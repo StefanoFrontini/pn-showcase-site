@@ -48,7 +48,6 @@ const KpiSignal1 = ({
 
   useEffect(() => {
     const vgSpec = toVegaSpec(spec);
-    console.log(data);
     new View(parse(vgSpec, undefined, { ast: true }), {
       expr: expressionInterpreter,
       renderer: "none",

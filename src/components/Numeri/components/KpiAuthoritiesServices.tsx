@@ -13,7 +13,6 @@ interface Props {
 }
 
 const KpiAuthoritiesServices = ({ data }: Props) => {
-  console.log("ste", data);
   return (
     <Stack
       direction={{ xs: "column", sm: "row" }}

@@ -1,11 +1,9 @@
 const nextConfig = {
-  output: 'export',
+  // output: 'export',
   reactStrictMode: true,
   trailingSlash: true,
-  distDir: 'build',
-  transpilePackages: [
-    '@pagopa/mui-italia',
-  ],
+  distDir: "build",
+  transpilePackages: ["@pagopa/mui-italia"],
   modularizeImports: {
     "@mui/icons-material": {
       transform: "@mui/icons-material/{{member}}",
@@ -13,7 +11,7 @@ const nextConfig = {
     "@mui/material": {
       transform: "@mui/material/{{member}}",
     },
-  }
+  },
 };
 
 module.exports = nextConfig;
