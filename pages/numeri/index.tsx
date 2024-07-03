@@ -37,13 +37,10 @@ export async function getStaticProps<T1, T2 = unknown>() {
   const data: [T1, T2] = (await Promise.all(
     responses.map((response) => response.json())
   )) as [T1, T2];
-  // const [metricsData1, metricsData2] = data;
   return {
     props: {
       fallback: {
         [unstable_serialize(urls)]: data,
-        // [SEND_NUMBERS_SECTION_1]: metricsData1,
-        // [SEND_NUMBERS_SECTION_2]: metricsData2,
       },
     },
   };

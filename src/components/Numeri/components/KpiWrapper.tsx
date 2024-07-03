@@ -11,6 +11,10 @@ type Props = {
 // ): item is SceneText => "text" in item;
 
 const KpiWrapper = ({ spec, data, ...restProps }: Props): JSX.Element => {
+  const formattedDate = new Intl.DateTimeFormat("it-IT").format(
+    new Date(data.last_run)
+  );
+
   // const [text, setText] = useState("#");
 
   // useEffect(() => {
@@ -24,7 +28,7 @@ const KpiWrapper = ({ spec, data, ...restProps }: Props): JSX.Element => {
 
   return (
     <p color="#fff" {...restProps}>
-      {data.last_run}
+      {formattedDate}
     </p>
   );
 };
