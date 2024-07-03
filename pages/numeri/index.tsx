@@ -5,8 +5,8 @@ import {
   SEND_NUMBERS_SECTION_1,
   SEND_NUMBERS_SECTION_2,
 } from "@utils/constants";
+import { Metrics1, Metrics2 } from "model/numbers.models";
 import { useState } from "react";
-import { useGetSendNumbers } from "services/numbers.services";
 import DashboardIntro from "src/components/Numeri/components/DashboardIntro";
 import { DataSectionWrapper } from "src/components/Numeri/components/DataSectionWrapper";
 import KpiAuthoritiesServices from "src/components/Numeri/components/KpiAuthoritiesServices";
@@ -15,8 +15,6 @@ import NotificationsTrend from "src/components/Numeri/components/NotificationsTr
 import TopServices from "src/components/Numeri/components/TopServices";
 import { curYear, firstYear } from "src/components/Numeri/shared/constants";
 import Tabs from "src/components/Tabs";
-import { unstable_serialize } from "swr";
-import { SWRConfig } from "swr/_internal";
 import PageHead from "../../src/components/PageHead";
 
 type Tabs = {
@@ -31,33 +29,29 @@ const years = Array.from({ length: numYear }, (_, i) => curYear - i).map(
 
 const tabs: Tabs[] = [{ id: null, label: "Totale" }, ...years];
 
-export async function getStaticProps<T1, T2 = unknown>() {
+export async function getStaticProps() {
   const urls = [SEND_NUMBERS_SECTION_1, SEND_NUMBERS_SECTION_2];
   const responses = await Promise.all(urls.map((url) => fetch(url)));
-  const data: [T1, T2] = (await Promise.all(
-    responses.map((response) => response.json())
-  )) as [T1, T2];
+  const notOk = responses.some((res) => !res.ok);
+  if (notOk) {
+    // If there is a server error the cache is not updated
+    // until the next successful request.
+    throw new Error("Error fetching data");
+  }
+  const data = (await Promise.all(responses.map((res) => res.json()))) as [
+    Metrics1,
+    Metrics2
+  ];
   return {
     props: {
-      fallback: {
-        [unstable_serialize(urls)]: data,
-      },
+      data,
     },
   };
 }
 const NumeriPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
-  fallback,
+  data,
 }) => {
-  return (
-    <SWRConfig value={{ fallback }}>
-      <Dashboard />
-    </SWRConfig>
-  );
-};
-const Dashboard = () => {
   const [selYear, setSelYear] = useState<number | null>(null);
-  const { data } = useGetSendNumbers();
-  if (!data) return null;
   const [metricsData1, metricsData2] = data;
 
   const handleTabChange = (tab: number) => {
