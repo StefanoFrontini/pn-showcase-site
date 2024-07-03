@@ -7,15 +7,19 @@ import chartConfig from "../shared/chart-config";
 type Props = {
   spec: TopLevelSpec;
   yearSignal: number | null;
+  data: any;
 };
 
-const PieChart = ({ spec, yearSignal }: Props): JSX.Element => {
+const PieChart = ({ spec, yearSignal, data }: Props): JSX.Element => {
   const [chart, setChart] = useState<Result | null>(null);
   const chartContent = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (!chartContent.current) return;
-    embed(chartContent.current, spec, chartConfig).then(setChart);
+    embed(chartContent.current, spec, chartConfig).then((res) => {
+      res.view.insert("myData", data);
+      setChart(res);
+    });
   }, [spec]);
 
   useEffect(() => {

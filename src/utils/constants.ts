@@ -45,3 +45,8 @@ export const ACCESSIBILITY_PARTICULAR_LINK = {
   PARTICULAR_ACCESSIBILITY_URL:
     process.env.NEXT_PUBLIC_ACCESSIBILITY_PARTICULAR_ACCESSIBILITY_URL,
 };
+export const SEND_NUMBERS_SECTION_1 =
+  "https://gist.githubusercontent.com/StefanoFrontini/b1f2a03d90dfeed356ba87463cda69e3/raw/c4ac908016af17e958dae241577a07d0471e8542/send-sezione1.json";
+
+export const SEND_NUMBERS_SECTION_2 =
+  "https://gist.githubusercontent.com/StefanoFrontini/6d1179031c54ff8da29afd577506a7ce/raw/737efca5d8b88d15a1bd365272cce84191cb2f14/send-sezione2.json";

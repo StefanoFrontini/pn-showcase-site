@@ -7,6 +7,7 @@ import KpiCard from "./KpiCard";
 
 type Props = {
   selYear: number | null;
+  data: any;
 };
 
 type LabelsCumulativeDaily = "cumulato" | "mensile";
@@ -53,7 +54,7 @@ const optionsTotalDigitalAnalogToItalian: OptionsTotalDigitalAnalogToItalian = (
   }
 };
 
-const NotificationsTrend = ({ selYear }: Props): JSX.Element => {
+const NotificationsTrend = ({ selYear, data }: Props): JSX.Element => {
   const [curOptionCumulativeDaily, setCurOptionCumulativeDaily] = useState(
     optionsCumulativeDaily[0].id
   );
@@ -115,6 +116,7 @@ const NotificationsTrend = ({ selYear }: Props): JSX.Element => {
           cumulativeSignal={curOptionCumulativeDaily === 1 ? true : false}
           filterSignal={getLabel(curOptionTotalDigitalAnalog)}
           yearSignal={selYear}
+          data={data}
         />
       </Box>
     </KpiCard>

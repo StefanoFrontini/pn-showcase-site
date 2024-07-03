@@ -3,7 +3,11 @@ import lastUpdateSpec from "../assets/data/last-update.vl.json";
 import { toVegaLiteSpec } from "../shared/toVegaLiteSpec";
 import KpiWrapper from "./KpiWrapper";
 
-const DashboardIntro = () => {
+interface Props {
+  data: any;
+}
+
+const DashboardIntro = ({ data }: Props) => {
   return (
     <Box mb={10}>
       <Stack
@@ -16,7 +20,7 @@ const DashboardIntro = () => {
           Ultimo aggiornamento -&nbsp;
         </Typography>
         <Typography color="textSecondary" variant="caption">
-          <KpiWrapper spec={toVegaLiteSpec(lastUpdateSpec)} />
+          <KpiWrapper spec={toVegaLiteSpec(lastUpdateSpec)} data={data} />
         </Typography>
       </Stack>
     </Box>

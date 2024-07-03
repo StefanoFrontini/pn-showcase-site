@@ -1,14 +1,19 @@
 import { Box } from "@mui/material";
 import Stack from "@mui/material/Stack";
-import topAuthoritiesSpec from "../assets/data/top-authorities.vl.json";
 
 import servicesSpec from "../assets/data/services.vl.json";
+import topAuthoritiesSpec from "../assets/data/top-authorities.vl.json";
 import { toVegaLiteSpec } from "../shared/toVegaLiteSpec";
 import ChartServices from "./ChartServices";
 import KpiAuthority from "./KpiAuthority";
 import KpiCard from "./KpiCard";
 
-const KpiAuthoritiesServices = (): JSX.Element => {
+interface Props {
+  data: any;
+}
+
+const KpiAuthoritiesServices = ({ data }: Props) => {
+  console.log("ste", data);
   return (
     <Stack
       direction={{ xs: "column", sm: "row" }}
@@ -19,7 +24,7 @@ const KpiAuthoritiesServices = (): JSX.Element => {
           label="Totale enti attivi"
           subLabel="Enti che hanno inviato almeno una notifica"
         >
-          <KpiAuthority spec={toVegaLiteSpec(servicesSpec)} />
+          <KpiAuthority spec={toVegaLiteSpec(servicesSpec)} data={data} />
         </KpiCard>
       </Box>
       <Box style={{ flex: "1 0 0" }} mb={3}>
@@ -28,7 +33,10 @@ const KpiAuthoritiesServices = (): JSX.Element => {
           subLabel="Categorie di enti ordinate per numero di enti attivi"
           borderLeft=""
         >
-          <ChartServices spec={toVegaLiteSpec(topAuthoritiesSpec)} />
+          <ChartServices
+            spec={toVegaLiteSpec(topAuthoritiesSpec)}
+            data={data.top10_cat_enti_n_enti}
+          />
         </KpiCard>
       </Box>
     </Stack>

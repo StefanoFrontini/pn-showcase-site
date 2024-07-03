@@ -6,14 +6,17 @@ import chartConfig from "../shared/chart-config";
 
 type Props = {
   spec: TopLevelSpec;
+  data: any;
 };
 
-const ChartServices = ({ spec }: Props): JSX.Element => {
+const ChartServices = ({ spec, data }: Props): JSX.Element => {
   const chartContent = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (!chartContent.current) return;
-    embed(chartContent.current, spec, chartConfig);
+    embed(chartContent.current, spec, chartConfig).then((res) => {
+      res.view.insert("myData", data).runAsync();
+    });
   }, [spec]);
 
   return (

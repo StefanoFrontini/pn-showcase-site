@@ -16,31 +16,39 @@ import { cacheLoader } from "../shared/vega-cache-loader";
 
 type Props = {
   spec: TopLevelSpec | VegaSpec;
+  yearSignal: number | null;
   className?: string;
-  data: any;
+  data?: any;
 };
 const isSceneText = (
   item: VegaScene | VegaSceneGroup | SceneText
 ): item is SceneText => "text" in item;
 
-const KpiAuthority = ({ spec, data, ...restProps }: Props): JSX.Element => {
+const KpiSignal1 = ({
+  spec,
+  yearSignal,
+  data,
+  ...restProps
+}: Props): JSX.Element => {
   const [text, setText] = useState("#");
+  const [view, setView] = useState<View | null>(null);
   const [scenegraph, setScenegraph] = useState<VegaSceneRoot | null>(null);
 
   useEffect(() => {
-    function getText(): string {
+    const getText = (): string => {
       if (scenegraph === null) return "";
       const scene = searchTree(scenegraph.root, "role", "mark");
       if (scene === null) return "";
       const marks = scene.items;
       return isSceneText(marks[0]) ? marks[0].text : "";
-    }
+    };
 
     setText(getText());
   }, [scenegraph]);
 
   useEffect(() => {
     const vgSpec = toVegaSpec(spec);
+    console.log(data);
     new View(parse(vgSpec, undefined, { ast: true }), {
       expr: expressionInterpreter,
       renderer: "none",
@@ -48,10 +56,18 @@ const KpiAuthority = ({ spec, data, ...restProps }: Props): JSX.Element => {
     })
       .insert("myData", data)
       .runAsync()
-      .then((viewRes) =>
-        setScenegraph(viewRes.scenegraph() as unknown as VegaSceneRoot)
-      );
+      .then((viewRes) => setView(viewRes));
   }, [spec]);
+
+  useEffect(() => {
+    if (view === null) return;
+    view
+      .signal("year", yearSignal)
+      .runAsync()
+      .then((viewP) =>
+        setScenegraph({ ...viewP.scenegraph() } as unknown as VegaSceneRoot)
+      ); // Force text
+  }, [view, yearSignal]);
 
   return (
     <Typography variant="h4" sx={{ mt: 3 }} {...restProps}>
@@ -60,4 +76,4 @@ const KpiAuthority = ({ spec, data, ...restProps }: Props): JSX.Element => {
   );
 };
 
-export default KpiAuthority;
+export default KpiSignal1;

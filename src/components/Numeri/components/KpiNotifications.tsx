@@ -1,19 +1,21 @@
 import { Box, Paper, Stack, Typography } from "@mui/material";
-import notificationAnalogSpec from "../assets/data/notifications-analog.vl.json";
-import notificationsDigitalSpec from "../assets/data/notifications-digital.vl.json";
-import notificationsTotalSpec from "../assets/data/notifications-total.vl.json";
-import pieChartAnalogSpec from "../assets/data/pie-chart-analog.vl.json";
-import pieChartDigitalSpec from "../assets/data/pie-chart-digital.vl.json";
+// import notificationAnalogSpec from "../assets/data/notifications-analog.vl.json";
+import notificationAnalogSpec1 from "../assets/data/notifications-analog1.vl.json";
+import notificationsDigitalSpec1 from "../assets/data/notifications-digital1.vl.json";
+import notificationsTotalSpec1 from "../assets/data/notifications-total1.vl.json";
+import pieChartAnalogSpec from "../assets/data/pie-chart-analog1.vl.json";
+import pieChartDigitalSpec from "../assets/data/pie-chart-digital1.vl.json";
 import { toVegaLiteSpec } from "../shared/toVegaLiteSpec";
 import KpiCard from "./KpiCard";
-import KpiSignal from "./KpiSignal";
+import KpiSignal1 from "./KpiSignal1";
 import PieChart from "./PieChart";
 
 type Props = {
   selYear: number | null;
+  data: any;
 };
 
-const KpiNotifications = ({ selYear }: Props): JSX.Element => {
+const KpiNotifications = ({ selYear, data }: Props): JSX.Element => {
   return (
     <Stack
       direction={{ xs: "column", sm: "row" }}
@@ -25,9 +27,10 @@ const KpiNotifications = ({ selYear }: Props): JSX.Element => {
           label="Totale notifiche"
           subLabel="Notifiche inviate tramite SEND"
         >
-          <KpiSignal
-            spec={toVegaLiteSpec(notificationsTotalSpec)}
+          <KpiSignal1
+            spec={toVegaLiteSpec(notificationsTotalSpec1)}
             yearSignal={selYear}
+            data={data}
           />
         </KpiCard>
       </Box>
@@ -59,15 +62,17 @@ const KpiNotifications = ({ selYear }: Props): JSX.Element => {
                 Notifiche inviate ai destinatari tramite canali digitali
               </Typography>
 
-              <KpiSignal
-                spec={toVegaLiteSpec(notificationsDigitalSpec)}
+              <KpiSignal1
+                spec={toVegaLiteSpec(notificationsDigitalSpec1)}
                 yearSignal={selYear}
+                data={data}
               />
             </Box>
             <Box>
               <PieChart
                 spec={toVegaLiteSpec(pieChartDigitalSpec)}
                 yearSignal={selYear}
+                data={data}
               />
             </Box>
           </Box>
@@ -101,15 +106,17 @@ const KpiNotifications = ({ selYear }: Props): JSX.Element => {
                 Notifiche inviate ai destinatari tramite raccomandata cartacea
               </Typography>
 
-              <KpiSignal
-                spec={toVegaLiteSpec(notificationAnalogSpec)}
+              <KpiSignal1
+                spec={toVegaLiteSpec(notificationAnalogSpec1)}
                 yearSignal={selYear}
+                data={data}
               />
             </Box>
             <Box>
               <PieChart
                 spec={toVegaLiteSpec(pieChartAnalogSpec)}
                 yearSignal={selYear}
+                data={data}
               />
             </Box>
           </Box>

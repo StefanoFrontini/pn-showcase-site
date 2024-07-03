@@ -9,19 +9,24 @@ type Props = {
   cumulativeSignal: boolean;
   filterSignal: string;
   yearSignal: number | null;
+  data: any;
 };
 const CumulativeChart = ({
   spec,
   cumulativeSignal,
   filterSignal,
   yearSignal,
+  data,
 }: Props) => {
   const [chart, setChart] = useState<Result | null>(null);
   const chartContent = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (!chartContent.current) return;
-    embed(chartContent.current, spec, chartConfig).then(setChart);
+    embed(chartContent.current, spec, chartConfig).then((res) => {
+      res.view.insert("myData", data);
+      setChart(res);
+    });
   }, [spec]);
 
   useEffect(() => {

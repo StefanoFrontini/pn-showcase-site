@@ -4,8 +4,7 @@
   "height": "container",
   "padding": 5,
   "data": {
-    "url": "https://pdnd-prod-dl-1-public-data.s3.eu-central-1.amazonaws.com/dashboard/send/dashboard-send-sezione1.json",
-    "format": { "property": "notifiche_per_mese" }
+    "name": "myData"
   },
   "params": [
     { "name": "is_cumulative", "value": true },
