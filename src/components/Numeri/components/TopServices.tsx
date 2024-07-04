@@ -3,13 +3,14 @@ import { toVegaLiteSpec } from "../shared/toVegaLiteSpec";
 import { Box, Stack, Typography } from "@mui/material";
 import actsSpec from "../assets/data/acts.vl.json";
 
+import { Metrics2 } from "model/numbers.models";
 import topAreasSpec from "../assets/data/top-areas.vl.json";
 import ChartServices from "./ChartServices";
 import KpiAuthority from "./KpiAuthority";
 import KpiCard from "./KpiCard";
 
 interface Props {
-  data: any;
+  data: Metrics2;
 }
 
 const TopServices = ({ data }: Props) => {

@@ -1,10 +1,11 @@
 import { Box, Stack, Typography } from "@mui/material";
+import { Metrics1 } from "model/numbers.models";
 import lastUpdateSpec from "../assets/data/last-update.vl.json";
 import { toVegaLiteSpec } from "../shared/toVegaLiteSpec";
 import KpiWrapper from "./KpiWrapper";
 
 interface Props {
-  data: any;
+  data: Metrics1;
 }
 
 const DashboardIntro = ({ data }: Props) => {

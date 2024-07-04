@@ -1,6 +1,7 @@
 import { Box } from "@mui/material";
 import Stack from "@mui/material/Stack";
 
+import { Metrics2 } from "model/numbers.models";
 import servicesSpec from "../assets/data/services.vl.json";
 import topAuthoritiesSpec from "../assets/data/top-authorities.vl.json";
 import { toVegaLiteSpec } from "../shared/toVegaLiteSpec";
@@ -9,7 +10,7 @@ import KpiAuthority from "./KpiAuthority";
 import KpiCard from "./KpiCard";
 
 interface Props {
-  data: any;
+  data: Metrics2;
 }
 
 const KpiAuthoritiesServices = ({ data }: Props) => {

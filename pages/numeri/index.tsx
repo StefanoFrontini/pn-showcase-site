@@ -29,7 +29,7 @@ const years = Array.from({ length: numYear }, (_, i) => curYear - i).map(
 
 const tabs: Tabs[] = [{ id: null, label: "Totale" }, ...years];
 
-export async function getStaticProps() {
+export async function getStaticProps({ noLayout = false }) {
   const urls = [SEND_NUMBERS_SECTION_1, SEND_NUMBERS_SECTION_2];
   const responses = await Promise.all(urls.map((url) => fetch(url)));
   const notOk = responses.some((res) => !res.ok);
@@ -45,6 +45,7 @@ export async function getStaticProps() {
   return {
     props: {
       data,
+      noLayout,
     },
   };
 }

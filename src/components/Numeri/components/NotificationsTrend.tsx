@@ -1,4 +1,5 @@
 import { Box, MenuItem, Select, Stack, Typography } from "@mui/material";
+import { NotifichePerMese } from "model/numbers.models";
 import { useState } from "react";
 import downloadSpec from "../assets/data/download.vl.json";
 import { toVegaLiteSpec } from "../shared/toVegaLiteSpec";
@@ -7,7 +8,7 @@ import KpiCard from "./KpiCard";
 
 type Props = {
   selYear: number | null;
-  data: any;
+  data: NotifichePerMese[];
 };
 
 type LabelsCumulativeDaily = "cumulato" | "mensile";

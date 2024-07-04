@@ -1,4 +1,5 @@
 import { Box } from "@mui/material";
+import { TotaleNotifiche } from "model/numbers.models";
 import { useEffect, useRef, useState } from "react";
 import embed, { Result } from "vega-embed";
 import { TopLevelSpec } from "vega-lite";
@@ -7,7 +8,7 @@ import chartConfig from "../shared/chart-config";
 type Props = {
   spec: TopLevelSpec;
   yearSignal: number | null;
-  data: any;
+  data: TotaleNotifiche[];
 };
 
 const PieChart = ({ spec, yearSignal, data }: Props): JSX.Element => {
