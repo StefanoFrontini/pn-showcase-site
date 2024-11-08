@@ -1,12 +1,13 @@
 import { DEFAULT_LANG } from "@utils/constants";
 import Document, {
-  Html,
-  Head,
-  Main,
-  NextScript,
   DocumentContext,
   DocumentInitialProps,
+  Head,
+  Html,
+  Main,
+  NextScript,
 } from "next/document";
+import Script from "next/script";
 import { ReactElement } from "react";
 import { LangCode } from "../model";
 
@@ -31,6 +32,12 @@ export default class MyDocument extends Document<{ lang: LangCode }> {
         <body>
           <Main />
           <NextScript />
+          <Script
+            src="/iframe-resizer/child/index.umd.js"
+            type="text/javascript"
+            id="iframe-resizer-child"
+            strategy="beforeInteractive"
+          />
         </body>
       </Html>
     );
