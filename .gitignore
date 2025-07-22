@@ -38,4 +38,6 @@ yarn-error.log*
 /public/static/documents/radd-stores-registry.csv
 
 # conf
-/public/conf/config.json
+# /public/conf/config.json
+
+.env
