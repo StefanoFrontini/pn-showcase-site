@@ -9,7 +9,6 @@ import {
 } from "vega";
 import { expressionInterpreter } from "vega-interpreter";
 
-import { Typography } from "@mui/material";
 import { TopLevelSpec } from "vega-lite";
 import { VegaSceneRoot, searchTree, toVegaSpec } from "../shared/chart-utils";
 import { cacheLoader } from "../shared/vega-cache-loader";
@@ -23,7 +22,7 @@ const isSceneText = (
   item: VegaScene | VegaSceneGroup | SceneText
 ): item is SceneText => "text" in item;
 
-const KpiSignal = ({ spec, yearSignal, ...restProps }: Props): JSX.Element => {
+const KpiSignal = ({ spec, yearSignal }: Props) => {
   const [text, setText] = useState("#");
   const [view, setView] = useState<View | null>(null);
   const [scenegraph, setScenegraph] = useState<VegaSceneRoot | null>(null);
@@ -61,11 +60,7 @@ const KpiSignal = ({ spec, yearSignal, ...restProps }: Props): JSX.Element => {
       ); // Force text
   }, [view, yearSignal]);
 
-  return (
-    <Typography variant="h4" sx={{ mt: 3 }} {...restProps}>
-      {text}
-    </Typography>
-  );
+  return <>{text}</>;
 };
 
 export default KpiSignal;

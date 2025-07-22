@@ -14,7 +14,7 @@
       "as": "type"
     }
   ],
-  "mark": "arc",
+  "mark": { "type": "arc", "innerRadius": 65, "outerRadius": 110 },
   "encoding": {
     "theta": { "field": "num_iun", "type": "quantitative" },
     "color": {
