@@ -14,7 +14,6 @@ import { getI18n } from "../../api/i18n";
 import DashboardIntro from "../../components/Numeri/components/DashboardIntro";
 import { DataSectionWrapper } from "../../components/Numeri/components/DataSectionWrapper";
 import KpiAuthoritiesServices from "../../components/Numeri/components/KpiAuthoritiesServices";
-import KpiNotifications from "../../components/Numeri/components/KpiNotifications";
 import NotificationsTrend from "../../components/Numeri/components/NotificationsTrend";
 import TopServices from "../../components/Numeri/components/TopServices";
 import { curYear, firstYear } from "../../components/Numeri/shared/constants";
@@ -29,6 +28,9 @@ import PieChart from "../../components/Numeri/components/PieChart";
 
 import CardText from "src/components/Numeri/components/CardText";
 import CardTitle from "src/components/Numeri/components/CardTitle";
+import MapChart from "src/components/Numeri/components/MapChart";
+import SectionFirstColumnLayout from "src/components/Numeri/components/SectionFirstColumnLayout";
+import SectionSecondColumnLayout from "src/components/Numeri/components/SectionSecondColumnLayout";
 import pieChartDigitalSpec from "../../components/Numeri/assets/data/pie-chart-digital.vl.json";
 
 type Tabs = {
@@ -121,23 +123,6 @@ const SendInNumbers: NextPage = () => {
               width="6"
               height="6"
             ></image>
-          </pattern>
-          <pattern
-            id="pattern_3"
-            patternUnits="userSpaceOnUse"
-            width="10"
-            height="10"
-          >
-            {" "}
-            <image
-              xlinkHref="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxMCcgaGVpZ2h0PScxMCc+CiAgPHJlY3Qgd2lkdGg9JzEwJyBoZWlnaHQ9JzEwJyBmaWxsPScjNTU5NGU3Jy8+CiAgPHBhdGggZD0nTS0xLDEgbDIsLTIKICAgICAgICAgICBNMCwxMCBsMTAsLTEwCiAgICAgICAgICAgTTksMTEgbDIsLTInIHN0cm9rZT0nd2hpdGUnIHN0cm9rZS13aWR0aD0nMScvPgo8L3N2Zz4="
-              x="0"
-              y="0"
-              width="10"
-              height="10"
-            >
-              {" "}
-            </image>{" "}
           </pattern>
         </defs>
       </svg>
@@ -296,9 +281,73 @@ const SendInNumbers: NextPage = () => {
           </KpiCard2>
         </Stack>
         <Box mb={2}>
-          <KpiNotifications selYear={selYear} />
+          {/* <KpiNotifications selYear={selYear} /> */}
           <NotificationsTrend selYear={selYear} />
         </Box>
+      </SectionLayout>
+      <SectionLayout
+        title="Enti attivi su SEND"
+        text="Enti aderenti che hanno inviato almeno una notifica SEND dall'avvio del servizio"
+      >
+        <SectionFirstColumnLayout>
+          <KpiCard2>
+            <Stack direction={"column"} spacing={2} width={"100%"}>
+              <Icons.AccountBalanceIcon />
+              <Typography
+                sx={{
+                  color: dashboardColors.get("blue-io"),
+                  fontSize: "2rem",
+                  fontWeight: 700,
+                  lineHeight: "2.625rem",
+                }}
+              >
+                <KpiSignal
+                  spec={toVegaLiteSpec(notificationsTotalSpec)}
+                  yearSignal={selYear}
+                />
+              </Typography>
+              <CardTitle>Totale enti attivi su SEND</CardTitle>
+              <CardText>
+                Numero complessivo degli enti aderenti che hanno almeno inviato
+                una notifica SEND
+              </CardText>
+            </Stack>
+          </KpiCard2>
+          <KpiCard2>
+            <Stack direction={"column"} spacing={2} width={"100%"}>
+              <Icons.ThingsToDoIcon />
+              <Typography
+                sx={{
+                  color: dashboardColors.get("blue-io"),
+                  fontSize: "2rem",
+                  fontWeight: 700,
+                  lineHeight: "2.625rem",
+                }}
+              >
+                <KpiSignal
+                  spec={toVegaLiteSpec(notificationsTotalSpec)}
+                  yearSignal={selYear}
+                />
+              </Typography>
+              <CardText>
+                Percentuale di comuni sul totale degli enti attivi su SEND
+              </CardText>
+            </Stack>
+          </KpiCard2>
+        </SectionFirstColumnLayout>
+        <SectionSecondColumnLayout>
+          <KpiCard2>
+            <CardTitle>
+              Distribuzione geografica dei comuni attivi su SEND
+            </CardTitle>
+            <CardText>
+              Il grafico mostra la distribuzione dei comuni attivi nelle diverse
+              regioni, la dimensione delle bolle indica il volume dei comumi
+              attivi per regione.
+            </CardText>
+            <MapChart />
+          </KpiCard2>
+        </SectionSecondColumnLayout>
       </SectionLayout>
       <Box sx={{ overflowX: "hidden" }}>
         {/* <DataSectionWrapper
