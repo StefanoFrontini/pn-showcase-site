@@ -40,7 +40,12 @@
   ],
   "layer": [
     {
-      "mark": { "type": "bar", "width": { "band": 0.7 } },
+      "mark": {
+        "type": "bar",
+        "width": { "band": 0.7 },
+        "cornerRadius": 5,
+        "fill": "#0B3EE3"
+      },
       "transform": [{ "filter": "!is_cumulative" }],
       "encoding": {
         "y": {

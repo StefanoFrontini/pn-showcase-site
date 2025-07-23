@@ -1,4 +1,14 @@
-export const dashboardColors: ReadonlyMap<string, string> = new Map([
+const colors = [
+  "blue-io",
+  "primary",
+  "secondary",
+  "grey-650",
+  "grey-700",
+] as const;
+
+type Colors = (typeof colors)[number];
+
+export const dashboardColors: ReadonlyMap<Colors, string> = new Map([
   ["blue-io", "#0B3EE3"],
   ["primary", "#17324D"],
   ["secondary", "#5C6F82"],

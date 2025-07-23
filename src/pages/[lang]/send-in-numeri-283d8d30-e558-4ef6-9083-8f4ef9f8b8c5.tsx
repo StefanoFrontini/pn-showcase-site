@@ -85,6 +85,62 @@ const SendInNumbers: NextPage = () => {
         type="text/javascript"
         id="iframe-resizer-child"
       />
+      <svg
+        height="0"
+        width="0"
+        xmlns="http://www.w3.org/2000/svg"
+        version="1.1"
+      >
+        <defs>
+          <pattern
+            id="pattern_1"
+            patternUnits="userSpaceOnUse"
+            width="8"
+            height="8"
+          >
+            <image
+              xlinkHref="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2NkZDdmOSIvPjxwYXRoIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBzdHJva2Utd2lkdGg9IjQuNSIgZD0iTTIwLTVWNW0wIDMwdjEwbTIwLTMwdjEwTTAgMTV2MTBNLTUgNDBINU0tNSAwSDVtMzAgMGgxME0zNSA0MGgxME0xNSAyMGgxMCIvPjwvc3ZnPg==
+"
+              x="0"
+              y="0"
+              width="8"
+              height="8"
+            ></image>
+          </pattern>
+          <pattern
+            id="pattern_2"
+            patternUnits="userSpaceOnUse"
+            width="6"
+            height="6"
+            patternTransform="rotate(45)"
+          >
+            <image
+              xlinkHref="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iIzBiM2VlNSIvPjxwYXRoIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSI2LjUiIGQ9Ik0wIDEwaDIweiIvPjwvc3ZnPg=="
+              x="0"
+              y="0"
+              width="6"
+              height="6"
+            ></image>
+          </pattern>
+          <pattern
+            id="pattern_3"
+            patternUnits="userSpaceOnUse"
+            width="10"
+            height="10"
+          >
+            {" "}
+            <image
+              xlinkHref="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxMCcgaGVpZ2h0PScxMCc+CiAgPHJlY3Qgd2lkdGg9JzEwJyBoZWlnaHQ9JzEwJyBmaWxsPScjNTU5NGU3Jy8+CiAgPHBhdGggZD0nTS0xLDEgbDIsLTIKICAgICAgICAgICBNMCwxMCBsMTAsLTEwCiAgICAgICAgICAgTTksMTEgbDIsLTInIHN0cm9rZT0nd2hpdGUnIHN0cm9rZS13aWR0aD0nMScvPgo8L3N2Zz4="
+              x="0"
+              y="0"
+              width="10"
+              height="10"
+            >
+              {" "}
+            </image>{" "}
+          </pattern>
+        </defs>
+      </svg>
 
       <Box mt={8}>
         <Typography
@@ -149,50 +205,80 @@ const SendInNumbers: NextPage = () => {
                 spacing={4}
                 width={"100%"}
               >
-                <Box>
-                  <Typography
-                    sx={{
-                      color: dashboardColors.get("blue-io"),
-                      fontSize: "2rem",
-                      fontWeight: 700,
-                      lineHeight: "2.625rem",
-                    }}
+                <Stack direction={"column"} spacing={1}>
+                  <Stack
+                    direction={"row"}
+                    spacing={2}
+                    width={"100%"}
+                    alignItems={"center"}
                   >
-                    <KpiSignal
-                      spec={toVegaLiteSpec(notificationsDigitalSpec)}
-                      yearSignal={selYear}
-                    />
-                  </Typography>
-                  <Stack direction={"column"} spacing={1}>
-                    <CardTitle>Numero di notifiche SEND digitali</CardTitle>
-                    <CardText>
-                      Notifiche SEND inviate ai destinatari tramite canali
-                      digitali come PEC e Domicilio Digitale
-                    </CardText>
+                    <svg
+                      width="36"
+                      height="36"
+                      viewBox="0 0 36 36"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <circle cx="18" cy="18" r="18" fill="url(#pattern_2)" />
+                    </svg>
+
+                    <Typography
+                      sx={{
+                        color: dashboardColors.get("blue-io"),
+                        fontSize: "2rem",
+                        fontWeight: 700,
+                        lineHeight: "2.625rem",
+                      }}
+                    >
+                      <KpiSignal
+                        spec={toVegaLiteSpec(notificationsDigitalSpec)}
+                        yearSignal={selYear}
+                      />
+                    </Typography>
                   </Stack>
-                </Box>
-                <Box>
-                  <Typography
-                    sx={{
-                      color: dashboardColors.get("blue-io"),
-                      fontSize: "2rem",
-                      fontWeight: 700,
-                      lineHeight: "2.625rem",
-                    }}
+                  <CardTitle>Numero di notifiche SEND digitali</CardTitle>
+                  <CardText>
+                    Notifiche SEND inviate ai destinatari tramite canali
+                    digitali come PEC e Domicilio Digitale
+                  </CardText>
+                </Stack>
+                <Stack direction={"column"} spacing={1}>
+                  <Stack
+                    direction={"row"}
+                    spacing={2}
+                    width={"100%"}
+                    alignItems={"center"}
                   >
-                    <KpiSignal
-                      spec={toVegaLiteSpec(notificationsAnalogSpec)}
-                      yearSignal={selYear}
-                    />
-                  </Typography>
-                  <Stack direction={"column"} spacing={1}>
-                    <CardTitle>Numero di notifiche SEND analogiche</CardTitle>
-                    <CardText>
-                      Notifiche SEND inviate ai destinatari che non hanno
-                      trovato una PEC o un Domicilio Digitale
-                    </CardText>
+                    <svg
+                      width="36"
+                      height="36"
+                      viewBox="0 0 36 36"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <circle cx="18" cy="18" r="18" fill="url(#pattern_1)" />
+                    </svg>
+
+                    <Typography
+                      sx={{
+                        color: dashboardColors.get("blue-io"),
+                        fontSize: "2rem",
+                        fontWeight: 700,
+                        lineHeight: "2.625rem",
+                      }}
+                    >
+                      <KpiSignal
+                        spec={toVegaLiteSpec(notificationsAnalogSpec)}
+                        yearSignal={selYear}
+                      />
+                    </Typography>
                   </Stack>
-                </Box>
+                  <CardTitle>Numero di notifiche SEND analogiche</CardTitle>
+                  <CardText>
+                    Notifiche SEND inviate ai destinatari che non hanno trovato
+                    una PEC o un Domicilio Digitale
+                  </CardText>
+                </Stack>
               </Stack>
               <Stack
                 direction={"column"}
