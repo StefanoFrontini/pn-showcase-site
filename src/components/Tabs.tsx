@@ -72,6 +72,7 @@ const Tabs = ({
               sx={{
                 borderColor: dashboardColors.get("blue-io"),
                 color: dashboardColors.get("blue-io"),
+                fontWeight: 700,
                 backgroundColor:
                   currentTab === index
                     ? dashboardColors.get("blue-io-50")

@@ -1,6 +1,6 @@
 import type { GetStaticPaths, NextPage } from "next";
 
-import { Box, Stack, Typography } from "@mui/material";
+import { Alert, Box, Button, Stack, Typography } from "@mui/material";
 import { langCodes } from "@utils/constants";
 import Script from "next/script";
 import { useState } from "react";
@@ -30,6 +30,8 @@ import CardTitle from "src/components/Numeri/components/CardTitle";
 import ChartServices from "src/components/Numeri/components/ChartServices";
 import MapChart from "src/components/Numeri/components/MapChart";
 import pieChartDigitalSpec from "../../components/Numeri/assets/data/pie-chart-digital.vl.json";
+
+// import {  } from "@pagopa/mui-italia";
 
 type Tabs = {
   id: number | null;
@@ -125,25 +127,56 @@ const SendInNumbers: NextPage = () => {
         </defs>
       </svg>
 
-      <Box sx={{ maxWidth: 1340, backgroundColor: "white" }} marginX={17.7}>
+      <Box
+        sx={{ maxWidth: 1156, backgroundColor: "white", mx: "auto" }}
+        marginX={17.7}
+      >
         <Box component="header">
-          <Typography
-            align="center"
-            fontWeight={700}
-            fontSize="14px"
-            color="textSecondary"
-            mb={3}
-            sx={{ textTransform: "uppercase" }}
+          <Stack
+            direction="row"
+            justifyContent="space-between"
+            alignItems={"center"}
           >
-            {t("hero.eyelet")}
-          </Typography>
+            <Box paddingY={10.6}>
+              <Typography
+                fontWeight={700}
+                fontSize="14px"
+                color="textSecondary"
+                mb={3}
+                sx={{ textTransform: "uppercase" }}
+              >
+                {t("hero.eyelet")}
+              </Typography>
 
-          <Typography align="center" variant="h2">
-            {t("hero.title")}
-          </Typography>
-          <DashboardIntro />
+              <Typography align="center" variant="h2">
+                {t("hero.title")}
+              </Typography>
+              <DashboardIntro />
+            </Box>
+            <Box>
+              <Alert
+                action={
+                  <Button
+                    sx={{ color: dashboardColors.get("blue-io") }}
+                    href="/"
+                    size="small"
+                  >
+                    Vai al sito
+                  </Button>
+                }
+                severity="info"
+                variant="standard"
+                sx={{
+                  backgroundColor: dashboardColors.get("blue-io-50"),
+                  borderLeft: `4px solid ${dashboardColors.get("blue-io")}`,
+                }}
+              >
+                Contenuto che serve ad avvisare l'utente
+              </Alert>
+            </Box>
+          </Stack>
         </Box>
-        <Box component="main">
+        <Box component="main" paddingTop={6}>
           <SectionLayout
             title="Notifiche SEND inviate"
             text="I seguenti dati si riferiscono alle comunicazioni a valore legale inviate dagli enti aderenti."
@@ -304,7 +337,7 @@ const SendInNumbers: NextPage = () => {
               <Stack
                 flex={"0 0 30.602%"}
                 direction={"column"}
-                spacing={2}
+                spacing={6}
                 width={"100%"}
               >
                 <KpiCard2>
