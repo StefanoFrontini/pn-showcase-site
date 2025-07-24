@@ -153,11 +153,14 @@ const SendInNumbers: NextPage = () => {
               </Typography>
               <DashboardIntro />
             </Box>
-            <Box>
+            <Box flex={"0 0 35%"}>
               <Alert
                 action={
                   <Button
-                    sx={{ color: dashboardColors.get("blue-io") }}
+                    sx={{
+                      color: dashboardColors.get("blue-io"),
+                      whiteSpace: "nowrap",
+                    }}
                     href="/"
                     size="small"
                   >
@@ -171,7 +174,7 @@ const SendInNumbers: NextPage = () => {
                   borderLeft: `4px solid ${dashboardColors.get("blue-io")}`,
                 }}
               >
-                Contenuto che serve ad avvisare l'utente
+                I dati sono tutti disponibili come json su dati.gov.it
               </Alert>
             </Box>
           </Stack>
