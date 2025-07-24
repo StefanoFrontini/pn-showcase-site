@@ -12,10 +12,7 @@ import { dashboardColors } from "src/components/Numeri/shared/colors";
 import { toVegaLiteSpec } from "src/components/Numeri/shared/toVegaLiteSpec";
 import { getI18n } from "../../api/i18n";
 import DashboardIntro from "../../components/Numeri/components/DashboardIntro";
-import { DataSectionWrapper } from "../../components/Numeri/components/DataSectionWrapper";
-import KpiAuthoritiesServices from "../../components/Numeri/components/KpiAuthoritiesServices";
 import NotificationsTrend from "../../components/Numeri/components/NotificationsTrend";
-import TopServices from "../../components/Numeri/components/TopServices";
 import { curYear, firstYear } from "../../components/Numeri/shared/constants";
 import Tabs from "../../components/Tabs";
 import { useTranslation } from "../../hook/useTranslation";
@@ -26,11 +23,12 @@ import notificationsDigitalSpec from "../../components/Numeri/assets/data/notifi
 import notificationsTotalSpec from "../../components/Numeri/assets/data/notifications-total.vl.json";
 import PieChart from "../../components/Numeri/components/PieChart";
 
+import topAreasSpec from "../../components/Numeri/assets/data/top-areas.vl.json";
+
 import CardText from "src/components/Numeri/components/CardText";
 import CardTitle from "src/components/Numeri/components/CardTitle";
+import ChartServices from "src/components/Numeri/components/ChartServices";
 import MapChart from "src/components/Numeri/components/MapChart";
-import SectionFirstColumnLayout from "src/components/Numeri/components/SectionFirstColumnLayout";
-import SectionSecondColumnLayout from "src/components/Numeri/components/SectionSecondColumnLayout";
 import pieChartDigitalSpec from "../../components/Numeri/assets/data/pie-chart-digital.vl.json";
 
 type Tabs = {
@@ -127,86 +125,38 @@ const SendInNumbers: NextPage = () => {
         </defs>
       </svg>
 
-      <Box mt={8}>
-        <Typography
-          align="center"
-          fontWeight={700}
-          fontSize="14px"
-          color="textSecondary"
-          mb={3}
-          sx={{ textTransform: "uppercase" }}
-        >
-          {t("hero.eyelet")}
-        </Typography>
+      <Box sx={{ maxWidth: 1340, backgroundColor: "white" }} marginX={17.7}>
+        <Box component="header">
+          <Typography
+            align="center"
+            fontWeight={700}
+            fontSize="14px"
+            color="textSecondary"
+            mb={3}
+            sx={{ textTransform: "uppercase" }}
+          >
+            {t("hero.eyelet")}
+          </Typography>
 
-        <Typography align="center" variant="h2">
-          {t("hero.title")}
-        </Typography>
-        <DashboardIntro />
-      </Box>
-
-      <SectionLayout
-        title="Notifiche SEND inviate"
-        text="I seguenti dati si riferiscono alle comunicazioni a valore legale inviate dagli enti aderenti."
-      >
-        <Box sx={{ textAlign: "left" }}>
-          <Tabs
-            tabs={tabs.map((tab) => tab.label)}
-            onTabChange={handleTabChange}
-          />
+          <Typography align="center" variant="h2">
+            {t("hero.title")}
+          </Typography>
+          <DashboardIntro />
         </Box>
-        <Stack direction={"row"} spacing={2} width={"100%"}>
-          <Box sx={{ flex: "0 0 32%" }}>
-            <KpiCard2>
-              <Stack direction={"column"} spacing={2} width={"100%"}>
-                <Icons.ForwardToInboxIcon />
-                <Typography
-                  sx={{
-                    color: dashboardColors.get("blue-io"),
-                    fontSize: "2rem",
-                    fontWeight: 700,
-                    lineHeight: "2.625rem",
-                  }}
-                >
-                  <KpiSignal
-                    spec={toVegaLiteSpec(notificationsTotalSpec)}
-                    yearSignal={selYear}
-                  />
-                </Typography>
-                <CardTitle>Totale notifiche SEND inviate</CardTitle>
-                <CardText>
-                  La notifica SEND è una comunicazione a valore legale emessa in
-                  via ufficiale da un'amministrazione. Può essere trasmessa per
-                  via cartacea o digitale.
-                </CardText>
-              </Stack>
-            </KpiCard2>
-          </Box>
-          <KpiCard2>
-            <Stack direction={"row"} spacing={2} width={"100%"}>
-              <Stack
-                flex={"0 0 55%"}
-                direction={"column"}
-                spacing={4}
-                width={"100%"}
-              >
-                <Stack direction={"column"} spacing={1}>
-                  <Stack
-                    direction={"row"}
-                    spacing={2}
-                    width={"100%"}
-                    alignItems={"center"}
-                  >
-                    <svg
-                      width="36"
-                      height="36"
-                      viewBox="0 0 36 36"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <circle cx="18" cy="18" r="18" fill="url(#pattern_2)" />
-                    </svg>
-
+        <Box component="main">
+          <SectionLayout
+            title="Notifiche SEND inviate"
+            text="I seguenti dati si riferiscono alle comunicazioni a valore legale inviate dagli enti aderenti."
+          >
+            <Tabs
+              tabs={tabs.map((tab) => tab.label)}
+              onTabChange={handleTabChange}
+            />
+            <Stack direction={"row"} spacing={6} width={"100%"}>
+              <Box sx={{ flex: "0 0 30.602%" }}>
+                <KpiCard2>
+                  <Stack direction={"column"} spacing={2} width={"100%"}>
+                    <Icons.ForwardToInboxIcon />
                     <Typography
                       sx={{
                         color: dashboardColors.get("blue-io"),
@@ -216,141 +166,222 @@ const SendInNumbers: NextPage = () => {
                       }}
                     >
                       <KpiSignal
-                        spec={toVegaLiteSpec(notificationsDigitalSpec)}
+                        spec={toVegaLiteSpec(notificationsTotalSpec)}
                         yearSignal={selYear}
                       />
                     </Typography>
+                    <CardTitle>Totale notifiche SEND inviate</CardTitle>
+                    <CardText>
+                      La notifica SEND è una comunicazione a valore legale
+                      emessa in via ufficiale da un'amministrazione. Può essere
+                      trasmessa per via cartacea o digitale.
+                    </CardText>
                   </Stack>
-                  <CardTitle>Numero di notifiche SEND digitali</CardTitle>
-                  <CardText>
-                    Notifiche SEND inviate ai destinatari tramite canali
-                    digitali come PEC e Domicilio Digitale
-                  </CardText>
-                </Stack>
-                <Stack direction={"column"} spacing={1}>
-                  <Stack
-                    direction={"row"}
-                    spacing={2}
-                    width={"100%"}
-                    alignItems={"center"}
-                  >
-                    <svg
-                      width="36"
-                      height="36"
-                      viewBox="0 0 36 36"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
+                </KpiCard2>
+              </Box>
+              <Box sx={{ flex: "1 1 0" }}>
+                <KpiCard2>
+                  <Stack direction={"row"} spacing={2} width={"100%"}>
+                    <Stack
+                      sx={{ flex: "0 0 50%" }}
+                      direction={"column"}
+                      spacing={4}
+                      width={"100%"}
                     >
-                      <circle cx="18" cy="18" r="18" fill="url(#pattern_1)" />
-                    </svg>
+                      <Stack direction={"column"} spacing={1}>
+                        <Stack
+                          direction={"row"}
+                          spacing={2}
+                          width={"100%"}
+                          alignItems={"center"}
+                        >
+                          <svg
+                            width="36"
+                            height="36"
+                            viewBox="0 0 36 36"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <circle
+                              cx="18"
+                              cy="18"
+                              r="18"
+                              fill="url(#pattern_2)"
+                            />
+                          </svg>
 
-                    <Typography
-                      sx={{
-                        color: dashboardColors.get("blue-io"),
-                        fontSize: "2rem",
-                        fontWeight: 700,
-                        lineHeight: "2.625rem",
-                      }}
+                          <Typography
+                            sx={{
+                              color: dashboardColors.get("blue-io"),
+                              fontSize: "2rem",
+                              fontWeight: 700,
+                              lineHeight: "2.625rem",
+                            }}
+                          >
+                            <KpiSignal
+                              spec={toVegaLiteSpec(notificationsDigitalSpec)}
+                              yearSignal={selYear}
+                            />
+                          </Typography>
+                        </Stack>
+                        <CardTitle>Numero di notifiche SEND digitali</CardTitle>
+                        <CardText>
+                          Notifiche SEND inviate ai destinatari tramite canali
+                          digitali come PEC e Domicilio Digitale
+                        </CardText>
+                      </Stack>
+                      <Stack direction={"column"} spacing={1}>
+                        <Stack
+                          direction={"row"}
+                          spacing={2}
+                          width={"100%"}
+                          alignItems={"center"}
+                        >
+                          <svg
+                            width="36"
+                            height="36"
+                            viewBox="0 0 36 36"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <circle
+                              cx="18"
+                              cy="18"
+                              r="18"
+                              fill="url(#pattern_1)"
+                            />
+                          </svg>
+
+                          <Typography
+                            sx={{
+                              color: dashboardColors.get("blue-io"),
+                              fontSize: "2rem",
+                              fontWeight: 700,
+                              lineHeight: "2.625rem",
+                            }}
+                          >
+                            <KpiSignal
+                              spec={toVegaLiteSpec(notificationsAnalogSpec)}
+                              yearSignal={selYear}
+                            />
+                          </Typography>
+                        </Stack>
+                        <CardTitle>
+                          Numero di notifiche SEND analogiche
+                        </CardTitle>
+                        <CardText>
+                          Notifiche SEND inviate ai destinatari che non hanno
+                          trovato una PEC o un Domicilio Digitale
+                        </CardText>
+                      </Stack>
+                    </Stack>
+                    <Stack
+                      sx={{ flex: "1 1 0" }}
+                      direction={"column"}
+                      spacing={2}
+                      width={"100%"}
+                      justifyContent={"center"}
+                      alignItems={"center"}
                     >
-                      <KpiSignal
-                        spec={toVegaLiteSpec(notificationsAnalogSpec)}
+                      <PieChart
+                        spec={toVegaLiteSpec(pieChartDigitalSpec)}
                         yearSignal={selYear}
                       />
-                    </Typography>
+                    </Stack>
                   </Stack>
-                  <CardTitle>Numero di notifiche SEND analogiche</CardTitle>
-                  <CardText>
-                    Notifiche SEND inviate ai destinatari che non hanno trovato
-                    una PEC o un Domicilio Digitale
-                  </CardText>
-                </Stack>
-              </Stack>
+                </KpiCard2>
+              </Box>
+            </Stack>
+            <Box mb={2}>
+              <NotificationsTrend selYear={selYear} />
+            </Box>
+          </SectionLayout>
+          <SectionLayout
+            title="Enti attivi su SEND"
+            text="Enti aderenti che hanno inviato almeno una notifica SEND dall'avvio del servizio"
+          >
+            <Stack direction={"row"} spacing={6} width={"100%"}>
               <Stack
+                flex={"0 0 30.602%"}
                 direction={"column"}
                 spacing={2}
                 width={"100%"}
-                justifyContent={"center"}
-                alignItems={"center"}
               >
-                <PieChart
-                  spec={toVegaLiteSpec(pieChartDigitalSpec)}
-                  yearSignal={selYear}
-                />
+                <KpiCard2>
+                  <Stack direction={"column"} spacing={1} width={"100%"}>
+                    <Icons.AccountBalanceIcon />
+                    <CardTitle>Totale enti attivi su SEND</CardTitle>
+                    <CardText>
+                      Numero complessivo degli enti aderenti che hanno almeno
+                      inviato una notifica SEND
+                    </CardText>
+                    <Typography
+                      sx={{
+                        color: dashboardColors.get("blue-io"),
+                        fontSize: "2rem",
+                        fontWeight: 700,
+                        lineHeight: "2.625rem",
+                      }}
+                    >
+                      <KpiSignal
+                        spec={toVegaLiteSpec(notificationsTotalSpec)}
+                        yearSignal={selYear}
+                      />
+                    </Typography>
+                  </Stack>
+                </KpiCard2>
+                <KpiCard2>
+                  <Stack direction={"column"} spacing={1} width={"100%"}>
+                    <Icons.ThingsToDoIcon />
+                    <CardTitle>
+                      Percentuale di comuni sul totale degli enti attivi su SEND
+                    </CardTitle>
+                    <Typography
+                      sx={{
+                        color: dashboardColors.get("blue-io"),
+                        fontSize: "2rem",
+                        fontWeight: 700,
+                        lineHeight: "2.625rem",
+                      }}
+                    >
+                      <KpiSignal
+                        spec={toVegaLiteSpec(notificationsTotalSpec)}
+                        yearSignal={selYear}
+                      />
+                    </Typography>
+                  </Stack>
+                </KpiCard2>
               </Stack>
+              <Box flex={"1 1 0"}>
+                <KpiCard2>
+                  <CardTitle>
+                    Distribuzione geografica dei comuni attivi su SEND
+                  </CardTitle>
+                  <CardText>
+                    Il grafico mostra la distribuzione dei comuni attivi nelle
+                    diverse regioni, la dimensione delle bolle indica il volume
+                    dei comumi attivi per regione.
+                  </CardText>
+                  <MapChart />
+                </KpiCard2>
+              </Box>
             </Stack>
-          </KpiCard2>
-        </Stack>
-        <Box mb={2}>
-          {/* <KpiNotifications selYear={selYear} /> */}
-          <NotificationsTrend selYear={selYear} />
+          </SectionLayout>
+          <SectionLayout
+            title="Principali tipologie di notifiche SEND"
+            text="Prime dieci tipologie di notifiche SEND ordinate per numero di invii."
+          >
+            <KpiCard2>
+              <CardText>Tipologie dei principali enti aderenti</CardText>
+
+              <ChartServices spec={toVegaLiteSpec(topAreasSpec)} />
+            </KpiCard2>
+          </SectionLayout>
         </Box>
-      </SectionLayout>
-      <SectionLayout
-        title="Enti attivi su SEND"
-        text="Enti aderenti che hanno inviato almeno una notifica SEND dall'avvio del servizio"
-      >
-        <SectionFirstColumnLayout>
-          <KpiCard2>
-            <Stack direction={"column"} spacing={2} width={"100%"}>
-              <Icons.AccountBalanceIcon />
-              <Typography
-                sx={{
-                  color: dashboardColors.get("blue-io"),
-                  fontSize: "2rem",
-                  fontWeight: 700,
-                  lineHeight: "2.625rem",
-                }}
-              >
-                <KpiSignal
-                  spec={toVegaLiteSpec(notificationsTotalSpec)}
-                  yearSignal={selYear}
-                />
-              </Typography>
-              <CardTitle>Totale enti attivi su SEND</CardTitle>
-              <CardText>
-                Numero complessivo degli enti aderenti che hanno almeno inviato
-                una notifica SEND
-              </CardText>
-            </Stack>
-          </KpiCard2>
-          <KpiCard2>
-            <Stack direction={"column"} spacing={2} width={"100%"}>
-              <Icons.ThingsToDoIcon />
-              <Typography
-                sx={{
-                  color: dashboardColors.get("blue-io"),
-                  fontSize: "2rem",
-                  fontWeight: 700,
-                  lineHeight: "2.625rem",
-                }}
-              >
-                <KpiSignal
-                  spec={toVegaLiteSpec(notificationsTotalSpec)}
-                  yearSignal={selYear}
-                />
-              </Typography>
-              <CardText>
-                Percentuale di comuni sul totale degli enti attivi su SEND
-              </CardText>
-            </Stack>
-          </KpiCard2>
-        </SectionFirstColumnLayout>
-        <SectionSecondColumnLayout>
-          <KpiCard2>
-            <CardTitle>
-              Distribuzione geografica dei comuni attivi su SEND
-            </CardTitle>
-            <CardText>
-              Il grafico mostra la distribuzione dei comuni attivi nelle diverse
-              regioni, la dimensione delle bolle indica il volume dei comumi
-              attivi per regione.
-            </CardText>
-            <MapChart />
-          </KpiCard2>
-        </SectionSecondColumnLayout>
-      </SectionLayout>
-      <Box sx={{ overflowX: "hidden" }}>
-        {/* <DataSectionWrapper
+      </Box>
+
+      {/* <Box sx={{ overflowX: "hidden" }}>
+        <DataSectionWrapper
           title={t("sent_notifications.title")}
           description={t("sent_notifications.description")}
         >
@@ -359,7 +390,7 @@ const SendInNumbers: NextPage = () => {
 
             <NotificationsTrend selYear={selYear} />
           </Box>
-        </DataSectionWrapper> */}
+        </DataSectionWrapper>
 
         <DataSectionWrapper
           title={t("authorities_and_types.title")}
@@ -368,10 +399,9 @@ const SendInNumbers: NextPage = () => {
         >
           <Box mb={2}>
             <KpiAuthoritiesServices />
-            <TopServices />
           </Box>
         </DataSectionWrapper>
-      </Box>
+      </Box> */}
     </>
   );
 };

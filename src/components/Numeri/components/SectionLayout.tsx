@@ -1,4 +1,4 @@
-import { Container, Stack, Typography } from "@mui/material";
+import { Box, Stack, Typography } from "@mui/material";
 import { dashboardColors } from "../shared/colors";
 
 type SectionLayoutProps = {
@@ -9,33 +9,36 @@ type SectionLayoutProps = {
 
 const SectionLayout = ({ title, children, text }: SectionLayoutProps) => {
   return (
-    <Container
-      component="section"
-      sx={{ py: 6, maxWidth: 1340, backgroundColor: "white" }}
-      maxWidth={false}
-    >
-      <Typography
-        component="h2"
-        sx={{
-          color: dashboardColors.get("primary"),
-          fontSize: "2.375rem",
-          fontWeight: 700,
-          lineHeight: "3.125rem",
-        }}
-      >
-        {title}
-      </Typography>
-      <Typography
-        component="p"
-        sx={{
-          color: dashboardColors.get("primary"),
-          fontSize: "1.125rem",
-          fontWeight: 400,
-          lineHeight: "1.5rem",
-        }}
-      >
-        {text}
-      </Typography>
+    // <Container
+    //   component="section"
+    //   sx={{ py: 6, maxWidth: 1340, backgroundColor: "white" }}
+    //   maxWidth={false}
+    // >
+    <Box component="section" marginBottom={12}>
+      <Box sx={{ mb: 4 }}>
+        <Typography
+          component="h2"
+          sx={{
+            color: dashboardColors.get("primary"),
+            fontSize: "2.375rem",
+            fontWeight: 700,
+            lineHeight: "3.125rem",
+          }}
+        >
+          {title}
+        </Typography>
+        <Typography
+          component="p"
+          sx={{
+            color: dashboardColors.get("primary"),
+            fontSize: "1.125rem",
+            fontWeight: 400,
+            lineHeight: "1.5rem",
+          }}
+        >
+          {text}
+        </Typography>
+      </Box>
 
       <Stack
         direction={{ xs: "column", sm: "column" }}
@@ -44,7 +47,8 @@ const SectionLayout = ({ title, children, text }: SectionLayoutProps) => {
       >
         {children}
       </Stack>
-    </Container>
+    </Box>
+    // </Container>
   );
 };
 export default SectionLayout;

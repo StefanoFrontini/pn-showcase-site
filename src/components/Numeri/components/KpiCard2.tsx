@@ -8,7 +8,7 @@ const KpiCard2 = ({ children }: Props) => {
     <Paper
       elevation={8}
       sx={{
-        p: 3,
+        p: 6,
         borderRadius: 2,
       }}
     >

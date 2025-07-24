@@ -13,6 +13,7 @@ import {
 } from "@mui/material";
 import { useTheme } from "@mui/system";
 import { useRef, useState } from "react";
+import { dashboardColors } from "./Numeri/shared/colors";
 
 type Props = {
   tabs: Array<string>;
@@ -30,7 +31,7 @@ const useIsMobile = () => {
 const Tabs = ({
   tabs,
   fullWidth = false,
-  buttonSize = "large",
+  buttonSize = "small",
   breakOnMobile = true,
   onTabChange,
 }: Props) => {
@@ -58,14 +59,23 @@ const Tabs = ({
   };
 
   return (
-    <Box sx={{ textAlign: "center", width: fullWidth ? "100%" : "auto" }}>
+    <Box
+      sx={{
+        textAlign: "left",
+        width: fullWidth ? "100%" : "auto",
+      }}
+    >
       {(!isMobile || !breakOnMobile) && (
         <ButtonGroup color="primary" fullWidth={fullWidth}>
           {tabs.map((tab, index) => (
             <Button
               sx={{
+                borderColor: dashboardColors.get("blue-io"),
+                color: dashboardColors.get("blue-io"),
                 backgroundColor:
-                  currentTab === index ? "rgba(0, 115, 230, 0.08)" : undefined,
+                  currentTab === index
+                    ? dashboardColors.get("blue-io-50")
+                    : undefined,
               }}
               onClick={() => handleChangeTab(index)}
               size={buttonSize}
