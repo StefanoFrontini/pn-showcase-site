@@ -9,13 +9,8 @@ type SectionLayoutProps = {
 
 const SectionLayout = ({ title, children, text }: SectionLayoutProps) => {
   return (
-    // <Container
-    //   component="section"
-    //   sx={{ py: 6, maxWidth: 1340, backgroundColor: "white" }}
-    //   maxWidth={false}
-    // >
     <Box component="section" marginBottom={12}>
-      <Box sx={{ mb: 4 }}>
+      <Box marginBottom={6}>
         <Typography
           component="h2"
           sx={{
@@ -23,6 +18,7 @@ const SectionLayout = ({ title, children, text }: SectionLayoutProps) => {
             fontSize: "2.375rem",
             fontWeight: 700,
             lineHeight: "3.125rem",
+            mb: 1,
           }}
         >
           {title}
@@ -48,7 +44,6 @@ const SectionLayout = ({ title, children, text }: SectionLayoutProps) => {
         {children}
       </Stack>
     </Box>
-    // </Container>
   );
 };
 export default SectionLayout;

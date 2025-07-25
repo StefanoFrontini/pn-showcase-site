@@ -1,16 +1,5 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-
-  "config": {
-    "style": {
-      "guide-label": {
-        "font": "Titillium Web, sans-serif"
-      },
-      "guide-title": {
-        "font": "Titillium Web, sans-serif"
-      }
-    }
-  },
   "width": 120,
   "height": 116,
   "data": {

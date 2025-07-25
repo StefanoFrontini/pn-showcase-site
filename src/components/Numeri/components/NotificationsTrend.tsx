@@ -1,10 +1,12 @@
 import { Box, MenuItem, Select, Stack, Typography } from "@mui/material";
 import { useState } from "react";
+import { useTranslation } from "../../../hook/useTranslation";
 import downloadSpec from "../assets/data/download.vl.json";
 import { toVegaLiteSpec } from "../shared/toVegaLiteSpec";
+import CardText from "./CardText";
+import CardTitle from "./CardTitle";
 import CumulativeChart from "./CumulativeChart";
-import KpiCard from "./KpiCard";
-import { useTranslation } from "../../../hook/useTranslation";
+import KpiCard2 from "./KpiCard2";
 
 type Props = {
   selYear: number | null;
@@ -54,55 +56,60 @@ const NotificationsTrend = ({ selYear }: Props): JSX.Element => {
     return result ? result.label : "total";
   };
   return (
-    <KpiCard
-      label={t("sent_notifications.trend.title", { ns: "numeri" })}
-      borderLeft=""
-    >
-      <Stack direction="row" spacing={2} alignItems="center">
-        <Typography variant="caption" color="textSecondary">
-          {t("sent_notifications.trend.description_1", { ns: "numeri" })}
-        </Typography>
+    <KpiCard2>
+      <Stack direction="column" spacing={2}>
+        <CardTitle>
+          {t("sent_notifications.trend.title", { ns: "numeri" })}
+        </CardTitle>
+        <Stack direction="row" spacing={2} alignItems="center">
+          <CardText>
+            {t("sent_notifications.trend.description_1", { ns: "numeri" })}
+          </CardText>
 
-        <Select
-          value={curOptionCumulativeDaily}
-          size="small"
-          sx={{ fontSize: 14 }}
-          onChange={(e: any) => handleOptionCumulativeDaily(+e.target.value)}
-        >
-          {optionsCumulativeDaily.map((option) => (
-            <MenuItem key={option.id} value={option.id}>
-              {t(`sent_notifications.trend.${option.label}`, { ns: "numeri" })}
-            </MenuItem>
-          ))}
-        </Select>
-        <Typography variant="caption" color="textSecondary">
-          {" "}
-          {t("sent_notifications.trend.description_2", { ns: "numeri" })}
-        </Typography>
-        <Select
-          size={"small"}
-          sx={{ fontSize: 14 }}
-          value={curOptionTotalDigitalAnalog}
-          onChange={(e: any) =>
-            handleOptionsTotalDigitalAnalog(+e.target.value)
-          }
-        >
-          {optionsTotalDigitalAnalog.map((option) => (
-            <MenuItem key={option.id} value={option.id}>
-              {t(`sent_notifications.${option.label}.name`, { ns: "numeri" })}
-            </MenuItem>
-          ))}
-        </Select>
+          <Select
+            value={curOptionCumulativeDaily}
+            size="small"
+            sx={{ fontSize: 14 }}
+            onChange={(e: any) => handleOptionCumulativeDaily(+e.target.value)}
+          >
+            {optionsCumulativeDaily.map((option) => (
+              <MenuItem key={option.id} value={option.id}>
+                {t(`sent_notifications.trend.${option.label}`, {
+                  ns: "numeri",
+                })}
+              </MenuItem>
+            ))}
+          </Select>
+          <Typography variant="caption" color="textSecondary">
+            {" "}
+            {t("sent_notifications.trend.description_2", { ns: "numeri" })}
+          </Typography>
+          <Select
+            size={"small"}
+            sx={{ fontSize: 14 }}
+            value={curOptionTotalDigitalAnalog}
+            onChange={(e: any) =>
+              handleOptionsTotalDigitalAnalog(+e.target.value)
+            }
+          >
+            {optionsTotalDigitalAnalog.map((option) => (
+              <MenuItem key={option.id} value={option.id}>
+                {t(`sent_notifications.${option.label}.name`, { ns: "numeri" })}
+              </MenuItem>
+            ))}
+          </Select>
+        </Stack>
+
+        <Box style={{ height: "22rem" }}>
+          <CumulativeChart
+            spec={toVegaLiteSpec(downloadSpec)}
+            cumulativeSignal={curOptionCumulativeDaily === 1 ? true : false}
+            filterSignal={getLabel(curOptionTotalDigitalAnalog)}
+            yearSignal={selYear}
+          />
+        </Box>
       </Stack>
-      <Box style={{ height: "22rem" }}>
-        <CumulativeChart
-          spec={toVegaLiteSpec(downloadSpec)}
-          cumulativeSignal={curOptionCumulativeDaily === 1 ? true : false}
-          filterSignal={getLabel(curOptionTotalDigitalAnalog)}
-          yearSignal={selYear}
-        />
-      </Box>
-    </KpiCard>
+    </KpiCard2>
   );
 };
 export default NotificationsTrend;

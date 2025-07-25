@@ -5,6 +5,10 @@ const colors = [
   "secondary",
   "grey-650",
   "grey-700",
+  "alert",
+  "alert-border",
+  "icon",
+  "icon-bg",
 ] as const;
 
 type Colors = (typeof colors)[number];
@@ -16,4 +20,7 @@ export const dashboardColors: ReadonlyMap<Colors, string> = new Map([
   ["secondary", "#5C6F82"],
   ["grey-650", "#636B82"],
   ["grey-700", "#555C70"],
+  ["alert-border", "#89D9FC"],
+  ["alert", "#E0F5FE"],
+  ["icon", "#215C76"],
 ]);

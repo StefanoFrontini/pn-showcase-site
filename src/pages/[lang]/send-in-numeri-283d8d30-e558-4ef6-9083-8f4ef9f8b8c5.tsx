@@ -1,9 +1,10 @@
 import type { GetStaticPaths, NextPage } from "next";
 
+import InfoIcon from "@mui/icons-material/Info";
 import { Alert, Box, Button, Stack, Typography } from "@mui/material";
 import { langCodes } from "@utils/constants";
 import Script from "next/script";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import Icons from "src/components/Numeri/components/Icons";
 import KpiCard2 from "src/components/Numeri/components/KpiCard2";
 import KpiSignal from "src/components/Numeri/components/KpiSignal";
@@ -29,7 +30,9 @@ import CardText from "src/components/Numeri/components/CardText";
 import CardTitle from "src/components/Numeri/components/CardTitle";
 import ChartServices from "src/components/Numeri/components/ChartServices";
 import MapChart from "src/components/Numeri/components/MapChart";
+import LangContext from "src/context/lang-context";
 import pieChartDigitalSpec from "../../components/Numeri/assets/data/pie-chart-digital.vl.json";
+console.log({ data: toVegaLiteSpec(topAreasSpec) });
 
 // import {  } from "@pagopa/mui-italia";
 
@@ -72,6 +75,8 @@ const tabs: Tabs[] = [{ id: null, label: "Totale" }, ...years].reverse();
 const SendInNumbers: NextPage = () => {
   const { t } = useTranslation(["numeri"]);
   const [selYear, setSelYear] = useState<number | null>(null);
+  const { lang } = useContext(LangContext);
+  console.log("🚀 ~ lang:", lang);
 
   const handleTabChange = (tab: number) => {
     if (tab === tabs[tab].id) {
@@ -153,12 +158,23 @@ const SendInNumbers: NextPage = () => {
               </Typography>
               <DashboardIntro />
             </Box>
-            <Box flex={"0 0 35%"}>
+            <Box flex={"0 0 32%"}>
               <Alert
+                iconMapping={{
+                  info: (
+                    <InfoIcon
+                      sx={{
+                        color: dashboardColors.get("icon"),
+                        backgroundColor: dashboardColors.get("alert"),
+                        borderRadius: "50%",
+                      }}
+                    />
+                  ),
+                }}
                 action={
                   <Button
                     sx={{
-                      color: dashboardColors.get("blue-io"),
+                      color: dashboardColors.get("icon"),
                       whiteSpace: "nowrap",
                     }}
                     href="/"
@@ -170,11 +186,11 @@ const SendInNumbers: NextPage = () => {
                 severity="info"
                 variant="standard"
                 sx={{
-                  backgroundColor: dashboardColors.get("blue-io-50"),
-                  borderLeft: `4px solid ${dashboardColors.get("blue-io")}`,
+                  backgroundColor: dashboardColors.get("alert"),
+                  border: `1px solid ${dashboardColors.get("alert-border")}`,
                 }}
               >
-                I dati sono tutti disponibili come json su dati.gov.it
+                I dati sono disponibili su dati.gov.it
               </Alert>
             </Box>
           </Stack>
@@ -182,7 +198,7 @@ const SendInNumbers: NextPage = () => {
         <Box component="main" paddingTop={6}>
           <SectionLayout
             title="Notifiche SEND inviate"
-            text="I seguenti dati si riferiscono alle comunicazioni a valore legale inviate dagli enti aderenti."
+            text="I dati si riferiscono alle comunicazioni a valore legale inviate dagli enti aderenti."
           >
             <Tabs
               tabs={tabs.map((tab) => tab.label)}
@@ -333,7 +349,7 @@ const SendInNumbers: NextPage = () => {
             </Box>
           </SectionLayout>
           <SectionLayout
-            title="Enti attivi su SEND"
+            title="Enti SEND"
             text="Enti aderenti che hanno inviato almeno una notifica SEND dall'avvio del servizio"
           >
             <Stack direction={"row"} spacing={6} width={"100%"}>
@@ -390,9 +406,11 @@ const SendInNumbers: NextPage = () => {
               </Stack>
               <Box flex={"1 1 0"}>
                 <KpiCard2>
-                  <CardTitle>
-                    Distribuzione geografica dei comuni attivi su SEND
-                  </CardTitle>
+                  <Box marginBottom={1}>
+                    <CardTitle>
+                      Distribuzione geografica dei comuni attivi su SEND
+                    </CardTitle>
+                  </Box>
                   <CardText>
                     Il grafico mostra la distribuzione dei comuni attivi nelle
                     diverse regioni, la dimensione delle bolle indica il volume

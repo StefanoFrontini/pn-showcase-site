@@ -11,6 +11,7 @@ import { toVegaLiteSpec } from "../shared/toVegaLiteSpec";
 //   categorySignal: string;
 // };
 const spec = toVegaLiteSpec(mapJsonSpec);
+console.log("🚀 ~ spec:", spec);
 
 const MapChart = () => {
   //   const { data, isPending, isLoading } = useDashboardData();
