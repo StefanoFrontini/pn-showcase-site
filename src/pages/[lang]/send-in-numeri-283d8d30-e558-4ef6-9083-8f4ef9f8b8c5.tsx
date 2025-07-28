@@ -26,6 +26,7 @@ import PieChart from "../../components/Numeri/components/PieChart";
 
 import topAreasSpec from "../../components/Numeri/assets/data/top-areas.vl.json";
 
+import Head from "next/head";
 import CardText from "src/components/Numeri/components/CardText";
 import CardTitle from "src/components/Numeri/components/CardTitle";
 import ChartServices from "src/components/Numeri/components/ChartServices";
@@ -87,6 +88,9 @@ const SendInNumbers: NextPage = () => {
 
   return (
     <>
+      <Head>
+        <title>{t("hero.title")}</title>
+      </Head>
       <Script
         src="/iframe-resizer/child/index.umd.js"
         type="text/javascript"
