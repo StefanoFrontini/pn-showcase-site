@@ -61,6 +61,9 @@ const NotificationsTrend = ({ selYear }: Props): JSX.Element => {
         <CardTitle>
           {t("sent_notifications.trend.title", { ns: "numeri" })}
         </CardTitle>
+        <CardText>
+          {t("sent_notifications.trend.description", { ns: "numeri" })}
+        </CardText>
         <Stack direction="row" spacing={2} alignItems="center">
           <CardText>
             {t("sent_notifications.trend.description_1", { ns: "numeri" })}

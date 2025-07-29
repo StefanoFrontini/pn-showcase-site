@@ -26,13 +26,15 @@
       "description": "Notifiche inviate ai destinatari tramite raccomandata cartacea"
     },
     "trend": {
-      "title": "Andamento delle notifiche",
+      "title": "Andamento delle notifiche SEND",
+      "description": "Andamento del numero di notifiche SEND emesse in via ufficiale da un ente aderente.",
       "description_1": "Andamento",
       "description_2": "delle notifiche",
       "monthly": "mensile",
       "aggregate": "cumulato"
     }
   },
+
   "authorities_and_types": {
     "title": "Enti e tipologie di notifica inviate",
     "description": "I seguenti dati mostrano quanti Enti stanno utilizzando SEND e per quale tipologia di servizi",
@@ -45,17 +47,50 @@
         "title": "Principali categorie di enti attivi",
         "description": "Categorie di enti ordinate per numero di enti attivi"
       }
+    }
+  },
+  "notification_types": {
+    "total": {
+      "title": "Tipologie di notifiche inviate",
+      "description": "La tipologia rappresenta la sfera di appartenenza della notifica (es. multe, tributi, anagrafe etc.)"
     },
-    "notification_types": {
-      "total": {
-        "title": "Tipologie di notifiche inviate",
-        "description": "La tipologia rappresenta la sfera di appartenenza della notifica (es. multe, tributi, anagrafe etc.)"
-      },
-      "main_scopes": {
-        "title": "Principali ambiti",
-        "description": "Servizi ordinati per numero di notifiche depositate a partire dall'adozione di SEND",
-        "notes": "* diversa/o da quelli la cui notificazione è esclusa tramite SEND ai sensi dell’art.26, comma 17 D.L. 76/2020"
-      }
+    "main_scopes": {
+      "title": "Principali ambiti",
+      "description": "Servizi ordinati per numero di notifiche depositate a partire dall'adozione di SEND",
+      "notes": "* diversa/o da quelli la cui notificazione è esclusa tramite SEND ai sensi dell’art.26, comma 17 D.L. 76/2020"
+    },
+    "tutte": {
+      "name": "tutte"
+    },
+    "comuni": {
+      "name": "Comuni"
+    },
+    "riscossori": {
+      "name": "Riscossori e altro"
+    },
+    "altri_enti": {
+      "name": "Altri enti territoriali"
+    },
+    "province": {
+      "name": "Province"
+    },
+    "regioni": {
+      "name": "Regioni"
+    },
+    "comunali": {
+      "name": "Enti comunali"
+    },
+    "ordini": {
+      "name": "Ordini, collegi e consigli professionali"
+    },
+    "amministrazioni": {
+      "name": "Pubbliche amministrazioni centrali"
+    },
+    "universita": {
+      "name": "Università"
+    },
+    "consorzi": {
+      "name": "Consorzi universitari"
     }
   }
 }

@@ -29,13 +29,12 @@ import topAreasSpec from "../../components/Numeri/assets/data/top-areas.vl.json"
 import Head from "next/head";
 import CardText from "src/components/Numeri/components/CardText";
 import CardTitle from "src/components/Numeri/components/CardTitle";
-import ChartServices from "src/components/Numeri/components/ChartServices";
 import MapChart from "src/components/Numeri/components/MapChart";
+import NotificationsTypes from "src/components/Numeri/components/NotificationsTypes";
 import LangContext from "src/context/lang-context";
 import pieChartDigitalSpec from "../../components/Numeri/assets/data/pie-chart-digital.vl.json";
-console.log({ data: toVegaLiteSpec(topAreasSpec) });
 
-// import {  } from "@pagopa/mui-italia";
+console.log({ data: toVegaLiteSpec(topAreasSpec) });
 
 type Tabs = {
   id: number | null;
@@ -157,7 +156,7 @@ const SendInNumbers: NextPage = () => {
                 {t("hero.eyelet")}
               </Typography>
 
-              <Typography align="center" variant="h2">
+              <Typography align="center" variant="h1">
                 {t("hero.title")}
               </Typography>
               <DashboardIntro />
@@ -230,7 +229,7 @@ const SendInNumbers: NextPage = () => {
                     <CardText>
                       La notifica SEND è una comunicazione a valore legale
                       emessa in via ufficiale da un'amministrazione. Può essere
-                      trasmessa per via cartacea o digitale.
+                      recapitata in modalità digitale o analogica.
                     </CardText>
                   </Stack>
                 </KpiCard2>
@@ -282,8 +281,8 @@ const SendInNumbers: NextPage = () => {
                         </Stack>
                         <CardTitle>Numero di notifiche SEND digitali</CardTitle>
                         <CardText>
-                          Notifiche SEND inviate ai destinatari tramite canali
-                          digitali come PEC e Domicilio Digitale
+                          Notifiche SEND emesse ai destinatari tramite canali
+                          digitali certificati.
                         </CardText>
                       </Stack>
                       <Stack direction={"column"} spacing={1}>
@@ -326,8 +325,9 @@ const SendInNumbers: NextPage = () => {
                           Numero di notifiche SEND analogiche
                         </CardTitle>
                         <CardText>
-                          Notifiche SEND inviate ai destinatari che non hanno
-                          trovato una PEC o un Domicilio Digitale
+                          Notifiche SEND emesse in modalità analogica per
+                          assenza di canali digitali certificati del
+                          destinatario.
                         </CardText>
                       </Stack>
                     </Stack>
@@ -354,7 +354,7 @@ const SendInNumbers: NextPage = () => {
           </SectionLayout>
           <SectionLayout
             title="Enti SEND"
-            text="Enti aderenti che hanno inviato almeno una notifica SEND dall'avvio del servizio"
+            text="Enti aderenti che hanno inviato almeno una notifica SEND dall'avvio del servizio."
           >
             <Stack direction={"row"} spacing={6} width={"100%"}>
               <Stack
@@ -366,10 +366,10 @@ const SendInNumbers: NextPage = () => {
                 <KpiCard2>
                   <Stack direction={"column"} spacing={1} width={"100%"}>
                     <Icons.AccountBalanceIcon />
-                    <CardTitle>Totale enti attivi su SEND</CardTitle>
+                    <CardTitle>Totale enti su SEND</CardTitle>
                     <CardText>
-                      Numero complessivo degli enti aderenti che hanno almeno
-                      inviato una notifica SEND
+                      Numero complessivo degli enti che hanno inviato almeno una
+                      notifica SEND.
                     </CardText>
                     <Typography
                       sx={{
@@ -390,7 +390,7 @@ const SendInNumbers: NextPage = () => {
                   <Stack direction={"column"} spacing={1} width={"100%"}>
                     <Icons.ThingsToDoIcon />
                     <CardTitle>
-                      Percentuale di comuni sul totale degli enti attivi su SEND
+                      Percentuale di comuni sul totale degli enti su SEND
                     </CardTitle>
                     <Typography
                       sx={{
@@ -412,13 +412,13 @@ const SendInNumbers: NextPage = () => {
                 <KpiCard2>
                   <Box marginBottom={1}>
                     <CardTitle>
-                      Distribuzione geografica dei comuni attivi su SEND
+                      Distribuzione geografica dei comuni su SEND
                     </CardTitle>
                   </Box>
                   <CardText>
-                    Il grafico mostra la distribuzione dei comuni attivi nelle
-                    diverse regioni, la dimensione delle bolle indica il volume
-                    dei comumi attivi per regione.
+                    Il grafico mostra la distribuzione dei comuni nelle diverse
+                    regioni, la dimensione delle bolle indica il volume dei
+                    comumi attivi per regione.
                   </CardText>
                   <MapChart />
                 </KpiCard2>
@@ -426,14 +426,15 @@ const SendInNumbers: NextPage = () => {
             </Stack>
           </SectionLayout>
           <SectionLayout
-            title="Principali tipologie di notifiche SEND"
-            text="Prime dieci tipologie di notifiche SEND ordinate per numero di invii."
+            title="Principali ambiti di notifiche SEND"
+            text="Categorie di notifiche SEND più inviate."
           >
-            <KpiCard2>
-              <CardText>Tipologie dei principali enti aderenti</CardText>
+            <NotificationsTypes />
+            {/* <KpiCard2>
+              <CardText>Filtra per tipologia di ente aderente</CardText>
 
               <ChartServices spec={toVegaLiteSpec(topAreasSpec)} />
-            </KpiCard2>
+            </KpiCard2> */}
           </SectionLayout>
         </Box>
       </Box>
