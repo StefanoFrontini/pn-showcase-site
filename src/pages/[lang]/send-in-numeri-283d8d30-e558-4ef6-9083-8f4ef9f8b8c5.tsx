@@ -88,7 +88,7 @@ const SendInNumbers: NextPage = () => {
   return (
     <>
       <Head>
-        <title>{t("hero.title")}</title>
+        <title>{t("title")}</title>
       </Head>
       <Script
         src="/iframe-resizer/child/index.umd.js"
@@ -139,28 +139,35 @@ const SendInNumbers: NextPage = () => {
         sx={{ maxWidth: 1156, backgroundColor: "white", mx: "auto" }}
         marginX={17.7}
       >
-        <Box component="header">
+        <Box component="header" sx={{ py: 11 }}>
           <Stack
             direction="row"
             justifyContent="space-between"
             alignItems={"center"}
           >
-            <Box paddingY={10.6}>
+            <Stack direction="column" spacing={1}>
               <Typography
-                fontWeight={700}
-                fontSize="14px"
-                color="textSecondary"
-                mb={3}
-                sx={{ textTransform: "uppercase" }}
+                sx={{
+                  textTransform: "uppercase",
+                  fontWeight: 700,
+                  color: dashboardColors.get("secondary"),
+                  fontSize: "0.875rem",
+                  letterSpacing: 1,
+                }}
               >
                 {t("hero.eyelet")}
               </Typography>
 
-              <Typography align="center" variant="h1">
+              <Typography
+                variant="h1"
+                sx={{
+                  color: dashboardColors.get("primary"),
+                }}
+              >
                 {t("hero.title")}
               </Typography>
               <DashboardIntro />
-            </Box>
+            </Stack>
             <Box flex={"0 0 32%"}>
               <Alert
                 iconMapping={{
