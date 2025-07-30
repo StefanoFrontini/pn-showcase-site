@@ -2,6 +2,7 @@ import { Box, MenuItem, Select, Stack, Typography } from "@mui/material";
 import { useState } from "react";
 import { useTranslation } from "../../../hook/useTranslation";
 import downloadSpec from "../assets/data/download.vl.json";
+import { dashboardColors } from "../shared/colors";
 import { toVegaLiteSpec } from "../shared/toVegaLiteSpec";
 import CardText from "./CardText";
 import CardTitle from "./CardTitle";
@@ -72,11 +73,22 @@ const NotificationsTrend = ({ selYear }: Props): JSX.Element => {
           <Select
             value={curOptionCumulativeDaily}
             size="small"
-            sx={{ fontSize: 14 }}
+            sx={{
+              fontSize: 14,
+              "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+                borderColor: dashboardColors.get("blue-io"),
+              },
+            }}
             onChange={(e: any) => handleOptionCumulativeDaily(+e.target.value)}
           >
             {optionsCumulativeDaily.map((option) => (
-              <MenuItem key={option.id} value={option.id}>
+              <MenuItem
+                key={option.id}
+                value={option.id}
+                sx={{
+                  "&.Mui-selected": { color: dashboardColors.get("blue-io") },
+                }}
+              >
                 {t(`sent_notifications.trend.${option.label}`, {
                   ns: "numeri",
                 })}
@@ -89,14 +101,25 @@ const NotificationsTrend = ({ selYear }: Props): JSX.Element => {
           </Typography>
           <Select
             size={"small"}
-            sx={{ fontSize: 14 }}
+            sx={{
+              fontSize: 14,
+              "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+                borderColor: dashboardColors.get("blue-io"),
+              },
+            }}
             value={curOptionTotalDigitalAnalog}
             onChange={(e: any) =>
               handleOptionsTotalDigitalAnalog(+e.target.value)
             }
           >
             {optionsTotalDigitalAnalog.map((option) => (
-              <MenuItem key={option.id} value={option.id}>
+              <MenuItem
+                key={option.id}
+                value={option.id}
+                sx={{
+                  "&.Mui-selected": { color: dashboardColors.get("blue-io") },
+                }}
+              >
                 {t(`sent_notifications.${option.label}.name`, { ns: "numeri" })}
               </MenuItem>
             ))}

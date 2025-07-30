@@ -4,7 +4,6 @@
   "height": "container",
   "padding": 5,
 
-  "params": [{ "name": "category", "value": "Comuni" }],
   "datasets": {
     "regions_coordinates": [
       { "regione": "Marche", "longitude": 13.5765, "latitude": 43.6167 },
@@ -56,13 +55,10 @@
     },
     {
       "data": {
-        "url": "https://gist.githubusercontent.com/StefanoFrontini/b256d34084b3fe98c295b0a2d3beb42e/raw/71f3945d4ed66e56d9abbed800e95e752fcac487/dashboard-io.json",
-        "format": { "property": "metrics_by_geo_cat" }
+        "url": "https://gist.githubusercontent.com/StefanoFrontini/a71f6def4ea6f834bb1ae53984c816b9/raw/506879c5eaadd7a0a279e7c67b2448e0784166a5/dashboard-send-sezione2.json",
+        "format": { "property": "geo_comuni" }
       },
       "transform": [
-        {
-          "filter": "datum.category === category"
-        },
         {
           "lookup": "regione",
           "from": {
@@ -78,7 +74,7 @@
         "longitude": { "field": "longitude", "type": "quantitative" },
         "latitude": { "field": "latitude", "type": "quantitative" },
         "size": {
-          "field": "count_serv",
+          "field": "num_comuni_attivi",
           "type": "quantitative",
           "scale": { "range": [0, 2000] },
           "legend": null
@@ -88,10 +84,16 @@
         "tooltip": [
           { "field": "regione", "type": "nominal", "title": "Regione" },
           {
-            "field": "count_serv",
+            "field": "num_comuni_attivi",
             "format": ",",
             "type": "quantitative",
-            "title": "Comuni attivi"
+            "title": "Comuni"
+          },
+          {
+            "field": "perc_comuni_attivi",
+            "format": ".0%",
+            "type": "quantitative",
+            "title": "Percentuale comuni rispetto al totale dei comuni per regione"
           }
         ]
       }

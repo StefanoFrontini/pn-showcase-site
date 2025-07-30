@@ -29,9 +29,13 @@ import topAreasSpec from "../../components/Numeri/assets/data/top-areas.vl.json"
 import Head from "next/head";
 import CardText from "src/components/Numeri/components/CardText";
 import CardTitle from "src/components/Numeri/components/CardTitle";
+import KpiWrapper from "src/components/Numeri/components/KpiWrapper";
 import MapChart from "src/components/Numeri/components/MapChart";
 import NotificationsTypes from "src/components/Numeri/components/NotificationsTypes";
+import SquareBracketWrapper from "src/components/Numeri/components/SquareBracketWrapper";
 import LangContext from "src/context/lang-context";
+import entitiesActiveSpec from "../../components/Numeri/assets/data/entities-active.vl.json";
+import municipalitiesActivePercSpec from "../../components/Numeri/assets/data/municipalities-active-perc.vl.json";
 import pieChartDigitalSpec from "../../components/Numeri/assets/data/pie-chart-digital.vl.json";
 
 console.log({ data: toVegaLiteSpec(topAreasSpec) });
@@ -360,7 +364,7 @@ const SendInNumbers: NextPage = () => {
             </Box>
           </SectionLayout>
           <SectionLayout
-            title="Enti SEND"
+            title="Enti su SEND"
             text="Enti aderenti che hanno inviato almeno una notifica SEND dall'avvio del servizio."
           >
             <Stack direction={"row"} spacing={6} width={"100%"}>
@@ -386,10 +390,7 @@ const SendInNumbers: NextPage = () => {
                         lineHeight: "2.625rem",
                       }}
                     >
-                      <KpiSignal
-                        spec={toVegaLiteSpec(notificationsTotalSpec)}
-                        yearSignal={selYear}
-                      />
+                      <KpiWrapper spec={toVegaLiteSpec(entitiesActiveSpec)} />
                     </Typography>
                   </Stack>
                 </KpiCard2>
@@ -407,10 +408,11 @@ const SendInNumbers: NextPage = () => {
                         lineHeight: "2.625rem",
                       }}
                     >
-                      <KpiSignal
-                        spec={toVegaLiteSpec(notificationsTotalSpec)}
-                        yearSignal={selYear}
-                      />
+                      <SquareBracketWrapper>
+                        <KpiWrapper
+                          spec={toVegaLiteSpec(municipalitiesActivePercSpec)}
+                        />
+                      </SquareBracketWrapper>
                     </Typography>
                   </Stack>
                 </KpiCard2>
@@ -437,11 +439,6 @@ const SendInNumbers: NextPage = () => {
             text="Categorie di notifiche SEND più inviate."
           >
             <NotificationsTypes />
-            {/* <KpiCard2>
-              <CardText>Filtra per tipologia di ente aderente</CardText>
-
-              <ChartServices spec={toVegaLiteSpec(topAreasSpec)} />
-            </KpiCard2> */}
           </SectionLayout>
         </Box>
       </Box>

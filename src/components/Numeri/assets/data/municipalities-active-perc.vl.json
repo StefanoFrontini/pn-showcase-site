@@ -1,0 +1,14 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://gist.githubusercontent.com/StefanoFrontini/a71f6def4ea6f834bb1ae53984c816b9/raw/506879c5eaadd7a0a279e7c67b2448e0784166a5/dashboard-send-sezione2.json"
+  },
+  "mark": "text",
+  "encoding": {
+    "text": {
+      "field": "perc_comuni_attivi",
+      "type": "quantitative",
+      "format": ".0%"
+    }
+  }
+}

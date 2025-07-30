@@ -1,10 +1,21 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "data": {
-    "url": "https://pdnd-prod-dl-1-public-data.s3.eu-central-1.amazonaws.com/dashboard/send/dashboard-send-sezione2.json ",
+    "url": "https://gist.githubusercontent.com/StefanoFrontini/a71f6def4ea6f834bb1ae53984c816b9/raw/506879c5eaadd7a0a279e7c67b2448e0784166a5/dashboard-send-sezione2.json",
     "format": { "property": "top10_ambiti" }
   },
+  "params": [{ "name": "category", "value": null }],
   "transform": [
+    {
+      "filter": "(!category || category === 'tutte') ? datum.categoria_ente === null : datum.categoria_ente === category"
+    },
+    {
+      "window": [{ "op": "rank", "as": "rank" }],
+      "sort": [{ "field": "ranking", "order": "ascending" }]
+    },
+    {
+      "filter": "datum.rank <= 10"
+    },
     {
       "calculate": "datum.ambito === 'Riscossione Coattiva' || datum.ambito === 'Ordinanze' || datum.ambito === 'Decreto' ? datum.ambito + '*' : datum.ambito",
       "as": "ambito_label"
@@ -15,7 +26,7 @@
   "encoding": {
     "y": {
       "field": "ambito_label",
-      "sort": { "field": "num_iun", "order": "descending", "op": "sum" },
+      "sort": { "field": "ranking", "order": "ascending" },
       "scale": { "padding": 0 },
       "axis": {
         "domain": false,

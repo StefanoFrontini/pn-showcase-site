@@ -3,7 +3,7 @@
   "width": 120,
   "height": 116,
   "data": {
-    "url": "https://pdnd-prod-dl-1-public-data.s3.eu-central-1.amazonaws.com/dashboard/send/dashboard-send-sezione1.json",
+    "url": "https://gist.githubusercontent.com/StefanoFrontini/79ed190a28fe85d75e694feda550f9c5/raw/2ef0a5514812a051ba1ad11923a56120e4530668/dashboard-send-sezione1.json",
     "format": { "property": "totale_notifiche" }
   },
   "params": [{ "name": "year", "value": null }],

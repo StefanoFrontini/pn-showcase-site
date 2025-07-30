@@ -9,14 +9,13 @@ import { getMarks } from "../shared/chart-utils";
 
 type Props = {
   spec: TopLevelSpec;
-  className?: string;
 };
 
 const isSceneText = (
   item: VegaScene | VegaSceneGroup | SceneText
 ): item is SceneText => "text" in item;
 
-const KpiWrapper = ({ spec, ...restProps }: Props): JSX.Element => {
+const KpiWrapper = ({ spec }: Props) => {
   const [text, setText] = useState("#");
 
   useEffect(() => {
@@ -28,11 +27,7 @@ const KpiWrapper = ({ spec, ...restProps }: Props): JSX.Element => {
     });
   });
 
-  return (
-    <p color="#fff" {...restProps}>
-      {text}
-    </p>
-  );
+  return <>{text}</>;
 };
 
 export default KpiWrapper;

@@ -6,6 +6,7 @@ import CardText from "./CardText";
 import KpiCard2 from "./KpiCard2";
 
 import topAreasSpec from "../assets/data/top-areas.vl.json";
+import { dashboardColors } from "../shared/colors";
 import ChartServices from "./ChartServices";
 
 const categories = [
@@ -45,7 +46,12 @@ const options: OptionsCategories[] = [
 const NotificationsTypes = () => {
   const { t } = useTranslation(["numeri"]);
 
-  const [curOption, setCurOption] = useState(options[0].tag);
+  const [curOption, setCurOption] = useState<string>(options[0].tag);
+  function getLabel(tag: string) {
+    if (tag === "tutte") return null;
+    const result = options.find((f) => f.tag === tag);
+    return result ? result.label : null;
+  }
 
   const handleOptions = (id: string) => {
     setCurOption(id);
@@ -65,12 +71,23 @@ const NotificationsTypes = () => {
           </Typography>
           <Select
             size={"small"}
-            sx={{ fontSize: 14 }}
+            sx={{
+              fontSize: 14,
+              "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+                borderColor: dashboardColors.get("blue-io"),
+              },
+            }}
             value={curOption}
             onChange={(e: any) => handleOptions(e.target.value)}
           >
             {options.map((option) => (
-              <MenuItem key={option.tag} value={option.tag}>
+              <MenuItem
+                key={option.tag}
+                value={option.tag}
+                sx={{
+                  "&.Mui-selected": { color: dashboardColors.get("blue-io") },
+                }}
+              >
                 {t(`notification_types.${option.tag}.name`, { ns: "numeri" })}
               </MenuItem>
             ))}
@@ -85,7 +102,10 @@ const NotificationsTypes = () => {
             yearSignal={selYear}
           />
         </Box> */}
-        <ChartServices spec={toVegaLiteSpec(topAreasSpec)} />
+        <ChartServices
+          spec={toVegaLiteSpec(topAreasSpec)}
+          categorySignal={getLabel(curOption)}
+        />
       </Stack>
     </KpiCard2>
   );
