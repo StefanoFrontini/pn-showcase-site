@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useTranslation } from "../../../hook/useTranslation";
 import { toVegaLiteSpec } from "../shared/toVegaLiteSpec";
 import CardText from "./CardText";
-import KpiCard2 from "./KpiCard2";
+import KpiCard from "./KpiCard";
 
 import topAreasSpec from "../assets/data/top-areas.vl.json";
 import { dashboardColors } from "../shared/colors";
@@ -57,7 +57,7 @@ const NotificationsTypes = () => {
     setCurOption(id);
   };
   return (
-    <KpiCard2>
+    <KpiCard>
       <Stack direction="column" spacing={2}>
         <Stack direction="row" spacing={2} alignItems="center">
           <CardText>
@@ -107,7 +107,7 @@ const NotificationsTypes = () => {
           categorySignal={getLabel(curOption)}
         />
       </Stack>
-    </KpiCard2>
+    </KpiCard>
   );
 };
 export default NotificationsTypes;

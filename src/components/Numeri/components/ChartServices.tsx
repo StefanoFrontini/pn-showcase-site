@@ -25,7 +25,7 @@ const ChartServices = ({ spec, categorySignal }: Props) => {
 
   return (
     <Box
-      sx={{ height: "100%", width: "100%", mt: 3 }}
+      sx={{ height: "100%", width: "100%" }}
       ref={chartContent}
       id="chart-content"
     ></Box>

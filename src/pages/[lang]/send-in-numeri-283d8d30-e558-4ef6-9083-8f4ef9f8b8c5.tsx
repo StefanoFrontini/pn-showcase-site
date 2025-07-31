@@ -6,7 +6,7 @@ import { langCodes } from "@utils/constants";
 import Script from "next/script";
 import { useContext, useState } from "react";
 import Icons from "src/components/Numeri/components/Icons";
-import KpiCard2 from "src/components/Numeri/components/KpiCard2";
+import KpiCard from "src/components/Numeri/components/KpiCard";
 import KpiSignal from "src/components/Numeri/components/KpiSignal";
 import SectionLayout from "src/components/Numeri/components/SectionLayout";
 import { dashboardColors } from "src/components/Numeri/shared/colors";
@@ -15,7 +15,8 @@ import { getI18n } from "../../api/i18n";
 import DashboardIntro from "../../components/Numeri/components/DashboardIntro";
 import NotificationsTrend from "../../components/Numeri/components/NotificationsTrend";
 import { curYear, firstYear } from "../../components/Numeri/shared/constants";
-import Tabs from "../../components/Tabs";
+// import Tabs from "../../components/Tabs";
+import TabsNumeri from "src/components/Numeri/components/TabsNumeri";
 import { useTranslation } from "../../hook/useTranslation";
 import { LangCode } from "../../model";
 
@@ -140,16 +141,26 @@ const SendInNumbers: NextPage = () => {
       </svg>
 
       <Box
-        sx={{ maxWidth: 1156, backgroundColor: "white", mx: "auto" }}
+        sx={{
+          maxWidth: 1156,
+          backgroundColor: "white",
+          mx: "auto",
+          px: {
+            xs: 2,
+            md: 2,
+            xl: 0,
+          },
+        }}
         marginX={17.7}
       >
         <Box component="header" sx={{ py: 11 }}>
           <Stack
-            direction="row"
+            direction={{ xs: "column", md: "row" }}
+            spacing={{ xs: 6, md: 0 }}
             justifyContent="space-between"
             alignItems={"center"}
           >
-            <Stack direction="column" spacing={1}>
+            <Stack direction="column" spacing={2}>
               <Typography
                 sx={{
                   textTransform: "uppercase",
@@ -214,13 +225,17 @@ const SendInNumbers: NextPage = () => {
             title="Notifiche SEND inviate"
             text="I dati si riferiscono alle comunicazioni a valore legale inviate dagli enti aderenti."
           >
-            <Tabs
+            <TabsNumeri
               tabs={tabs.map((tab) => tab.label)}
               onTabChange={handleTabChange}
             />
-            <Stack direction={"row"} spacing={6} width={"100%"}>
+            <Stack
+              direction={{ xs: "column", sm: "row" }}
+              spacing={{ xs: 2, md: 6 }}
+              width={"100%"}
+            >
               <Box sx={{ flex: "0 0 30.602%" }}>
-                <KpiCard2>
+                <KpiCard>
                   <Stack direction={"column"} spacing={2} width={"100%"}>
                     <Icons.ForwardToInboxIcon />
                     <Typography
@@ -243,11 +258,15 @@ const SendInNumbers: NextPage = () => {
                       recapitata in modalità digitale o analogica.
                     </CardText>
                   </Stack>
-                </KpiCard2>
+                </KpiCard>
               </Box>
               <Box sx={{ flex: "1 1 0" }}>
-                <KpiCard2>
-                  <Stack direction={"row"} spacing={2} width={"100%"}>
+                <KpiCard>
+                  <Stack
+                    direction={{ xs: "column", sm: "row" }}
+                    spacing={{ xs: 8, sm: 2 }}
+                    width={"100%"}
+                  >
                     <Stack
                       sx={{ flex: "0 0 50%" }}
                       direction={"column"}
@@ -356,25 +375,27 @@ const SendInNumbers: NextPage = () => {
                       />
                     </Stack>
                   </Stack>
-                </KpiCard2>
+                </KpiCard>
               </Box>
             </Stack>
-            <Box mb={2}>
-              <NotificationsTrend selYear={selYear} />
-            </Box>
+            <NotificationsTrend selYear={selYear} />
           </SectionLayout>
           <SectionLayout
             title="Enti su SEND"
             text="Enti aderenti che hanno inviato almeno una notifica SEND dall'avvio del servizio."
           >
-            <Stack direction={"row"} spacing={6} width={"100%"}>
+            <Stack
+              direction={{ xs: "column", sm: "row" }}
+              spacing={{ xs: 2, md: 6 }}
+              width={"100%"}
+            >
               <Stack
                 flex={"0 0 30.602%"}
                 direction={"column"}
                 spacing={6}
                 width={"100%"}
               >
-                <KpiCard2>
+                <KpiCard>
                   <Stack direction={"column"} spacing={1} width={"100%"}>
                     <Icons.AccountBalanceIcon />
                     <CardTitle>Totale enti su SEND</CardTitle>
@@ -393,8 +414,8 @@ const SendInNumbers: NextPage = () => {
                       <KpiWrapper spec={toVegaLiteSpec(entitiesActiveSpec)} />
                     </Typography>
                   </Stack>
-                </KpiCard2>
-                <KpiCard2>
+                </KpiCard>
+                <KpiCard>
                   <Stack direction={"column"} spacing={1} width={"100%"}>
                     <Icons.ThingsToDoIcon />
                     <CardTitle>
@@ -415,10 +436,10 @@ const SendInNumbers: NextPage = () => {
                       </SquareBracketWrapper>
                     </Typography>
                   </Stack>
-                </KpiCard2>
+                </KpiCard>
               </Stack>
               <Box flex={"1 1 0"}>
-                <KpiCard2>
+                <KpiCard>
                   <Box marginBottom={1}>
                     <CardTitle>
                       Distribuzione geografica dei comuni su SEND
@@ -430,7 +451,7 @@ const SendInNumbers: NextPage = () => {
                     comumi attivi per regione.
                   </CardText>
                   <MapChart />
-                </KpiCard2>
+                </KpiCard>
               </Box>
             </Stack>
           </SectionLayout>

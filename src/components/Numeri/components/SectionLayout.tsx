@@ -37,9 +37,9 @@ const SectionLayout = ({ title, children, text }: SectionLayoutProps) => {
       </Box>
 
       <Stack
-        direction={{ xs: "column", sm: "column" }}
-        spacing={{ xs: 2, sm: 2, md: 4 }}
-        sx={{ mt: 3 }}
+        direction={{ xs: "column" }}
+        spacing={6}
+        // sx={{ mt: 3 }}
       >
         {children}
       </Stack>

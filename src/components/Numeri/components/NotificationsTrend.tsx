@@ -7,7 +7,7 @@ import { toVegaLiteSpec } from "../shared/toVegaLiteSpec";
 import CardText from "./CardText";
 import CardTitle from "./CardTitle";
 import CumulativeChart from "./CumulativeChart";
-import KpiCard2 from "./KpiCard2";
+import KpiCard from "./KpiCard";
 
 type Props = {
   selYear: number | null;
@@ -57,7 +57,7 @@ const NotificationsTrend = ({ selYear }: Props): JSX.Element => {
     return result ? result.label : "total";
   };
   return (
-    <KpiCard2>
+    <KpiCard>
       <Stack direction="column" spacing={2}>
         <CardTitle>
           {t("sent_notifications.trend.title", { ns: "numeri" })}
@@ -65,65 +65,77 @@ const NotificationsTrend = ({ selYear }: Props): JSX.Element => {
         <CardText>
           {t("sent_notifications.trend.description", { ns: "numeri" })}
         </CardText>
-        <Stack direction="row" spacing={2} alignItems="center">
-          <CardText>
-            {t("sent_notifications.trend.description_1", { ns: "numeri" })}
-          </CardText>
+        <Stack
+          direction={{ xs: "column", sm: "row" }}
+          spacing={2}
+          alignItems="flex-start"
+        >
+          <Stack direction="row" spacing={1} alignItems={"center"}>
+            <CardText>
+              {t("sent_notifications.trend.description_1", { ns: "numeri" })}
+            </CardText>
 
-          <Select
-            value={curOptionCumulativeDaily}
-            size="small"
-            sx={{
-              fontSize: 14,
-              "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
-                borderColor: dashboardColors.get("blue-io"),
-              },
-            }}
-            onChange={(e: any) => handleOptionCumulativeDaily(+e.target.value)}
-          >
-            {optionsCumulativeDaily.map((option) => (
-              <MenuItem
-                key={option.id}
-                value={option.id}
-                sx={{
-                  "&.Mui-selected": { color: dashboardColors.get("blue-io") },
-                }}
-              >
-                {t(`sent_notifications.trend.${option.label}`, {
-                  ns: "numeri",
-                })}
-              </MenuItem>
-            ))}
-          </Select>
-          <Typography variant="caption" color="textSecondary">
-            {" "}
-            {t("sent_notifications.trend.description_2", { ns: "numeri" })}
-          </Typography>
-          <Select
-            size={"small"}
-            sx={{
-              fontSize: 14,
-              "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
-                borderColor: dashboardColors.get("blue-io"),
-              },
-            }}
-            value={curOptionTotalDigitalAnalog}
-            onChange={(e: any) =>
-              handleOptionsTotalDigitalAnalog(+e.target.value)
-            }
-          >
-            {optionsTotalDigitalAnalog.map((option) => (
-              <MenuItem
-                key={option.id}
-                value={option.id}
-                sx={{
-                  "&.Mui-selected": { color: dashboardColors.get("blue-io") },
-                }}
-              >
-                {t(`sent_notifications.${option.label}.name`, { ns: "numeri" })}
-              </MenuItem>
-            ))}
-          </Select>
+            <Select
+              value={curOptionCumulativeDaily}
+              size="small"
+              sx={{
+                fontSize: 14,
+                "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+                  borderColor: dashboardColors.get("blue-io"),
+                },
+              }}
+              onChange={(e: any) =>
+                handleOptionCumulativeDaily(+e.target.value)
+              }
+            >
+              {optionsCumulativeDaily.map((option) => (
+                <MenuItem
+                  key={option.id}
+                  value={option.id}
+                  sx={{
+                    "&.Mui-selected": { color: dashboardColors.get("blue-io") },
+                  }}
+                >
+                  {t(`sent_notifications.trend.${option.label}`, {
+                    ns: "numeri",
+                  })}
+                </MenuItem>
+              ))}
+            </Select>
+          </Stack>
+          <Stack direction="row" spacing={1} alignItems={"center"}>
+            <Typography variant="caption" color="textSecondary">
+              {" "}
+              {t("sent_notifications.trend.description_2", { ns: "numeri" })}
+            </Typography>
+            <Select
+              size={"small"}
+              sx={{
+                fontSize: 14,
+                "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+                  borderColor: dashboardColors.get("blue-io"),
+                },
+              }}
+              value={curOptionTotalDigitalAnalog}
+              onChange={(e: any) =>
+                handleOptionsTotalDigitalAnalog(+e.target.value)
+              }
+            >
+              {optionsTotalDigitalAnalog.map((option) => (
+                <MenuItem
+                  key={option.id}
+                  value={option.id}
+                  sx={{
+                    "&.Mui-selected": { color: dashboardColors.get("blue-io") },
+                  }}
+                >
+                  {t(`sent_notifications.${option.label}.name`, {
+                    ns: "numeri",
+                  })}
+                </MenuItem>
+              ))}
+            </Select>
+          </Stack>
         </Stack>
 
         <Box style={{ height: "22rem" }}>
@@ -135,7 +147,7 @@ const NotificationsTrend = ({ selYear }: Props): JSX.Element => {
           />
         </Box>
       </Stack>
-    </KpiCard2>
+    </KpiCard>
   );
 };
 export default NotificationsTrend;
