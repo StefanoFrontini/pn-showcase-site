@@ -138,7 +138,7 @@ const NotificationsTrend = ({ selYear }: Props): JSX.Element => {
           </Stack>
         </Stack>
 
-        <Box style={{ height: "22rem" }}>
+        <Box sx={{ height: "22rem" }}>
           <CumulativeChart
             spec={toVegaLiteSpec(downloadSpec)}
             cumulativeSignal={curOptionCumulativeDaily === 1 ? true : false}
@@ -146,6 +146,17 @@ const NotificationsTrend = ({ selYear }: Props): JSX.Element => {
             yearSignal={selYear}
           />
         </Box>
+        {curOptionCumulativeDaily === 1 && (
+          <Typography
+            sx={{
+              color: dashboardColors.get("grey-650"),
+              fontSize: "0.875rem",
+              pt: 3,
+            }}
+          >
+            {t("sent_notifications.trend.note", { ns: "numeri" })}
+          </Typography>
+        )}
       </Stack>
     </KpiCard>
   );

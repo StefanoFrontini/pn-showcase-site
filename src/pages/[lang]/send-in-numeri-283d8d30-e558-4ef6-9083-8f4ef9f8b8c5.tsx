@@ -205,7 +205,7 @@ const SendInNumbers: NextPage = () => {
                     href="/"
                     size="small"
                   >
-                    Vai al sito
+                    {t("hero.website")}
                   </Button>
                 }
                 severity="info"
@@ -215,15 +215,15 @@ const SendInNumbers: NextPage = () => {
                   border: `1px solid ${dashboardColors.get("alert-border")}`,
                 }}
               >
-                I dati sono disponibili su dati.gov.it
+                {t("hero.alert")}
               </Alert>
             </Box>
           </Stack>
         </Box>
         <Box component="main" paddingTop={6}>
           <SectionLayout
-            title="Notifiche SEND inviate"
-            text="I dati si riferiscono alle comunicazioni a valore legale inviate dagli enti aderenti."
+            title={t("sent_notifications.title")}
+            text={t("sent_notifications.description")}
           >
             <TabsNumeri
               tabs={tabs.map((tab) => tab.label)}
@@ -232,11 +232,10 @@ const SendInNumbers: NextPage = () => {
             <Stack
               direction={{ xs: "column", sm: "row" }}
               spacing={{ xs: 2, md: 6 }}
-              width={"100%"}
             >
               <Box sx={{ flex: "0 0 30.602%" }}>
                 <KpiCard>
-                  <Stack direction={"column"} spacing={2} width={"100%"}>
+                  <Stack direction={"column"} spacing={2}>
                     <Icons.ForwardToInboxIcon />
                     <Typography
                       sx={{
@@ -251,11 +250,9 @@ const SendInNumbers: NextPage = () => {
                         yearSignal={selYear}
                       />
                     </Typography>
-                    <CardTitle>Totale notifiche SEND inviate</CardTitle>
+                    <CardTitle>{t("sent_notifications.total.title")}</CardTitle>
                     <CardText>
-                      La notifica SEND è una comunicazione a valore legale
-                      emessa in via ufficiale da un'amministrazione. Può essere
-                      recapitata in modalità digitale o analogica.
+                      {t("sent_notifications.total.description")}
                     </CardText>
                   </Stack>
                 </KpiCard>
@@ -265,13 +262,11 @@ const SendInNumbers: NextPage = () => {
                   <Stack
                     direction={{ xs: "column", sm: "row" }}
                     spacing={{ xs: 8, sm: 2 }}
-                    width={"100%"}
                   >
                     <Stack
                       sx={{ flex: "0 0 50%" }}
                       direction={"column"}
                       spacing={4}
-                      width={"100%"}
                     >
                       <Stack direction={"column"} spacing={1}>
                         <Stack
@@ -309,17 +304,17 @@ const SendInNumbers: NextPage = () => {
                             />
                           </Typography>
                         </Stack>
-                        <CardTitle>Numero di notifiche SEND digitali</CardTitle>
+                        <CardTitle>
+                          {t("sent_notifications.digital.title")}
+                        </CardTitle>
                         <CardText>
-                          Notifiche SEND emesse ai destinatari tramite canali
-                          digitali certificati.
+                          {t("sent_notifications.digital.description")}
                         </CardText>
                       </Stack>
                       <Stack direction={"column"} spacing={1}>
                         <Stack
                           direction={"row"}
                           spacing={2}
-                          width={"100%"}
                           alignItems={"center"}
                         >
                           <svg
@@ -352,12 +347,10 @@ const SendInNumbers: NextPage = () => {
                           </Typography>
                         </Stack>
                         <CardTitle>
-                          Numero di notifiche SEND analogiche
+                          {t("sent_notifications.analog.title")}
                         </CardTitle>
                         <CardText>
-                          Notifiche SEND emesse in modalità analogica per
-                          assenza di canali digitali certificati del
-                          destinatario.
+                          {t("sent_notifications.analog.description")}
                         </CardText>
                       </Stack>
                     </Stack>
@@ -365,7 +358,6 @@ const SendInNumbers: NextPage = () => {
                       sx={{ flex: "1 1 0" }}
                       direction={"column"}
                       spacing={2}
-                      width={"100%"}
                       justifyContent={"center"}
                       alignItems={"center"}
                     >
@@ -381,27 +373,20 @@ const SendInNumbers: NextPage = () => {
             <NotificationsTrend selYear={selYear} />
           </SectionLayout>
           <SectionLayout
-            title="Enti su SEND"
-            text="Enti aderenti che hanno inviato almeno una notifica SEND dall'avvio del servizio."
+            title={t("entities.title")}
+            text={t("entities.description")}
           >
             <Stack
               direction={{ xs: "column", sm: "row" }}
               spacing={{ xs: 2, md: 6 }}
-              width={"100%"}
             >
-              <Stack
-                flex={"0 0 30.602%"}
-                direction={"column"}
-                spacing={6}
-                width={"100%"}
-              >
+              <Stack flex={"0 0 30.602%"} direction={"column"} spacing={6}>
                 <KpiCard>
                   <Stack direction={"column"} spacing={1} width={"100%"}>
                     <Icons.AccountBalanceIcon />
-                    <CardTitle>Totale enti su SEND</CardTitle>
+                    <CardTitle>{t("entities.active.total.title")}</CardTitle>
                     <CardText>
-                      Numero complessivo degli enti che hanno inviato almeno una
-                      notifica SEND.
+                      {t("entities.active.total.description")}
                     </CardText>
                     <Typography
                       sx={{
@@ -419,7 +404,7 @@ const SendInNumbers: NextPage = () => {
                   <Stack direction={"column"} spacing={1} width={"100%"}>
                     <Icons.ThingsToDoIcon />
                     <CardTitle>
-                      Percentuale di comuni sul totale degli enti su SEND
+                      {t("entities.active.municipalities.title")}
                     </CardTitle>
                     <Typography
                       sx={{
@@ -442,13 +427,11 @@ const SendInNumbers: NextPage = () => {
                 <KpiCard>
                   <Box marginBottom={1}>
                     <CardTitle>
-                      Distribuzione geografica dei comuni su SEND
+                      {t("entities.active.geographic_distribution.title")}
                     </CardTitle>
                   </Box>
                   <CardText>
-                    Il grafico mostra la distribuzione dei comuni nelle diverse
-                    regioni, la dimensione delle bolle indica il volume dei
-                    comumi attivi per regione.
+                    {t("entities.active.geographic_distribution.description")}
                   </CardText>
                   <MapChart />
                 </KpiCard>
@@ -456,36 +439,13 @@ const SendInNumbers: NextPage = () => {
             </Stack>
           </SectionLayout>
           <SectionLayout
-            title="Principali ambiti di notifiche SEND"
-            text="Categorie di notifiche SEND più inviate."
+            title={t("notification_types.title")}
+            text={t("notification_types.description")}
           >
             <NotificationsTypes />
           </SectionLayout>
         </Box>
       </Box>
-
-      {/* <Box sx={{ overflowX: "hidden" }}>
-        <DataSectionWrapper
-          title={t("sent_notifications.title")}
-          description={t("sent_notifications.description")}
-        >
-          <Box mb={2}>
-            <KpiNotifications selYear={selYear} />
-
-            <NotificationsTrend selYear={selYear} />
-          </Box>
-        </DataSectionWrapper>
-
-        <DataSectionWrapper
-          title={t("authorities_and_types.title")}
-          description={t("authorities_and_types.description")}
-          background="grey"
-        >
-          <Box mb={2}>
-            <KpiAuthoritiesServices />
-          </Box>
-        </DataSectionWrapper>
-      </Box> */}
     </>
   );
 };

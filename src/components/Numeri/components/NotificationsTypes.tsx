@@ -1,4 +1,4 @@
-import { MenuItem, Select, Stack, Typography } from "@mui/material";
+import { Box, MenuItem, Select, Stack, Typography } from "@mui/material";
 import { useState } from "react";
 import { useTranslation } from "../../../hook/useTranslation";
 import { toVegaLiteSpec } from "../shared/toVegaLiteSpec";
@@ -57,57 +57,55 @@ const NotificationsTypes = () => {
     setCurOption(id);
   };
   return (
-    <KpiCard>
-      <Stack direction="column" spacing={2}>
-        <Stack direction="row" spacing={2} alignItems="center">
-          <CardText>
-            Filtra per tipologia di ente aderente.
-            {/* {t("sent_notifications.trend.description_1", { ns: "numeri" })} */}
-          </CardText>
+    <Box sx={{ height: "49rem" }}>
+      <KpiCard>
+        <Stack direction="column" spacing={2}>
+          <Stack direction="row" spacing={2} alignItems="center">
+            <CardText>
+              {t("notification_types.main_scopes.title", { ns: "numeri" })}
+            </CardText>
 
-          <Typography variant="caption" color="textSecondary">
-            {" "}
-            {/* {t("sent_notifications.trend.description_2", { ns: "numeri" })} */}
-          </Typography>
-          <Select
-            size={"small"}
-            sx={{
-              fontSize: 14,
-              "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
-                borderColor: dashboardColors.get("blue-io"),
-              },
-            }}
-            value={curOption}
-            onChange={(e: any) => handleOptions(e.target.value)}
-          >
-            {options.map((option) => (
-              <MenuItem
-                key={option.tag}
-                value={option.tag}
-                sx={{
-                  "&.Mui-selected": { color: dashboardColors.get("blue-io") },
-                }}
-              >
-                {t(`notification_types.${option.tag}.name`, { ns: "numeri" })}
-              </MenuItem>
-            ))}
-          </Select>
-        </Stack>
+            <Select
+              size={"small"}
+              sx={{
+                fontSize: 14,
+                "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+                  borderColor: dashboardColors.get("blue-io"),
+                },
+              }}
+              value={curOption}
+              onChange={(e: any) => handleOptions(e.target.value)}
+            >
+              {options.map((option) => (
+                <MenuItem
+                  key={option.tag}
+                  value={option.tag}
+                  sx={{
+                    "&.Mui-selected": { color: dashboardColors.get("blue-io") },
+                  }}
+                >
+                  {t(`notification_types.${option.tag}.name`, { ns: "numeri" })}
+                </MenuItem>
+              ))}
+            </Select>
+          </Stack>
 
-        {/* <Box style={{ height: "22rem" }}>
-          <CumulativeChart
-            spec={toVegaLiteSpec(downloadSpec)}
-            cumulativeSignal={curOptionCumulativeDaily === 1 ? true : false}
-            filterSignal={getLabel(curOptionTotalDigitalAnalog)}
-            yearSignal={selYear}
+          <ChartServices
+            spec={toVegaLiteSpec(topAreasSpec)}
+            categorySignal={getLabel(curOption)}
           />
-        </Box> */}
-        <ChartServices
-          spec={toVegaLiteSpec(topAreasSpec)}
-          categorySignal={getLabel(curOption)}
-        />
-      </Stack>
-    </KpiCard>
+          <Typography
+            sx={{
+              color: dashboardColors.get("grey-650"),
+              fontSize: "0.875rem",
+              lineHeight: "1.125rem",
+            }}
+          >
+            {t("notification_types.main_scopes.notes", { ns: "numeri" })}
+          </Typography>
+        </Stack>
+      </KpiCard>
+    </Box>
   );
 };
 export default NotificationsTypes;
