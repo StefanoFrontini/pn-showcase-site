@@ -4,13 +4,14 @@ import type { AppProps } from "next/app";
 
 import { theme } from "@pagopa/mui-italia";
 
+import { ConfigProvider } from "src/context/config-context";
 import Loading from "../components/loading";
 import { LangProvider } from "../context/lang-context";
 import "../styles/default.css";
-import { ConfigProvider } from "src/context/config-context";
 
 function MyApp({ Component, pageProps }: AppProps) {
-  const translationLoading = !pageProps.lang && !pageProps.translations;
+  const translationLoading =
+    !pageProps.lang || !pageProps.translations || !pageProps.vegaLocale;
 
   return (
     <ConfigProvider>
@@ -18,6 +19,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <LangProvider
           lang={pageProps.lang}
           translations={pageProps.translations}
+          vegaLocale={pageProps.vegaLocale}
         >
           {translationLoading && <Loading />}
 

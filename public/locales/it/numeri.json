@@ -27,6 +27,12 @@
       "title": "Numero di notifiche SEND analogiche",
       "description": "Notifiche SEND emesse in modalità analogica per assenza di canali digitali certificati del destinatario."
     },
+    "pieChart": {
+      "tooltip": {
+        "type": "Tipo di notifica",
+        "number": "Numero di notifiche"
+      }
+    },
     "trend": {
       "title": "Andamento delle notifiche SEND",
       "description": "Andamento del numero di notifiche SEND emesse in via ufficiale da un ente aderente.",
@@ -37,6 +43,11 @@
       "total": "complessivo",
       "digital": "digitali",
       "analog": "analogiche",
+      "tooltip": {
+        "month": "Mese",
+        "aggregate": "Notifiche cumulate",
+        "monthly": "Notifiche mensili"
+      },
       "note": "Il valore cumulato è la somma progressiva di una quantità nel tempo."
     }
   },
@@ -55,6 +66,11 @@
       "geographic_distribution": {
         "title": "Distribuzione geografica dei comuni su SEND",
         "description": "Il grafico mostra la distribuzione dei comuni nelle diverse regioni, la dimensione delle bolle indica il volume dei comuni attivi per regione."
+      },
+      "tooltip": {
+        "region": "Regione",
+        "municipalities": "Comuni",
+        "percentage": "Percentuale comuni rispetto al totale dei comuni per regione"
       }
     }
   },
@@ -65,6 +81,10 @@
     "main_scopes": {
       "title": "Filtra per tipologia di ente aderente.",
       "notes": "* diversa/o da quelli la cui notificazione è esclusa tramite SEND ai sensi dell’art.26, comma 17 D.L. 76/2020"
+    },
+    "tooltip": {
+      "category": "Ambito",
+      "notifications": "Notifiche"
     },
     "tutte": {
       "name": "tutte"

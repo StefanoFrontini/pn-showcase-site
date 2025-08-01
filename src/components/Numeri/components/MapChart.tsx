@@ -1,50 +1,81 @@
 import { Box } from "@mui/material";
 import { useEffect, useRef } from "react";
+import { useTranslation } from "src/hook/useTranslation";
 import embed from "vega-embed";
+import { TopLevelSpec } from "vega-lite";
 import chartConfig from "../shared/chart-config";
 
 import mapJsonSpec from "../assets/data/italy-regions-circles.vl.json";
-// import { formatTooltip } from "@/shared/formatTooltip";
 import { toVegaLiteSpec } from "../shared/toVegaLiteSpec";
 
-// type Props = {
-//   categorySignal: string;
-// };
 const spec = toVegaLiteSpec(mapJsonSpec);
-console.log("🚀 ~ spec:", spec);
 
 const MapChart = () => {
-  //   const { data, isPending, isLoading } = useDashboardData();
-  //   const [data, setData] = useState(null);
-  //   const [chart, setChart] = useState<Result | null>(null);
   const chartContent = useRef<HTMLDivElement>(null);
+  const { t } = useTranslation(["numeri"]);
 
-  //   useEffect(() => {
-  //     fetch(
-  //       "https://gist.githubusercontent.com/StefanoFrontini/b256d34084b3fe98c295b0a2d3beb42e/raw/71f3945d4ed66e56d9abbed800e95e752fcac487/dashboard-io.json"
-  //     )
-  //       .then((response) => response.json())
-  //       .then((data) => setData(data));
-  //   }, []);
+  function translateMapTooltip(spec: TopLevelSpec) {
+    // Type guard for layered specs
+    if (
+      !("layer" in spec) ||
+      !Array.isArray(spec.layer) ||
+      spec.layer.length < 2
+    ) {
+      return spec;
+    }
+
+    const layer = spec.layer[1];
+    if (!layer?.encoding?.tooltip) {
+      return spec;
+    }
+
+    const tooltips = layer.encoding.tooltip;
+    if (!Array.isArray(tooltips)) {
+      return spec;
+    }
+
+    const translatedTooltips = tooltips.map((tooltip) => {
+      if (tooltip.field === "regione") {
+        return { ...tooltip, title: t("entities.active.tooltip.region") };
+      }
+      if (tooltip.field === "num_comuni_attivi") {
+        return {
+          ...tooltip,
+          title: t("entities.active.tooltip.municipalities"),
+        };
+      }
+      if (tooltip.field === "perc_comuni_attivi") {
+        return { ...tooltip, title: t("entities.active.tooltip.percentage") };
+      }
+      return tooltip;
+    });
+
+    return {
+      ...spec,
+      layer: [
+        spec.layer[0],
+        {
+          ...layer,
+          encoding: {
+            ...layer.encoding,
+            tooltip: translatedTooltips,
+          },
+        },
+      ],
+    } as TopLevelSpec;
+  }
 
   useEffect(() => {
     if (!chartContent.current) return;
-    // const tooltipOptions = {
-    //   formatTooltip: formatTooltip("regione", "count_serv"),
-    // };
     const options = {
       ...chartConfig,
-      //   tooltip: tooltipOptions,
     };
-    embed(chartContent.current, spec, options).then((chart) => {
-      chart.view.resize().runAsync();
-    });
-  }, []);
-
-  //   useEffect(() => {
-  //     if (chart === null) return;
-  //     chart.view.signal("category", categorySignal).runAsync();
-  //   }, [chart, categorySignal]);
+    embed(chartContent.current, translateMapTooltip(spec), options).then(
+      (chart) => {
+        chart.view.resize().runAsync();
+      }
+    );
+  }, [t]);
 
   return (
     <Box

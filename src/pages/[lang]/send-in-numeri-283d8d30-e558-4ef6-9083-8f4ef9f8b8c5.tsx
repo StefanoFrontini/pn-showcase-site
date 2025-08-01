@@ -25,8 +25,6 @@ import notificationsDigitalSpec from "../../components/Numeri/assets/data/notifi
 import notificationsTotalSpec from "../../components/Numeri/assets/data/notifications-total.vl.json";
 import PieChart from "../../components/Numeri/components/PieChart";
 
-import topAreasSpec from "../../components/Numeri/assets/data/top-areas.vl.json";
-
 import Head from "next/head";
 import CardText from "src/components/Numeri/components/CardText";
 import CardTitle from "src/components/Numeri/components/CardTitle";
@@ -35,12 +33,12 @@ import MapChart from "src/components/Numeri/components/MapChart";
 import NotificationsTypes from "src/components/Numeri/components/NotificationsTypes";
 import SquareBracketWrapper from "src/components/Numeri/components/SquareBracketWrapper";
 import SvgDefs from "src/components/Numeri/components/SvgDefs";
-import LangContext from "src/context/lang-context";
 import entitiesActiveSpec from "../../components/Numeri/assets/data/entities-active.vl.json";
 import municipalitiesActivePercSpec from "../../components/Numeri/assets/data/municipalities-active-perc.vl.json";
 import pieChartDigitalSpec from "../../components/Numeri/assets/data/pie-chart-digital.vl.json";
 
-console.log({ data: toVegaLiteSpec(topAreasSpec) });
+import LangContext from "src/context/lang-context";
+import { formatLocale, timeFormatLocale } from "vega";
 
 type Tabs = {
   id: number | null;
@@ -62,11 +60,27 @@ export async function getStaticProps({
   params: { lang: LangCode };
 }) {
   const translations = getI18n(params.lang, ["common", "numeri"]);
+  // const vegaLocale = (
+  //   await import(
+  //     `src/components/Numeri/shared/locale/${params.lang}/locale.json`
+  //   )
+  // ).default;
+  // const vegaTimeLocale = (
+  //   await import(
+  //     `src/components/Numeri/shared/locale/${params.lang}/time-locale.json`
+  //   )
+  // ).default;
+  const vegaFormatLocale = require(`src/components/Numeri/shared/locale/${params.lang}/locale.json`);
+  const vegaTimeFormatLocale = require(`src/components/Numeri/shared/locale/${params.lang}/time-locale.json`);
 
   return {
     props: {
       translations,
       lang: params.lang,
+      vegaLocale: {
+        formatLocale: vegaFormatLocale,
+        timeFormatLocale: vegaTimeFormatLocale,
+      },
     },
   };
 }
@@ -80,9 +94,13 @@ const tabs: Tabs[] = [{ id: null, label: "Totale" }, ...years].reverse();
 
 const SendInNumbers: NextPage = () => {
   const { t } = useTranslation(["numeri"]);
+
+  const { vegaLocale } = useContext(LangContext);
+
   const [selYear, setSelYear] = useState<number | null>(null);
-  const { lang } = useContext(LangContext);
-  console.log("🚀 ~ lang:", lang);
+
+  formatLocale(vegaLocale.formatLocale ?? {});
+  timeFormatLocale(vegaLocale.timeFormatLocale ?? {});
 
   const handleTabChange = (tab: number) => {
     if (tab === tabs[tab].id) {

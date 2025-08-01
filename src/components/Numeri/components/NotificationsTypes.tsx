@@ -1,5 +1,6 @@
 import { Box, MenuItem, Select, Stack, Typography } from "@mui/material";
 import { useState } from "react";
+import { TopLevelSpec } from "vega-lite";
 import { useTranslation } from "../../../hook/useTranslation";
 import { toVegaLiteSpec } from "../shared/toVegaLiteSpec";
 import CardText from "./CardText";
@@ -45,6 +46,49 @@ const options: OptionsCategories[] = [
 
 const NotificationsTypes = () => {
   const { t } = useTranslation(["numeri"]);
+  console.log("topAreasSpec", topAreasSpec);
+
+  function translateTooltip(spec: TopLevelSpec) {
+    if (!("layer" in spec)) return spec;
+    if (!Array.isArray(spec.layer) || spec.layer.length < 3) return spec;
+
+    const tooltipLayer = spec.layer[1];
+    if (!tooltipLayer?.encoding?.tooltip) return spec;
+
+    const tooltips = tooltipLayer.encoding.tooltip;
+    if (!Array.isArray(tooltips)) return spec;
+
+    const translatedTooltips = tooltips.map((tooltip) => {
+      if (tooltip.field === "ambito") {
+        return { ...tooltip, title: t("notification_types.tooltip.category") };
+      }
+      if (tooltip.field === "num_iun") {
+        return {
+          ...tooltip,
+          title: t("notification_types.tooltip.notifications"),
+        };
+      }
+      return tooltip;
+    });
+    console.log(
+      "🚀 ~ translateTooltip ~ translatedTooltips:",
+      translatedTooltips
+    );
+
+    return {
+      ...spec,
+      layer: [
+        ...spec.layer.slice(0, 2),
+        {
+          ...tooltipLayer,
+          encoding: {
+            ...tooltipLayer.encoding,
+            tooltip: translatedTooltips,
+          },
+        },
+      ],
+    } as TopLevelSpec;
+  }
 
   const [curOption, setCurOption] = useState<string>(options[0].tag);
   function getLabel(tag: string) {
@@ -91,7 +135,7 @@ const NotificationsTypes = () => {
           </Stack>
 
           <ChartServices
-            spec={toVegaLiteSpec(topAreasSpec)}
+            spec={translateTooltip(toVegaLiteSpec(topAreasSpec))}
             categorySignal={getLabel(curOption)}
           />
           <Typography

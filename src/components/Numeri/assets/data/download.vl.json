@@ -141,7 +141,7 @@
             "format": ","
           },
           {
-            "field": "metric_value",
+            "field": "notification_value",
             "title": "Notifiche mensili",
             "format": ","
           }

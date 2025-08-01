@@ -1,5 +1,6 @@
 import { Box } from "@mui/material";
 import { useEffect, useRef, useState } from "react";
+import { useTranslation } from "src/hook/useTranslation";
 import embed, { Result } from "vega-embed";
 import { TopLevelSpec } from "vega-lite";
 import chartConfig from "../shared/chart-config";
@@ -10,12 +11,44 @@ type Props = {
 };
 
 const PieChart = ({ spec, yearSignal }: Props): JSX.Element => {
+  const { t } = useTranslation(["numeri"]);
   const [chart, setChart] = useState<Result | null>(null);
   const chartContent = useRef<HTMLDivElement>(null);
 
+  function translateTooltip(spec: TopLevelSpec) {
+    if (
+      "encoding" in spec &&
+      spec.encoding &&
+      "tooltip" in spec.encoding &&
+      spec.encoding.tooltip &&
+      Array.isArray(spec.encoding.tooltip)
+    ) {
+      const tooltip = [];
+      tooltip[0] = {
+        ...spec.encoding.tooltip[0],
+        title: t("sent_notifications.pieChart.tooltip.type"),
+      };
+      tooltip[1] = {
+        ...spec.encoding.tooltip[1],
+
+        title: t("sent_notifications.pieChart.tooltip.number"),
+      };
+      return {
+        ...spec,
+        encoding: {
+          ...spec.encoding,
+          tooltip,
+        },
+      } as TopLevelSpec;
+    }
+    return spec;
+  }
+
   useEffect(() => {
     if (!chartContent.current) return;
-    embed(chartContent.current, spec, chartConfig).then(setChart);
+    embed(chartContent.current, translateTooltip(spec), chartConfig).then(
+      setChart
+    );
   }, [spec]);
 
   useEffect(() => {
