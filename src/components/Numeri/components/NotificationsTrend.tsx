@@ -36,7 +36,7 @@ const optionsTotalDigitalAnalog: OptionsTotalDigitalAnalog[] = [
   { id: 3, label: "analog" },
 ];
 
-const NotificationsTrend = ({ selYear }: Props): JSX.Element => {
+const NotificationsTrend = ({ selYear }: Props) => {
   const { t } = useTranslation(["numeri"]);
 
   const [curOptionCumulativeDaily, setCurOptionCumulativeDaily] = useState(
