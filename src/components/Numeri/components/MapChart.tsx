@@ -1,5 +1,5 @@
 import { Box } from "@mui/material";
-import { useEffect, useRef } from "react";
+import { useEffect, useMemo, useRef } from "react";
 import { useTranslation } from "src/hook/useTranslation";
 import embed from "vega-embed";
 import { TopLevelSpec } from "vega-lite";
@@ -15,7 +15,6 @@ const MapChart = () => {
   const { t } = useTranslation(["numeri"]);
 
   function translateMapTooltip(spec: TopLevelSpec) {
-    // Type guard for layered specs
     if (
       !("layer" in spec) ||
       !Array.isArray(spec.layer) ||
@@ -64,17 +63,16 @@ const MapChart = () => {
       ],
     } as TopLevelSpec;
   }
+  const translatedTooltip = useMemo(() => translateMapTooltip(spec), []);
 
   useEffect(() => {
     if (!chartContent.current) return;
     const options = {
       ...chartConfig,
     };
-    embed(chartContent.current, translateMapTooltip(spec), options).then(
-      (chart) => {
-        chart.view.resize().runAsync();
-      }
-    );
+    embed(chartContent.current, translatedTooltip, options).then((chart) => {
+      chart.view.resize().runAsync();
+    });
   }, [t]);
 
   return (

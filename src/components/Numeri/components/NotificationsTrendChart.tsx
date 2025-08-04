@@ -1,5 +1,5 @@
 import { Box } from "@mui/material";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { useTranslation } from "src/hook/useTranslation";
 import embed, { Result } from "vega-embed";
 import { TopLevelSpec } from "vega-lite";
@@ -23,80 +23,59 @@ const NotificationsTrendChart = ({
   const { t } = useTranslation(["numeri"]);
 
   function translateTooltip(spec: TopLevelSpec) {
-    if (!("layer" in spec) || !Array.isArray(spec.layer)) {
+    if (!("layer" in spec)) {
       return spec;
     }
 
-    if (!spec.layer[0]?.encoding?.tooltip) {
+    if (!Array.isArray(spec.layer)) {
       return spec;
-    }
-
-    const tooltips = spec.layer[0].encoding.tooltip;
-    if (!Array.isArray(tooltips) || tooltips.length < 3) {
-      return spec;
-    }
-
-    const barChartTooltip = [
-      { ...tooltips[0], title: t("sent_notifications.trend.tooltip.month") },
-      {
-        ...tooltips[1],
-        title: t("sent_notifications.trend.tooltip.aggregate"),
-      },
-      { ...tooltips[2], title: t("sent_notifications.trend.tooltip.monthly") },
-    ];
-
-    let lineChartTooltip;
-    if (
-      spec.layer[1]?.encoding?.tooltip &&
-      Array.isArray(spec.layer[1].encoding.tooltip)
-    ) {
-      lineChartTooltip = [
-        {
-          ...spec.layer[1].encoding.tooltip[0],
-          title: t("sent_notifications.trend.tooltip.month"),
-        },
-        {
-          ...spec.layer[1].encoding.tooltip[1],
-          title: t("sent_notifications.trend.tooltip.aggregate"),
-        },
-        {
-          ...spec.layer[1].encoding.tooltip[2],
-          title: t("sent_notifications.trend.tooltip.monthly"),
-        },
-      ];
     }
 
     return {
       ...spec,
-      layer: [
-        {
-          ...spec.layer[0],
-          encoding: {
-            ...spec.layer[0].encoding,
-            tooltip: barChartTooltip,
+      layer: spec.layer.map((layer) => {
+        if (
+          !layer?.encoding?.tooltip ||
+          !Array.isArray(layer.encoding.tooltip)
+        ) {
+          return layer;
+        }
+
+        const tooltips = layer.encoding.tooltip;
+        if (tooltips.length < 3) {
+          return layer;
+        }
+
+        const translatedTooltip = [
+          {
+            ...tooltips[0],
+            title: t("sent_notifications.trend.tooltip.month"),
           },
-        },
-        ...(spec.layer[1] && spec.layer[1].encoding
-          ? [
-              {
-                ...spec.layer[1],
-                encoding: {
-                  ...spec.layer[1].encoding,
-                  tooltip: lineChartTooltip || spec.layer[1].encoding?.tooltip,
-                },
-              },
-            ]
-          : []),
-        ...(spec.layer.slice(2) || []),
-      ],
+          {
+            ...tooltips[1],
+            title: t("sent_notifications.trend.tooltip.aggregate"),
+          },
+          {
+            ...tooltips[2],
+            title: t("sent_notifications.trend.tooltip.monthly"),
+          },
+        ];
+
+        return {
+          ...layer,
+          encoding: {
+            ...layer.encoding,
+            tooltip: translatedTooltip,
+          },
+        };
+      }),
     } as TopLevelSpec;
   }
+  const translatedTooltip = useMemo(() => translateTooltip(spec), []);
 
   useEffect(() => {
     if (!chartContent.current) return;
-    embed(chartContent.current, translateTooltip(spec), chartConfig).then(
-      setChart
-    );
+    embed(chartContent.current, translatedTooltip, chartConfig).then(setChart);
   }, [spec]);
 
   useEffect(() => {

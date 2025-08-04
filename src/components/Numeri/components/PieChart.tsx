@@ -1,5 +1,5 @@
 import { Box } from "@mui/material";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { useTranslation } from "src/hook/useTranslation";
 import embed, { Result } from "vega-embed";
 import { TopLevelSpec } from "vega-lite";
@@ -43,12 +43,11 @@ const PieChart = ({ spec, yearSignal }: Props): JSX.Element => {
     }
     return spec;
   }
+  const translatedTooltip = useMemo(() => translateTooltip(spec), []);
 
   useEffect(() => {
     if (!chartContent.current) return;
-    embed(chartContent.current, translateTooltip(spec), chartConfig).then(
-      setChart
-    );
+    embed(chartContent.current, translatedTooltip, chartConfig).then(setChart);
   }, [spec]);
 
   useEffect(() => {

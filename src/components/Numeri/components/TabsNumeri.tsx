@@ -1,6 +1,7 @@
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import {
   Box,
+  Breakpoint,
   Button,
   ButtonGroup,
   ClickAwayListener,
@@ -9,10 +10,8 @@ import {
   MenuList,
   Paper,
   Popper,
-  useMediaQuery,
 } from "@mui/material";
-import { useTheme } from "@mui/system";
-import { useRef, useState } from "react";
+import { useTabBehavior } from "src/hook/useTabBehavior";
 import { dashboardColors } from "../shared/colors";
 
 type Props = {
@@ -21,11 +20,8 @@ type Props = {
   buttonSize?: "small" | "medium" | "large";
   breakOnMobile?: boolean;
   onTabChange: (v: number) => void;
-};
-
-const useIsMobile = () => {
-  const theme = useTheme();
-  return useMediaQuery(theme.breakpoints.down("xs"));
+  initialTab?: number;
+  breakpoint?: Breakpoint;
 };
 
 const TabsNumeri = ({
@@ -34,29 +30,18 @@ const TabsNumeri = ({
   buttonSize = "small",
   breakOnMobile = true,
   onTabChange,
+  initialTab = 3,
+  breakpoint = "xs",
 }: Props) => {
-  const isMobile = useIsMobile();
-  const [currentTab, setCurrentTab] = useState(3);
-  const [dropdownOpen, setDropdownOpen] = useState(false);
-  const anchorRef = useRef<HTMLDivElement>(null);
-
-  const handleChangeTab = (newValue: number) => {
-    setCurrentTab(newValue);
-    setDropdownOpen(false);
-    onTabChange(newValue);
-  };
-
-  const handleToggleDropdown = () => {
-    setDropdownOpen((prevDropdownOpen) => !prevDropdownOpen);
-  };
-
-  const handleCloseDropdown = (event: Event) => {
-    if (anchorRef.current?.contains(event.target as HTMLElement)) {
-      return;
-    }
-
-    setDropdownOpen(false);
-  };
+  const {
+    currentTab,
+    dropdownOpen,
+    anchorRef,
+    isMobile,
+    handleChangeTab,
+    handleToggleDropdown,
+    handleCloseDropdown,
+  } = useTabBehavior(initialTab, breakpoint, onTabChange);
 
   return (
     <Box

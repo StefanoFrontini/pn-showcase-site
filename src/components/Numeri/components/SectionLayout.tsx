@@ -1,13 +1,13 @@
 import { Box, Stack, Typography } from "@mui/material";
 import { dashboardColors } from "../shared/colors";
 
-type SectionLayoutProps = {
+type Props = {
   title: string;
   children: React.ReactNode;
   text?: string;
 };
 
-const SectionLayout = ({ title, children, text }: SectionLayoutProps) => {
+const SectionLayout = ({ title, children, text }: Props) => {
   return (
     <Box component="section" marginBottom={12}>
       <Box marginBottom={6}>
@@ -36,11 +36,7 @@ const SectionLayout = ({ title, children, text }: SectionLayoutProps) => {
         </Typography>
       </Box>
 
-      <Stack
-        direction={{ xs: "column" }}
-        spacing={6}
-        // sx={{ mt: 3 }}
-      >
+      <Stack direction={{ xs: "column" }} spacing={6}>
         {children}
       </Stack>
     </Box>
