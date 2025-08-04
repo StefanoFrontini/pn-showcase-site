@@ -8,13 +8,12 @@ import Icons from "src/components/Numeri/components/Icons";
 import KpiCard from "src/components/Numeri/components/KpiCard";
 import KpiSignal from "src/components/Numeri/components/KpiSignal";
 import SectionLayout from "src/components/Numeri/components/SectionLayout";
+import TabsNumeri from "src/components/Numeri/components/TabsNumeri";
 import { toVegaLiteSpec } from "src/components/Numeri/shared/toVegaLiteSpec";
 import { getI18n } from "../../api/i18n";
 import LastUpdate from "../../components/Numeri/components/LastUpdate";
 import NotificationsTrend from "../../components/Numeri/components/NotificationsTrend";
 import { curYear, firstYear } from "../../components/Numeri/shared/constants";
-// import Tabs from "../../components/Tabs";
-import TabsNumeri from "src/components/Numeri/components/TabsNumeri";
 import { useTranslation } from "../../hook/useTranslation";
 import { LangCode } from "../../model";
 

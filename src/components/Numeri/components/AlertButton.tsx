@@ -16,7 +16,6 @@ export default function AlertButton({
       size="small"
     >
       {children}
-      {/* {t("hero.website")} */}
     </Button>
   );
 }
