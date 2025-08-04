@@ -1,5 +1,5 @@
 import { Box, MenuItem, Select, Stack, Typography } from "@mui/material";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { TopLevelSpec } from "vega-lite";
 import { useTranslation } from "../../../hook/useTranslation";
 import { toVegaLiteSpec } from "../shared/toVegaLiteSpec";
@@ -8,45 +8,32 @@ import KpiCard from "./KpiCard";
 
 import topAreasSpec from "../assets/data/top-areas.vl.json";
 import { dashboardColors } from "../shared/colors";
-import ChartServices from "./ChartServices";
+import NotificationsTypesChart from "./NotificationsTypesChart";
 
-const categories = [
-  "tutte",
-  "Comuni",
-  "Riscossori e altro",
-  "Altri enti territoriali",
-  "Province",
-  "Regioni",
-  "Enti comunali",
-  "Ordini, collegi e consigli professionali",
-  "Pubbliche amministrazioni centrali",
-  "Università",
-  "Consorzi universitari",
-] as const;
-
-type Categories = (typeof categories)[number];
+const categoriesMap = new Map([
+  ["tutte", null],
+  ["comuni", "Comuni"],
+  ["riscossori", "Riscossori e altro"],
+  ["altri_enti", "Altri enti territoriali"],
+  ["province", "Province"],
+  ["regioni", "Regioni"],
+  ["comunali", "Enti comunali"],
+  ["ordini", "Ordini, collegi e consigli professionali"],
+  ["amministrazioni", "Pubbliche amministrazioni centrali"],
+  ["universita", "Università"],
+  ["consorzi", "Consorzi universitari"],
+]);
 
 type OptionsCategories = {
   tag: string;
-  label: Categories;
+  label: string | null;
 };
-const options: OptionsCategories[] = [
-  { tag: "tutte", label: categories[0] },
-  { tag: "comuni", label: categories[1] },
-  { tag: "riscossori", label: categories[2] },
-  { tag: "altri_enti", label: categories[3] },
-  { tag: "province", label: categories[4] },
-  { tag: "regioni", label: categories[5] },
-  { tag: "comunali", label: categories[6] },
-  { tag: "ordini", label: categories[7] },
-  { tag: "amministrazioni", label: categories[8] },
-  { tag: "universita", label: categories[9] },
-  { tag: "consorzi", label: categories[10] },
-];
+const options: OptionsCategories[] = Array.from(categoriesMap.entries()).map(
+  ([tag, label]) => ({ tag, label })
+);
 
 const NotificationsTypes = () => {
   const { t } = useTranslation(["numeri"]);
-  console.log("topAreasSpec", topAreasSpec);
 
   function translateTooltip(spec: TopLevelSpec) {
     if (!("layer" in spec)) return spec;
@@ -70,15 +57,11 @@ const NotificationsTypes = () => {
       }
       return tooltip;
     });
-    console.log(
-      "🚀 ~ translateTooltip ~ translatedTooltips:",
-      translatedTooltips
-    );
 
     return {
       ...spec,
       layer: [
-        ...spec.layer.slice(0, 2),
+        ...spec.layer,
         {
           ...tooltipLayer,
           encoding: {
@@ -90,12 +73,12 @@ const NotificationsTypes = () => {
     } as TopLevelSpec;
   }
 
+  const translatedTooltip = useMemo(
+    () => translateTooltip(toVegaLiteSpec(topAreasSpec)),
+    []
+  );
+
   const [curOption, setCurOption] = useState<string>(options[0].tag);
-  function getLabel(tag: string) {
-    if (tag === "tutte") return null;
-    const result = options.find((f) => f.tag === tag);
-    return result ? result.label : null;
-  }
 
   const handleOptions = (id: string) => {
     setCurOption(id);
@@ -134,9 +117,9 @@ const NotificationsTypes = () => {
             </Select>
           </Stack>
 
-          <ChartServices
-            spec={translateTooltip(toVegaLiteSpec(topAreasSpec))}
-            categorySignal={getLabel(curOption)}
+          <NotificationsTypesChart
+            spec={translatedTooltip}
+            categorySignal={categoriesMap.get(curOption) ?? null}
           />
           <Typography
             sx={{

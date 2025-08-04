@@ -6,56 +6,38 @@ import { dashboardColors } from "../shared/colors";
 import { toVegaLiteSpec } from "../shared/toVegaLiteSpec";
 import CardText from "./CardText";
 import CardTitle from "./CardTitle";
-import CumulativeChart from "./CumulativeChart";
 import KpiCard from "./KpiCard";
+import NotificationsTrendChart from "./NotificationsTrendChart";
 
 type Props = {
   selYear: number | null;
 };
 
-type LabelsCumulativeDaily = "aggregate" | "monthly";
-type LabelsTotalDigitalAnalog = "total" | "digital" | "analog";
+const optionsCumulativeMonthly = ["aggregate", "monthly"] as const;
+type OptionsCumulativeMonthly = (typeof optionsCumulativeMonthly)[number];
 
-type OptionsCumulativeDaily = {
-  id: number;
-  label: LabelsCumulativeDaily;
-};
-type OptionsTotalDigitalAnalog = {
-  id: number;
-  label: LabelsTotalDigitalAnalog;
-};
-
-const optionsCumulativeDaily: OptionsCumulativeDaily[] = [
-  { id: 1, label: "aggregate" },
-  { id: 2, label: "monthly" },
-];
-
-const optionsTotalDigitalAnalog: OptionsTotalDigitalAnalog[] = [
-  { id: 1, label: "total" },
-  { id: 2, label: "digital" },
-  { id: 3, label: "analog" },
-];
+const optionsTotalDigitalAnalog = ["total", "digital", "analog"] as const;
+type OptionsTotalDigitalAnalog = (typeof optionsTotalDigitalAnalog)[number];
 
 const NotificationsTrend = ({ selYear }: Props) => {
   const { t } = useTranslation(["numeri"]);
 
-  const [curOptionCumulativeDaily, setCurOptionCumulativeDaily] = useState(
-    optionsCumulativeDaily[0].id
-  );
+  const [curOptionCumulativeMonthly, setCurOptionCumulativeMonthly] =
+    useState<OptionsCumulativeMonthly>(optionsCumulativeMonthly[0]);
+
   const [curOptionTotalDigitalAnalog, setCurOptionTotalDigitalAnalog] =
-    useState(optionsTotalDigitalAnalog[0].id);
+    useState<OptionsTotalDigitalAnalog>(optionsTotalDigitalAnalog[0]);
 
-  const handleOptionCumulativeDaily = (id: number) => {
-    setCurOptionCumulativeDaily(id);
+  const handleOptionCumulativeMonthly = (option: OptionsCumulativeMonthly) => {
+    setCurOptionCumulativeMonthly(option);
   };
 
-  const handleOptionsTotalDigitalAnalog = (id: number) => {
-    setCurOptionTotalDigitalAnalog(id);
+  const handleOptionsTotalDigitalAnalog = (
+    option: OptionsTotalDigitalAnalog
+  ) => {
+    setCurOptionTotalDigitalAnalog(option);
   };
-  const getLabel = (id: number) => {
-    const result = optionsTotalDigitalAnalog.find((f) => f.id === id);
-    return result ? result.label : "total";
-  };
+
   return (
     <KpiCard>
       <Stack direction="column" spacing={2}>
@@ -76,7 +58,7 @@ const NotificationsTrend = ({ selYear }: Props) => {
             </CardText>
 
             <Select
-              value={curOptionCumulativeDaily}
+              value={curOptionCumulativeMonthly}
               size="small"
               sx={{
                 fontSize: 14,
@@ -85,18 +67,18 @@ const NotificationsTrend = ({ selYear }: Props) => {
                 },
               }}
               onChange={(e: any) =>
-                handleOptionCumulativeDaily(+e.target.value)
+                handleOptionCumulativeMonthly(e.target.value)
               }
             >
-              {optionsCumulativeDaily.map((option) => (
+              {optionsCumulativeMonthly.map((option) => (
                 <MenuItem
-                  key={option.id}
-                  value={option.id}
+                  key={option}
+                  value={option}
                   sx={{
                     "&.Mui-selected": { color: dashboardColors.get("blue-io") },
                   }}
                 >
-                  {t(`sent_notifications.trend.${option.label}`, {
+                  {t(`sent_notifications.trend.${option}`, {
                     ns: "numeri",
                   })}
                 </MenuItem>
@@ -118,18 +100,18 @@ const NotificationsTrend = ({ selYear }: Props) => {
               }}
               value={curOptionTotalDigitalAnalog}
               onChange={(e: any) =>
-                handleOptionsTotalDigitalAnalog(+e.target.value)
+                handleOptionsTotalDigitalAnalog(e.target.value)
               }
             >
               {optionsTotalDigitalAnalog.map((option) => (
                 <MenuItem
-                  key={option.id}
-                  value={option.id}
+                  key={option}
+                  value={option}
                   sx={{
                     "&.Mui-selected": { color: dashboardColors.get("blue-io") },
                   }}
                 >
-                  {t(`sent_notifications.${option.label}.name`, {
+                  {t(`sent_notifications.${option}.name`, {
                     ns: "numeri",
                   })}
                 </MenuItem>
@@ -139,14 +121,16 @@ const NotificationsTrend = ({ selYear }: Props) => {
         </Stack>
 
         <Box sx={{ height: "22rem" }}>
-          <CumulativeChart
+          <NotificationsTrendChart
             spec={toVegaLiteSpec(downloadSpec)}
-            cumulativeSignal={curOptionCumulativeDaily === 1 ? true : false}
-            filterSignal={getLabel(curOptionTotalDigitalAnalog)}
+            cumulativeSignal={
+              curOptionCumulativeMonthly === "aggregate" ? true : false
+            }
+            filterSignal={curOptionTotalDigitalAnalog}
             yearSignal={selYear}
           />
         </Box>
-        {curOptionCumulativeDaily === 1 && (
+        {curOptionCumulativeMonthly === "aggregate" && (
           <Typography
             sx={{
               color: dashboardColors.get("grey-650"),

@@ -9,7 +9,7 @@ type Props = {
   categorySignal: string | null;
 };
 
-const ChartServices = ({ spec, categorySignal }: Props) => {
+const NotificationsTypesChart = ({ spec, categorySignal }: Props) => {
   const [chart, setChart] = useState<Result | null>(null);
   const chartContent = useRef<HTMLDivElement>(null);
 
@@ -32,4 +32,4 @@ const ChartServices = ({ spec, categorySignal }: Props) => {
   );
 };
 
-export default ChartServices;
+export default NotificationsTypesChart;

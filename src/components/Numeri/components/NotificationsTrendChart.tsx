@@ -11,7 +11,7 @@ type Props = {
   filterSignal: string;
   yearSignal: number | null;
 };
-const CumulativeChart = ({
+const NotificationsTrendChart = ({
   spec,
   cumulativeSignal,
   filterSignal,
@@ -122,4 +122,4 @@ const CumulativeChart = ({
     ></Box>
   );
 };
-export default CumulativeChart;
+export default NotificationsTrendChart;

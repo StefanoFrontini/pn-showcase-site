@@ -7,7 +7,7 @@
   "params": [{ "name": "category", "value": null }],
   "transform": [
     {
-      "filter": "(!category || category === 'tutte') ? datum.categoria_ente === null : datum.categoria_ente === category"
+      "filter": "datum.categoria_ente === category"
     },
     {
       "window": [{ "op": "rank", "as": "rank" }],
