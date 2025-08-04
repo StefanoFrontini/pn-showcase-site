@@ -8,17 +8,11 @@ import italiaTheme from "../assets/data/italia-theme.json";
 
 import { cacheLoader } from "./vega-cache-loader";
 
-// Set default locale
-// formatLocale({ ...itLocale, nan: "–" });
-// timeFormatLocale(itTimeLocale);
-
 // Add custom expressions
 // REF: https://github.com/vega/vega/issues/3207
 expressionFunction("entries", Object.entries);
 
 const chartConfig: EmbedOptions = {
-  // timeFormatLocale: itTimeLocale,
-  // formatLocale: { ...itLocale, nan: "–" },
   actions: false,
   config: {
     ...italiaTheme,

@@ -23,12 +23,10 @@ const CumulativeChart = ({
   const { t } = useTranslation(["numeri"]);
 
   function translateTooltip(spec: TopLevelSpec) {
-    // Type guard to check if this is a layer spec
     if (!("layer" in spec) || !Array.isArray(spec.layer)) {
       return spec;
     }
 
-    // Safely check all required properties exist
     if (!spec.layer[0]?.encoding?.tooltip) {
       return spec;
     }
@@ -38,7 +36,6 @@ const CumulativeChart = ({
       return spec;
     }
 
-    // Proceed with translation if all checks pass
     const barChartTooltip = [
       { ...tooltips[0], title: t("sent_notifications.trend.tooltip.month") },
       {
@@ -48,7 +45,6 @@ const CumulativeChart = ({
       { ...tooltips[2], title: t("sent_notifications.trend.tooltip.monthly") },
     ];
 
-    // Check if layer 1 exists and has tooltips
     let lineChartTooltip;
     if (
       spec.layer[1]?.encoding?.tooltip &&

@@ -1,7 +1,6 @@
 import type { GetStaticPaths, InferGetStaticPropsType } from "next";
 
-import InfoIcon from "@mui/icons-material/Info";
-import { Alert, Box, Button, Stack, Typography } from "@mui/material";
+import { Box, Stack } from "@mui/material";
 import { langCodes } from "@utils/constants";
 import Script from "next/script";
 import { useState } from "react";
@@ -9,10 +8,9 @@ import Icons from "src/components/Numeri/components/Icons";
 import KpiCard from "src/components/Numeri/components/KpiCard";
 import KpiSignal from "src/components/Numeri/components/KpiSignal";
 import SectionLayout from "src/components/Numeri/components/SectionLayout";
-import { dashboardColors } from "src/components/Numeri/shared/colors";
 import { toVegaLiteSpec } from "src/components/Numeri/shared/toVegaLiteSpec";
 import { getI18n } from "../../api/i18n";
-import DashboardIntro from "../../components/Numeri/components/DashboardIntro";
+import LastUpdate from "../../components/Numeri/components/LastUpdate";
 import NotificationsTrend from "../../components/Numeri/components/NotificationsTrend";
 import { curYear, firstYear } from "../../components/Numeri/shared/constants";
 // import Tabs from "../../components/Tabs";
@@ -37,6 +35,10 @@ import entitiesActiveSpec from "../../components/Numeri/assets/data/entities-act
 import municipalitiesActivePercSpec from "../../components/Numeri/assets/data/municipalities-active-perc.vl.json";
 import pieChartDigitalSpec from "../../components/Numeri/assets/data/pie-chart-digital.vl.json";
 
+import AlertWrapper from "src/components/Numeri/components/AlertWrapper";
+import FormatEyelet from "src/components/Numeri/components/FormatEyelet";
+import FormatKpi from "src/components/Numeri/components/FormatKpi";
+import FormatTitle from "src/components/Numeri/components/FormatTitle";
 import { formatLocale, timeFormatLocale } from "vega";
 
 type Tabs = {
@@ -88,7 +90,7 @@ const SendInNumbers = ({
 
   const [selYear, setSelYear] = useState<number | null>(null);
 
-  formatLocale(vegaLocale.formatLocale ?? {});
+  formatLocale({ ...vegaLocale.formatLocale, nan: "–" });
   timeFormatLocale(vegaLocale.timeFormatLocale ?? {});
 
   const handleTabChange = (tab: number) => {
@@ -131,62 +133,14 @@ const SendInNumbers = ({
             alignItems={"center"}
           >
             <Stack direction="column" spacing={2}>
-              <Typography
-                sx={{
-                  textTransform: "uppercase",
-                  fontWeight: 700,
-                  color: dashboardColors.get("secondary"),
-                  fontSize: "0.875rem",
-                  letterSpacing: 1,
-                }}
-              >
-                {t("hero.eyelet")}
-              </Typography>
-
-              <Typography
-                variant="h1"
-                sx={{
-                  color: dashboardColors.get("primary"),
-                }}
-              >
-                {t("hero.title")}
-              </Typography>
-              <DashboardIntro />
+              <FormatEyelet>{t("hero.eyelet")}</FormatEyelet>
+              <FormatTitle>{t("hero.title")}</FormatTitle>
+              <LastUpdate>{t("hero.last_update", { ns: "numeri" })}</LastUpdate>
             </Stack>
             <Box flex={"0 0 32%"}>
-              <Alert
-                iconMapping={{
-                  info: (
-                    <InfoIcon
-                      sx={{
-                        color: dashboardColors.get("icon"),
-                        backgroundColor: dashboardColors.get("alert"),
-                        borderRadius: "50%",
-                      }}
-                    />
-                  ),
-                }}
-                action={
-                  <Button
-                    sx={{
-                      color: dashboardColors.get("icon"),
-                      whiteSpace: "nowrap",
-                    }}
-                    href="/"
-                    size="small"
-                  >
-                    {t("hero.website")}
-                  </Button>
-                }
-                severity="info"
-                variant="standard"
-                sx={{
-                  backgroundColor: dashboardColors.get("alert"),
-                  border: `1px solid ${dashboardColors.get("alert-border")}`,
-                }}
-              >
+              <AlertWrapper buttonText={t("hero.website")}>
                 {t("hero.alert")}
-              </Alert>
+              </AlertWrapper>
             </Box>
           </Stack>
         </Box>
@@ -207,19 +161,12 @@ const SendInNumbers = ({
                 <KpiCard>
                   <Stack direction={"column"} spacing={2}>
                     <Icons.ForwardToInboxIcon />
-                    <Typography
-                      sx={{
-                        color: dashboardColors.get("blue-io"),
-                        fontSize: "2rem",
-                        fontWeight: 700,
-                        lineHeight: "2.625rem",
-                      }}
-                    >
+                    <FormatKpi>
                       <KpiSignal
                         spec={toVegaLiteSpec(notificationsTotalSpec)}
                         yearSignal={selYear}
                       />
-                    </Typography>
+                    </FormatKpi>
                     <CardTitle>{t("sent_notifications.total.title")}</CardTitle>
                     <CardText>
                       {t("sent_notifications.total.description")}
@@ -259,20 +206,12 @@ const SendInNumbers = ({
                               fill="url(#pattern_2)"
                             />
                           </svg>
-
-                          <Typography
-                            sx={{
-                              color: dashboardColors.get("blue-io"),
-                              fontSize: "2rem",
-                              fontWeight: 700,
-                              lineHeight: "2.625rem",
-                            }}
-                          >
+                          <FormatKpi>
                             <KpiSignal
                               spec={toVegaLiteSpec(notificationsDigitalSpec)}
                               yearSignal={selYear}
                             />
-                          </Typography>
+                          </FormatKpi>
                         </Stack>
                         <CardTitle>
                           {t("sent_notifications.digital.title")}
@@ -301,20 +240,12 @@ const SendInNumbers = ({
                               fill="url(#pattern_1)"
                             />
                           </svg>
-
-                          <Typography
-                            sx={{
-                              color: dashboardColors.get("blue-io"),
-                              fontSize: "2rem",
-                              fontWeight: 700,
-                              lineHeight: "2.625rem",
-                            }}
-                          >
+                          <FormatKpi>
                             <KpiSignal
                               spec={toVegaLiteSpec(notificationsAnalogSpec)}
                               yearSignal={selYear}
                             />
-                          </Typography>
+                          </FormatKpi>
                         </Stack>
                         <CardTitle>
                           {t("sent_notifications.analog.title")}
@@ -358,16 +289,9 @@ const SendInNumbers = ({
                     <CardText>
                       {t("entities.active.total.description")}
                     </CardText>
-                    <Typography
-                      sx={{
-                        color: dashboardColors.get("blue-io"),
-                        fontSize: "2rem",
-                        fontWeight: 700,
-                        lineHeight: "2.625rem",
-                      }}
-                    >
+                    <FormatKpi>
                       <KpiWrapper spec={toVegaLiteSpec(entitiesActiveSpec)} />
-                    </Typography>
+                    </FormatKpi>
                   </Stack>
                 </KpiCard>
                 <KpiCard>
@@ -376,20 +300,13 @@ const SendInNumbers = ({
                     <CardTitle>
                       {t("entities.active.municipalities.title")}
                     </CardTitle>
-                    <Typography
-                      sx={{
-                        color: dashboardColors.get("blue-io"),
-                        fontSize: "2rem",
-                        fontWeight: 700,
-                        lineHeight: "2.625rem",
-                      }}
-                    >
+                    <FormatKpi>
                       <SquareBracketWrapper>
                         <KpiWrapper
                           spec={toVegaLiteSpec(municipalitiesActivePercSpec)}
                         />
                       </SquareBracketWrapper>
-                    </Typography>
+                    </FormatKpi>
                   </Stack>
                 </KpiCard>
               </Stack>
