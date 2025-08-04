@@ -1,10 +1,10 @@
-import type { GetStaticPaths, NextPage } from "next";
+import type { GetStaticPaths, InferGetStaticPropsType } from "next";
 
 import InfoIcon from "@mui/icons-material/Info";
 import { Alert, Box, Button, Stack, Typography } from "@mui/material";
 import { langCodes } from "@utils/constants";
 import Script from "next/script";
-import { useContext, useState } from "react";
+import { useState } from "react";
 import Icons from "src/components/Numeri/components/Icons";
 import KpiCard from "src/components/Numeri/components/KpiCard";
 import KpiSignal from "src/components/Numeri/components/KpiSignal";
@@ -37,7 +37,6 @@ import entitiesActiveSpec from "../../components/Numeri/assets/data/entities-act
 import municipalitiesActivePercSpec from "../../components/Numeri/assets/data/municipalities-active-perc.vl.json";
 import pieChartDigitalSpec from "../../components/Numeri/assets/data/pie-chart-digital.vl.json";
 
-import LangContext from "src/context/lang-context";
 import { formatLocale, timeFormatLocale } from "vega";
 
 type Tabs = {
@@ -60,16 +59,6 @@ export async function getStaticProps({
   params: { lang: LangCode };
 }) {
   const translations = getI18n(params.lang, ["common", "numeri"]);
-  // const vegaLocale = (
-  //   await import(
-  //     `src/components/Numeri/shared/locale/${params.lang}/locale.json`
-  //   )
-  // ).default;
-  // const vegaTimeLocale = (
-  //   await import(
-  //     `src/components/Numeri/shared/locale/${params.lang}/time-locale.json`
-  //   )
-  // ).default;
   const vegaFormatLocale = require(`src/components/Numeri/shared/locale/${params.lang}/locale.json`);
   const vegaTimeFormatLocale = require(`src/components/Numeri/shared/locale/${params.lang}/time-locale.json`);
 
@@ -92,10 +81,10 @@ const years = Array.from({ length: numYear }, (_, i) => curYear - i).map(
 
 const tabs: Tabs[] = [{ id: null, label: "Totale" }, ...years].reverse();
 
-const SendInNumbers: NextPage = () => {
+const SendInNumbers = ({
+  vegaLocale,
+}: InferGetStaticPropsType<typeof getStaticProps>) => {
   const { t } = useTranslation(["numeri"]);
-
-  const { vegaLocale } = useContext(LangContext);
 
   const [selYear, setSelYear] = useState<number | null>(null);
 

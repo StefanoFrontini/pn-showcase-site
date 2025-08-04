@@ -10,8 +10,7 @@ import { LangProvider } from "../context/lang-context";
 import "../styles/default.css";
 
 function MyApp({ Component, pageProps }: AppProps) {
-  const translationLoading =
-    !pageProps.lang || !pageProps.translations || !pageProps.vegaLocale;
+  const translationLoading = !pageProps.lang || !pageProps.translations;
 
   return (
     <ConfigProvider>
@@ -19,7 +18,6 @@ function MyApp({ Component, pageProps }: AppProps) {
         <LangProvider
           lang={pageProps.lang}
           translations={pageProps.translations}
-          vegaLocale={pageProps.vegaLocale}
         >
           {translationLoading && <Loading />}
 

@@ -8,39 +8,30 @@ import React, {
   useMemo,
   useState,
 } from "react";
-import chartConfig from "src/components/Numeri/shared/chart-config";
-import { VegaLocale } from "src/components/Numeri/shared/locale/vegaLocaleType";
 import { I18n, LangCode } from "../model";
 
 interface ILangContext {
   lang: LangCode;
   changeLanguage: (lang: LangCode) => void;
   translations: I18n;
-  vegaLocale: VegaLocale;
 }
 
 const LangContext = createContext<ILangContext>({
   lang: DEFAULT_LANG,
   changeLanguage: (lang: LangCode) => {},
   translations: {},
-  vegaLocale: {
-    formatLocale: chartConfig.formatLocale,
-    timeFormatLocale: chartConfig.timeFormatLocale,
-  },
 });
 
 interface Props {
   children: ReactNode;
   lang: LangCode;
   translations: I18n;
-  vegaLocale: VegaLocale;
 }
 
 export const LangProvider: React.FC<Props> = ({
   children,
   lang = DEFAULT_LANG,
   translations,
-  vegaLocale,
 }) => {
   const [selectedLang, setSelectedLang] = useState<LangCode>(
     langCodes.find((l) => l === lang) ?? DEFAULT_LANG
@@ -82,7 +73,6 @@ export const LangProvider: React.FC<Props> = ({
       lang: selectedLang,
       changeLanguage: changeLanguageHandler,
       translations,
-      vegaLocale,
     }),
     [selectedLang, changeLanguageHandler, translations]
   );
