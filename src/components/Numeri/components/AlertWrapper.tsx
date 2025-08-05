@@ -1,8 +1,7 @@
 import { Alert } from "@mui/material";
+import InfoIcon from "@mui/icons-material/Info";
 import { dashboardColors } from "../shared/colors";
 import AlertButton from "./AlertButton";
-
-import InfoIcon from "@mui/icons-material/Info";
 
 export default function AlertWrapper({
   children,

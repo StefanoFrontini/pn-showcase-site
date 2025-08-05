@@ -1,6 +1,6 @@
 import { Breakpoint, useTheme } from "@mui/material";
 import useMediaQuery from "@mui/material/useMediaQuery";
-import { useRef, useState } from "react";
+import { useCallback, useRef, useState } from "react";
 
 export const useTabBehavior = (
   initialTab = 0,
@@ -13,23 +13,26 @@ export const useTabBehavior = (
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down(breakpoint));
 
-  const handleChangeTab = (newValue: number) => {
-    setCurrentTab(newValue);
-    setDropdownOpen(false);
-    onTabChange?.(newValue);
-    return newValue;
-  };
+  const handleChangeTab = useCallback(
+    (newValue: number) => {
+      setCurrentTab(newValue);
+      setDropdownOpen(false);
+      onTabChange?.(newValue);
+      return newValue;
+    },
+    [onTabChange]
+  );
 
-  const handleToggleDropdown = () => {
+  const handleToggleDropdown = useCallback(() => {
     setDropdownOpen((prev) => !prev);
-  };
+  }, []);
 
-  const handleCloseDropdown = (event: Event) => {
+  const handleCloseDropdown = useCallback((event: Event) => {
     if (anchorRef.current?.contains(event.target as HTMLElement)) {
       return;
     }
     setDropdownOpen(false);
-  };
+  }, []);
 
   return {
     currentTab,

@@ -1,28 +1,30 @@
 import type { GetStaticPaths, InferGetStaticPropsType } from "next";
 
 import { Box, Stack } from "@mui/material";
-import { langCodes } from "@utils/constants";
 import Script from "next/script";
 import { useState } from "react";
-import Icons from "src/components/Numeri/components/Icons";
-import KpiCard from "src/components/Numeri/components/KpiCard";
-import KpiSignal from "src/components/Numeri/components/KpiSignal";
-import SectionLayout from "src/components/Numeri/components/SectionLayout";
-import TabsNumeri from "src/components/Numeri/components/TabsNumeri";
-import { toVegaLiteSpec } from "src/components/Numeri/shared/toVegaLiteSpec";
+import Head from "next/head";
+import { formatLocale, timeFormatLocale } from "vega";
 import { getI18n } from "../../api/i18n";
 import LastUpdate from "../../components/Numeri/components/LastUpdate";
 import NotificationsTrend from "../../components/Numeri/components/NotificationsTrend";
 import { curYear, firstYear } from "../../components/Numeri/shared/constants";
 import { useTranslation } from "../../hook/useTranslation";
 import { LangCode } from "../../model";
-
 import notificationsAnalogSpec from "../../components/Numeri/assets/data/notifications-analog.vl.json";
 import notificationsDigitalSpec from "../../components/Numeri/assets/data/notifications-digital.vl.json";
 import notificationsTotalSpec from "../../components/Numeri/assets/data/notifications-total.vl.json";
-import PieChart from "../../components/Numeri/components/PieChart";
+import entitiesActiveSpec from "../../components/Numeri/assets/data/entities-active.vl.json";
+import municipalitiesActivePercSpec from "../../components/Numeri/assets/data/municipalities-active-perc.vl.json";
+import pieChartDigitalSpec from "../../components/Numeri/assets/data/pie-chart-digital.vl.json";
+import { langCodes } from "@utils/constants";
+import Icons from "src/components/Numeri/components/Icons";
+import KpiCard from "src/components/Numeri/components/KpiCard";
+import KpiSignal from "src/components/Numeri/components/KpiSignal";
+import SectionLayout from "src/components/Numeri/components/SectionLayout";
+import TabsNumeri from "src/components/Numeri/components/TabsNumeri";
+import { toVegaLiteSpec } from "src/components/Numeri/shared/toVegaLiteSpec";
 
-import Head from "next/head";
 import CardText from "src/components/Numeri/components/CardText";
 import CardTitle from "src/components/Numeri/components/CardTitle";
 import KpiWrapper from "src/components/Numeri/components/KpiWrapper";
@@ -30,29 +32,25 @@ import MapChart from "src/components/Numeri/components/MapChart";
 import NotificationsTypes from "src/components/Numeri/components/NotificationsTypes";
 import SquareBracketWrapper from "src/components/Numeri/components/SquareBracketWrapper";
 import SvgDefs from "src/components/Numeri/components/SvgDefs";
-import entitiesActiveSpec from "../../components/Numeri/assets/data/entities-active.vl.json";
-import municipalitiesActivePercSpec from "../../components/Numeri/assets/data/municipalities-active-perc.vl.json";
-import pieChartDigitalSpec from "../../components/Numeri/assets/data/pie-chart-digital.vl.json";
 
 import AlertWrapper from "src/components/Numeri/components/AlertWrapper";
 import FormatEyelet from "src/components/Numeri/components/FormatEyelet";
 import FormatKpi from "src/components/Numeri/components/FormatKpi";
 import FormatTitle from "src/components/Numeri/components/FormatTitle";
-import { formatLocale, timeFormatLocale } from "vega";
+import PieChartWrapper from "src/components/Numeri/components/PieChartWrapper";
+import { getVegaLocale } from "src/components/Numeri/shared/getVegaLocale";
 
 type Tabs = {
   id: number | null;
   label: string;
 };
 
-export const getStaticPaths: GetStaticPaths = async () => {
-  return {
-    paths: langCodes.map((lang) => ({
-      params: { lang },
-    })),
-    fallback: false,
-  };
-};
+export const getStaticPaths: GetStaticPaths = async () => ({
+  paths: langCodes.map((lang) => ({
+    params: { lang },
+  })),
+  fallback: false,
+});
 
 export async function getStaticProps({
   params,
@@ -60,16 +58,15 @@ export async function getStaticProps({
   params: { lang: LangCode };
 }) {
   const translations = getI18n(params.lang, ["common", "numeri"]);
-  const vegaFormatLocale = require(`src/components/Numeri/shared/locale/${params.lang}/locale.json`);
-  const vegaTimeFormatLocale = require(`src/components/Numeri/shared/locale/${params.lang}/time-locale.json`);
+  const vegaLocale = getVegaLocale(params.lang);
 
   return {
     props: {
       translations,
       lang: params.lang,
       vegaLocale: {
-        formatLocale: vegaFormatLocale,
-        timeFormatLocale: vegaTimeFormatLocale,
+        formatLocale: vegaLocale.formatLocale,
+        timeFormatLocale: vegaLocale.timeFormatLocale,
       },
     },
   };
@@ -80,7 +77,7 @@ const years = Array.from({ length: numYear }, (_, i) => curYear - i).map(
   (y) => ({ id: y, label: String(y) })
 );
 
-const tabs: Tabs[] = [{ id: null, label: "Totale" }, ...years].reverse();
+const tabs: Array<Tabs> = [{ id: null, label: "Totale" }, ...years].reverse();
 
 const SendInNumbers = ({
   vegaLocale,
@@ -261,7 +258,7 @@ const SendInNumbers = ({
                       justifyContent={"center"}
                       alignItems={"center"}
                     >
-                      <PieChart
+                      <PieChartWrapper
                         spec={toVegaLiteSpec(pieChartDigitalSpec)}
                         yearSignal={selYear}
                       />

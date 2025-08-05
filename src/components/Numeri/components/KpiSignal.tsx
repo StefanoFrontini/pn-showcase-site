@@ -29,9 +29,13 @@ const KpiSignal = ({ spec, yearSignal }: Props) => {
 
   useEffect(() => {
     const getText = (): string => {
-      if (scenegraph === null) return "";
+      if (scenegraph === null) {
+        return "";
+      }
       const scene = searchTree(scenegraph.root, "role", "mark");
-      if (scene === null) return "";
+      if (scene === null) {
+        return "";
+      }
       const marks = scene.items;
       return isSceneText(marks[0]) ? marks[0].text : "";
     };
@@ -47,17 +51,21 @@ const KpiSignal = ({ spec, yearSignal }: Props) => {
       loader: cacheLoader,
     })
       .runAsync()
-      .then((viewRes) => setView(viewRes));
+      .then((viewRes) => setView(viewRes))
+      .catch(console.error);
   }, [spec]);
 
   useEffect(() => {
-    if (view === null) return;
+    if (view === null) {
+      return;
+    }
     view
       .signal("year", yearSignal)
       .runAsync()
       .then((viewP) =>
         setScenegraph({ ...viewP.scenegraph() } as unknown as VegaSceneRoot)
-      ); // Force text
+      )
+      .catch(console.error); // Force text
   }, [view, yearSignal]);
 
   return <>{text}</>;

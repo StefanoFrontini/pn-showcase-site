@@ -1,20 +1,33 @@
 import { Box } from "@mui/material";
-import { useEffect, useMemo, useRef } from "react";
-import { useTranslation } from "src/hook/useTranslation";
+import { useCallback, useEffect, useRef } from "react";
 import embed from "vega-embed";
 import { TopLevelSpec } from "vega-lite";
 import chartConfig from "../shared/chart-config";
 
 import mapJsonSpec from "../assets/data/italy-regions-circles.vl.json";
 import { toVegaLiteSpec } from "../shared/toVegaLiteSpec";
+import { useTranslation } from "src/hook/useTranslation";
 
 const spec = toVegaLiteSpec(mapJsonSpec);
 
 const MapChart = () => {
   const chartContent = useRef<HTMLDivElement>(null);
   const { t } = useTranslation(["numeri"]);
+  const translationRef = useRef({
+    region: t("entities.active.tooltip.region"),
+    municipalities: t("entities.active.tooltip.municipalities"),
+    percentage: t("entities.active.tooltip.percentage"),
+  });
 
-  function translateMapTooltip(spec: TopLevelSpec) {
+  useEffect(() => {
+    translationRef.current = {
+      region: t("entities.active.tooltip.region"),
+      municipalities: t("entities.active.tooltip.municipalities"),
+      percentage: t("entities.active.tooltip.percentage"),
+    };
+  }, [t]);
+
+  const translateMapTooltip = useCallback((spec: TopLevelSpec) => {
     if (
       !("layer" in spec) ||
       !Array.isArray(spec.layer) ||
@@ -35,16 +48,16 @@ const MapChart = () => {
 
     const translatedTooltips = tooltips.map((tooltip) => {
       if (tooltip.field === "regione") {
-        return { ...tooltip, title: t("entities.active.tooltip.region") };
+        return { ...tooltip, title: translationRef.current.region };
       }
       if (tooltip.field === "num_comuni_attivi") {
         return {
           ...tooltip,
-          title: t("entities.active.tooltip.municipalities"),
+          title: translationRef.current.municipalities,
         };
       }
       if (tooltip.field === "perc_comuni_attivi") {
-        return { ...tooltip, title: t("entities.active.tooltip.percentage") };
+        return { ...tooltip, title: translationRef.current.percentage };
       }
       return tooltip;
     });
@@ -62,18 +75,24 @@ const MapChart = () => {
         },
       ],
     } as TopLevelSpec;
-  }
-  const translatedTooltip = useMemo(() => translateMapTooltip(spec), []);
+  }, []);
 
   useEffect(() => {
-    if (!chartContent.current) return;
+    if (!chartContent.current) {
+      return;
+    }
     const options = {
       ...chartConfig,
     };
-    embed(chartContent.current, translatedTooltip, options).then((chart) => {
-      chart.view.resize().runAsync();
-    });
-  }, [t]);
+    embed(chartContent.current, translateMapTooltip(spec), options)
+      .then((chart) => {
+        chart.view
+          .resize()
+          .runAsync()
+          .catch((err) => console.error(err));
+      })
+      .catch((err) => console.error(err));
+  }, [translateMapTooltip]);
 
   return (
     <Box

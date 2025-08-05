@@ -19,12 +19,16 @@ const KpiWrapper = ({ spec }: Props) => {
   const [text, setText] = useState("#");
 
   useEffect(() => {
-    getMarks(spec).then((marks) => {
-      if (!marks[0]) return;
-      if (isSceneText(marks[0])) {
-        setText(marks[0].text);
-      }
-    });
+    getMarks(spec)
+      .then((marks) => {
+        if (!marks[0]) {
+          return;
+        }
+        if (isSceneText(marks[0])) {
+          setText(marks[0].text);
+        }
+      })
+      .catch(console.error);
   });
 
   return <>{text}</>;

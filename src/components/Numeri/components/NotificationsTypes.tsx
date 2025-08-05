@@ -1,13 +1,13 @@
 import { Box, MenuItem, Select, Stack, Typography } from "@mui/material";
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import { TopLevelSpec } from "vega-lite";
 import { useTranslation } from "../../../hook/useTranslation";
 import { toVegaLiteSpec } from "../shared/toVegaLiteSpec";
+import topAreasSpec from "../assets/data/top-areas.vl.json";
+import { dashboardColors } from "../shared/colors";
 import CardText from "./CardText";
 import KpiCard from "./KpiCard";
 
-import topAreasSpec from "../assets/data/top-areas.vl.json";
-import { dashboardColors } from "../shared/colors";
 import NotificationsTypesChart from "./NotificationsTypesChart";
 
 const categoriesMap = new Map([
@@ -28,22 +28,30 @@ type OptionsCategories = {
   tag: string;
   label: string | null;
 };
-const options: OptionsCategories[] = Array.from(categoriesMap.entries()).map(
-  ([tag, label]) => ({ tag, label })
-);
+const options: Array<OptionsCategories> = Array.from(
+  categoriesMap.entries()
+).map(([tag, label]) => ({ tag, label }));
 
 const NotificationsTypes = () => {
   const { t } = useTranslation(["numeri"]);
 
   function translateTooltip(spec: TopLevelSpec) {
-    if (!("layer" in spec)) return spec;
-    if (!Array.isArray(spec.layer) || spec.layer.length < 3) return spec;
+    if (!("layer" in spec)) {
+      return spec;
+    }
+    if (!Array.isArray(spec.layer) || spec.layer.length < 3) {
+      return spec;
+    }
 
     const tooltipLayer = spec.layer[1];
-    if (!tooltipLayer?.encoding?.tooltip) return spec;
+    if (!tooltipLayer?.encoding?.tooltip) {
+      return spec;
+    }
 
     const tooltips = tooltipLayer.encoding.tooltip;
-    if (!Array.isArray(tooltips)) return spec;
+    if (!Array.isArray(tooltips)) {
+      return spec;
+    }
 
     const translatedTooltips = tooltips.map((tooltip) => {
       if (tooltip.field === "ambito") {
@@ -72,11 +80,6 @@ const NotificationsTypes = () => {
       ],
     } as TopLevelSpec;
   }
-
-  const translatedTooltip = useMemo(
-    () => translateTooltip(toVegaLiteSpec(topAreasSpec)),
-    []
-  );
 
   const [curOption, setCurOption] = useState<string>(options[0].tag);
 
@@ -118,7 +121,7 @@ const NotificationsTypes = () => {
           </Stack>
 
           <NotificationsTypesChart
-            spec={translatedTooltip}
+            spec={translateTooltip(toVegaLiteSpec(topAreasSpec))}
             categorySignal={categoriesMap.get(curOption) ?? null}
           />
           <Typography

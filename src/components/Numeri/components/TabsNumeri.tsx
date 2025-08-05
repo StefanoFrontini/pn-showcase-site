@@ -11,8 +11,8 @@ import {
   Paper,
   Popper,
 } from "@mui/material";
-import { useTabBehavior } from "src/hook/useTabBehavior";
 import { dashboardColors } from "../shared/colors";
+import { useTabBehavior } from "src/hook/useTabBehavior";
 
 type Props = {
   tabs: Array<string>;

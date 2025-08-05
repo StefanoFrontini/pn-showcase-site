@@ -14,13 +14,22 @@ const NotificationsTypesChart = ({ spec, categorySignal }: Props) => {
   const chartContent = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (!chartContent.current) return;
-    embed(chartContent.current, spec, chartConfig).then(setChart);
+    if (!chartContent.current) {
+      return;
+    }
+    embed(chartContent.current, spec, chartConfig)
+      .then(setChart)
+      .catch(console.error);
   }, [spec]);
 
   useEffect(() => {
-    if (chart === null) return;
-    chart.view.signal("category", categorySignal).runAsync();
+    if (chart === null) {
+      return;
+    }
+    chart.view
+      .signal("category", categorySignal)
+      .runAsync()
+      .catch(console.error);
   }, [chart, categorySignal]);
 
   return (
