@@ -8,7 +8,7 @@
     "text": {
       "field": "perc_enti_attivi",
       "type": "quantitative",
-      "format": ",d"
+      "format": ".0%"
     }
   }
 }

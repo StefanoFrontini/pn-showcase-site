@@ -16,6 +16,7 @@ import notificationsDigitalSpec from "../../components/Numeri/assets/data/notifi
 import notificationsTotalSpec from "../../components/Numeri/assets/data/notifications-total.vl.json";
 import entitiesActiveSpec from "../../components/Numeri/assets/data/entities-active.vl.json";
 import municipalitiesActivePercSpec from "../../components/Numeri/assets/data/municipalities-active-perc.vl.json";
+import entitiesActivePercSpec from "../../components/Numeri/assets/data/entities-active-perc.vl.json";
 import pieChartDigitalSpec from "../../components/Numeri/assets/data/pie-chart-digital.vl.json";
 import { langCodes } from "@utils/constants";
 import Icons from "src/components/Numeri/components/Icons";
@@ -30,7 +31,6 @@ import CardTitle from "src/components/Numeri/components/CardTitle";
 import KpiWrapper from "src/components/Numeri/components/KpiWrapper";
 import MapChart from "src/components/Numeri/components/MapChart";
 import NotificationsTypes from "src/components/Numeri/components/NotificationsTypes";
-import SquareBracketWrapper from "src/components/Numeri/components/SquareBracketWrapper";
 import SvgDefs from "src/components/Numeri/components/SvgDefs";
 
 import AlertWrapper from "src/components/Numeri/components/AlertWrapper";
@@ -39,6 +39,7 @@ import FormatKpi from "src/components/Numeri/components/FormatKpi";
 import FormatTitle from "src/components/Numeri/components/FormatTitle";
 import PieChartWrapper from "src/components/Numeri/components/PieChartWrapper";
 import { getVegaLocale } from "src/components/Numeri/shared/getVegaLocale";
+import KpiEntitiesPerc from "src/components/Numeri/components/KpiEntitiesPerc";
 
 type Tabs = {
   id: number | null;
@@ -288,6 +289,11 @@ const SendInNumbers = ({
                     <FormatKpi>
                       <KpiWrapper spec={toVegaLiteSpec(entitiesActiveSpec)} />
                     </FormatKpi>
+                    <KpiEntitiesPerc
+                      spec={toVegaLiteSpec(entitiesActivePercSpec)}
+                    >
+                      rispetto all'anno precedente
+                    </KpiEntitiesPerc>
                   </Stack>
                 </KpiCard>
                 <KpiCard>
@@ -297,11 +303,9 @@ const SendInNumbers = ({
                       {t("entities.active.municipalities.title")}
                     </CardTitle>
                     <FormatKpi>
-                      <SquareBracketWrapper>
-                        <KpiWrapper
-                          spec={toVegaLiteSpec(municipalitiesActivePercSpec)}
-                        />
-                      </SquareBracketWrapper>
+                      <KpiWrapper
+                        spec={toVegaLiteSpec(municipalitiesActivePercSpec)}
+                      />
                     </FormatKpi>
                   </Stack>
                 </KpiCard>
