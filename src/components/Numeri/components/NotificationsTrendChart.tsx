@@ -18,7 +18,6 @@ const NotificationsTrendChart = ({
 }: Props) => {
   const [chart, setChart] = useState<Result | null>(null);
   const chartContent = useRef<HTMLDivElement>(null);
-  console.log("spec", spec);
 
   useEffect(() => {
     if (!chartContent.current) {
