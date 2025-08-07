@@ -78,7 +78,7 @@ const NotificationsTrend = ({ selYear }: Props) => {
           },
           {
             ...tooltips[2],
-            title: t("sent_notifications.trend.tooltip.aggregate", {
+            title: t("sent_notifications.trend.tooltip.monthly", {
               ns: "numeri",
             }),
           },

@@ -70,7 +70,7 @@
         "description_1": "Visualizza valore",
         "absolute": {
           "name": "assoluto",
-          "description": "La dimensione delle bolle indica il volume dei comuni attivi per regione"
+          "description": "La dimensione delle bolle indica il volume dei comuni attivi per regione."
         },
         "percentage": {
           "name": "percentuale",
