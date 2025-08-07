@@ -1,6 +1,6 @@
 {
-  "title": "SEND - Digital Notification Service | SEND Numbers",
-  "description": "Discover data related to sent notifications, entities using SEND, and types of service data",
+  "title": "SEND - Servizio Notifiche Digitali | SEND in numbers",
+  "description": "Learn about the data related to sent notifications, institutions that are using SEND and service types",
   "hero": {
     "eyelet": "Data and performance",
     "title": "Discover SEND numbers",
@@ -11,9 +11,9 @@
   "total": "Total",
   "sent_notifications": {
     "title": "SEND notifications sent",
-    "description": "The data refers to legally binding communications sent by participating entities.",
+    "description": "The data refers to legally binding communications sent by participating institutions.",
     "total": {
-      "name": "overall",
+      "name": "total",
       "title": "Total SEND notifications sent",
       "description": "A SEND notification is a legally binding communication officially issued by an administration. It can be delivered digitally or in analog format."
     },
@@ -25,22 +25,22 @@
     "analog": {
       "name": "analog",
       "title": "Number of analog SEND notifications",
-      "description": "SEND notifications issued in analog format due to the absence of certified digital channels for the recipient."
+      "description": "SEND notifications issued in analog format due to absence of certified digital channels for the recipient."
     },
     "pieChart": {
       "tooltip": {
-        "type": "Type of notification",
+        "type": "Notification type",
         "number": "Number of notifications"
       }
     },
     "trend": {
       "title": "SEND notifications trend",
-      "description": "Trend of the number of SEND notifications officially issued by a participating entity.",
+      "description": "Trend of the number of SEND notifications officially issued by a participating institution.",
       "description_1": "Trend",
       "description_2": "of notifications",
       "monthly": "monthly",
       "aggregate": "cumulative",
-      "total": "overall",
+      "total": "total",
       "digital": "digital",
       "analog": "analog",
       "tooltip": {
@@ -53,34 +53,44 @@
   },
 
   "entities": {
-    "title": "Entities on SEND",
-    "description": "Participating entities that have sent at least one SEND notification since the service launch.",
+    "title": "Institutions on SEND",
+    "description": "Participating institutions that have sent at least one SEND notification since the service launch.",
     "active": {
       "total": {
-        "title": "Total entities on SEND",
-        "description": "Total number of entities that have sent at least one SEND notification."
+        "title": "Total institutions on SEND",
+        "description": "Total number of institutions that have sent at least one SEND notification.",
+        "description_1": "compared to the previous year"
       },
       "municipalities": {
-        "title": "Percentage of municipalities out of total entities on SEND"
+        "title": "Percentage of municipalities out of total institutions on SEND"
       },
       "geographic_distribution": {
         "title": "Geographic distribution of municipalities on SEND",
-        "description": "The chart shows the distribution of municipalities in different regions, the size of the bubbles indicates the volume of active municipalities per region."
+        "description": "The chart shows the distribution of municipalities across different regions.",
+        "description_1": "Display value",
+        "absolute": {
+          "name": "absolute",
+          "description": "The bubble size indicates the volume of active municipalities per region"
+        },
+        "percentage": {
+          "name": "percentage",
+          "description": "The coloring shows the percentage of active municipalities in each region."
+        }
       },
       "tooltip": {
         "region": "Region",
         "municipalities": "Municipalities",
-        "percentage": "Percentage of municipalities relative to total municipalities per region"
+        "percentage": "Percentage of municipalities relative to total municipalities per region."
       }
     }
   },
 
   "notification_types": {
     "title": "Main areas of SEND notifications",
-    "description": "Categories of most sent SEND notifications.",
+    "description": "Most sent SEND notification categories.",
     "main_scopes": {
-      "title": "Filter by type of participating entity.",
-      "notes": "* different from those whose notification is excluded through SEND pursuant to art. 26, paragraph 17 D.L. 76/2020"
+      "title": "Filter by participating institution type.",
+      "notes": "* other than those whose notification is excluded via SEND pursuant to art.26, para. 17 of D.L. 76/2020"
     },
     "tooltip": {
       "category": "Area",
@@ -96,7 +106,7 @@
       "name": "Collectors and others"
     },
     "altri_enti": {
-      "name": "Other territorial entities"
+      "name": "Other territorial institutions"
     },
     "province": {
       "name": "Provinces"
@@ -105,10 +115,10 @@
       "name": "Regions"
     },
     "comunali": {
-      "name": "Municipal entities"
+      "name": "Municipal institutions"
     },
     "ordini": {
-      "name": "Professional orders, colleges and councils"
+      "name": "Orders, colleges and professional councils"
     },
     "amministrazioni": {
       "name": "Central public administrations"

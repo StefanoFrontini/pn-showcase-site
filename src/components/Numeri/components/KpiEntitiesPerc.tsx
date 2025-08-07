@@ -5,8 +5,8 @@ import {
   SceneGroup as VegaSceneGroup,
 } from "vega";
 import { TopLevelSpec } from "vega-lite";
-import { getMarks } from "../shared/chart-utils";
 import { Box, Stack, Typography } from "@mui/material";
+import { getMarks } from "../shared/chart-utils";
 import { dashboardColors } from "../shared/colors";
 
 type Props = {

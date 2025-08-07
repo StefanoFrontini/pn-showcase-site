@@ -55,12 +55,17 @@ const NotificationsTypes = () => {
 
     const translatedTooltips = tooltips.map((tooltip) => {
       if (tooltip.field === "ambito") {
-        return { ...tooltip, title: t("notification_types.tooltip.category") };
+        return {
+          ...tooltip,
+          title: t("notification_types.tooltip.category", { ns: "numeri" }),
+        };
       }
       if (tooltip.field === "num_iun") {
         return {
           ...tooltip,
-          title: t("notification_types.tooltip.notifications"),
+          title: t("notification_types.tooltip.notifications", {
+            ns: "numeri",
+          }),
         };
       }
       return tooltip;

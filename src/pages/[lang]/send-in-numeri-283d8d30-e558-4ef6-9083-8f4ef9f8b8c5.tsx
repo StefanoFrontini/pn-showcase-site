@@ -29,7 +29,6 @@ import { toVegaLiteSpec } from "src/components/Numeri/shared/toVegaLiteSpec";
 import CardText from "src/components/Numeri/components/CardText";
 import CardTitle from "src/components/Numeri/components/CardTitle";
 import KpiWrapper from "src/components/Numeri/components/KpiWrapper";
-import MapChart from "src/components/Numeri/components/MapChart";
 import NotificationsTypes from "src/components/Numeri/components/NotificationsTypes";
 import SvgDefs from "src/components/Numeri/components/SvgDefs";
 
@@ -40,6 +39,7 @@ import FormatTitle from "src/components/Numeri/components/FormatTitle";
 import PieChartWrapper from "src/components/Numeri/components/PieChartWrapper";
 import { getVegaLocale } from "src/components/Numeri/shared/getVegaLocale";
 import KpiEntitiesPerc from "src/components/Numeri/components/KpiEntitiesPerc";
+import Maps from "src/components/Numeri/components/Maps";
 
 type Tabs = {
   id: number | null;
@@ -78,8 +78,6 @@ const years = Array.from({ length: numYear }, (_, i) => curYear - i).map(
   (y) => ({ id: y, label: String(y) })
 );
 
-const tabs: Array<Tabs> = [{ id: null, label: "Totale" }, ...years].reverse();
-
 const SendInNumbers = ({
   vegaLocale,
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
@@ -96,6 +94,10 @@ const SendInNumbers = ({
     }
     setSelYear(tabs[tab].id);
   };
+  const tabs: Array<Tabs> = [
+    { id: null, label: t("total") },
+    ...years,
+  ].reverse();
 
   return (
     <>
@@ -130,12 +132,12 @@ const SendInNumbers = ({
             alignItems={"center"}
           >
             <Stack direction="column" spacing={2}>
-              <FormatEyelet>{t("hero.eyelet")}</FormatEyelet>
-              <FormatTitle>{t("hero.title")}</FormatTitle>
+              <FormatEyelet>{t("hero.eyelet", { ns: "numeri" })}</FormatEyelet>
+              <FormatTitle>{t("hero.title", { ns: "numeri" })}</FormatTitle>
               <LastUpdate>{t("hero.last_update", { ns: "numeri" })}</LastUpdate>
             </Stack>
             <Box flex={"0 0 32%"}>
-              <AlertWrapper buttonText={t("hero.website")}>
+              <AlertWrapper buttonText={t("hero.website", { ns: "numeri" })}>
                 {t("hero.alert")}
               </AlertWrapper>
             </Box>
@@ -164,9 +166,13 @@ const SendInNumbers = ({
                         yearSignal={selYear}
                       />
                     </FormatKpi>
-                    <CardTitle>{t("sent_notifications.total.title")}</CardTitle>
+                    <CardTitle>
+                      {t("sent_notifications.total.title", { ns: "numeri" })}
+                    </CardTitle>
                     <CardText>
-                      {t("sent_notifications.total.description")}
+                      {t("sent_notifications.total.description", {
+                        ns: "numeri",
+                      })}
                     </CardText>
                   </Stack>
                 </KpiCard>
@@ -211,10 +217,14 @@ const SendInNumbers = ({
                           </FormatKpi>
                         </Stack>
                         <CardTitle>
-                          {t("sent_notifications.digital.title")}
+                          {t("sent_notifications.digital.title", {
+                            ns: "numeri",
+                          })}
                         </CardTitle>
                         <CardText>
-                          {t("sent_notifications.digital.description")}
+                          {t("sent_notifications.digital.description", {
+                            ns: "numeri",
+                          })}
                         </CardText>
                       </Stack>
                       <Stack direction={"column"} spacing={1}>
@@ -248,7 +258,9 @@ const SendInNumbers = ({
                           {t("sent_notifications.analog.title")}
                         </CardTitle>
                         <CardText>
-                          {t("sent_notifications.analog.description")}
+                          {t("sent_notifications.analog.description", {
+                            ns: "numeri",
+                          })}
                         </CardText>
                       </Stack>
                     </Stack>
@@ -282,9 +294,11 @@ const SendInNumbers = ({
                 <KpiCard>
                   <Stack direction={"column"} spacing={1} width={"100%"}>
                     <Icons.AccountBalanceIcon />
-                    <CardTitle>{t("entities.active.total.title")}</CardTitle>
+                    <CardTitle>
+                      {t("entities.active.total.title", { ns: "numeri" })}
+                    </CardTitle>
                     <CardText>
-                      {t("entities.active.total.description")}
+                      {t("entities.active.total.description", { ns: "numeri" })}
                     </CardText>
                     <FormatKpi>
                       <KpiWrapper spec={toVegaLiteSpec(entitiesActiveSpec)} />
@@ -292,7 +306,9 @@ const SendInNumbers = ({
                     <KpiEntitiesPerc
                       spec={toVegaLiteSpec(entitiesActivePercSpec)}
                     >
-                      rispetto all'anno precedente
+                      {t("entities.active.total.description_1", {
+                        ns: "numeri",
+                      })}
                     </KpiEntitiesPerc>
                   </Stack>
                 </KpiCard>
@@ -300,7 +316,9 @@ const SendInNumbers = ({
                   <Stack direction={"column"} spacing={1} width={"100%"}>
                     <Icons.ThingsToDoIcon />
                     <CardTitle>
-                      {t("entities.active.municipalities.title")}
+                      {t("entities.active.municipalities.title", {
+                        ns: "numeri",
+                      })}
                     </CardTitle>
                     <FormatKpi>
                       <KpiWrapper
@@ -312,22 +330,14 @@ const SendInNumbers = ({
               </Stack>
               <Box flex={"1 1 0"}>
                 <KpiCard>
-                  <Box marginBottom={1}>
-                    <CardTitle>
-                      {t("entities.active.geographic_distribution.title")}
-                    </CardTitle>
-                  </Box>
-                  <CardText>
-                    {t("entities.active.geographic_distribution.description")}
-                  </CardText>
-                  <MapChart />
+                  <Maps />
                 </KpiCard>
               </Box>
             </Stack>
           </SectionLayout>
           <SectionLayout
-            title={t("notification_types.title")}
-            text={t("notification_types.description")}
+            title={t("notification_types.title", { ns: "numeri" })}
+            text={t("notification_types.description", { ns: "numeri" })}
           >
             <NotificationsTypes />
           </SectionLayout>

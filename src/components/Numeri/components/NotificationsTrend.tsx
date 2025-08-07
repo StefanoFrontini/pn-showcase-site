@@ -1,4 +1,4 @@
-import { Box, MenuItem, Select, Stack, Typography } from "@mui/material";
+import { Box, Card, MenuItem, Select, Stack, Typography } from "@mui/material";
 import { useState } from "react";
 import { TopLevelSpec } from "vega-lite";
 import { useTranslation } from "../../../hook/useTranslation";
@@ -66,15 +66,21 @@ const NotificationsTrend = ({ selYear }: Props) => {
         const translatedTooltip = [
           {
             ...tooltips[0],
-            title: t("sent_notifications.trend.tooltip.month"),
+            title: t("sent_notifications.trend.tooltip.month", {
+              ns: "numeri",
+            }),
           },
           {
             ...tooltips[1],
-            title: t("sent_notifications.trend.tooltip.aggregate"),
+            title: t("sent_notifications.trend.tooltip.aggregate", {
+              ns: "numeri",
+            }),
           },
           {
             ...tooltips[2],
-            title: t("sent_notifications.trend.tooltip.monthly"),
+            title: t("sent_notifications.trend.tooltip.aggregate", {
+              ns: "numeri",
+            }),
           },
         ];
 
@@ -137,10 +143,9 @@ const NotificationsTrend = ({ selYear }: Props) => {
             </Select>
           </Stack>
           <Stack direction="row" spacing={1} alignItems={"center"}>
-            <Typography variant="caption" color="textSecondary">
-              {" "}
+            <CardText>
               {t("sent_notifications.trend.description_2", { ns: "numeri" })}
-            </Typography>
+            </CardText>
             <Select
               size={"small"}
               sx={{

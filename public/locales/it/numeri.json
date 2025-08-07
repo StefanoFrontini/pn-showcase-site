@@ -58,19 +58,29 @@
     "active": {
       "total": {
         "title": "Totale enti su SEND",
-        "description": "Numero complessivo degli enti che hanno inviato almeno una notifica SEND."
+        "description": "Numero complessivo degli enti che hanno inviato almeno una notifica SEND.",
+        "description_1": "rispetto all'anno precedente"
       },
       "municipalities": {
         "title": "Percentuale di comuni sul totale degli enti su SEND"
       },
       "geographic_distribution": {
         "title": "Distribuzione geografica dei comuni su SEND",
-        "description": "Il grafico mostra la distribuzione dei comuni nelle diverse regioni, la dimensione delle bolle indica il volume dei comuni attivi per regione."
+        "description": "Il grafico mostra la distribuzione dei comuni nelle diverse regioni.",
+        "description_1": "Visualizza valore",
+        "absolute": {
+          "name": "assoluto",
+          "description": "La dimensione delle bolle indica il volume dei comuni attivi per regione"
+        },
+        "percentage": {
+          "name": "percentuale",
+          "description": "La colorazione mostra la percentuale di comuni attivi in ciascuna regione."
+        }
       },
       "tooltip": {
         "region": "Regione",
         "municipalities": "Comuni",
-        "percentage": "Percentuale comuni rispetto al totale dei comuni per regione"
+        "percentage": "Percentuale comuni rispetto al totale dei comuni per regione."
       }
     }
   },

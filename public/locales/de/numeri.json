@@ -1,90 +1,100 @@
 {
-  "title": "SEND - Digitaler Benachrichtigungsdienst | Die Zahlen von SEND",
-  "description": "Entdecken Sie die Daten zu versendeten Benachrichtigungen, Behörden, die SEND nutzen, und Arten von Dienstleistungsdaten",
+  "title": "SEND - Servizio Notifiche Digitali | SEND in Zahlen",
+  "description": "Entdecken Sie Daten über die gesendeten Zustellungen, Körperschaften, die SEND nutzen, und Dienstarten",
   "hero": {
     "eyelet": "Daten und Leistung",
-    "title": "Entdecken Sie die Zahlen von SEND",
+    "title": "Entdecken Sie die SEND-Zahlen",
     "last_update": "Letzte Aktualisierung",
     "alert": "Die Daten sind auf dati.gov.it verfügbar",
-    "website": "Zur Website"
+    "website": "Zur Website gehen"
   },
   "total": "Gesamt",
   "sent_notifications": {
-    "title": "Versendete SEND-Benachrichtigungen",
-    "description": "Die Daten beziehen sich auf rechtsgültige Mitteilungen, die von teilnehmenden Behörden versendet wurden.",
+    "title": "Gesendete SEND-Zustellungen",
+    "description": "Die Daten beziehen sich auf rechtswirksame Mitteilungen, die von teilnehmenden Körperschaften gesendet wurden.",
     "total": {
       "name": "insgesamt",
-      "title": "Gesamtzahl versendeter SEND-Benachrichtigungen",
-      "description": "Eine SEND-Benachrichtigung ist eine rechtsgültige Mitteilung, die offiziell von einer Verwaltung ausgestellt wird. Sie kann digital oder analog zugestellt werden."
+      "title": "Gesamte gesendete SEND-Zustellungen",
+      "description": "Eine SEND-Zustellung ist eine rechtswirksame Mitteilung, die offiziell von einer Verwaltung herausgegeben wird. Sie kann digital oder analog zugestellt werden."
     },
     "digital": {
       "name": "digital",
-      "title": "Anzahl digitaler SEND-Benachrichtigungen",
-      "description": "SEND-Benachrichtigungen, die an Empfänger über zertifizierte digitale Kanäle versendet wurden."
+      "title": "Anzahl digitaler SEND-Zustellungen",
+      "description": "SEND-Zustellungen, die an Empfänger über zertifizierte digitale Kanäle zugestellt wurden."
     },
     "analog": {
       "name": "analog",
-      "title": "Anzahl analoger SEND-Benachrichtigungen",
-      "description": "SEND-Benachrichtigungen, die analog versendet wurden, da zertifizierte digitale Kanäle des Empfängers fehlen."
+      "title": "Anzahl analoger SEND-Zustellungen",
+      "description": "SEND-Zustellungen, die analog zugestellt wurden, weil zertifizierte digitale Kanäle des Empfängers fehlen."
     },
     "pieChart": {
       "tooltip": {
-        "type": "Art der Benachrichtigung",
-        "number": "Anzahl der Benachrichtigungen"
+        "type": "Zustellungstyp",
+        "number": "Anzahl Zustellungen"
       }
     },
     "trend": {
-      "title": "Entwicklung der SEND-Benachrichtigungen",
-      "description": "Entwicklung der Anzahl von SEND-Benachrichtigungen, die offiziell von einer teilnehmenden Behörde ausgestellt wurden.",
-      "description_1": "Entwicklung",
-      "description_2": "der Benachrichtigungen",
+      "title": "Verlauf der SEND-Zustellungen",
+      "description": "Verlauf der Anzahl von SEND-Zustellungen, die offiziell von einer teilnehmenden Körperschaft herausgegeben wurden.",
+      "description_1": "Verlauf",
+      "description_2": "der Zustellungen",
       "monthly": "monatlich",
-      "aggregate": "kumuliert",
+      "aggregate": "kumulativ",
       "total": "gesamt",
       "digital": "digital",
       "analog": "analog",
       "tooltip": {
         "month": "Monat",
-        "aggregate": "Kumulierte Benachrichtigungen",
-        "monthly": "Monatliche Benachrichtigungen"
+        "aggregate": "Kumulative Zustellungen",
+        "monthly": "Monatliche Zustellungen"
       },
-      "note": "Der kumulierte Wert ist die fortschreitende Summe einer Menge über die Zeit."
+      "note": "Der kumulative Wert ist die fortlaufende Summe einer Menge über die Zeit."
     }
   },
 
   "entities": {
-    "title": "Behörden auf SEND",
-    "description": "Teilnehmende Behörden, die seit dem Start des Dienstes mindestens eine SEND-Benachrichtigung versendet haben.",
+    "title": "Körperschaften auf SEND",
+    "description": "Teilnehmende Körperschaften, die seit dem Start des Dienstes mindestens eine SEND-Zustellung gesendet haben.",
     "active": {
       "total": {
-        "title": "Gesamtzahl der Behörden auf SEND",
-        "description": "Gesamtanzahl der Behörden, die mindestens eine SEND-Benachrichtigung versendet haben."
+        "title": "Gesamte Körperschaften auf SEND",
+        "description": "Gesamtzahl der Körperschaften, die mindestens eine SEND-Zustellung gesendet haben.",
+        "description_1": "im Vergleich zum Vorjahr"
       },
       "municipalities": {
-        "title": "Prozentsatz der Gemeinden an der Gesamtzahl der Behörden auf SEND"
+        "title": "Prozentsatz der Gemeinden von der Gesamtzahl der Körperschaften auf SEND"
       },
       "geographic_distribution": {
         "title": "Geografische Verteilung der Gemeinden auf SEND",
-        "description": "Das Diagramm zeigt die Verteilung der Gemeinden in den verschiedenen Regionen, die Größe der Blasen zeigt das Volumen der aktiven Gemeinden pro Region an."
+        "description": "Das Diagramm zeigt die Verteilung der Gemeinden in verschiedenen Regionen.",
+        "description_1": "Wert anzeigen",
+        "absolute": {
+          "name": "absolut",
+          "description": "Die Blasengröße zeigt das Volumen aktiver Gemeinden pro Region"
+        },
+        "percentage": {
+          "name": "prozentual",
+          "description": "Die Färbung zeigt den Prozentsatz aktiver Gemeinden in jeder Region."
+        }
       },
       "tooltip": {
         "region": "Region",
         "municipalities": "Gemeinden",
-        "percentage": "Prozentsatz der Gemeinden im Verhältnis zur Gesamtzahl der Gemeinden pro Region"
+        "percentage": "Prozentsatz der Gemeinden bezogen auf die Gesamtzahl der Gemeinden pro Region."
       }
     }
   },
 
   "notification_types": {
-    "title": "Hauptbereiche der SEND-Benachrichtigungen",
-    "description": "Kategorien der am häufigsten versendeten SEND-Benachrichtigungen.",
+    "title": "Hauptbereiche der SEND-Zustellungen",
+    "description": "Meistgesendete SEND-Zustellungskategorien.",
     "main_scopes": {
-      "title": "Nach Art der teilnehmenden Behörde filtern.",
-      "notes": "* verschieden von jenen, deren Benachrichtigung über SEND gemäß Art. 26, Abs. 17 D.L. 76/2020 ausgeschlossen ist"
+      "title": "Nach Art der teilnehmenden Körperschaft filtern.",
+      "notes": "* anders als diejenigen, deren Zustellung über SEND gemäß Art.26, Abs. 17 des GvD 76/2020 ausgeschlossen ist"
     },
     "tooltip": {
       "category": "Bereich",
-      "notifications": "Benachrichtigungen"
+      "notifications": "Zustellungen"
     },
     "tutte": {
       "name": "Alle"
@@ -96,7 +106,7 @@
       "name": "Eintreiber und andere"
     },
     "altri_enti": {
-      "name": "Andere Gebietskörperschaften"
+      "name": "Andere territoriale Körperschaften"
     },
     "province": {
       "name": "Provinzen"
@@ -105,10 +115,10 @@
       "name": "Regionen"
     },
     "comunali": {
-      "name": "Gemeindebehörden"
+      "name": "Gemeindekörperschaften"
     },
     "ordini": {
-      "name": "Berufsverbände, Kammern und Berufsräte"
+      "name": "Orden, Kollegien und Berufsräte"
     },
     "amministrazioni": {
       "name": "Zentrale öffentliche Verwaltungen"
