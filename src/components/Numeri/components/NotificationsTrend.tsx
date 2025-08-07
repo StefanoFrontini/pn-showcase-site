@@ -8,7 +8,8 @@ import { toVegaLiteSpec } from "../shared/toVegaLiteSpec";
 import CardText from "./CardText";
 import CardTitle from "./CardTitle";
 import KpiCard from "./KpiCard";
-import NotificationsTrendChart from "./NotificationsTrendChart";
+import NotificationsTrendLineChart from "./NotificationsTrendLineChart";
+import NotificationsTrendBarChart from "./NotificationsTrendBarChart";
 
 type Props = {
   selYear: number | null;
@@ -177,14 +178,17 @@ const NotificationsTrend = ({ selYear }: Props) => {
         </Stack>
 
         <Box sx={{ height: "22rem" }}>
-          <NotificationsTrendChart
-            spec={translateTooltip(toVegaLiteSpec(downloadSpec))}
-            cumulativeSignal={
-              curOptionCumulativeMonthly === "aggregate" ? true : false
-            }
-            filterSignal={curOptionTotalDigitalAnalog}
-            yearSignal={selYear}
-          />
+          {curOptionCumulativeMonthly === "aggregate" ? (
+            <NotificationsTrendLineChart
+              filterSignal={curOptionTotalDigitalAnalog}
+              yearSignal={selYear}
+            />
+          ) : (
+            <NotificationsTrendBarChart
+              filterSignal={curOptionTotalDigitalAnalog}
+              yearSignal={selYear}
+            />
+          )}
         </Box>
         {curOptionCumulativeMonthly === "aggregate" && (
           <Typography
