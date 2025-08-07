@@ -1,6 +1,6 @@
 import type { GetStaticPaths, InferGetStaticPropsType } from "next";
 
-import { Box, Stack } from "@mui/material";
+import { Box, Card, Stack } from "@mui/material";
 import Script from "next/script";
 import { useState } from "react";
 import Head from "next/head";
@@ -156,7 +156,7 @@ const SendInNumbers = ({
               direction={{ xs: "column", sm: "row" }}
               spacing={{ xs: 2, md: 6 }}
             >
-              <Box sx={{ flex: "0 0 30.602%" }}>
+              <Box sx={{ flex: "0 0 30.602%", display: "flex" }}>
                 <KpiCard>
                   <Stack direction={"column"} spacing={2}>
                     <Icons.ForwardToInboxIcon />
@@ -292,13 +292,15 @@ const SendInNumbers = ({
             >
               <Stack flex={"0 0 30.602%"} direction={"column"} spacing={6}>
                 <KpiCard>
-                  <Stack direction={"column"} spacing={1} width={"100%"}>
+                  <Stack direction={"column"} spacing={1}>
                     <Icons.AccountBalanceIcon />
                     <CardTitle>
                       {t("entities.active.total.title", { ns: "numeri" })}
                     </CardTitle>
                     <CardText>
-                      {t("entities.active.total.description", { ns: "numeri" })}
+                      {t("entities.active.total.description", {
+                        ns: "numeri",
+                      })}
                     </CardText>
                     <FormatKpi>
                       <KpiWrapper spec={toVegaLiteSpec(entitiesActiveSpec)} />
@@ -313,7 +315,8 @@ const SendInNumbers = ({
                   </Stack>
                 </KpiCard>
                 <KpiCard>
-                  <Stack direction={"column"} spacing={1} width={"100%"}>
+                  <Stack direction={"column"} spacing={1}>
+                    <CardText>&nbsp; </CardText>
                     <Icons.ThingsToDoIcon />
                     <CardTitle>
                       {t("entities.active.municipalities.title", {
@@ -325,6 +328,7 @@ const SendInNumbers = ({
                         spec={toVegaLiteSpec(municipalitiesActivePercSpec)}
                       />
                     </FormatKpi>
+                    <CardText>&nbsp; </CardText>
                   </Stack>
                 </KpiCard>
               </Stack>
