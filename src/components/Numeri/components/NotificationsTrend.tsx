@@ -1,4 +1,4 @@
-import { Box, Card, MenuItem, Select, Stack, Typography } from "@mui/material";
+import { Box, MenuItem, Select, Stack, Typography } from "@mui/material";
 import { useState } from "react";
 import { TopLevelSpec } from "vega-lite";
 import { useTranslation } from "../../../hook/useTranslation";
@@ -10,6 +10,10 @@ import CardTitle from "./CardTitle";
 import KpiCard from "./KpiCard";
 import NotificationsTrendLineChart from "./NotificationsTrendLineChart";
 import NotificationsTrendBarChart from "./NotificationsTrendBarChart";
+
+import barChartSpec from "../assets/data/bar_chart.vl.json";
+
+import lineChartSpec from "../assets/data/line_chart.vl.json";
 
 type Props = {
   selYear: number | null;
@@ -182,11 +186,13 @@ const NotificationsTrend = ({ selYear }: Props) => {
             <NotificationsTrendLineChart
               filterSignal={curOptionTotalDigitalAnalog}
               yearSignal={selYear}
+              spec={translateTooltip(toVegaLiteSpec(lineChartSpec))}
             />
           ) : (
             <NotificationsTrendBarChart
               filterSignal={curOptionTotalDigitalAnalog}
               yearSignal={selYear}
+              spec={translateTooltip(toVegaLiteSpec(barChartSpec))}
             />
           )}
         </Box>

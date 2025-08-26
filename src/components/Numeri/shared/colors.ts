@@ -13,6 +13,8 @@ const colors = [
   "success-850",
   "error-100",
   "error-850",
+  "yellow-100",
+  "yellow-850",
 ] as const;
 
 type Colors = (typeof colors)[number];
@@ -32,4 +34,6 @@ export const dashboardColors: ReadonlyMap<Colors, string> = new Map([
   ["success-850", "#224021"],
   ["error-100", "#FBE4E4"],
   ["error-850", "#772727"],
+  ["yellow-100", "#FFFBE6"],
+  ["yellow-850", "#FFB900"],
 ]);

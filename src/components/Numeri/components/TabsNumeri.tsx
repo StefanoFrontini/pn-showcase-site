@@ -48,10 +48,29 @@ const TabsNumeri = ({
       sx={{
         textAlign: "left",
         width: fullWidth ? "100%" : "auto",
+        position: "relative",
       }}
     >
+      {/* This element is invisible but is read by screen readers. It notifies the user that the data has been updated when the button is clicked */}
+      <Box
+        component="span"
+        sx={{
+          position: "absolute",
+          width: "1px",
+          height: "1px",
+          padding: 0,
+          overflow: "hidden",
+          clip: "rect(0, 0, 0, 0)",
+          whiteSpace: "nowrap",
+          border: 0,
+        }}
+        aria-live="assertive"
+        aria-atomic="true"
+      >
+        {`Periodo dati visualizzati: ${tabs[currentTab]}.`}
+      </Box>
       {(!isMobile || !breakOnMobile) && (
-        <ButtonGroup color="primary" fullWidth={fullWidth}>
+        <ButtonGroup color="primary" fullWidth={fullWidth} role="tablist">
           {tabs.map((tab, index) => (
             <Button
               sx={{
@@ -72,6 +91,8 @@ const TabsNumeri = ({
               size={buttonSize}
               value={index}
               key={tab}
+              role="tab"
+              aria-selected={currentTab === index}
             >
               {tab}
             </Button>

@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import embed, { Result } from "vega-embed";
 import { TopLevelSpec } from "vega-lite";
 import chartConfig from "../shared/chart-config";
+import { removeGraphicsSymbolRole } from "../shared/removeGraphicsSymbolRole";
 
 type Props = {
   spec: TopLevelSpec;
@@ -18,7 +19,10 @@ const NotificationsTypesChart = ({ spec, categorySignal }: Props) => {
       return;
     }
     embed(chartContent.current, spec, chartConfig)
-      .then(setChart)
+      .then((result) => {
+        setChart(result);
+        setTimeout(() => removeGraphicsSymbolRole(chartContent), 100);
+      })
       .catch(console.error);
   }, [spec]);
 
@@ -29,6 +33,9 @@ const NotificationsTypesChart = ({ spec, categorySignal }: Props) => {
     chart.view
       .signal("category", categorySignal)
       .runAsync()
+      .then(() => {
+        setTimeout(() => removeGraphicsSymbolRole(chartContent), 100);
+      })
       .catch(console.error);
   }, [chart, categorySignal]);
 

@@ -3,14 +3,19 @@ import { useEffect, useRef, useState } from "react";
 import embed, { Result } from "vega-embed";
 import { TopLevelSpec } from "vega-lite";
 import chartConfig from "../shared/chart-config";
-import barChartSpec from "../assets/data/bar_chart.vl.json";
+import { removeGraphicsSymbolRole } from "../shared/removeGraphicsSymbolRole";
 
 type Props = {
   filterSignal: string;
   yearSignal: number | null;
+  spec: TopLevelSpec;
 };
 
-const NotificationsTrendBarChart = ({ filterSignal, yearSignal }: Props) => {
+const NotificationsTrendBarChart = ({
+  filterSignal,
+  yearSignal,
+  spec,
+}: Props) => {
   const [chart, setChart] = useState<Result | null>(null);
   const chartContent = useRef<HTMLDivElement>(null);
 
@@ -18,26 +23,38 @@ const NotificationsTrendBarChart = ({ filterSignal, yearSignal }: Props) => {
     if (!chartContent.current) {
       return;
     }
-    embed(chartContent.current, barChartSpec as TopLevelSpec, chartConfig)
-      .then(setChart)
+    embed(chartContent.current, spec as TopLevelSpec, chartConfig)
+      .then((result) => {
+        setChart(result);
+        setTimeout(() => removeGraphicsSymbolRole(chartContent), 100);
+      })
       .catch(console.error);
   }, []);
 
   useEffect(() => {
-    if (chart === null) {
+    if (chart === null || !chartContent.current) {
       return;
     }
     chart.view
       .signal("notification_type", filterSignal)
       .runAsync()
+      .then(() => {
+        setTimeout(() => removeGraphicsSymbolRole(chartContent), 100);
+      })
       .catch(console.error);
   }, [chart, filterSignal]);
 
   useEffect(() => {
-    if (chart === null) {
+    if (chart === null || !chartContent.current) {
       return;
     }
-    chart.view.signal("year", yearSignal).runAsync().catch(console.error);
+    chart.view
+      .signal("year", yearSignal)
+      .runAsync()
+      .then(() => {
+        setTimeout(() => removeGraphicsSymbolRole(chartContent), 100);
+      })
+      .catch(console.error);
   }, [chart, yearSignal]);
 
   return (

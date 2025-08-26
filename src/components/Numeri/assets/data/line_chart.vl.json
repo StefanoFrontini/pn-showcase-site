@@ -80,7 +80,7 @@
             "labelFont": "Titillium Web, sans-serif",
             "labelOverlap": "parity",
             "tickDash": [4, 4],
-            "tickCount": "month"
+            "tickCount": 12
           }
         },
         "tooltip": [

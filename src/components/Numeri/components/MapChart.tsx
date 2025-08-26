@@ -3,6 +3,7 @@ import { useEffect, useRef } from "react";
 import embed from "vega-embed";
 import { TopLevelSpec } from "vega-lite";
 import chartConfig from "../shared/chart-config";
+import { removeGraphicsSymbolRole } from "../shared/removeGraphicsSymbolRole";
 
 type Props = {
   spec: TopLevelSpec;
@@ -20,7 +21,13 @@ const MapChart = ({ spec }: Props) => {
     };
     embed(chartContent.current, spec, options)
       .then((chart) => {
-        chart.view.resize().runAsync().catch(console.error);
+        chart.view
+          .resize()
+          .runAsync()
+          .then(() => {
+            setTimeout(() => removeGraphicsSymbolRole(chartContent), 100);
+          })
+          .catch(console.error);
       })
       .catch(console.error);
   }, [spec]);
