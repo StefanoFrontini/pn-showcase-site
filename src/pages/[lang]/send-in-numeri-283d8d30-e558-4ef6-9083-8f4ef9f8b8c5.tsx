@@ -1,6 +1,6 @@
 import type { GetStaticPaths, InferGetStaticPropsType } from "next";
 
-import { Box, Card, Stack } from "@mui/material";
+import { Box, Stack } from "@mui/material";
 import Script from "next/script";
 import { useState } from "react";
 import Head from "next/head";
