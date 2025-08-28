@@ -71,7 +71,7 @@
         },
         "x": {
           "field": "month",
-          "type": "temporal",
+          "type": "ordinal",
           "timeUnit": "yearmonth",
           "axis": {
             "format": "%b %Y",
@@ -79,8 +79,7 @@
             "labelFontWeight": 600,
             "labelFont": "Titillium Web, sans-serif",
             "labelOverlap": "parity",
-            "tickDash": [4, 4],
-            "tickCount": 12
+            "tickDash": [4, 4]
           }
         },
         "tooltip": [
