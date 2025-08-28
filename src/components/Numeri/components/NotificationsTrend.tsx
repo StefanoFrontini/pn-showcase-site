@@ -2,9 +2,10 @@ import { Box, MenuItem, Select, Stack, Typography } from "@mui/material";
 import { useContext, useState } from "react";
 import { TopLevelSpec } from "vega-lite";
 import { useTranslation } from "../../../hook/useTranslation";
-import downloadSpec from "../assets/data/download.vl.json";
 import { dashboardColors } from "../shared/colors";
 import { toVegaLiteSpec } from "../shared/toVegaLiteSpec";
+import barChartSpec from "../assets/data/bar_chart.vl.json";
+import lineChartSpec from "../assets/data/line_chart.vl.json";
 import CardText from "./CardText";
 import CardTitle from "./CardTitle";
 import KpiCard from "./KpiCard";
@@ -12,9 +13,6 @@ import NotificationsTrendLineChart from "./NotificationsTrendLineChart";
 import NotificationsTrendBarChart from "./NotificationsTrendBarChart";
 import { swapComponent } from "./swapComponent";
 
-import barChartSpec from "../assets/data/bar_chart.vl.json";
-
-import lineChartSpec from "../assets/data/line_chart.vl.json";
 import LangContext from "src/context/lang-context";
 
 type Props = {
@@ -172,41 +170,54 @@ const NotificationsTrend = ({ selYear }: Props) => {
               </Select>
             )}
           </Stack>
-          <Stack direction="row" spacing={1} alignItems={"center"}>
-            {swapComponent(isSwapped)(
-              <CardText>
-                {t("sent_notifications.trend.description_2", { ns: "numeri" })}
-              </CardText>,
-              <Select
-                size={"small"}
-                sx={{
-                  fontSize: 14,
-                  "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
-                    borderColor: dashboardColors.get("blue-io"),
-                  },
-                }}
-                value={curOptionTotalDigitalAnalog}
-                onChange={(e: any) =>
-                  handleOptionsTotalDigitalAnalog(e.target.value)
-                }
-              >
-                {optionsTotalDigitalAnalog.map((option) => (
-                  <MenuItem
-                    key={option}
-                    value={option}
-                    sx={{
-                      "&.Mui-selected": {
-                        color: dashboardColors.get("blue-io"),
-                      },
-                    }}
-                  >
-                    {t(`sent_notifications.${option}.name`, {
-                      ns: "numeri",
-                    })}
-                  </MenuItem>
-                ))}
-              </Select>
-            )}
+          <Stack
+            direction="row"
+            spacing={isSwapped ? 1 : 0.5}
+            alignItems={"center"}
+          >
+            <CardText>
+              {t("sent_notifications.trend.description_2", {
+                ns: "numeri",
+              })}
+            </CardText>
+            <Stack direction="row" spacing={1} alignItems={"center"}>
+              {swapComponent(isSwapped)(
+                <CardText>
+                  {t("sent_notifications.trend.description_3", {
+                    ns: "numeri",
+                  })}
+                </CardText>,
+                <Select
+                  size={"small"}
+                  sx={{
+                    fontSize: 14,
+                    "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+                      borderColor: dashboardColors.get("blue-io"),
+                    },
+                  }}
+                  value={curOptionTotalDigitalAnalog}
+                  onChange={(e: any) =>
+                    handleOptionsTotalDigitalAnalog(e.target.value)
+                  }
+                >
+                  {optionsTotalDigitalAnalog.map((option) => (
+                    <MenuItem
+                      key={option}
+                      value={option}
+                      sx={{
+                        "&.Mui-selected": {
+                          color: dashboardColors.get("blue-io"),
+                        },
+                      }}
+                    >
+                      {t(`sent_notifications.${option}.name`, {
+                        ns: "numeri",
+                      })}
+                    </MenuItem>
+                  ))}
+                </Select>
+              )}
+            </Stack>
           </Stack>
         </Stack>
 

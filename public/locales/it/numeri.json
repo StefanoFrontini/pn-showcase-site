@@ -37,7 +37,8 @@
       "title": "Andamento delle notifiche SEND",
       "description": "Andamento del numero di notifiche SEND emesse in via ufficiale da un ente aderente.",
       "description_1": "Andamento",
-      "description_2": "delle notifiche",
+      "description_2": "delle",
+      "description_3": "notifiche",
       "monthly": "mensile",
       "aggregate": "cumulato",
       "total": "complessivo",
@@ -87,7 +88,7 @@
 
   "notification_types": {
     "title": "Principali ambiti di notifiche SEND",
-    "description": "Categorie di notifiche SEND più inviate.",
+    "description": "Numero di notifiche SEND inviate suddivise per categoria.",
     "main_scopes": {
       "title": "Filtra per tipologia di ente aderente.",
       "notes": "* diversa/o da quelli la cui notificazione è esclusa tramite SEND ai sensi dell’art.26, comma 17 D.L. 76/2020"
