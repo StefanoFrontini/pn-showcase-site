@@ -32,7 +32,13 @@
       }
     },
     {
-      "mark": { "type": "text", "radius": 124, "fill": "#0B3EE3" },
+      "mark": {
+        "type": "text",
+        "radius": 123,
+        "fill": "#0B3EE3",
+        "fontWeight": "bold",
+        "fontSize": 14
+      },
       "encoding": {
         "text": { "field": "percentage", "type": "nominal", "format": ".0%" }
       }
