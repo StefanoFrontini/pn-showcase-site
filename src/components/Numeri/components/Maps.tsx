@@ -92,6 +92,40 @@ export default function Maps() {
       ],
     } as TopLevelSpec;
   }
+
+  function translatePercentageMapTooltip(spec: TopLevelSpec) {
+    if (
+      !("encoding" in spec) ||
+      !spec.encoding?.tooltip ||
+      !Array.isArray(spec.encoding.tooltip)
+    ) {
+      return spec;
+    }
+
+    const translatedTooltips = spec.encoding.tooltip.map((tooltip: any) => {
+      if (tooltip.field === "regione") {
+        return { ...tooltip, title: t("entities.active.tooltip.region") };
+      }
+      if (tooltip.field === "num_comuni_attivi") {
+        return {
+          ...tooltip,
+          title: t("entities.active.tooltip.municipalities"),
+        };
+      }
+      if (tooltip.field === "perc_comuni_attivi") {
+        return { ...tooltip, title: t("entities.active.tooltip.percentage") };
+      }
+      return tooltip;
+    });
+
+    return {
+      ...spec,
+      encoding: {
+        ...spec.encoding,
+        tooltip: translatedTooltips,
+      },
+    } as TopLevelSpec;
+  }
   return (
     <Stack direction={"column"} spacing={2}>
       <CardTitle>
@@ -142,7 +176,7 @@ export default function Maps() {
               "entities.active.geographic_distribution.percentage.description"
             )}
           </CardText>
-          <MapChart spec={translateMapTooltip(percentageSpec)} />
+          <MapChart spec={translatePercentageMapTooltip(percentageSpec)} />
         </>
       )}
     </Stack>

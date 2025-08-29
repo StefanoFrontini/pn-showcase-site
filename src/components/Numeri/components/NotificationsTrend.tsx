@@ -210,7 +210,7 @@ const NotificationsTrend = ({ selYear }: Props) => {
                         },
                       }}
                     >
-                      {t(`sent_notifications.${option}.name`, {
+                      {t(`sent_notifications.trend.${option}`, {
                         ns: "numeri",
                       })}
                     </MenuItem>

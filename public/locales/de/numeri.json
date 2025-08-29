@@ -3,29 +3,29 @@
   "description": "Entdecken Sie Daten über die gesendeten Zustellungen, Körperschaften, die SEND nutzen, und Dienstarten",
   "hero": {
     "eyelet": "Daten und Leistung",
-    "title": "Entdecken Sie die SEND-Zahlen",
+    "title": "SEND in Zahlen",
     "last_update": "Letzte Aktualisierung",
     "alert": "Die Daten sind auf dati.gov.it verfügbar",
-    "website": "Zur Website gehen"
+    "website": "Zur den Daten"
   },
   "total": "Gesamt",
   "sent_notifications": {
-    "title": "Gesendete SEND-Zustellungen",
-    "description": "Die Daten beziehen sich auf rechtswirksame Mitteilungen, die von teilnehmenden Körperschaften gesendet wurden.",
+    "title": "Versandte SEND-Benachrichtigungen",
+    "description": "Die Daten beziehen sich auf rechtsverbindliche Mitteilungen, die von teilnehmenden Entitäten versandt wurden.",
     "total": {
-      "name": "insgesamt",
-      "title": "Gesamte gesendete SEND-Zustellungen",
-      "description": "Eine SEND-Zustellung ist eine rechtswirksame Mitteilung, die offiziell von einer Verwaltung herausgegeben wird. Sie kann digital oder analog zugestellt werden."
+      "name": "Gesamtzahl",
+      "title": "Gesamtzahl der versandten SEND-Benachrichtigungen",
+      "description": "Eine SEND-Benachrichtigung ist eine rechtsverbindliche Mitteilung, die offiziell von einer Behörde ausgestellt wird. Sie kann digital oder analog zugestellt werden."
     },
     "digital": {
       "name": "digital",
-      "title": "Anzahl digitaler SEND-Zustellungen",
-      "description": "SEND-Zustellungen, die an Empfänger über zertifizierte digitale Kanäle zugestellt wurden."
+      "title": "Anzahl der digitalen SEND-Benachrichtigungen",
+      "description": "SEND-Benachrichtigungen, die über zertifizierte digitale Kanäle an die Empfänger zugestellt wurden"
     },
     "analog": {
       "name": "analog",
-      "title": "Anzahl analoger SEND-Zustellungen",
-      "description": "SEND-Zustellungen, die analog zugestellt wurden, weil zertifizierte digitale Kanäle des Empfängers fehlen."
+      "title": "Anzahl der analogen SEND-Benachrichtigungen",
+      "description": "SEND-Benachrichtigungen, die analog zugestellt wurden, da keine zertifizierten digitalen Kanäle des Empfängers verfügbar waren"
     },
     "pieChart": {
       "tooltip": {
@@ -34,11 +34,11 @@
       }
     },
     "trend": {
-      "title": "Verlauf der SEND-Zustellungen",
-      "description": "Verlauf der Anzahl von SEND-Zustellungen, die offiziell von einer teilnehmenden Körperschaft herausgegeben wurden.",
-      "description_1": "Verlauf",
+      "title": "Entwicklung der SEND-Benachrichtigungen",
+      "description": "Entwicklung der Anzahl der SEND-Benachrichtigungen, die offiziell von einer teilnehmenden Entität ausgestellt wurden.",
+      "description_1": "Entwicklung",
       "description_2": "der",
-      "description_3": "Zustellungen",
+      "description_3": "Benachrichtigungen",
       "monthly": "monatlich",
       "aggregate": "kumulativ",
       "total": "gesamt",
@@ -46,28 +46,28 @@
       "analog": "analog",
       "tooltip": {
         "month": "Monat",
-        "aggregate": "Kumulative Zustellungen",
-        "monthly": "Monatliche Zustellungen"
+        "aggregate": "Kumulierte Benachrichtigungen",
+        "monthly": "Monatliche Benachrichtigungen"
       },
       "note": "Der kumulative Wert ist die fortlaufende Summe einer Menge über die Zeit."
     }
   },
 
   "entities": {
-    "title": "Körperschaften auf SEND",
-    "description": "Teilnehmende Körperschaften, die seit dem Start des Dienstes mindestens eine SEND-Zustellung gesendet haben.",
+    "title": "Entitäten auf SEND",
+    "description": "Teilnehmende Entitäten, die seit Beginn des Dienstes mindestens eine SEND-Benachrichtigung versandt haben.",
     "active": {
       "total": {
-        "title": "Gesamte Körperschaften auf SEND",
-        "description": "Gesamtzahl der Körperschaften, die mindestens eine SEND-Zustellung gesendet haben.",
+        "title": "Gesamtzahl der Entitäten auf SEND",
+        "description": "Gesamtanzahl der Entitäten, die mindestens eine SEND-Benachrichtigung versandt haben.",
         "description_1": "im Vergleich zum Vorjahr"
       },
       "municipalities": {
-        "title": "Prozentsatz der Gemeinden von der Gesamtzahl der Körperschaften auf SEND"
+        "title": "Prozentsatz der Gemeinden an der Gesamtzahl der Entitäten auf SEND"
       },
       "geographic_distribution": {
         "title": "Geografische Verteilung der Gemeinden auf SEND",
-        "description": "Das Diagramm zeigt die Verteilung der Gemeinden in verschiedenen Regionen.",
+        "description": "Das Diagramm zeigt die Verteilung der Gemeinden in den verschiedenen Regionen; die Größe der Blasen gibt die Anzahl der Gemeinden pro Region an.",
         "description_1": "Wert anzeigen",
         "absolute": {
           "name": "absolut",
@@ -81,17 +81,17 @@
       "tooltip": {
         "region": "Region",
         "municipalities": "Gemeinden",
-        "percentage": "Prozentsatz der Gemeinden bezogen auf die Gesamtzahl der Gemeinden pro Region."
+        "percentage": "Anteil der Gemeinden an der Gesamtzahl der Gemeinden in der Region"
       }
     }
   },
 
   "notification_types": {
-    "title": "Hauptbereiche der SEND-Zustellungen",
-    "description": "Meistgesendete SEND-Zustellungskategorien.",
+    "title": "Hauptbereiche der SEND-Benachrichtigungen",
+    "description": "Am häufigsten versandte Kategorien von SEND-Benachrichtigungen.",
     "main_scopes": {
-      "title": "Nach Art der teilnehmenden Körperschaft filtern.",
-      "notes": "* anders als diejenigen, deren Zustellung über SEND gemäß Art.26, Abs. 17 des GvD 76/2020 ausgeschlossen ist"
+      "title": "Nach Typ der teilnehmenden Entität filtern",
+      "notes": "*anders als diejenigen, deren Benachrichtigung gemäß Art. 26, Abs. 17 D.L. 76/2020 vom SEND-Verfahren ausgeschlossen ist."
     },
     "tooltip": {
       "category": "Bereich",
@@ -104,10 +104,10 @@
       "name": "Gemeinden"
     },
     "riscossori": {
-      "name": "Eintreiber und andere"
+      "name": "Steuerbehörden und andere"
     },
     "altri_enti": {
-      "name": "Andere territoriale Körperschaften"
+      "name": "Andere Gebietskörperschaften"
     },
     "province": {
       "name": "Provinzen"
@@ -116,10 +116,10 @@
       "name": "Regionen"
     },
     "comunali": {
-      "name": "Gemeindekörperschaften"
+      "name": "Kommunale Einrichtungen"
     },
     "ordini": {
-      "name": "Orden, Kollegien und Berufsräte"
+      "name": "Berufsorganisationen, Kammern und Berufsverbände"
     },
     "amministrazioni": {
       "name": "Zentrale öffentliche Verwaltungen"
@@ -128,7 +128,7 @@
       "name": "Universitäten"
     },
     "consorzi": {
-      "name": "Universitätskonsortien"
+      "name": "Universitätsverbünde"
     }
   }
 }
