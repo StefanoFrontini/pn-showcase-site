@@ -1,92 +1,92 @@
 {
-  "last_run": "2025-08-03T13:06:46.457767",
-  "enti_attivi": 5527,
-  "perc_enti_attivi": 0.61,
+  "last_run": "2025-08-29T08:42:04.772313",
+  "enti_attivi": 5631,
+  "perc_enti_attivi": 0.63,
   "perc_comuni_attivi": 0.99,
   "geo_comuni": [
     {
-      "regione": "Emilia-Romagna",
-      "num_comuni_tot": 330,
-      "num_comuni_attivi": 221,
-      "perc_comuni_attivi": 0.67
-    },
-    {
       "regione": "Liguria",
       "num_comuni_tot": 234,
-      "num_comuni_attivi": 147,
-      "perc_comuni_attivi": 0.63
+      "num_comuni_attivi": 151,
+      "perc_comuni_attivi": 0.65
+    },
+    {
+      "regione": "Emilia-Romagna",
+      "num_comuni_tot": 330,
+      "num_comuni_attivi": 224,
+      "perc_comuni_attivi": 0.68
     },
     {
       "regione": "Lazio",
       "num_comuni_tot": 378,
-      "num_comuni_attivi": 271,
-      "perc_comuni_attivi": 0.72
+      "num_comuni_attivi": 278,
+      "perc_comuni_attivi": 0.74
     },
     {
       "regione": "Sicilia",
       "num_comuni_tot": 391,
-      "num_comuni_attivi": 312,
-      "perc_comuni_attivi": 0.8
+      "num_comuni_attivi": 315,
+      "perc_comuni_attivi": 0.81
     },
     {
       "regione": "Toscana",
       "num_comuni_tot": 273,
-      "num_comuni_attivi": 206,
-      "perc_comuni_attivi": 0.75
+      "num_comuni_attivi": 209,
+      "perc_comuni_attivi": 0.77
     },
     {
       "regione": "Abruzzo",
       "num_comuni_tot": 305,
-      "num_comuni_attivi": 222,
+      "num_comuni_attivi": 223,
       "perc_comuni_attivi": 0.73
     },
     {
       "regione": "Piemonte",
       "num_comuni_tot": 1180,
-      "num_comuni_attivi": 750,
-      "perc_comuni_attivi": 0.64
+      "num_comuni_attivi": 769,
+      "perc_comuni_attivi": 0.65
     },
     {
       "regione": "Calabria",
       "num_comuni_tot": 404,
-      "num_comuni_attivi": 293,
+      "num_comuni_attivi": 294,
       "perc_comuni_attivi": 0.73
     },
     {
       "regione": "Veneto",
       "num_comuni_tot": 560,
-      "num_comuni_attivi": 404,
-      "perc_comuni_attivi": 0.72
+      "num_comuni_attivi": 416,
+      "perc_comuni_attivi": 0.74
     },
     {
       "regione": "Lombardia",
       "num_comuni_tot": 1502,
-      "num_comuni_attivi": 1032,
-      "perc_comuni_attivi": 0.69
+      "num_comuni_attivi": 1055,
+      "perc_comuni_attivi": 0.7
     },
     {
       "regione": "Valle d'Aosta/Vall\u00e9e d'Aoste",
       "num_comuni_tot": 74,
-      "num_comuni_attivi": 50,
-      "perc_comuni_attivi": 0.68
+      "num_comuni_attivi": 55,
+      "perc_comuni_attivi": 0.74
     },
     {
       "regione": "Puglia",
       "num_comuni_tot": 257,
-      "num_comuni_attivi": 221,
-      "perc_comuni_attivi": 0.86
+      "num_comuni_attivi": 223,
+      "perc_comuni_attivi": 0.87
     },
     {
       "regione": "Sardegna",
       "num_comuni_tot": 377,
-      "num_comuni_attivi": 227,
-      "perc_comuni_attivi": 0.6
+      "num_comuni_attivi": 231,
+      "perc_comuni_attivi": 0.61
     },
     {
       "regione": "Umbria",
       "num_comuni_tot": 92,
-      "num_comuni_attivi": 72,
-      "perc_comuni_attivi": 0.78
+      "num_comuni_attivi": 73,
+      "perc_comuni_attivi": 0.79
     },
     {
       "regione": "Molise",
@@ -97,14 +97,14 @@
     {
       "regione": "Friuli-Venezia Giulia",
       "num_comuni_tot": 215,
-      "num_comuni_attivi": 148,
-      "perc_comuni_attivi": 0.69
+      "num_comuni_attivi": 153,
+      "perc_comuni_attivi": 0.71
     },
     {
       "regione": "Marche",
       "num_comuni_tot": 225,
-      "num_comuni_attivi": 158,
-      "perc_comuni_attivi": 0.7
+      "num_comuni_attivi": 163,
+      "perc_comuni_attivi": 0.72
     },
     {
       "regione": "Basilicata",
@@ -115,44 +115,44 @@
     {
       "regione": "Trentino-Alto Adige/S\u00fcdtirol",
       "num_comuni_tot": 282,
-      "num_comuni_attivi": 56,
-      "perc_comuni_attivi": 0.2
+      "num_comuni_attivi": 59,
+      "perc_comuni_attivi": 0.21
     },
     {
       "regione": "Campania",
       "num_comuni_tot": 550,
-      "num_comuni_attivi": 440,
+      "num_comuni_attivi": 441,
       "perc_comuni_attivi": 0.8
     }
   ],
   "top10_ambiti": [
     {
       "ambito": "Recupero Bolli non Pagati",
-      "num_iun": 7296636,
+      "num_iun": 7306031,
       "ranking": 1,
       "categoria_ente": null
     },
     {
       "ambito": "Polizia Locale",
-      "num_iun": 5304824,
+      "num_iun": 5777146,
       "ranking": 2,
       "categoria_ente": null
     },
     {
       "ambito": "Contributi",
-      "num_iun": 2385106,
+      "num_iun": 2446451,
       "ranking": 3,
       "categoria_ente": null
     },
     {
       "ambito": "Riscossione Coattiva",
-      "num_iun": 2164074,
+      "num_iun": 2249993,
       "ranking": 4,
       "categoria_ente": null
     },
     {
       "ambito": "Tributi",
-      "num_iun": 1675169,
+      "num_iun": 1708423,
       "ranking": 5,
       "categoria_ente": null
     },
@@ -164,37 +164,37 @@
     },
     {
       "ambito": "Decreto",
-      "num_iun": 190671,
+      "num_iun": 195377,
       "ranking": 7,
       "categoria_ente": null
     },
     {
       "ambito": "Patrimonio",
-      "num_iun": 66634,
+      "num_iun": 66724,
       "ranking": 8,
       "categoria_ente": null
     },
     {
       "ambito": "Polizia Provinciale",
-      "num_iun": 24458,
+      "num_iun": 30300,
       "ranking": 9,
       "categoria_ente": null
     },
     {
       "ambito": "Scuola",
-      "num_iun": 22590,
+      "num_iun": 22624,
       "ranking": 10,
       "categoria_ente": null
     },
     {
       "ambito": "Polizia Locale",
-      "num_iun": 52717,
+      "num_iun": 62839,
       "ranking": 1,
       "categoria_ente": "Altri enti territoriali"
     },
     {
       "ambito": "Riscossione Coattiva",
-      "num_iun": 4745,
+      "num_iun": 4747,
       "ranking": 2,
       "categoria_ente": "Altri enti territoriali"
     },
@@ -212,7 +212,7 @@
     },
     {
       "ambito": "Ordinanze",
-      "num_iun": 136,
+      "num_iun": 143,
       "ranking": 5,
       "categoria_ente": "Altri enti territoriali"
     },
@@ -236,49 +236,49 @@
     },
     {
       "ambito": "Polizia Locale",
-      "num_iun": 5200547,
+      "num_iun": 5656924,
       "ranking": 1,
       "categoria_ente": "Comuni"
     },
     {
       "ambito": "Tributi",
-      "num_iun": 1167281,
+      "num_iun": 1199411,
       "ranking": 2,
       "categoria_ente": "Comuni"
     },
     {
       "ambito": "Riscossione Coattiva",
-      "num_iun": 47427,
+      "num_iun": 49160,
       "ranking": 3,
       "categoria_ente": "Comuni"
     },
     {
       "ambito": "Patrimonio",
-      "num_iun": 46585,
+      "num_iun": 46666,
       "ranking": 4,
       "categoria_ente": "Comuni"
     },
     {
       "ambito": "Scuola",
-      "num_iun": 17539,
+      "num_iun": 17572,
       "ranking": 5,
       "categoria_ente": "Comuni"
     },
     {
       "ambito": "Anagrafe",
-      "num_iun": 15940,
+      "num_iun": 16612,
       "ranking": 6,
       "categoria_ente": "Comuni"
     },
     {
       "ambito": "Ordinanze",
-      "num_iun": 4428,
+      "num_iun": 5068,
       "ranking": 7,
       "categoria_ente": "Comuni"
     },
     {
       "ambito": "Ufficio Tecnico / SUAP",
-      "num_iun": 887,
+      "num_iun": 950,
       "ranking": 8,
       "categoria_ente": "Comuni"
     },
@@ -296,7 +296,7 @@
     },
     {
       "ambito": "Revoca benefici",
-      "num_iun": 1336,
+      "num_iun": 1338,
       "ranking": 1,
       "categoria_ente": "Consorzi universitari"
     },
@@ -332,7 +332,7 @@
     },
     {
       "ambito": "Contributi",
-      "num_iun": 2385083,
+      "num_iun": 2446428,
       "ranking": 1,
       "categoria_ente": "Pubbliche amministrazioni centrali"
     },
@@ -344,13 +344,13 @@
     },
     {
       "ambito": "Decreto",
-      "num_iun": 190670,
+      "num_iun": 195376,
       "ranking": 3,
       "categoria_ente": "Pubbliche amministrazioni centrali"
     },
     {
       "ambito": "Esercito Italiano",
-      "num_iun": 2780,
+      "num_iun": 2988,
       "ranking": 4,
       "categoria_ente": "Pubbliche amministrazioni centrali"
     },
@@ -368,13 +368,13 @@
     },
     {
       "ambito": "Polizia Locale",
-      "num_iun": 32768,
+      "num_iun": 36103,
       "ranking": 1,
       "categoria_ente": "Province"
     },
     {
       "ambito": "Polizia Provinciale",
-      "num_iun": 24366,
+      "num_iun": 30208,
       "ranking": 2,
       "categoria_ente": "Province"
     },
@@ -386,7 +386,7 @@
     },
     {
       "ambito": "Ordinanze",
-      "num_iun": 27,
+      "num_iun": 28,
       "ranking": 4,
       "categoria_ente": "Province"
     },
@@ -451,20 +451,26 @@
       "categoria_ente": "Salute locale"
     },
     {
-      "ambito": "Polizia Locale",
-      "num_iun": 2,
+      "ambito": "Ticket",
+      "num_iun": 12,
       "ranking": 3,
       "categoria_ente": "Salute locale"
     },
     {
-      "ambito": "Scuola",
-      "num_iun": 1,
+      "ambito": "Polizia Locale",
+      "num_iun": 2,
       "ranking": 4,
       "categoria_ente": "Salute locale"
     },
     {
       "ambito": "Scuola",
-      "num_iun": 4887,
+      "num_iun": 1,
+      "ranking": 5,
+      "categoria_ente": "Salute locale"
+    },
+    {
+      "ambito": "Scuola",
+      "num_iun": 4888,
       "ranking": 1,
       "categoria_ente": "Universit\u00e0"
     },
@@ -500,31 +506,31 @@
     },
     {
       "ambito": "Riscossione Coattiva",
-      "num_iun": 2104377,
+      "num_iun": 2188561,
       "ranking": 1,
       "categoria_ente": "Riscossori e altro"
     },
     {
       "ambito": "Tributi",
-      "num_iun": 482833,
+      "num_iun": 483957,
       "ranking": 2,
       "categoria_ente": "Riscossori e altro"
     },
     {
       "ambito": "Recupero Bolli non Pagati",
-      "num_iun": 209648,
+      "num_iun": 219043,
       "ranking": 3,
+      "categoria_ente": "Riscossori e altro"
+    },
+    {
+      "ambito": "Polizia Locale",
+      "num_iun": 20314,
+      "ranking": 4,
       "categoria_ente": "Riscossori e altro"
     },
     {
       "ambito": "Patrimonio",
       "num_iun": 18463,
-      "ranking": 4,
-      "categoria_ente": "Riscossori e altro"
-    },
-    {
-      "ambito": "Polizia Locale",
-      "num_iun": 17826,
       "ranking": 5,
       "categoria_ente": "Riscossori e altro"
     },
