@@ -56,6 +56,7 @@
   "entities": {
     "title": "Organismes sur SEND",
     "description": "Organismes participants ayant envoyé au moins une notification SEND depuis le lancement du service.",
+    "screen_readers": "Période de données affichée:",
     "active": {
       "total": {
         "title": "Nombre total d’organismes sur SEND",

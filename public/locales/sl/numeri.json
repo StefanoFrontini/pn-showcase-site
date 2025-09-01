@@ -12,6 +12,7 @@
   "sent_notifications": {
     "title": "Poslana obvestila SEND",
     "description": "Podatki se nanašajo na pravno veljavne komunikacije, ki jih pošljejo sodelujoče organizacije.",
+    "screen_readers": "Periodo dati visualizzato:",
     "total": {
       "name": "skupno",
       "title": "Skupaj poslana obvestila SEND",

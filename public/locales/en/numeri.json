@@ -12,6 +12,7 @@
   "sent_notifications": {
     "title": "SEND notifications sent",
     "description": "The data refers to legally binding communications sent by participating institutions.",
+    "screen_readers": "Displayed data period:",
     "total": {
       "name": "total",
       "title": "Total SEND notifications sent",

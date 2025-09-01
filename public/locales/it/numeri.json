@@ -12,6 +12,7 @@
   "sent_notifications": {
     "title": "Notifiche SEND inviate",
     "description": "I dati si riferiscono alle comunicazioni a valore legale inviate dagli enti aderenti.",
+    "screen_readers": "Periodo dati visualizzato:",
     "total": {
       "name": "complessive",
       "title": "Totale notifiche SEND inviate",

@@ -13,6 +13,7 @@ import {
 } from "@mui/material";
 import { dashboardColors } from "../shared/colors";
 import { useTabBehavior } from "src/hook/useTabBehavior";
+import { useTranslation } from "src/hook/useTranslation";
 
 type Props = {
   tabs: Array<string>;
@@ -42,6 +43,7 @@ const TabsNumeri = ({
     handleToggleDropdown,
     handleCloseDropdown,
   } = useTabBehavior(initialTab, breakpoint, onTabChange);
+  const { t } = useTranslation(["numeri"]);
 
   return (
     <Box
@@ -67,7 +69,7 @@ const TabsNumeri = ({
         aria-live="assertive"
         aria-atomic="true"
       >
-        {`Periodo dati visualizzati: ${tabs[currentTab]}.`}
+        {`${t("sent_notifications.screen_readers")} ${tabs[currentTab]}.`}
       </Box>
       {(!isMobile || !breakOnMobile) && (
         <ButtonGroup color="primary" fullWidth={fullWidth} role="tablist">

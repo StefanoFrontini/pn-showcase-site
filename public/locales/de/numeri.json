@@ -12,6 +12,8 @@
   "sent_notifications": {
     "title": "Versandte SEND-Benachrichtigungen",
     "description": "Die Daten beziehen sich auf rechtsverbindliche Mitteilungen, die von teilnehmenden Entitäten versandt wurden.",
+
+    "screen_readers": "Angezeigter Datenzeitraum:",
     "total": {
       "name": "Gesamtzahl",
       "title": "Gesamtzahl der versandten SEND-Benachrichtigungen",
