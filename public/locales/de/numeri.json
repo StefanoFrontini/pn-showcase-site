@@ -31,8 +31,8 @@
     },
     "pieChart": {
       "tooltip": {
-        "type": "Zustellungstyp",
-        "number": "Anzahl Zustellungen"
+        "type": "Benachrichtigungstyp",
+        "number": "Anzahl der Benachrichtigungen"
       }
     },
     "trend": {
@@ -43,7 +43,7 @@
       "description_3": "Benachrichtigungen",
       "monthly": "monatlich",
       "aggregate": "kumulativ",
-      "total": "gesamt",
+      "total": "Gesamtzahl",
       "digital": "digital",
       "analog": "analog",
       "tooltip": {
@@ -69,11 +69,11 @@
       },
       "geographic_distribution": {
         "title": "Geografische Verteilung der Gemeinden auf SEND",
-        "description": "Das Diagramm zeigt die Verteilung der Gemeinden in den verschiedenen Regionen; die Größe der Blasen gibt die Anzahl der Gemeinden pro Region an.",
+        "description": "Das Diagramm zeigt die Verteilung der Gemeinden in den verschiedenen Regionen.",
         "description_1": "Wert anzeigen",
         "absolute": {
           "name": "absolut",
-          "description": "Die Blasengröße zeigt das Volumen aktiver Gemeinden pro Region"
+          "description": "Die Blasengröße zeigt die Anzahl der aktiven Gemeinden pro Region an."
         },
         "percentage": {
           "name": "prozentual",
