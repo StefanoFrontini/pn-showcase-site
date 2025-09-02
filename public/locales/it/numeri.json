@@ -21,12 +21,12 @@
     "digital": {
       "name": "digitali",
       "title": "Numero di notifiche SEND digitali",
-      "description": "Notifiche SEND emesse ai destinatari tramite canali digitali certificati."
+      "description": "Notifiche SEND trasmesse ai destinatari tramite canali digitali certificati."
     },
     "analog": {
       "name": "analogiche",
       "title": "Numero di notifiche SEND analogiche",
-      "description": "Notifiche SEND emesse in modalità analogica per assenza di canali digitali certificati del destinatario."
+      "description": "Notifiche SEND trasmesse in modalità analogica per assenza di canali digitali certificati del destinatario."
     },
     "pieChart": {
       "tooltip": {
@@ -36,7 +36,7 @@
     },
     "trend": {
       "title": "Andamento delle notifiche SEND",
-      "description": "Andamento del numero di notifiche SEND emesse in via ufficiale da un ente aderente.",
+      "description": "Andamento del numero di notifiche inviate tramite SEND dagli enti aderenti.",
       "description_1": "Andamento",
       "description_2": "delle",
       "description_3": "notifiche",
@@ -56,7 +56,7 @@
 
   "entities": {
     "title": "Enti su SEND",
-    "description": "Enti aderenti che hanno inviato almeno una notifica SEND dell'avvio del servizio.",
+    "description": "Enti aderenti che hanno inviato almeno una notifica SEND dall'avvio del servizio.",
     "active": {
       "total": {
         "title": "Totale enti su SEND",
@@ -92,7 +92,7 @@
     "description": "Numero di notifiche SEND inviate suddivise per categoria.",
     "main_scopes": {
       "title": "Filtra per tipologia di ente aderente.",
-      "notes": "* diversa/o da quelli la cui notificazione è esclusa tramite SEND ai sensi dell’art.26, comma 17 D.L. 76/2020"
+      "notes": "* è rimessa all'ente aderente la verifica che l'atto non rientri tra quelli la cui notificazione è esclusa tramite SEND ai sensi dell’art.26, comma 17 D.L. 76/2020."
     },
     "tooltip": {
       "category": "Ambito",
