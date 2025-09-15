@@ -29,7 +29,7 @@ const NotificationsTrendBarChart = ({
         setTimeout(() => removeGraphicsSymbolRole(chartContent), 100);
       })
       .catch(console.error);
-  }, []);
+  }, [spec]);
 
   useEffect(() => {
     if (chart === null || !chartContent.current) {

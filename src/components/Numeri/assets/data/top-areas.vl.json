@@ -21,7 +21,7 @@
       "as": "ambito_label"
     }
   ],
-  "height": { "step": 56 },
+  "height": 560,
   "width": "container",
   "encoding": {
     "y": {
