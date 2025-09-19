@@ -12,6 +12,7 @@ import {
   Popper,
 } from "@mui/material";
 import { dashboardColors } from "../shared/colors";
+import CardText from "./CardText";
 import { useTabBehavior } from "src/hook/useTabBehavior";
 import { useTranslation } from "src/hook/useTranslation";
 
@@ -72,34 +73,40 @@ const TabsNumeri = ({
         {`${t("sent_notifications.screen_readers")} ${tabs[currentTab]}.`}
       </Box>
       {(!isMobile || !breakOnMobile) && (
-        <ButtonGroup color="primary" fullWidth={fullWidth} role="tablist">
-          {tabs.map((tab, index) => (
-            <Button
-              sx={{
-                borderColor: dashboardColors.get("blue-io-200"),
-                color: dashboardColors.get("blue-io"),
-                "&:hover": {
+        <>
+          <CardText sx={{ mb: 1.5 }}>
+            Tramite i selettori sotto riportati, è possibile filtrare solo
+            questa sezione per il periodo di riferimento desiderato.
+          </CardText>
+          <ButtonGroup color="primary" fullWidth={fullWidth} role="tablist">
+            {tabs.map((tab, index) => (
+              <Button
+                sx={{
+                  borderColor: dashboardColors.get("blue-io-200"),
                   color: dashboardColors.get("blue-io"),
-                },
+                  "&:hover": {
+                    color: dashboardColors.get("blue-io"),
+                  },
 
-                borderWidth: 1,
-                fontWeight: 700,
-                backgroundColor:
-                  currentTab === index
-                    ? dashboardColors.get("blue-io-50")
-                    : undefined,
-              }}
-              onClick={() => handleChangeTab(index)}
-              size={buttonSize}
-              value={index}
-              key={tab}
-              role="tab"
-              aria-selected={currentTab === index}
-            >
-              {tab}
-            </Button>
-          ))}
-        </ButtonGroup>
+                  borderWidth: 1,
+                  fontWeight: 700,
+                  backgroundColor:
+                    currentTab === index
+                      ? dashboardColors.get("blue-io-50")
+                      : undefined,
+                }}
+                onClick={() => handleChangeTab(index)}
+                size={buttonSize}
+                value={index}
+                key={tab}
+                role="tab"
+                aria-selected={currentTab === index}
+              >
+                {tab}
+              </Button>
+            ))}
+          </ButtonGroup>
+        </>
       )}
       {isMobile && breakOnMobile && (
         <>

@@ -15,7 +15,6 @@ import notificationsAnalogSpec from "../../components/Numeri/assets/data/notific
 import notificationsDigitalSpec from "../../components/Numeri/assets/data/notifications-digital.vl.json";
 import notificationsTotalSpec from "../../components/Numeri/assets/data/notifications-total.vl.json";
 import entitiesActiveSpec from "../../components/Numeri/assets/data/entities-active.vl.json";
-import municipalitiesActivePercSpec from "../../components/Numeri/assets/data/municipalities-active-perc.vl.json";
 import entitiesActivePercSpec from "../../components/Numeri/assets/data/entities-active-perc.vl.json";
 import pieChartDigitalSpec from "../../components/Numeri/assets/data/pie-chart-digital.vl.json";
 import { langCodes } from "@utils/constants";
@@ -124,25 +123,25 @@ const SendInNumbers = ({
         }}
         marginX={17.7}
       >
-        <Box component="header" sx={{ py: 11 }}>
-          <Stack
-            direction={{ xs: "column", md: "row" }}
-            spacing={{ xs: 6, md: 0 }}
-            justifyContent="space-between"
-            alignItems={"center"}
-          >
-            <Stack direction="column" spacing={2}>
-              <FormatEyelet>{t("hero.eyelet", { ns: "numeri" })}</FormatEyelet>
-              <FormatTitle>{t("hero.title", { ns: "numeri" })}</FormatTitle>
-              <LastUpdate>{t("hero.last_update", { ns: "numeri" })}</LastUpdate>
-            </Stack>
-            <Box flex={"0 0 32%"}>
-              <AlertWrapper buttonText={t("hero.website", { ns: "numeri" })}>
-                {t("hero.alert")}
-              </AlertWrapper>
-            </Box>
+        <Stack
+          direction={{ xs: "column", md: "row" }}
+          spacing={{ xs: 6, md: 0 }}
+          justifyContent="space-between"
+          alignItems={"center"}
+          component="header"
+          sx={{ py: 11 }}
+        >
+          <Stack direction="column" spacing={2}>
+            <FormatEyelet>{t("hero.eyelet", { ns: "numeri" })}</FormatEyelet>
+            <FormatTitle>{t("hero.title", { ns: "numeri" })}</FormatTitle>
+            <LastUpdate>{t("hero.last_update", { ns: "numeri" })}</LastUpdate>
           </Stack>
-        </Box>
+          <Box flex={"0 0 32%"}>
+            <AlertWrapper buttonText={t("hero.website", { ns: "numeri" })}>
+              {t("hero.alert")}
+            </AlertWrapper>
+          </Box>
+        </Stack>
         <Box component="main" paddingTop={6}>
           <SectionLayout
             title={t("sent_notifications.title")}
@@ -167,12 +166,20 @@ const SendInNumbers = ({
                       />
                     </FormatKpi>
                     <CardTitle>
-                      {t("sent_notifications.total.title", { ns: "numeri" })}
+                      {selYear === null
+                        ? t("sent_notifications.total.title_2", {
+                            ns: "numeri",
+                          })
+                        : t("sent_notifications.total.title", { ns: "numeri" })}
                     </CardTitle>
                     <CardText>
-                      {t("sent_notifications.total.description", {
-                        ns: "numeri",
-                      })}
+                      {selYear === null
+                        ? t("sent_notifications.total.description_2", {
+                            ns: "numeri",
+                          })
+                        : t("sent_notifications.total.description", {
+                            ns: "numeri",
+                          })}
                     </CardText>
                   </Stack>
                 </KpiCard>
@@ -312,23 +319,6 @@ const SendInNumbers = ({
                         ns: "numeri",
                       })}
                     </KpiEntitiesPerc>
-                  </Stack>
-                </KpiCard>
-                <KpiCard>
-                  <Stack direction={"column"} spacing={1}>
-                    <CardText>&nbsp; </CardText>
-                    <Icons.ThingsToDoIcon />
-                    <CardTitle>
-                      {t("entities.active.municipalities.title", {
-                        ns: "numeri",
-                      })}
-                    </CardTitle>
-                    <FormatKpi>
-                      <KpiWrapper
-                        spec={toVegaLiteSpec(municipalitiesActivePercSpec)}
-                      />
-                    </FormatKpi>
-                    <CardText>&nbsp; </CardText>
                   </Stack>
                 </KpiCard>
               </Stack>

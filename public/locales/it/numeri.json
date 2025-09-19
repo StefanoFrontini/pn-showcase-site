@@ -11,12 +11,14 @@
   "total": "Totale",
   "sent_notifications": {
     "title": "Notifiche SEND inviate",
-    "description": "I dati si riferiscono alle comunicazioni a valore legale inviate dagli enti aderenti.",
+    "description": "La notifica SEND è una comunicazione a valore legale emessa in via ufficiale da un'amministrazione. Può essere recapitata in modalità digitale o analogica.",
     "screen_readers": "Periodo dati visualizzato:",
     "total": {
       "name": "complessive",
-      "title": "Totale notifiche SEND inviate",
-      "description": "La notifica SEND è una comunicazione a valore legale emessa in via ufficiale da un'amministrazione. Può essere recapitata in modalità digitale o analogica."
+      "title": "Totale notifiche inviate",
+      "description": "Totale delle notifiche inviate nel periodo di riferimento considerato.",
+      "title_2": "Totale notifiche inviate da Luglio 2023",
+      "description_2": "Totale delle notifiche inviate dal primo anno di operatività della piattaforma."
     },
     "digital": {
       "name": "digitali",
@@ -68,7 +70,7 @@
       },
       "geographic_distribution": {
         "title": "Distribuzione geografica dei comuni su SEND",
-        "description": "Il grafico mostra la distribuzione dei comuni nelle diverse regioni.",
+        "description": "Il grafico mostra la distribuzione dei comuni aderenti a SEND, in quanto categoria di enti con maggior numero di adesioni.",
         "description_1": "Visualizza valore",
         "absolute": {
           "name": "assoluto",
