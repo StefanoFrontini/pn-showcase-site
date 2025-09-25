@@ -1,6 +1,6 @@
 import type { GetStaticPaths, InferGetStaticPropsType } from "next";
 
-import { Box, Stack } from "@mui/material";
+import { Box, Stack, Typography } from "@mui/material";
 import Script from "next/script";
 import { useState } from "react";
 import Head from "next/head";
@@ -39,6 +39,7 @@ import PieChartWrapper from "src/components/Numeri/components/PieChartWrapper";
 import { getVegaLocale } from "src/components/Numeri/shared/getVegaLocale";
 import KpiEntitiesPerc from "src/components/Numeri/components/KpiEntitiesPerc";
 import Maps from "src/components/Numeri/components/Maps";
+import { dashboardColors } from "src/components/Numeri/shared/colors";
 
 type Tabs = {
   id: number | null;
@@ -131,9 +132,42 @@ const SendInNumbers = ({
           component="header"
           sx={{ py: 11 }}
         >
-          <Stack direction="column" spacing={2}>
+          <Stack direction="column" spacing={2} flex={"0 0 52%"}>
             <FormatEyelet>{t("hero.eyelet", { ns: "numeri" })}</FormatEyelet>
             <FormatTitle>{t("hero.title", { ns: "numeri" })}</FormatTitle>
+            <Typography
+              component="p"
+              sx={{
+                color: dashboardColors.get("secondary"),
+                fontSize: "1.125rem",
+                fontWeight: 400,
+                lineHeight: "1.5rem",
+              }}
+            >
+              {t("hero.description", { ns: "numeri" })}
+              <Typography
+                component="span"
+                sx={{
+                  color: dashboardColors.get("secondary"),
+                  fontSize: "inherit",
+                  fontWeight: 600,
+                  lineHeight: "1.5rem",
+                }}
+              >
+                {t("hero.description_2", { ns: "numeri" })}
+              </Typography>
+              <Typography
+                component="span"
+                sx={{
+                  color: dashboardColors.get("secondary"),
+                  fontSize: "inherit",
+                  fontWeight: 400,
+                  lineHeight: "1.5rem",
+                }}
+              >
+                {t("hero.description_3", { ns: "numeri" })}
+              </Typography>
+            </Typography>
             <LastUpdate>{t("hero.last_update", { ns: "numeri" })}</LastUpdate>
           </Stack>
           <Box flex={"0 0 32%"}>
