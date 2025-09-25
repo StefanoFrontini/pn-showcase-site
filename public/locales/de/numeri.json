@@ -12,12 +12,15 @@
   "sent_notifications": {
     "title": "Versandte SEND-Benachrichtigungen",
     "description": "Die Daten beziehen sich auf rechtsverbindliche Mitteilungen, die von teilnehmenden Entitäten versandt wurden.",
+    "filters": "Mit den unten stehenden Selektoren können Sie diesen Abschnitt nach dem gewünschten Zeitraum filtern.",
 
     "screen_readers": "Angezeigter Datenzeitraum:",
     "total": {
       "name": "Gesamtzahl",
       "title": "Gesamtzahl der versandten SEND-Benachrichtigungen",
-      "description": "Eine SEND-Benachrichtigung ist eine rechtsverbindliche Mitteilung, die offiziell von einer Behörde ausgestellt wird. Sie kann digital oder analog zugestellt werden."
+      "description": "Eine SEND-Benachrichtigung ist eine rechtsverbindliche Mitteilung, die offiziell von einer Behörde ausgestellt wird. Sie kann digital oder analog zugestellt werden.",
+      "title_2": "Gesamt Benachrichtigungen seit Juli 2023",
+      "description_2": "Gesamt Benachrichtigungen seit dem ersten Betriebsjahr der Plattform."
     },
     "digital": {
       "name": "digital",
@@ -69,7 +72,7 @@
       },
       "geographic_distribution": {
         "title": "Geografische Verteilung der Gemeinden auf SEND",
-        "description": "Das Diagramm zeigt die Verteilung der Gemeinden in den verschiedenen Regionen.",
+        "description": "Die Grafik zeigt die Verteilung der Gemeinden, die SEND nutzen, als die Entitätskategorie mit der höchsten Beteiligung.",
         "description_1": "Wert anzeigen",
         "absolute": {
           "name": "absolut",

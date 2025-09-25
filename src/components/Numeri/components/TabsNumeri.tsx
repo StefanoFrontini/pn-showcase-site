@@ -75,8 +75,7 @@ const TabsNumeri = ({
       {(!isMobile || !breakOnMobile) && (
         <>
           <CardText sx={{ mb: 1.5 }}>
-            Tramite i selettori sotto riportati, è possibile filtrare solo
-            questa sezione per il periodo di riferimento desiderato.
+            {t("sent_notifications.filters")}
           </CardText>
           <ButtonGroup color="primary" fullWidth={fullWidth} role="tablist">
             {tabs.map((tab, index) => (

@@ -12,11 +12,14 @@
   "sent_notifications": {
     "title": "SEND notifications sent",
     "description": "The data refers to legally binding communications sent by participating institutions.",
+    "filters": "Use the selectors below to filter this section for the desired time period.",
     "screen_readers": "Displayed data period:",
     "total": {
       "name": "total",
       "title": "Total SEND notifications sent",
-      "description": "A SEND notification is a legally binding communication officially issued by an institution. It can be delivered digitally or in paper form."
+      "description": "A SEND notification is a legally binding communication officially issued by an institution. It can be delivered digitally or in paper form.",
+      "title_2": "Total notifications sent since July 2023",
+      "description_2": "Total notifications sent since the platform's first year of operation"
     },
     "digital": {
       "name": "digital",
@@ -68,7 +71,7 @@
       },
       "geographic_distribution": {
         "title": "Geographic distribution of municipalities on SEND",
-        "description": "The chart shows the distribution of municipalities across different regions.",
+        "description": "The chart shows the distribution of municipalities using SEND, as the entity category with the highest number of participants.",
         "description_1": "Display value",
         "absolute": {
           "name": "absolute",

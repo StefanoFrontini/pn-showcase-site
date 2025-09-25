@@ -12,11 +12,14 @@
   "sent_notifications": {
     "title": "Poslana obvestila SEND",
     "description": "Podatki se nanašajo na pravno veljavne komunikacije, ki jih pošljejo sodelujoče organizacije.",
-    "screen_readers": "Periodo dati visualizzato:",
+    "filters": "Uporabite spodnje izbirnike za filtriranje tega razdelka za želeno časovno obdobje.",
+    "screen_readers": "Prikazano obdobje podatkov:",
     "total": {
       "name": "skupno",
       "title": "Skupaj poslana obvestila SEND",
-      "description": "Obvestilo SEND je pravno veljavna komunikacija, ki jo uradno izda uprava. Lahko se dostavi digitalno ali analogno."
+      "description": "Obvestilo SEND je pravno veljavna komunikacija, ki jo uradno izda uprava. Lahko se dostavi digitalno ali analogno.",
+      "title_2": "Skupaj poslanih obvestil od julija 2023",
+      "description_2": "Skupaj poslanih obvestil od prvega leta delovanja platforme"
     },
     "digital": {
       "name": "digitalna",
@@ -68,7 +71,7 @@
       },
       "geographic_distribution": {
         "title": "Geografska porazdelitev občin na SEND",
-        "description": "Grafikon prikazuje porazdelitev občin v različnih regijah.",
+        "description": "Graf prikazuje porazdelitev občin, ki uporabljajo SEND, kot kategorijo entitet z največjim številom udeležencev.",
         "description_1": "Prikaži vrednost",
         "absolute": {
           "name": "absolutno",

@@ -12,6 +12,7 @@
   "sent_notifications": {
     "title": "Notifiche SEND inviate",
     "description": "La notifica SEND è una comunicazione a valore legale emessa in via ufficiale da un'amministrazione. Può essere recapitata in modalità digitale o analogica.",
+    "filters": "Tramite i selettori sotto riportati, è possibile filtrare solo questa sezione per il periodo di riferimento desiderato.",
     "screen_readers": "Periodo dati visualizzato:",
     "total": {
       "name": "complessive",
