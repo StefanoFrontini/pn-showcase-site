@@ -144,7 +144,7 @@ const SendInNumbers = ({
                 lineHeight: "1.5rem",
               }}
             >
-              {t("hero.description", { ns: "numeri" })}
+              {t("hero.description", { ns: "numeri" }) + " "}
               <Typography
                 component="span"
                 sx={{
