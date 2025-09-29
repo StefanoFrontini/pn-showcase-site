@@ -32,6 +32,7 @@ const NotificationsTypesChart = ({ spec, categorySignal }: Props) => {
     }
     chart.view
       .signal("category", categorySignal)
+      .resize()
       .runAsync()
       .then(() => {
         setTimeout(() => removeGraphicsSymbolRole(chartContent), 100);

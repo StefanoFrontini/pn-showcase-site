@@ -4,6 +4,10 @@
   "hero": {
     "eyelet": "Daten und Leistung",
     "title": "SEND in Zahlen",
+
+    "description": "Auf dieser Seite finden Sie täglich aktualisierte Daten zur ",
+    "description_2": "SEND",
+    "description_3": "-Benachrichtigungsplattform",
     "last_update": "Letzte Aktualisierung",
     "alert": "Die Daten sind auf dati.gov.it verfügbar",
     "website": "Zur den Daten"

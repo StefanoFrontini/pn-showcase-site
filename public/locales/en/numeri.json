@@ -4,6 +4,9 @@
   "hero": {
     "eyelet": "Data and performance",
     "title": "SEND in numbers",
+    "description": "On this page, you can find daily updated data for the",
+    "description_2": "SEND",
+    "description_3": " notifification platform.",
     "last_update": "Last update",
     "alert": "Data is available on dati.gov.it",
     "website": "See data"

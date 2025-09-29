@@ -4,6 +4,9 @@
   "hero": {
     "eyelet": "Données et performances",
     "title": "SEND en chiffres",
+    "description": "Cette page contient des données relatives à la plateforme de notification ",
+    "description_2": "SEND",
+    "description_3": ", mises à jour quotidiennement.",
     "last_update": "Dernière mise à jour",
     "alert": "Les données sont disponibles sur dati.gov.it",
     "website": "Voir les données"
