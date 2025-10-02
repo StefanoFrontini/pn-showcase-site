@@ -136,7 +136,16 @@ const NotificationsTypes = () => {
               lineHeight: "1.125rem",
             }}
           >
-            {t("notification_types.main_scopes.notes", { ns: "numeri" })}
+            {t("notification_types.main_scopes.note_1", { ns: "numeri" })}
+          </Typography>
+          <Typography
+            sx={{
+              color: dashboardColors.get("grey-650"),
+              fontSize: "0.875rem",
+              lineHeight: "1.125rem",
+            }}
+          >
+            {t("notification_types.main_scopes.note_2", { ns: "numeri" })}
           </Typography>
         </Stack>
       </KpiCard>

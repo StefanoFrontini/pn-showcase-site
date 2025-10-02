@@ -98,7 +98,8 @@
     "description": "Catégories de notifications SEND les plus envoyées.",
     "main_scopes": {
       "title": "Filtrer par type d’organisme participant",
-      "notes": "* différent(e) de ceux dont la notification est exclue via SEND conformément à l’art. 26, alinéa 17 du D.L. 76/2020"
+      "note_1": "* différent(e) de ceux dont la notification est exclue via SEND conformément à l’art. 26, alinéa 17 du D.L. 76/2020",
+      "note_2": "**"
     },
     "tooltip": {
       "category": "Domaine",

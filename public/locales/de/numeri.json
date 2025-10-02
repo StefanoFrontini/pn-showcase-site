@@ -100,7 +100,8 @@
     "description": "Am häufigsten versandte Kategorien von SEND-Benachrichtigungen.",
     "main_scopes": {
       "title": "Nach Typ der teilnehmenden Entität filtern",
-      "notes": "*anders als diejenigen, deren Benachrichtigung gemäß Art. 26, Abs. 17 D.L. 76/2020 vom SEND-Verfahren ausgeschlossen ist."
+      "note_1": "*anders als diejenigen, deren Benachrichtigung gemäß Art. 26, Abs. 17 D.L. 76/2020 vom SEND-Verfahren ausgeschlossen ist.",
+      "note_2": "**"
     },
     "tooltip": {
       "category": "Bereich",

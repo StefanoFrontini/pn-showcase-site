@@ -95,10 +95,11 @@
 
   "notification_types": {
     "title": "Principali ambiti di notifiche SEND",
-    "description": "Numero di notifiche SEND inviate suddivise per categoria.",
+    "description": "Numero di notifiche SEND inviate suddivise per categoria ed ambito**.",
     "main_scopes": {
       "title": "Filtra per tipologia di ente aderente.",
-      "notes": "* è rimessa all'ente aderente la verifica che l'atto non rientri tra quelli la cui notificazione è esclusa tramite SEND ai sensi dell’art.26, comma 17 D.L. 76/2020."
+      "note_1": "* è rimessa all'ente aderente la verifica che l'atto non rientri tra quelli la cui notificazione è esclusa tramite SEND ai sensi dell’art.26, comma 17 D.L. 76/2020.",
+      "note_2": "** La rappresentazione include i principali ambiti con un numero di notifiche inviate uguale o superiore a 4."
     },
     "tooltip": {
       "category": "Ambito",
