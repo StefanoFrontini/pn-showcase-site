@@ -74,7 +74,7 @@
       },
       "geographic_distribution": {
         "title": "Distribuzione geografica dei comuni su SEND",
-        "description": "Il grafico mostra la distribuzione dei comuni aderenti a SEND, in quanto categoria di enti con maggior numero di adesioni.",
+        "description": "Il grafico mostra la distribuzione dei comuni che hanno inviato almeno una notifica SEND.",
         "description_1": "Visualizza valore",
         "absolute": {
           "name": "assoluto",
