@@ -99,7 +99,7 @@
     "main_scopes": {
       "title": "Filter by type of participating institution",
       "note_1": "*different from those whose notification is excluded via SEND under Art. 26, paragraph 17 D.L. 76/2020",
-      "note_2": "**"
+      "note_2": "The chart includes the main sectors with 5 or more notifications sent."
     },
     "tooltip": {
       "category": "Area",

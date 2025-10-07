@@ -99,7 +99,7 @@
     "main_scopes": {
       "title": "Filtrer par type d’organisme participant",
       "note_1": "* différent(e) de ceux dont la notification est exclue via SEND conformément à l’art. 26, alinéa 17 du D.L. 76/2020",
-      "note_2": "**"
+      "note_2": "Le graphique inclut les principaux domaines avec un nombre de notifications envoyées égal ou supérieur à 5"
     },
     "tooltip": {
       "category": "Domaine",

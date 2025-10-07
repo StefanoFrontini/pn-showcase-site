@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "data": {
-    "url": "https://gist.githubusercontent.com/StefanoFrontini/79ed190a28fe85d75e694feda550f9c5/raw/0ca01bc3e1c4e6054b19f383d76d88462b08b866/dashboard-send-sezione1.json",
+    "url": "https://gist.githubusercontent.com/StefanoFrontini/79ed190a28fe85d75e694feda550f9c5/raw/17a5db29b2a19a22c8ee44b25bd8540cff930d06/dashboard-send-sezione1.json",
     "format": { "property": "totale_notifiche" }
   },
   "params": [{ "name": "year", "value": null }],

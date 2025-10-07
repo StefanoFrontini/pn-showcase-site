@@ -96,7 +96,7 @@
     "main_scopes": {
       "title": "Filtriraj po vrsti sodelujoče organizacije.",
       "note_1": "* drugače od tistih, katerih obveščanje je izključeno preko SEND v skladu s členom 26, odstavek 17 zakonskega odloka št. 76/2020",
-      "note_2": "**"
+      "note_2": "Grafikon prikazuje glavna območja s petimi ali več poslanimi obvestili"
     },
     "tooltip": {
       "category": "Področje",
