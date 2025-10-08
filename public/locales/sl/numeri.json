@@ -120,6 +120,9 @@
     "regioni": {
       "name": "Regije"
     },
+    "salute": {
+      "name": "Lokalno zdravstvo"
+    },
     "comunali": {
       "name": "Občinske organizacije"
     },

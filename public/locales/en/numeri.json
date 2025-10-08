@@ -123,6 +123,9 @@
     "regioni": {
       "name": "Regions"
     },
+    "salute": {
+      "name": "Local Healthcare"
+    },
     "comunali": {
       "name": "Municipal entities"
     },

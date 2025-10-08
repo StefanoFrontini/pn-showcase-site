@@ -123,6 +123,9 @@
     "regioni": {
       "name": "Regioni"
     },
+    "salute": {
+      "name": "Salute locale"
+    },
     "comunali": {
       "name": "Enti comunali"
     },

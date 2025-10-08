@@ -12,16 +12,17 @@ import NotificationsTypesChart from "./NotificationsTypesChart";
 
 const categoriesMap = new Map([
   ["tutte", null],
-  ["comuni", "Comuni"],
-  ["riscossori", "Riscossori e altro"],
   ["altri_enti", "Altri enti territoriali"],
-  ["province", "Province"],
-  ["regioni", "Regioni"],
+  ["comuni", "Comuni"],
+  ["consorzi", "Consorzi universitari"],
   ["comunali", "Enti comunali"],
   ["ordini", "Ordini, collegi e consigli professionali"],
+  ["province", "Province"],
   ["amministrazioni", "Pubbliche amministrazioni centrali"],
+  ["regioni", "Regioni"],
+  ["riscossori", "Riscossori e altro"],
+  ["salute", "Salute locale"],
   ["universita", "Università"],
-  ["consorzi", "Consorzi universitari"],
 ]);
 
 type OptionsCategories = {
