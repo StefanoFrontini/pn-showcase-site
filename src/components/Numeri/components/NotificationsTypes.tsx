@@ -6,12 +6,12 @@ import { toVegaLiteSpec } from "../shared/toVegaLiteSpec";
 import topAreasSpec from "../assets/data/top-areas.vl.json";
 import { dashboardColors } from "../shared/colors";
 import { url } from "../shared/constants";
+import type { SectionTwoData } from "../shared/jsonTypes";
 import CardText from "./CardText";
 import KpiCard from "./KpiCard";
-
 import NotificationsTypesChart from "./NotificationsTypesChart";
 
-function generateTag(str: string): string {
+function generateTag(str: string | null): string {
   if (str === null) {
     return "tutte";
   }
@@ -20,7 +20,15 @@ function generateTag(str: string): string {
 
 const NotificationsTypes = () => {
   const { t } = useTranslation(["numeri"]);
-  const [categories, setCategories] = useState<any>(null);
+  const [categories, setCategories] = useState<Record<
+    string,
+    string | null
+  > | null>(null);
+  const [curOption, setCurOption] = useState<string>("tutte");
+
+  const handleOptions = (id: string) => {
+    setCurOption(id);
+  };
 
   function translateTooltip(spec: TopLevelSpec) {
     if (!("layer" in spec)) {
@@ -73,23 +81,20 @@ const NotificationsTypes = () => {
     } as TopLevelSpec;
   }
 
-  const [curOption, setCurOption] = useState<string>("tutte");
-
-  const handleOptions = (id: string) => {
-    setCurOption(id);
-  };
-
   useEffect(() => {
     async function fetchData() {
       try {
         const response = await fetch(url);
-        const jsonData = await response.json();
-        const cat = jsonData.top10_ambiti.reduce((acc: any, item: any) => {
-          if (!(generateTag(item.categoria_ente) in acc)) {
-            acc[generateTag(item.categoria_ente)] = item.categoria_ente;
-          }
-          return acc;
-        }, {});
+        const jsonData: SectionTwoData = await response.json();
+        const cat = jsonData.top10_ambiti.reduce(
+          (acc: Record<string, string | null>, item) => {
+            if (!(generateTag(item.categoria_ente) in acc)) {
+              acc[generateTag(item.categoria_ente)] = item.categoria_ente;
+            }
+            return acc;
+          },
+          {}
+        );
         setCategories(cat);
       } catch (error) {
         console.error(error);
@@ -126,7 +131,7 @@ const NotificationsTypes = () => {
               value={curOption}
               onChange={(e: any) => handleOptions(e.target.value)}
             >
-              {optionCategories.map((option: any) => (
+              {optionCategories.map((option) => (
                 <MenuItem
                   key={option.tag}
                   value={option.tag}
