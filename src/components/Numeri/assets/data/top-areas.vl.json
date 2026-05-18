@@ -4,11 +4,17 @@
     "right": 5
   },
   "data": {
-    "url": "https://pdnd-prod-dl-1-public-data.s3.eu-central-1.amazonaws.com/dashboard/send/dashboard-send-sezione2.json",
-    "format": { "property": "top10_ambiti" }
+    "url": "https://gist.githubusercontent.com/StefanoFrontini/1572aa83bd623e27a7ff35a917872203/raw/ef986efebe8dad086185fa1f73fb4984e86e4b3e/sezione2-test.json",
+    "format": { "property": "ambiti_per_anno" }
   },
-  "params": [{ "name": "category", "value": null }],
+  "params": [
+    { "name": "category", "value": null },
+    { "name": "year", "value": null }
+  ],
   "transform": [
+    {
+      "filter": "year === year(datum.year) || year === datum.year"
+    },
     {
       "filter": "datum.categoria_ente === category"
     },

@@ -49,6 +49,7 @@
       "description_2": "der",
       "description_3": "Benachrichtigungen",
       "monthly": "monatlich",
+      "yearly": "jährlich",
       "aggregate": "kumulativ",
       "total": "Gesamtzahl",
       "digital": "digital",
@@ -56,7 +57,9 @@
       "tooltip": {
         "month": "Monat",
         "aggregate": "Kumulierte Benachrichtigungen",
-        "monthly": "Monatliche Benachrichtigungen"
+        "monthly": "Monatliche Benachrichtigungen",
+        "year": "Jahr",
+        "yearly": "Jährliche Benachrichtigungen"
       },
       "note": "Der kumulative Wert ist die fortlaufende Summe einer Menge über die Zeit."
     }

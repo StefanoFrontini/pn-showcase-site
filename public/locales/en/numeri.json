@@ -47,6 +47,7 @@
       "description_2": "of",
       "description_3": "notifications",
       "monthly": "monthly",
+      "yearly": "yearly",
       "aggregate": "cumulative",
       "total": "total",
       "digital": "digital",
@@ -54,7 +55,9 @@
       "tooltip": {
         "month": "Month",
         "aggregate": "Cumulative notifications",
-        "monthly": "Monthly notifications"
+        "monthly": "Monthly notifications",
+        "year": "Year",
+        "yearly": "Annual notifications"
       },
       "note": "The cumulative value is the progressive sum of a quantity over time."
     }

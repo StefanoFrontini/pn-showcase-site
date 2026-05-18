@@ -18,7 +18,11 @@ function generateTag(str: string | null): string {
   return str.toLowerCase().replace(/ /g, "_");
 }
 
-const NotificationsTypes = () => {
+type Props = {
+  selYear?: number | null;
+};
+
+const NotificationsTypes = ({ selYear }: Props) => {
   const { t } = useTranslation(["numeri"]);
   const [categories, setCategories] = useState<Record<
     string,
@@ -86,7 +90,7 @@ const NotificationsTypes = () => {
       try {
         const response = await fetch(url);
         const jsonData: SectionTwoData = await response.json();
-        const cat = jsonData.top10_ambiti.reduce(
+        const cat = jsonData.ambiti_per_anno.reduce(
           (acc: Record<string, string | null>, item) => {
             if (!(generateTag(item.categoria_ente) in acc)) {
               acc[generateTag(item.categoria_ente)] = item.categoria_ente;
@@ -154,6 +158,7 @@ const NotificationsTypes = () => {
           <NotificationsTypesChart
             spec={translateTooltip(toVegaLiteSpec(topAreasSpec))}
             categorySignal={categories[curOption] ?? null}
+            yearSignal={selYear}
           />
           <Typography
             sx={{

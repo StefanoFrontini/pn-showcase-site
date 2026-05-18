@@ -3,6 +3,7 @@
   "width": "container",
   "height": "container",
   "padding": 5,
+  "params": [{ "name": "year", "value": null }],
 
   "datasets": {
     "regions_coordinates": [
@@ -55,10 +56,13 @@
     },
     {
       "data": {
-        "url": "https://pdnd-prod-dl-1-public-data.s3.eu-central-1.amazonaws.com/dashboard/send/dashboard-send-sezione2.json",
+        "url": "https://gist.githubusercontent.com/StefanoFrontini/1572aa83bd623e27a7ff35a917872203/raw/ef986efebe8dad086185fa1f73fb4984e86e4b3e/sezione2-test.json",
         "format": { "property": "geo_comuni" }
       },
       "transform": [
+        {
+          "filter": "year === year(datum.year) || year === datum.year"
+        },
         {
           "lookup": "regione",
           "from": {

@@ -2,7 +2,7 @@ import type { GetStaticPaths, InferGetStaticPropsType } from "next";
 
 import { Box, Stack, Typography } from "@mui/material";
 import Script from "next/script";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import Head from "next/head";
 import { formatLocale, timeFormatLocale } from "vega";
 import { getI18n } from "../../api/i18n";
@@ -99,6 +99,22 @@ const SendInNumbers = ({
     ...years,
   ].reverse();
 
+  const entitiesActiveSpecWithYear = useMemo(
+    () => ({
+      ...toVegaLiteSpec(entitiesActiveSpec),
+      params: [{ name: "year", value: selYear }],
+    }),
+    [selYear]
+  );
+
+  const entitiesActivePercSpecWithYear = useMemo(
+    () => ({
+      ...toVegaLiteSpec(entitiesActivePercSpec),
+      params: [{ name: "year", value: selYear }],
+    }),
+    [selYear]
+  );
+
   return (
     <>
       <Head>
@@ -178,14 +194,28 @@ const SendInNumbers = ({
           </Box>
         </Stack>
         <Box component="main" paddingTop={6}>
-          <SectionLayout
-            title={t("sent_notifications.title")}
-            text={t("sent_notifications.description")}
+          <CardText sx={{ mb: 1.5 }}>
+            {t("sent_notifications.filters", { ns: "numeri" })}
+          </CardText>
+          <Box
+            sx={{
+              position: "sticky",
+              top: 0,
+              zIndex: 1,
+              backgroundColor: "white",
+              pb: 1.5,
+            }}
           >
             <TabsNumeri
               tabs={tabs.map((tab) => tab.label)}
               onTabChange={handleTabChange}
+              showDescription={false}
             />
+          </Box>
+          <SectionLayout
+            title={t("sent_notifications.title")}
+            text={t("sent_notifications.description")}
+          >
             <Stack
               direction={{ xs: "column", sm: "row" }}
               spacing={{ xs: 2, md: 6 }}
@@ -345,11 +375,9 @@ const SendInNumbers = ({
                       })}
                     </CardText>
                     <FormatKpi>
-                      <KpiWrapper spec={toVegaLiteSpec(entitiesActiveSpec)} />
+                      <KpiWrapper spec={entitiesActiveSpecWithYear} />
                     </FormatKpi>
-                    <KpiEntitiesPerc
-                      spec={toVegaLiteSpec(entitiesActivePercSpec)}
-                    >
+                    <KpiEntitiesPerc spec={entitiesActivePercSpecWithYear}>
                       {t("entities.active.total.description_1", {
                         ns: "numeri",
                       })}
@@ -359,7 +387,7 @@ const SendInNumbers = ({
               </Stack>
               <Box flex={"1 1 0"}>
                 <KpiCard>
-                  <Maps />
+                  <Maps selYear={selYear} />
                 </KpiCard>
               </Box>
             </Stack>
@@ -368,7 +396,7 @@ const SendInNumbers = ({
             title={t("notification_types.title", { ns: "numeri" })}
             text={t("notification_types.description", { ns: "numeri" })}
           >
-            <NotificationsTypes />
+            <NotificationsTypes selYear={selYear} />
           </SectionLayout>
         </Box>
       </Box>

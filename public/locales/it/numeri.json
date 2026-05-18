@@ -47,6 +47,7 @@
       "description_2": "delle",
       "description_3": "notifiche",
       "monthly": "mensile",
+      "yearly": "annuale",
       "aggregate": "cumulato",
       "total": "complessivo",
       "digital": "digitali",
@@ -54,7 +55,9 @@
       "tooltip": {
         "month": "Mese",
         "aggregate": "Notifiche cumulate",
-        "monthly": "Notifiche mensili"
+        "monthly": "Notifiche mensili",
+        "year": "Anno",
+        "yearly": "Notifiche annuali"
       },
       "note": "Il valore cumulato è la somma progressiva di una quantità nel tempo."
     }

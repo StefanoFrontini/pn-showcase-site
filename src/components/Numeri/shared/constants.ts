@@ -1,4 +1,4 @@
 export const curYear = new Date().getFullYear();
 export const firstYear = curYear - 2;
 export const url =
-  "https://pdnd-prod-dl-1-public-data.s3.eu-central-1.amazonaws.com/dashboard/send/dashboard-send-sezione2.json";
+  "https://gist.githubusercontent.com/StefanoFrontini/1572aa83bd623e27a7ff35a917872203/raw/ef986efebe8dad086185fa1f73fb4984e86e4b3e/sezione2-test.json";

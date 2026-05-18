@@ -39,3 +39,5 @@ yarn-error.log*
 
 # conf
 /public/conf/config.json
+
+.tool-versions

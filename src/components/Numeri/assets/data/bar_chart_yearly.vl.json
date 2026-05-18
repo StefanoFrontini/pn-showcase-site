@@ -1,0 +1,107 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "width": "container",
+  "height": "container",
+  "padding": 5,
+  "data": {
+    "url": "https://pdnd-prod-dl-1-public-data.s3.eu-central-1.amazonaws.com/dashboard/send/dashboard-send-sezione1.json",
+    "format": { "property": "notifiche_per_mese" }
+  },
+  "params": [
+    { "name": "notification_type", "value": "total" },
+    { "name": "year", "value": null }
+  ],
+  "transform": [
+    {
+      "calculate": "datum['num_iun_' + notification_type]",
+      "as": "notification_value"
+    },
+    {
+      "calculate": "toString(year(datum.month))",
+      "as": "year_val"
+    },
+    {
+      "aggregate": [
+        { "op": "sum", "field": "notification_value", "as": "annual_total" }
+      ],
+      "groupby": ["year_val"]
+    }
+  ],
+  "layer": [
+    {
+      "mark": {
+        "type": "bar",
+        "width": { "band": 0.7 },
+        "cornerRadius": 5,
+        "fill": "#0B3EE3"
+      },
+      "encoding": {
+        "y": {
+          "field": "annual_total",
+          "type": "quantitative",
+          "axis": {
+            "format": "~s",
+            "labelFontWeight": 600,
+            "labelFont": "Titillium Web, sans-serif"
+          }
+        },
+        "x": {
+          "field": "year_val",
+          "type": "ordinal",
+          "sort": "ascending",
+          "axis": {
+            "grid": false,
+            "labelFontWeight": 600,
+            "labelFont": "Titillium Web, sans-serif",
+            "labelAngle": 0,
+            "title": null
+          }
+        },
+        "tooltip": [
+          {
+            "field": "year_val",
+            "title": "Anno"
+          },
+          {
+            "field": "annual_total",
+            "title": "Notifiche annuali",
+            "format": ","
+          }
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "rect",
+        "width": { "band": 0.7 },
+        "color": "transparent",
+        "tooltip": true
+      },
+      "encoding": {
+        "x": {
+          "field": "year_val",
+          "type": "ordinal",
+          "sort": "ascending"
+        },
+        "y": {
+          "field": "annual_total",
+          "type": "quantitative"
+        },
+        "y2": {
+          "value": 0
+        },
+        "tooltip": [
+          {
+            "field": "year_val",
+            "title": "Anno"
+          },
+          {
+            "field": "annual_total",
+            "title": "Notifiche annuali",
+            "format": ","
+          }
+        ]
+      }
+    }
+  ]
+}

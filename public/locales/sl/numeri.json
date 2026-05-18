@@ -47,6 +47,7 @@
       "description_2": "",
       "description_3": "obvestil",
       "monthly": "mesečno",
+      "yearly": "letno",
       "aggregate": "kumulativno",
       "total": "skupno",
       "digital": "digitalna",
@@ -54,7 +55,9 @@
       "tooltip": {
         "month": "Mesec",
         "aggregate": "Kumulativna obvestila",
-        "monthly": "Mesečna obvestila"
+        "monthly": "Mesečna obvestila",
+        "year": "Leto",
+        "yearly": "Letna obvestila"
       },
       "note": "Kumulativna vrednost je progresivna vsota količine skozi čas."
     }
