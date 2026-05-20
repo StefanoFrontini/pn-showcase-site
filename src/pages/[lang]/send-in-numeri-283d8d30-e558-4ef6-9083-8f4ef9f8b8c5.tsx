@@ -17,6 +17,10 @@ import notificationsTotalSpec from "../../components/Numeri/assets/data/notifica
 import entitiesActiveSpec from "../../components/Numeri/assets/data/entities-active.vl.json";
 import entitiesActivePercSpec from "../../components/Numeri/assets/data/entities-active-perc.vl.json";
 import pieChartDigitalSpec from "../../components/Numeri/assets/data/pie-chart-digital.vl.json";
+import avvisiTotalSpec from "../../components/Numeri/assets/data/avvisi-total.vl.json";
+import avvisiAppIoSpec from "../../components/Numeri/assets/data/avvisi-app-io.vl.json";
+import avvisiEmailSmsSpec from "../../components/Numeri/assets/data/avvisi-email-sms.vl.json";
+import pieChartAvvisiSpec from "../../components/Numeri/assets/data/pie-chart-avvisi.vl.json";
 import { langCodes } from "@utils/constants";
 import Icons from "src/components/Numeri/components/Icons";
 import KpiCard from "src/components/Numeri/components/KpiCard";
@@ -29,6 +33,7 @@ import CardText from "src/components/Numeri/components/CardText";
 import CardTitle from "src/components/Numeri/components/CardTitle";
 import KpiWrapper from "src/components/Numeri/components/KpiWrapper";
 import NotificationsTypes from "src/components/Numeri/components/NotificationsTypes";
+import TopAtti from "src/components/Numeri/components/TopAtti";
 import SvgDefs from "src/components/Numeri/components/SvgDefs";
 
 import AlertWrapper from "src/components/Numeri/components/AlertWrapper";
@@ -203,7 +208,7 @@ const SendInNumbers = ({
               top: 0,
               zIndex: 1,
               backgroundColor: "white",
-              pb: 1.5,
+              mb: 5
             }}
           >
             <TabsNumeri
@@ -355,6 +360,129 @@ const SendInNumbers = ({
             <NotificationsTrend selYear={selYear} />
           </SectionLayout>
           <SectionLayout
+            title={t("avvisi.title")}
+            text={t("avvisi.description")}
+          >
+            <Stack
+              direction={{ xs: "column", sm: "row" }}
+              spacing={{ xs: 2, md: 6 }}
+            >
+              <Box sx={{ flex: "0 0 30.602%", display: "flex" }}>
+                <KpiCard>
+                  <Stack direction={"column"} spacing={2}>
+                    <Icons.ForwardToInboxIcon />
+                    <FormatKpi>
+                      <KpiSignal
+                        spec={toVegaLiteSpec(avvisiTotalSpec)}
+                        yearSignal={selYear}
+                      />
+                    </FormatKpi>
+                    <CardTitle>
+                      {selYear === null
+                        ? t("avvisi.total.title_2")
+                        : t("avvisi.total.title")}
+                    </CardTitle>
+                    <CardText>
+                      {selYear === null
+                        ? t("avvisi.total.description_2")
+                        : t("avvisi.total.description")}
+                    </CardText>
+                  </Stack>
+                </KpiCard>
+              </Box>
+              <Box sx={{ flex: "1 1 0" }}>
+                <KpiCard>
+                  <Stack
+                    direction={{ xs: "column", sm: "row" }}
+                    spacing={{ xs: 8, sm: 2 }}
+                  >
+                    <Stack
+                      sx={{ flex: "0 0 50%" }}
+                      direction={"column"}
+                      spacing={4}
+                    >
+                      <Stack direction={"column"} spacing={1}>
+                        <Stack
+                          direction={"row"}
+                          spacing={2}
+                          width={"100%"}
+                          alignItems={"center"}
+                        >
+                          <svg
+                            width="36"
+                            height="36"
+                            viewBox="0 0 36 36"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <circle
+                              cx="18"
+                              cy="18"
+                              r="18"
+                              fill="url(#pattern_2)"
+                            />
+                          </svg>
+                          <FormatKpi>
+                            <KpiSignal
+                              spec={toVegaLiteSpec(avvisiAppIoSpec)}
+                              yearSignal={selYear}
+                            />
+                          </FormatKpi>
+                        </Stack>
+                        <CardTitle>
+                          {t("avvisi.app_io.title")}
+                        </CardTitle>
+                      </Stack>
+                      <Stack direction={"column"} spacing={1}>
+                        <Stack
+                          direction={"row"}
+                          spacing={2}
+                          alignItems={"center"}
+                        >
+                          <svg
+                            width="36"
+                            height="36"
+                            viewBox="0 0 36 36"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <circle
+                              cx="18"
+                              cy="18"
+                              r="18"
+                              fill="url(#pattern_1)"
+                            />
+                          </svg>
+                          <FormatKpi>
+                            <KpiSignal
+                              spec={toVegaLiteSpec(avvisiEmailSmsSpec)}
+                              yearSignal={selYear}
+                            />
+                          </FormatKpi>
+                        </Stack>
+                        <CardTitle>
+                          {t("avvisi.email_sms.title")}
+                        </CardTitle>
+                      </Stack>
+                    </Stack>
+                    <Stack
+                      sx={{ flex: "1 1 0" }}
+                      direction={"column"}
+                      spacing={2}
+                      justifyContent={"center"}
+                      alignItems={"center"}
+                    >
+                      <PieChartWrapper
+                        spec={toVegaLiteSpec(pieChartAvvisiSpec)}
+                        yearSignal={selYear}
+                      />
+                    </Stack>
+                  </Stack>
+                </KpiCard>
+              </Box>
+            </Stack>
+          </SectionLayout>
+          <SectionLayout
             title={t("entities.title")}
             text={t("entities.description")}
           >
@@ -397,6 +525,12 @@ const SendInNumbers = ({
             text={t("notification_types.description", { ns: "numeri" })}
           >
             <NotificationsTypes selYear={selYear} />
+          </SectionLayout>
+          <SectionLayout
+            title={t("atti.title", { ns: "numeri" })}
+            text={t("atti.description", { ns: "numeri" })}
+          >
+            <TopAtti selYear={selYear} />
           </SectionLayout>
         </Box>
       </Box>

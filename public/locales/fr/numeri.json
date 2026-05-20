@@ -62,6 +62,23 @@
     }
   },
 
+  "avvisi": {
+    "title": "Avis envoyés",
+    "description": "Nombre d'avis envoyés, c'est-à-dire les messages informant les destinataires qu'une notification SEND est disponible, envoyés via App IO ou e-mail/SMS.",
+    "total": {
+      "title": "Total des avis envoyés",
+      "description": "Total des avis envoyés pendant la période de référence sélectionnée.",
+      "title_2": "Total des avis envoyés depuis juillet 2023",
+      "description_2": "Total des avis envoyés depuis la première année d'activité de la plateforme."
+    },
+    "app_io": {
+      "title": "Avis envoyés via App IO"
+    },
+    "email_sms": {
+      "title": "Avis envoyés par e-mail/SMS"
+    }
+  },
+
   "entities": {
     "title": "Organismes sur SEND",
     "description": "Organismes participants ayant envoyé au moins une notification SEND depuis le lancement du service.",
@@ -90,10 +107,17 @@
       },
       "tooltip": {
         "region": "Région",
-        "municipalities": "Communes",
-        "percentage": "Pourcentage de communes par rapport au nombre total de communes dans la région"
+        "municipalities": "Communes actives",
+        "percentage": "Pourcentage de communes actives par rapport au nombre total de communes dans la région"
       }
     }
+  },
+
+  "atti": {
+    "title": "Principaux actes notifiés par SEND",
+    "description": "Nombre des dix principaux actes* envoyés via SEND.",
+    "note_1": "* il appartient à l'organisme participant de vérifier que l'acte ne fait pas partie de ceux dont la notification est exclue via SEND en vertu de l'art. 26, alinéa 17 du D.L. 76/2020.",
+    "note_2": "La représentation inclut les principaux actes avec un nombre de notifications envoyées égal ou supérieur à 5."
   },
 
   "notification_types": {

@@ -63,6 +63,23 @@
     }
   },
 
+  "avvisi": {
+    "title": "Notifications sent",
+    "description": "Number of alerts sent, i.e. messages informing recipients that a SEND notification is available to read, delivered via App IO or email/SMS.",
+    "total": {
+      "title": "Total alerts sent",
+      "description": "Total alerts sent during the selected reference period.",
+      "title_2": "Total alerts sent since July 2023",
+      "description_2": "Total alerts sent since the platform's first year of operation."
+    },
+    "app_io": {
+      "title": "Alerts sent via App IO"
+    },
+    "email_sms": {
+      "title": "Alerts sent via email/SMS"
+    }
+  },
+
   "entities": {
     "title": "Institutions on SEND",
     "description": "Participating institutions that have sent at least one SEND notification since the service launch.",
@@ -90,10 +107,17 @@
       },
       "tooltip": {
         "region": "Region",
-        "municipalities": "Municipalities",
-        "percentage": "Percentage of municipalities compared to the total number of municipalities in the region"
+        "municipalities": "Active municipalities",
+        "percentage": "Percentage of active municipalities compared to the total number of municipalities in the region"
       }
     }
+  },
+
+  "atti": {
+    "title": "Main acts notified by SEND",
+    "description": "Number of the ten main acts* sent via SEND.",
+    "note_1": "* it is up to the participating entity to verify that the act is not among those whose notification is excluded via SEND pursuant to art. 26, paragraph 17 D.L. 76/2020.",
+    "note_2": "The representation includes the main acts with a number of notifications sent equal to or greater than 5."
   },
 
   "notification_types": {

@@ -65,6 +65,23 @@
     }
   },
 
+  "avvisi": {
+    "title": "Gesendete Benachrichtigungen",
+    "description": "Anzahl der gesendeten Benachrichtigungen, d. h. Nachrichten, die den Empfänger informieren, dass eine SEND-Mitteilung vorliegt, gesendet über App IO oder E-Mail/SMS.",
+    "total": {
+      "title": "Gesamtzahl gesendeter Benachrichtigungen",
+      "description": "Gesamtzahl der im ausgewählten Zeitraum gesendeten Benachrichtigungen.",
+      "title_2": "Gesamtzahl gesendeter Benachrichtigungen seit Juli 2023",
+      "description_2": "Gesamtzahl der seit dem ersten Betriebsjahr der Plattform gesendeten Benachrichtigungen."
+    },
+    "app_io": {
+      "title": "Benachrichtigungen über App IO gesendet"
+    },
+    "email_sms": {
+      "title": "Benachrichtigungen per E-Mail/SMS gesendet"
+    }
+  },
+
   "entities": {
     "title": "Entitäten auf SEND",
     "description": "Teilnehmende Entitäten, die seit Beginn des Dienstes mindestens eine SEND-Benachrichtigung versandt haben.",
@@ -92,10 +109,17 @@
       },
       "tooltip": {
         "region": "Region",
-        "municipalities": "Gemeinden",
-        "percentage": "Anteil der Gemeinden an der Gesamtzahl der Gemeinden in der Region"
+        "municipalities": "Aktive Gemeinden",
+        "percentage": "Anteil der aktiven Gemeinden an der Gesamtzahl der Gemeinden in der Region"
       }
     }
+  },
+
+  "atti": {
+    "title": "Hauptakte, die von SEND gemeldet wurden",
+    "description": "Anzahl der zehn wichtigsten Akte*, die über SEND gesendet wurden.",
+    "note_1": "* Es obliegt der teilnehmenden Einrichtung zu prüfen, ob die Akte nicht zu denjenigen gehört, deren Zustellung über SEND gemäß Art. 26, Abs. 17 D.L. 76/2020 ausgeschlossen ist.",
+    "note_2": "Die Darstellung umfasst die wichtigsten Akte mit einer Anzahl gesendeter Benachrichtigungen von fünf oder mehr."
   },
 
   "notification_types": {

@@ -90,7 +90,7 @@ const NotificationsTypes = ({ selYear }: Props) => {
       try {
         const response = await fetch(url);
         const jsonData: SectionTwoData = await response.json();
-        const cat = jsonData.ambiti_per_anno.reduce(
+        const cat = jsonData.top10_ambiti.reduce(
           (acc: Record<string, string | null>, item) => {
             if (!(generateTag(item.categoria_ente) in acc)) {
               acc[generateTag(item.categoria_ente)] = item.categoria_ente;

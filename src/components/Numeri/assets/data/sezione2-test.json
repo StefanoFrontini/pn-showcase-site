@@ -731,7 +731,7 @@
     }
   ],
 
-  "ambiti_per_anno": [
+  "top10_ambiti": [
     {
       "year": null,
       "categoria_ente": null,
@@ -1813,5 +1813,222 @@
       "num_iun": 3790,
       "ranking": 4
     }
+  ],
+
+  "top10_atti": [
+    {
+      "year": null,
+      "atto": "Cartella di Pagamento",
+      "num_iun": 12450000,
+      "ranking": 1
+    },
+    {
+      "year": null,
+      "atto": "Avviso di Accertamento",
+      "num_iun": 8230000,
+      "ranking": 2
+    },
+    { "year": null, "atto": "Verbale", "num_iun": 5120000, "ranking": 3 },
+    { "year": null, "atto": "Ordinanza", "num_iun": 3450000, "ranking": 4 },
+    {
+      "year": null,
+      "atto": "Avviso Bonario",
+      "num_iun": 2180000,
+      "ranking": 5
+    },
+    { "year": null, "atto": "Diffida", "num_iun": 820000, "ranking": 6 },
+    {
+      "year": null,
+      "atto": "Ingiunzione di Pagamento",
+      "num_iun": 490000,
+      "ranking": 7
+    },
+    {
+      "year": null,
+      "atto": "Decreto Ingiuntivo",
+      "num_iun": 185000,
+      "ranking": 8
+    },
+    {
+      "year": null,
+      "atto": "Atto di Citazione",
+      "num_iun": 98000,
+      "ranking": 9
+    },
+    { "year": null, "atto": "Provvedimento", "num_iun": 45000, "ranking": 10 },
+
+    {
+      "year": "2023",
+      "atto": "Cartella di Pagamento",
+      "num_iun": 498000,
+      "ranking": 1
+    },
+    {
+      "year": "2023",
+      "atto": "Avviso di Accertamento",
+      "num_iun": 329000,
+      "ranking": 2
+    },
+    { "year": "2023", "atto": "Verbale", "num_iun": 205000, "ranking": 3 },
+    { "year": "2023", "atto": "Ordinanza", "num_iun": 138000, "ranking": 4 },
+    {
+      "year": "2023",
+      "atto": "Avviso Bonario",
+      "num_iun": 87000,
+      "ranking": 5
+    },
+    { "year": "2023", "atto": "Diffida", "num_iun": 33000, "ranking": 6 },
+    {
+      "year": "2023",
+      "atto": "Ingiunzione di Pagamento",
+      "num_iun": 20000,
+      "ranking": 7
+    },
+    {
+      "year": "2023",
+      "atto": "Decreto Ingiuntivo",
+      "num_iun": 7400,
+      "ranking": 8
+    },
+    {
+      "year": "2023",
+      "atto": "Atto di Citazione",
+      "num_iun": 3900,
+      "ranking": 9
+    },
+    { "year": "2023", "atto": "Provvedimento", "num_iun": 1800, "ranking": 10 },
+
+    {
+      "year": "2024",
+      "atto": "Cartella di Pagamento",
+      "num_iun": 3235000,
+      "ranking": 1
+    },
+    {
+      "year": "2024",
+      "atto": "Avviso di Accertamento",
+      "num_iun": 2140000,
+      "ranking": 2
+    },
+    { "year": "2024", "atto": "Verbale", "num_iun": 1330000, "ranking": 3 },
+    { "year": "2024", "atto": "Ordinanza", "num_iun": 896000, "ranking": 4 },
+    {
+      "year": "2024",
+      "atto": "Avviso Bonario",
+      "num_iun": 567000,
+      "ranking": 5
+    },
+    { "year": "2024", "atto": "Diffida", "num_iun": 213000, "ranking": 6 },
+    {
+      "year": "2024",
+      "atto": "Ingiunzione di Pagamento",
+      "num_iun": 127000,
+      "ranking": 7
+    },
+    {
+      "year": "2024",
+      "atto": "Decreto Ingiuntivo",
+      "num_iun": 48000,
+      "ranking": 8
+    },
+    {
+      "year": "2024",
+      "atto": "Atto di Citazione",
+      "num_iun": 25500,
+      "ranking": 9
+    },
+    {
+      "year": "2024",
+      "atto": "Provvedimento",
+      "num_iun": 11700,
+      "ranking": 10
+    },
+
+    {
+      "year": "2025",
+      "atto": "Cartella di Pagamento",
+      "num_iun": 6842000,
+      "ranking": 1
+    },
+    {
+      "year": "2025",
+      "atto": "Avviso di Accertamento",
+      "num_iun": 4524000,
+      "ranking": 2
+    },
+    { "year": "2025", "atto": "Verbale", "num_iun": 2815000, "ranking": 3 },
+    { "year": "2025", "atto": "Ordinanza", "num_iun": 1896000, "ranking": 4 },
+    {
+      "year": "2025",
+      "atto": "Avviso Bonario",
+      "num_iun": 1199000,
+      "ranking": 5
+    },
+    { "year": "2025", "atto": "Diffida", "num_iun": 451000, "ranking": 6 },
+    {
+      "year": "2025",
+      "atto": "Ingiunzione di Pagamento",
+      "num_iun": 269000,
+      "ranking": 7
+    },
+    {
+      "year": "2025",
+      "atto": "Decreto Ingiuntivo",
+      "num_iun": 102000,
+      "ranking": 8
+    },
+    {
+      "year": "2025",
+      "atto": "Atto di Citazione",
+      "num_iun": 54000,
+      "ranking": 9
+    },
+    {
+      "year": "2025",
+      "atto": "Provvedimento",
+      "num_iun": 24800,
+      "ranking": 10
+    },
+
+    {
+      "year": "2026",
+      "atto": "Cartella di Pagamento",
+      "num_iun": 1875000,
+      "ranking": 1
+    },
+    {
+      "year": "2026",
+      "atto": "Avviso di Accertamento",
+      "num_iun": 1237000,
+      "ranking": 2
+    },
+    { "year": "2026", "atto": "Verbale", "num_iun": 770000, "ranking": 3 },
+    { "year": "2026", "atto": "Ordinanza", "num_iun": 519000, "ranking": 4 },
+    {
+      "year": "2026",
+      "atto": "Avviso Bonario",
+      "num_iun": 328000,
+      "ranking": 5
+    },
+    { "year": "2026", "atto": "Diffida", "num_iun": 123000, "ranking": 6 },
+    {
+      "year": "2026",
+      "atto": "Ingiunzione di Pagamento",
+      "num_iun": 73600,
+      "ranking": 7
+    },
+    {
+      "year": "2026",
+      "atto": "Decreto Ingiuntivo",
+      "num_iun": 27900,
+      "ranking": 8
+    },
+    {
+      "year": "2026",
+      "atto": "Atto di Citazione",
+      "num_iun": 14800,
+      "ranking": 9
+    },
+    { "year": "2026", "atto": "Provvedimento", "num_iun": 6800, "ranking": 10 }
   ]
 }

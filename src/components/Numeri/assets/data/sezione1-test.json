@@ -223,5 +223,17 @@
       "num_iun_digital": 201325,
       "num_iun_total": 715239
     }
+  ],
+  "totale_avvisi": [
+    { "year": null,   "type_avviso": "APP_IO",    "num_avvisi": 42318750 },
+    { "year": null,   "type_avviso": "EMAIL_SMS",  "num_avvisi": 5812430 },
+    { "year": "2023", "type_avviso": "APP_IO",    "num_avvisi": 1423600 },
+    { "year": "2023", "type_avviso": "EMAIL_SMS",  "num_avvisi": 193840 },
+    { "year": "2024", "type_avviso": "APP_IO",    "num_avvisi": 9874200 },
+    { "year": "2024", "type_avviso": "EMAIL_SMS",  "num_avvisi": 1102370 },
+    { "year": "2025", "type_avviso": "APP_IO",    "num_avvisi": 24318500 },
+    { "year": "2025", "type_avviso": "EMAIL_SMS",  "num_avvisi": 3542810 },
+    { "year": "2026", "type_avviso": "APP_IO",    "num_avvisi": 6702450 },
+    { "year": "2026", "type_avviso": "EMAIL_SMS",  "num_avvisi": 973410 }
   ]
 }

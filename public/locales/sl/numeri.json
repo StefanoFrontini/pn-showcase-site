@@ -63,6 +63,23 @@
     }
   },
 
+  "avvisi": {
+    "title": "Poslana obvestila",
+    "description": "Število poslanih opozoril, tj. sporočil, ki obveščajo prejemnike, da je na voljo obvestilo SEND, poslana prek aplikacije IO ali e-pošte/SMS.",
+    "total": {
+      "title": "Skupno poslana obvestila",
+      "description": "Skupno število opozoril, poslanih v izbranem referenčnem obdobju.",
+      "title_2": "Skupno poslana obvestila od julija 2023",
+      "description_2": "Skupno število opozoril, poslanih od prvega leta delovanja platforme."
+    },
+    "app_io": {
+      "title": "Obvestila poslana prek App IO"
+    },
+    "email_sms": {
+      "title": "Obvestila poslana po e-pošti/SMS"
+    }
+  },
+
   "entities": {
     "title": "Organizacije na SEND",
     "description": "Sodelujoče organizacije, ki so poslale najmanj eno obvestilo SEND od zagona storitve.",
@@ -90,10 +107,17 @@
       },
       "tooltip": {
         "region": "Regija",
-        "municipalities": "Občine",
-        "percentage": "Odstotek občin glede na skupno število občin na regijo."
+        "municipalities": "Aktivne občine",
+        "percentage": "Odstotek aktivnih občin glede na skupno število občin na regijo"
       }
     }
+  },
+
+  "atti": {
+    "title": "Glavni akti, ki jih sporoča SEND",
+    "description": "Število desetih glavnih aktov*, poslanih prek SEND.",
+    "note_1": "* Sodelujoča organizacija mora preveriti, da akt ni med tistimi, katerih uradno obvestilo je izključeno prek SEND v skladu s členom 26, odstavek 17 zakonskega odloka 76/2020.",
+    "note_2": "Prikaz vključuje glavne akte s številom poslanih obvestil, enakim ali večjim od 5."
   },
 
   "notification_types": {

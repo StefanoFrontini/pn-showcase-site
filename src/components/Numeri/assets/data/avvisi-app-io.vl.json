@@ -1,0 +1,16 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "data": {
+    "url": "https://gist.githubusercontent.com/StefanoFrontini/273f3188acf8bfe7ee2f16fd918e6a03/raw/02a8642c21bb4eeb26cd0476826af86a15ee09dd/sezione1-test.json",
+    "format": { "property": "totale_avvisi" }
+  },
+  "params": [{ "name": "year", "value": null }],
+  "transform": [
+    { "filter": "year == datum.year || year === +datum.year" },
+    { "filter": "datum.type_avviso == 'APP_IO'" }
+  ],
+  "mark": "text",
+  "encoding": {
+    "text": { "field": "num_avvisi", "aggregate": "sum", "format": ",d" }
+  }
+}
