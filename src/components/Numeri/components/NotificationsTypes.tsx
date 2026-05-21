@@ -154,21 +154,22 @@ const NotificationsTypes = ({ selYear }: Props) => {
               ))}
             </Select>
           </Stack>
+          <Typography
+            sx={{
+              color: dashboardColors.get("grey-650"),
+              fontSize: "0.875rem",
+              lineHeight: "1.125rem",
+              py: "1rem"
+            }}
+          >
+            {t("notification_types.main_scopes.note_1", { ns: "numeri" })}
+          </Typography>
 
           <NotificationsTypesChart
             spec={translateTooltip(toVegaLiteSpec(topAreasSpec))}
             categorySignal={categories[curOption] ?? null}
             yearSignal={selYear}
           />
-          <Typography
-            sx={{
-              color: dashboardColors.get("grey-650"),
-              fontSize: "0.875rem",
-              lineHeight: "1.125rem",
-            }}
-          >
-            {t("notification_types.main_scopes.note_1", { ns: "numeri" })}
-          </Typography>
           <Typography
             sx={{
               color: dashboardColors.get("grey-650"),

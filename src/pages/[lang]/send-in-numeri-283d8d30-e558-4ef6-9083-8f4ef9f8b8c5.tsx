@@ -14,6 +14,7 @@ import { LangCode } from "../../model";
 import notificationsAnalogSpec from "../../components/Numeri/assets/data/notifications-analog.vl.json";
 import notificationsDigitalSpec from "../../components/Numeri/assets/data/notifications-digital.vl.json";
 import notificationsTotalSpec from "../../components/Numeri/assets/data/notifications-total.vl.json";
+import notificationsTotalPercSpec from "../../components/Numeri/assets/data/notifications-total-perc.vl.json";
 import entitiesActiveSpec from "../../components/Numeri/assets/data/entities-active.vl.json";
 import entitiesActivePercSpec from "../../components/Numeri/assets/data/entities-active-perc.vl.json";
 import pieChartDigitalSpec from "../../components/Numeri/assets/data/pie-chart-digital.vl.json";
@@ -80,7 +81,7 @@ export async function getStaticProps({
 
 const numYear = curYear - firstYear + 1;
 const years = Array.from({ length: numYear }, (_, i) => curYear - i).map(
-  (y) => ({ id: y, label: String(y) })
+  (y) => ({ id: y, label: String(y) }),
 );
 
 const SendInNumbers = ({
@@ -109,7 +110,7 @@ const SendInNumbers = ({
       ...toVegaLiteSpec(entitiesActiveSpec),
       params: [{ name: "year", value: selYear }],
     }),
-    [selYear]
+    [selYear],
   );
 
   const entitiesActivePercSpecWithYear = useMemo(
@@ -117,7 +118,15 @@ const SendInNumbers = ({
       ...toVegaLiteSpec(entitiesActivePercSpec),
       params: [{ name: "year", value: selYear }],
     }),
-    [selYear]
+    [selYear],
+  );
+
+  const notificationsTotalPercSpecWithYear = useMemo(
+    () => ({
+      ...toVegaLiteSpec(notificationsTotalPercSpec),
+      params: [{ name: "year", value: selYear }],
+    }),
+    [selYear],
   );
 
   return (
@@ -208,7 +217,7 @@ const SendInNumbers = ({
               top: 0,
               zIndex: 1,
               backgroundColor: "white",
-              mb: 5
+              mb: 5,
             }}
           >
             <TabsNumeri
@@ -251,6 +260,15 @@ const SendInNumbers = ({
                             ns: "numeri",
                           })}
                     </CardText>
+                    {selYear !== null && (
+                      <KpiEntitiesPerc
+                        spec={notificationsTotalPercSpecWithYear}
+                      >
+                        {t("sent_notifications.total.description_1", {
+                          ns: "numeri",
+                        })}
+                      </KpiEntitiesPerc>
+                    )}
                   </Stack>
                 </KpiCard>
               </Box>
@@ -395,11 +413,12 @@ const SendInNumbers = ({
                   <Stack
                     direction={{ xs: "column", sm: "row" }}
                     spacing={{ xs: 8, sm: 2 }}
+                    alignItems={"center"}
                   >
                     <Stack
                       sx={{ flex: "0 0 50%" }}
                       direction={"column"}
-                      spacing={4}
+                      spacing={6}
                     >
                       <Stack direction={"column"} spacing={1}>
                         <Stack
@@ -429,9 +448,7 @@ const SendInNumbers = ({
                             />
                           </FormatKpi>
                         </Stack>
-                        <CardTitle>
-                          {t("avvisi.app_io.title")}
-                        </CardTitle>
+                        <CardTitle>{t("avvisi.app_io.title")}</CardTitle>
                       </Stack>
                       <Stack direction={"column"} spacing={1}>
                         <Stack
@@ -460,9 +477,7 @@ const SendInNumbers = ({
                             />
                           </FormatKpi>
                         </Stack>
-                        <CardTitle>
-                          {t("avvisi.email_sms.title")}
-                        </CardTitle>
+                        <CardTitle>{t("avvisi.email_sms.title")}</CardTitle>
                       </Stack>
                     </Stack>
                     <Stack

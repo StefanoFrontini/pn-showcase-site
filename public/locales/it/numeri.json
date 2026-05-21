@@ -11,28 +11,29 @@
     "alert": "I dati sono disponibili su dati.gov.it",
     "website": "Vai al sito"
   },
-  "total": "Totale",
+  "total": "Tutti",
   "sent_notifications": {
     "title": "Notifiche SEND inviate",
-    "description": "La notifica SEND è una comunicazione a valore legale emessa in via ufficiale da un'amministrazione. Può essere recapitata in modalità digitale o analogica.",
+    "description": "La notifica SEND è una comunicazione a valore legale emessa in via ufficiale da un’amministrazione. Può essere recapitata in modalità digitale o analogica.",
     "filters": "Tramite i filtri Anni, è possibile visualizzare le sezioni per il periodo di riferimento desiderato.",
     "screen_readers": "Periodo dati visualizzato:",
     "total": {
       "name": "complessive",
-      "title": "Totale notifiche inviate",
+      "title": "Totale notifiche SEND inviate",
       "description": "Totale delle notifiche inviate nel periodo di riferimento considerato.",
       "title_2": "Totale notifiche inviate da Luglio 2023",
-      "description_2": "Totale delle notifiche inviate dal primo anno di operatività della piattaforma."
+      "description_2": "Totale delle notifiche inviate dal primo anno di operatività della piattaforma.",
+      "description_1": "rispetto all’anno precedente"
     },
     "digital": {
       "name": "digitali",
       "title": "Numero di notifiche SEND digitali",
-      "description": "Notifiche SEND emesse ai destinatari tramite canali digitali certificati."
+      "description": "Notifiche SEND emesse ai destinatari tramite canali digitali certificati"
     },
     "analog": {
       "name": "analogiche",
       "title": "Numero di notifiche SEND analogiche",
-      "description": "Notifiche SEND emesse in modalità analogica per assenza di canali digitali certificati del destinatario."
+      "description": "Notifiche SEND emesse in modalità analogica per assenza di canali digitali certificati del destinatario"
     },
     "pieChart": {
       "tooltip": {
@@ -42,14 +43,14 @@
     },
     "trend": {
       "title": "Andamento delle notifiche SEND",
-      "description": "Andamento del numero di SEND emesse in via ufficiale da un ente aderente",
+      "description": "Andamento del numero di notifiche SEND emesse in via ufficiale da un ente aderente",
       "description_1": "Andamento",
       "description_2": "delle",
       "description_3": "notifiche",
       "monthly": "mensile",
       "yearly": "annuale",
       "aggregate": "cumulato",
-      "total": "complessivo",
+      "total": "complessive",
       "digital": "digitali",
       "analog": "analogiche",
       "tooltip": {
@@ -65,7 +66,7 @@
 
   "avvisi": {
     "title": "Avvisi inviati",
-    "description": "Andamento del numero di avvisi inviati, cioè messaggi che informano quando c'è una notifica SEND da leggere, inviati tramite App IO, e-mail o SMS.",
+    "description": "Andamento del numero di avvisi inviati, cioè messaggi che informano quando c’è una notifica SEND da leggere, inviati tramite App IO, e-mail o SMS.",
     "total": {
       "title": "Totale avvisi inviati",
       "description": "Totale degli avvisi inviati nel periodo di riferimento considerato.",
@@ -73,7 +74,7 @@
       "description_2": "Totale degli avvisi inviati dal primo anno di operatività della piattaforma."
     },
     "app_io": {
-      "title": "Avvisi inviati tramite l'App IO"
+      "title": "Avvisi inviati tramite l’App IO"
     },
     "email_sms": {
       "title": "Avvisi inviati tramite e-mail/SMS"
@@ -82,12 +83,12 @@
 
   "entities": {
     "title": "Enti su SEND",
-    "description": "Enti aderenti che hanno inviato almeno una notifica SEND dall'avvio del servizio.",
+    "description": "Enti aderenti che hanno inviato almeno una notifica SEND dall’avvio del servizio.",
     "active": {
       "total": {
         "title": "Totale enti su SEND",
         "description": "Numero complessivo degli enti che hanno inviato almeno una notifica SEND.",
-        "description_1": "rispetto all'anno precedente"
+        "description_1": "rispetto all’anno precedente"
       },
       "municipalities": {
         "title": "Percentuale di comuni sul totale degli enti su SEND"
@@ -116,7 +117,7 @@
   "atti": {
     "title": "Principali atti notificati da SEND",
     "description": "Numero dei dieci principali atti* inviati tramite SEND",
-    "note_1": "* diversi da quelli la cui notificazione è esclusa tramite SEND ai sensi dell'art.26, comma 17 D.L. 76/2020.",
+    "note_1": "* diversi da quelli la cui notificazione è esclusa tramite SEND ai sensi dell’art.26, comma 17 D.L. 76/2020.",
     "note_2": "La rappresentazione include i principali atti con un numero di notifiche inviate uguale o superiore a 5."
   },
 

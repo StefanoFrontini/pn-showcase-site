@@ -235,5 +235,10 @@
     { "year": "2025", "type_avviso": "EMAIL_SMS",  "num_avvisi": 3542810 },
     { "year": "2026", "type_avviso": "APP_IO",    "num_avvisi": 6702450 },
     { "year": "2026", "type_avviso": "EMAIL_SMS",  "num_avvisi": 973410 }
+  ],
+  "variazione_totale_notifiche": [
+    { "year": "2024", "pct_variazione_vs_anno_prec": 3.7211 },
+    { "year": "2025", "pct_variazione_vs_anno_prec": 1.4070 },
+    { "year": "2026", "pct_variazione_vs_anno_prec": -0.6708 }
   ]
 }

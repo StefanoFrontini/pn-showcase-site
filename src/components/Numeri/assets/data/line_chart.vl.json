@@ -4,7 +4,7 @@
   "height": "container",
   "padding": 5,
   "data": {
-    "url": "https://pdnd-prod-dl-1-public-data.s3.eu-central-1.amazonaws.com/dashboard/send/dashboard-send-sezione1.json",
+    "url": "https://gist.githubusercontent.com/StefanoFrontini/273f3188acf8bfe7ee2f16fd918e6a03/raw/602ba2a813099dbc47f977b1db997fae14addb41/sezione1-test.json",
     "format": {
       "property": "notifiche_per_mese"
     }

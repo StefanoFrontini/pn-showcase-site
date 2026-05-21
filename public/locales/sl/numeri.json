@@ -22,7 +22,8 @@
       "title": "Skupaj poslana obvestila SEND",
       "description": "Obvestilo SEND je pravno veljavna komunikacija, ki jo uradno izda uprava. Lahko se dostavi digitalno ali analogno.",
       "title_2": "Skupaj poslanih obvestil od julija 2023",
-      "description_2": "Skupaj poslanih obvestil od prvega leta delovanja platforme"
+      "description_2": "Skupaj poslanih obvestil od prvega leta delovanja platforme",
+      "description_1": "v primerjavi s prejšnjim letom"
     },
     "digital": {
       "name": "digitalna",

@@ -24,7 +24,8 @@
       "title": "Gesamtzahl der versandten SEND-Benachrichtigungen",
       "description": "Eine SEND-Benachrichtigung ist eine rechtsverbindliche Mitteilung, die offiziell von einer Behörde ausgestellt wird. Sie kann digital oder analog zugestellt werden.",
       "title_2": "Gesamt Benachrichtigungen seit Juli 2023",
-      "description_2": "Gesamt Benachrichtigungen seit dem ersten Betriebsjahr der Plattform."
+      "description_2": "Gesamt Benachrichtigungen seit dem ersten Betriebsjahr der Plattform.",
+      "description_1": "im Vergleich zum Vorjahr"
     },
     "digital": {
       "name": "digital",

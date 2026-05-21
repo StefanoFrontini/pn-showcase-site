@@ -21,7 +21,8 @@
       "title": "Nombre total de notifications SEND envoyées",
       "description": "Une notification SEND est une communication à valeur juridique émise officiellement par un organisme. Elle peut être délivrée de manière numérique ou analogique.",
       "title_2": "Nombre total de notifications depuis juillet 2023",
-      "description_2": "Nombre total de notifications envoyées depuis la première année d'exploitation de la plateforme"
+      "description_2": "Nombre total de notifications envoyées depuis la première année d'exploitation de la plateforme",
+      "description_1": "par rapport à l'année précédente"
     },
     "digital": {
       "name": "numériques",

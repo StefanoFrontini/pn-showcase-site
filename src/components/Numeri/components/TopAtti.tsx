@@ -53,7 +53,7 @@ const TopAtti = ({ selYear }: Props) => {
       <KpiCard>
         <Stack direction="column" spacing={2}>
           <CardText>
-            {t("atti.note_2", { ns: "numeri" })}
+            {t("atti.note_1", { ns: "numeri" })}
           </CardText>
 
           <TopAttiChart
@@ -67,7 +67,7 @@ const TopAtti = ({ selYear }: Props) => {
               lineHeight: "1.125rem",
             }}
           >
-            {t("atti.note_1", { ns: "numeri" })}
+            {t("atti.note_2", { ns: "numeri" })}
           </Typography>
         </Stack>
       </KpiCard>
