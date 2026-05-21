@@ -4,20 +4,38 @@
   "height": 116,
   "padding": 25,
   "data": {
-    "url": "https://gist.githubusercontent.com/StefanoFrontini/273f3188acf8bfe7ee2f16fd918e6a03/raw/02a8642c21bb4eeb26cd0476826af86a15ee09dd/sezione1-test.json",
-    "format": { "property": "totale_avvisi" }
+    "url": "https://gist.githubusercontent.com/StefanoFrontini/273f3188acf8bfe7ee2f16fd918e6a03/raw/c9bc7e3280ff14cb24f0767df089fd406015a735/sezione1-test.json",
+    "format": {
+      "property": "totale_avvisi"
+    }
   },
-  "params": [{ "name": "year", "value": null }],
-  "transform": [
-    { "filter": "year == datum.year || year === +datum.year" },
+  "params": [
     {
-      "calculate": "datum.type_avviso == 'APP_IO' ? 'App IO' : 'Email/SMS'",
+      "name": "year",
+      "value": null
+    }
+  ],
+  "transform": [
+    {
+      "filter": "year == datum.year || year === +datum.year"
+    },
+    {
+      "calculate": "datum.type_avviso == 'App IO' ? 'App IO' : 'Altri canali'",
       "as": "type"
     },
     {
-      "joinaggregate": [{ "op": "sum", "field": "num_avvisi", "as": "total" }]
+      "joinaggregate": [
+        {
+          "op": "sum",
+          "field": "num_avvisi",
+          "as": "total"
+        }
+      ]
     },
-    { "calculate": "datum.num_avvisi / datum.total", "as": "percentage" }
+    {
+      "calculate": "datum.num_avvisi / datum.total",
+      "as": "percentage"
+    }
   ],
   "layer": [
     {
@@ -38,26 +56,55 @@
         "fontSize": 14
       },
       "encoding": {
-        "text": { "field": "percentage", "type": "nominal", "format": ".0%" },
-        "theta": { "field": "num_avvisi", "type": "quantitative", "stack": true }
+        "text": {
+          "field": "percentage",
+          "type": "nominal",
+          "format": ".0%"
+        },
+        "theta": {
+          "field": "num_avvisi",
+          "type": "quantitative",
+          "stack": true
+        }
       }
     }
   ],
   "encoding": {
-    "theta": { "field": "num_avvisi", "type": "quantitative", "stack": true },
+    "theta": {
+      "field": "num_avvisi",
+      "type": "quantitative",
+      "stack": true
+    },
     "color": {
       "field": "type",
       "type": "nominal",
       "legend": null,
       "scale": {
-        "domain": ["Email/SMS", "App IO"],
-        "range": ["url(#pattern_1)", "url(#pattern_2)"]
+        "domain": [
+          "Altri canali",
+          "App IO"
+        ],
+        "range": [
+          "url(#pattern_1)",
+          "url(#pattern_2)"
+        ]
       }
     },
     "tooltip": [
-      { "field": "type", "type": "nominal", "title": "Canale" },
-      { "field": "num_avvisi", "type": "quantitative", "title": "Numero di avvisi", "format": "," }
+      {
+        "field": "type",
+        "type": "nominal",
+        "title": "Canale"
+      },
+      {
+        "field": "num_avvisi",
+        "type": "quantitative",
+        "title": "Numero di avvisi",
+        "format": ","
+      }
     ]
   },
-  "view": { "stroke": null }
+  "view": {
+    "stroke": null
+  }
 }
