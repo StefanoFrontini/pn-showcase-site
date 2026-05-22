@@ -1,27 +1,27 @@
 {
-  "last_run": "2026-05-21T08:21:13.084614",
+  "last_run": "2026-05-22T08:23:09.990240",
   "totale_notifiche": [
     { "year": "2024", "type_notification": "ANALOG", "num_iun": 7366679 },
-    { "year": "2025", "type_notification": "ANALOG", "num_iun": 14057455 },
+    { "year": "2025", "type_notification": "ANALOG", "num_iun": 14057454 },
     { "year": "2024", "type_notification": "DIGITAL", "num_iun": 1581399 },
-    { "year": "2026", "type_notification": "DIGITAL", "num_iun": 2598744 },
+    { "year": "2026", "type_notification": "DIGITAL", "num_iun": 2613437 },
     { "year": "2025", "type_notification": "DIGITAL", "num_iun": 5481629 },
-    { "year": "2026", "type_notification": "ANALOG", "num_iun": 6802649 },
-    { "year": null, "type_notification": "ANALOG", "num_iun": 29756831 },
-    { "year": null, "type_notification": "DIGITAL", "num_iun": 10027397 }
+    { "year": "2026", "type_notification": "ANALOG", "num_iun": 6857670 },
+    { "year": null, "type_notification": "ANALOG", "num_iun": 29811851 },
+    { "year": null, "type_notification": "DIGITAL", "num_iun": 10042090 }
   ],
   "perc_notifiche": [
-    { "year": null, "num_iun_tot": 39784228, "perc_tot_notifiche": null },
+    { "year": null, "num_iun_tot": 39853941, "perc_tot_notifiche": null },
     { "year": "2024", "num_iun_tot": 8948078, "perc_tot_notifiche": null },
-    { "year": "2025", "num_iun_tot": 19539084, "perc_tot_notifiche": 1.18 },
-    { "year": "2026", "num_iun_tot": 9401393, "perc_tot_notifiche": null }
+    { "year": "2025", "num_iun_tot": 19539083, "perc_tot_notifiche": 1.18 },
+    { "year": "2026", "num_iun_tot": 9471107, "perc_tot_notifiche": null }
   ],
   "notifiche_per_mese": [
     {
       "month": "2026-05",
-      "num_iun_analog": 1311286,
-      "num_iun_digital": 354761,
-      "num_iun_total": 1666047
+      "num_iun_analog": 1366313,
+      "num_iun_digital": 369462,
+      "num_iun_total": 1735775
     },
     {
       "month": "2024-09",
@@ -91,9 +91,9 @@
     },
     {
       "month": "2026-04",
-      "num_iun_analog": 1806129,
-      "num_iun_digital": 739455,
-      "num_iun_total": 2545584
+      "num_iun_analog": 1806126,
+      "num_iun_digital": 739449,
+      "num_iun_total": 2545575
     },
     {
       "month": "2024-06",
@@ -127,9 +127,9 @@
     },
     {
       "month": "2026-02",
-      "num_iun_analog": 1186201,
-      "num_iun_digital": 479054,
-      "num_iun_total": 1665255
+      "num_iun_analog": 1186200,
+      "num_iun_digital": 479053,
+      "num_iun_total": 1665253
     },
     {
       "month": "2024-05",
@@ -151,9 +151,9 @@
     },
     {
       "month": "2025-10",
-      "num_iun_analog": 1572189,
+      "num_iun_analog": 1572188,
       "num_iun_digital": 695881,
-      "num_iun_total": 2268070
+      "num_iun_total": 2268069
     },
     {
       "month": "2025-02",
@@ -211,9 +211,9 @@
     },
     {
       "month": "2026-03",
-      "num_iun_analog": 1558744,
-      "num_iun_digital": 568209,
-      "num_iun_total": 2126953
+      "num_iun_analog": 1558742,
+      "num_iun_digital": 568208,
+      "num_iun_total": 2126950
     },
     {
       "month": "2025-05",
@@ -229,13 +229,13 @@
     }
   ],
   "totale_avvisi": [
-    { "year": "2026", "type_avviso": "App IO", "num_avvisi": 1691853 },
-    { "year": "2026", "type_avviso": "Altri canali", "num_avvisi": 144918 },
-    { "year": "2025", "type_avviso": "App IO", "num_avvisi": 2278855 },
+    { "year": "2026", "type_avviso": "App IO", "num_avvisi": 1705135 },
+    { "year": "2026", "type_avviso": "Altri canali", "num_avvisi": 145973 },
+    { "year": "2025", "type_avviso": "App IO", "num_avvisi": 2278854 },
     { "year": "2025", "type_avviso": "Altri canali", "num_avvisi": 249698 },
     { "year": "2024", "type_avviso": "App IO", "num_avvisi": 589627 },
     { "year": "2024", "type_avviso": "Altri canali", "num_avvisi": 52856 },
-    { "year": null, "type_avviso": "App IO", "num_avvisi": 4582755 },
-    { "year": null, "type_avviso": "Altri canali", "num_avvisi": 449169 }
+    { "year": null, "type_avviso": "App IO", "num_avvisi": 4596036 },
+    { "year": null, "type_avviso": "Altri canali", "num_avvisi": 450224 }
   ]
 }
