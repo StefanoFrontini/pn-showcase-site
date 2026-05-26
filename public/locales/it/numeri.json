@@ -103,7 +103,7 @@
         },
         "percentage": {
           "name": "percentuale",
-          "description": "La colorazione mostra la percentuale di comuni attivi in ciascuna regione."
+          "description": "La colorazione mostra la percentuale di comuni attivi in ciascuna regione. Per ulteriori dettagli consulta il riquadro informativo associato a ciascuna regione, visualizzabile al passaggio del mouse oppure tramite navigazione da tastiera. Per navigare da tastiera usa le frecce sinistra e destra per spostarti tra i riquadri informativi delle regioni e premi ESC per chiuderli."
         }
       },
       "tooltip": {
