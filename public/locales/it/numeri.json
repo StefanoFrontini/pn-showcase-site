@@ -19,7 +19,7 @@
     "screen_readers": "Periodo dati visualizzato:",
     "total": {
       "name": "complessive",
-      "title": "Totale notifiche SEND inviate",
+      "title": "Totale notifiche inviate",
       "description": "Totale delle notifiche inviate nel periodo di riferimento considerato.",
       "title_2": "Totale notifiche inviate da Luglio 2023",
       "description_2": "Totale delle notifiche inviate dal primo anno di operatività della piattaforma.",
@@ -28,12 +28,12 @@
     "digital": {
       "name": "digitali",
       "title": "Numero di notifiche SEND digitali",
-      "description": "Notifiche SEND emesse ai destinatari tramite canali digitali certificati"
+      "description": "Notifiche SEND emesse ai destinatari tramite canali digitali certificati."
     },
     "analog": {
       "name": "analogiche",
       "title": "Numero di notifiche SEND analogiche",
-      "description": "Notifiche SEND emesse in modalità analogica per assenza di canali digitali certificati del destinatario"
+      "description": "Notifiche SEND emesse in modalità analogica per assenza di canali digitali certificati del destinatario."
     },
     "pieChart": {
       "tooltip": {
@@ -70,7 +70,7 @@
     "total": {
       "title": "Totale avvisi inviati",
       "description": "Totale degli avvisi inviati nel periodo di riferimento considerato.",
-      "title_2": "Totale avvisi inviati",
+      "title_2": "Totale avvisi inviati da Luglio 2023",
       "description_2": "Totale degli avvisi inviati dal primo anno di operatività della piattaforma."
     },
     "app_io": {
@@ -108,8 +108,8 @@
       },
       "tooltip": {
         "region": "Regione",
-        "municipalities": "Comuni attivi",
-        "percentage": "Percentuale comuni attivi rispetto al totale dei comuni per regione"
+        "municipalities": "Comuni",
+        "percentage": "Percentuale comuni rispetto al totale dei comuni per regione"
       }
     }
   },
