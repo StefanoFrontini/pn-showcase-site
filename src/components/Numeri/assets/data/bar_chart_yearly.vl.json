@@ -42,7 +42,8 @@
           "axis": {
             "format": "~s",
             "labelFontWeight": 600,
-            "labelFont": "Titillium Web, sans-serif"
+            "labelFont": "Titillium Web, sans-serif",
+            "domain": false
           }
         },
         "x": {
