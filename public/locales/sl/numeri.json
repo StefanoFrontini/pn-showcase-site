@@ -71,7 +71,8 @@
       "title": "Skupno poslana opozorila",
       "description": "Skupno število opozoril, poslanih v obravnavanem referenčnem obdobju.",
       "title_2": "Skupno poslana opozorila od julija 2023",
-      "description_2": "Skupno število opozoril, poslanih od prvega leta delovanja platforme."
+      "description_2": "Skupno število opozoril, poslanih od prvega leta delovanja platforme.",
+      "description_1": "v primerjavi s prejšnjim letom"
     },
     "app_io": {
       "title": "Opozorila, poslana prek aplikacije IO"

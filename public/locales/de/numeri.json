@@ -71,7 +71,8 @@
       "title": "Gesamtzahl der versandten Hinweise",
       "description": "Gesamtzahl der im betrachteten Bezugszeitraum versandten Hinweise.",
       "title_2": "Gesamtzahl der seit Juli 2023 versandten Hinweise",
-      "description_2": "Gesamtzahl der seit dem ersten Betriebsjahr der Plattform versandten Hinweise."
+      "description_2": "Gesamtzahl der seit dem ersten Betriebsjahr der Plattform versandten Hinweise.",
+      "description_1": "im Vergleich zum Vorjahr"
     },
     "app_io": {
       "title": "Über die IO-App versandte Hinweise"
