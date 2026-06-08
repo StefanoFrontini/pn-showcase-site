@@ -4,14 +4,14 @@
   "hero": {
     "eyelet": "Data and performance",
     "title": "SEND in numbers",
-    "description": "On this page, you can find daily updated data for the",
+    "description": "This page provides data relating to the notifications platform ",
     "description_2": "SEND",
-    "description_3": " notification platform.",
+    "description_3": ", updated daily.",
     "last_update": "Last update",
     "alert": "Data is available on dati.gov.it",
     "website": "See data"
   },
-  "total": "Total",
+  "total": "All",
   "sent_notifications": {
     "title": "SEND notifications sent",
     "description": "A SEND notification is a legally binding communication officially issued by an institution. It can be delivered digitally or in paper form.",
@@ -19,10 +19,10 @@
     "screen_readers": "Data period displayed:",
     "total": {
       "name": "total",
-      "title": "Total notifications sent",
+      "title": "Total SEND notifications sent",
       "description": "Total SEND notifications sent in the reference period considered.",
-      "title_2": "Total notifications sent since July 2023",
-      "description_2": "Total notifications sent since the platform's first year of operation.",
+      "title_2": "Total SEND notifications sent since July 2023",
+      "description_2": "Total SEND notifications sent since the platform's first year of operation.",
       "description_1": "compared to the previous year"
     },
     "digital": {
@@ -43,7 +43,7 @@
     },
     "trend": {
       "title": "SEND notifications trend",
-      "description": "Trend of SEND notifications officially issued by a participating institution",
+      "description": "Trend of the number of SEND notifications officially issued by a participating institution",
       "description_1": "Trend",
       "description_2": "of",
       "description_3": "notifications",
@@ -109,7 +109,7 @@
       "tooltip": {
         "region": "Region",
         "municipalities": "Municipalities",
-        "percentage": "Percentage of municipalities compared to the total number of municipalities in the region."
+        "percentage": "Percentage of municipalities compared to the total number of municipalities in the region"
       }
     }
   },
