@@ -21,7 +21,6 @@ import pieChartDigitalSpec from "../../components/Numeri/assets/data/pie-chart-d
 import avvisiTotalSpec from "../../components/Numeri/assets/data/avvisi-total.vl.json";
 import avvisiAppIoSpec from "../../components/Numeri/assets/data/avvisi-app-io.vl.json";
 import avvisiEmailSmsSpec from "../../components/Numeri/assets/data/avvisi-email-sms.vl.json";
-import avvisiTotalPercSpec from "../../components/Numeri/assets/data/avvisi-total-perc.vl.json";
 import pieChartAvvisiSpec from "../../components/Numeri/assets/data/pie-chart-avvisi.vl.json";
 import { langCodes } from "@utils/constants";
 import Icons from "src/components/Numeri/components/Icons";
@@ -125,14 +124,6 @@ const SendInNumbers = ({
   const notificationsTotalPercSpecWithYear = useMemo(
     () => ({
       ...toVegaLiteSpec(notificationsTotalPercSpec),
-      params: [{ name: "year", value: selYear }],
-    }),
-    [selYear],
-  );
-
-  const avvisiTotalPercSpecWithYear = useMemo(
-    () => ({
-      ...toVegaLiteSpec(avvisiTotalPercSpec),
       params: [{ name: "year", value: selYear }],
     }),
     [selYear],
@@ -414,11 +405,6 @@ const SendInNumbers = ({
                         ? t("avvisi.total.description_2")
                         : t("avvisi.total.description")}
                     </CardText>
-                    {selYear !== null && (
-                      <KpiEntitiesPerc spec={avvisiTotalPercSpecWithYear}>
-                        {t("avvisi.total.description_1")}
-                      </KpiEntitiesPerc>
-                    )}
                   </Stack>
                 </KpiCard>
               </Box>

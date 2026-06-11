@@ -71,8 +71,7 @@
       "title": "Total des avis envoyés",
       "description": "Total des avis envoyés au cours de la période de référence considérée.",
       "title_2": "Total des avis envoyés depuis juillet 2023",
-      "description_2": "Total des avis envoyés depuis la première année d'exploitation de la plateforme.",
-      "description_1": "par rapport à l'année précédente"
+      "description_2": "Total des avis envoyés depuis la première année d'exploitation de la plateforme."
     },
     "app_io": {
       "title": "Avis envoyés via l'app IO"

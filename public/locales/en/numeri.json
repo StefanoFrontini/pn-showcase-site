@@ -71,8 +71,7 @@
       "title": "Total notices sent",
       "description": "Total notices sent in the reference period considered.",
       "title_2": "Total notices sent since July 2023",
-      "description_2": "Total notices sent since the platform's first year of operation.",
-      "description_1": "compared to the previous year"
+      "description_2": "Total notices sent since the platform's first year of operation."
     },
     "app_io": {
       "title": "Notices sent via the IO App"
