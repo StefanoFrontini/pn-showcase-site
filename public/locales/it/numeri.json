@@ -65,8 +65,10 @@
   },
 
   "avvisi": {
-    "title": "Avvisi inviati",
-    "description": "Andamento del numero di avvisi inviati, cioè messaggi che informano quando c’è una notifica SEND da leggere, inviati tramite App IO, e-mail o SMS.",
+    "title": "Avvisi di cortesia inviati",
+    "description": "Distribuzione del numero di avvisi di cortesia inviati tramite l’app IO, e-mail o SMS per informare i destinatari della presenza di una notifica SEND da leggere.",
+    "note": "Gli avvisi di cortesia informano i destinatari della presenza di una nuova notifica SEND da leggere. Possono essere inviati tramite l’app IO, e-mail o SMS se il destinatario ha attivato il servizio su IO o configurato i propri recapiti su SEND. Maggiori dettagli sono disponibili a ",
+    "note_link": "questo link",
     "total": {
       "title": "Totale avvisi inviati",
       "description": "Totale degli avvisi inviati nel periodo di riferimento considerato.",
@@ -83,7 +85,7 @@
 
   "entities": {
     "title": "Enti su SEND",
-    "description": "Enti aderenti che hanno inviato almeno una notifica SEND dall’avvio del servizio.",
+    "description": "Enti aderenti che hanno inviato almeno una notifica SEND.",
     "active": {
       "total": {
         "title": "Totale enti su SEND",
@@ -112,6 +114,12 @@
         "percentage": "Percentuale comuni rispetto al totale dei comuni per regione"
       }
     }
+  },
+
+  "categorie_enti": {
+    "title": "Principali categorie di enti mittenti",
+    "description": "Numero di notifiche SEND inviate dagli enti mittenti, suddivise per macro categorie.",
+    "note_1": "La rappresentazione include gli enti mittenti con un numero di notifiche inviate uguale o superiore a 5."
   },
 
   "atti": {

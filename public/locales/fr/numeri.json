@@ -65,8 +65,10 @@
   },
 
   "avvisi": {
-    "title": "Avis envoyés",
-    "description": "Évolution du nombre d'avis envoyés, c'est-à-dire de messages informant qu'il y a une notification SEND à lire, envoyés via l'app IO, par e-mail ou par SMS.",
+    "title": "Avis de courtoisie envoyés",
+    "description": "Distribution du nombre d'avis de courtoisie envoyés via l'app IO, par e-mail ou par SMS pour informer les destinataires de la présence d'une notification SEND à lire.",
+    "note": "Les avis de courtoisie informent les destinataires de la présence d'une nouvelle notification SEND à lire. Ils peuvent être envoyés via l'app IO, par e-mail ou par SMS si le destinataire a activé le service sur IO ou configuré ses coordonnées sur SEND. Plus de détails sont disponibles à ",
+    "note_link": "ce lien",
     "total": {
       "title": "Total des avis envoyés",
       "description": "Total des avis envoyés au cours de la période de référence considérée.",
@@ -112,6 +114,12 @@
         "percentage": "Pourcentage de communes par rapport au nombre total de communes dans la région"
       }
     }
+  },
+
+  "categorie_enti": {
+    "title": "Principales catégories d'organismes émetteurs",
+    "description": "Nombre de notifications SEND envoyées par les organismes, réparties par macro-catégorie.",
+    "note_1": "La représentation inclut les organismes avec un nombre de notifications envoyées égal ou supérieur à 5."
   },
 
   "atti": {

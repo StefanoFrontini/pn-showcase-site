@@ -5,9 +5,10 @@ type Props = {
   title: string;
   children: React.ReactNode;
   text?: string;
+  note?: React.ReactNode;
 };
 
-const SectionLayout = ({ title, children, text }: Props) => (
+const SectionLayout = ({ title, children, text, note }: Props) => (
   <Box component="section" marginBottom={12}>
     <Box marginBottom={6}>
       <Typography
@@ -33,6 +34,7 @@ const SectionLayout = ({ title, children, text }: Props) => (
       >
         {text}
       </Typography>
+      {note && <Box mt={1}>{note}</Box>}
     </Box>
 
     <Stack direction={{ xs: "column" }} spacing={{ xs: 2, md: 6 }}>

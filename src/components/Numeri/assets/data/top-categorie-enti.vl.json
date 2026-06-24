@@ -5,7 +5,7 @@
   },
   "data": {
     "url": "https://gist.githubusercontent.com/StefanoFrontini/1572aa83bd623e27a7ff35a917872203/raw/4bf6935aed2fa4d6a297a11a3ffd7e343ebd4d46/sezione2-test.json",
-    "format": { "property": "top10_atti" }
+    "format": { "property": "top_categorie_enti" }
   },
   "params": [
     { "name": "year", "value": null }
@@ -13,20 +13,13 @@
   "transform": [
     {
       "filter": "year === year(datum.year) || year === datum.year"
-    },
-    {
-      "window": [{ "op": "rank", "as": "rank" }],
-      "sort": [{ "field": "ranking", "order": "ascending" }]
-    },
-    {
-      "filter": "datum.rank <= 10"
     }
   ],
-  "height": 560,
+  "height": 616,
   "width": "container",
   "encoding": {
     "y": {
-      "field": "tipologia_atto",
+      "field": "categoria_ente",
       "sort": { "field": "ranking", "order": "ascending" },
       "scale": { "padding": 0 },
       "axis": {
@@ -60,7 +53,7 @@
       "mark": { "type": "bar", "tooltip": true, "color": "transparent" },
       "encoding": {
         "tooltip": [
-          { "field": "tipologia_atto", "title": "Atto" },
+          { "field": "categoria_ente", "title": "Categoria ente" },
           {
             "field": "num_iun",
             "aggregate": "sum",
