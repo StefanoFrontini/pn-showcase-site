@@ -394,7 +394,7 @@ const SendInNumbers = ({
                   href="https://assistenza.notifichedigitali.it/hc/it/articles/33410411666705-Cos-%C3%A8-l-avviso-di-cortesia"
                   target="_blank"
                   rel="noopener noreferrer"
-                  sx={{ fontWeight: 600, color: dashboardColors.get("blue-io") }}
+                  sx={{ fontWeight: 600, color: dashboardColors.get("blue-io"), textDecorationColor: dashboardColors.get("blue-io") }}
                 >
                   {t("avvisi.note_link")}
                 </Link>
