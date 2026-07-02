@@ -4,7 +4,7 @@ export type SectionTwoData = {
   geo_comuni: Array<GeoComuni>;
   top10_ambiti: Array<Ambiti>;
   top10_atti: Array<Atto>;
-  top_categorie_enti: Array<CategoriaEnte>;
+  notif_enti_category: Array<CategoriaEnte>;
 };
 
 export type EntiPerAnno = {

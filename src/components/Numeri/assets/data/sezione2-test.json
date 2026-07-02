@@ -1,41 +1,17 @@
 {
-  "last_run": "2026-06-11T09:16:15.658826",
+  "last_run": "2026-07-02T13:53:14.508215",
   "enti_attivi": [
-    { "num_enti": 7085, "year": null, "pct_variazione_vs_anno_prec": null },
+    { "num_enti": 7093, "year": null, "pct_variazione_vs_anno_prec": null },
     { "num_enti": 2944, "year": "2024", "pct_variazione_vs_anno_prec": null },
     { "num_enti": 4918, "year": "2025", "pct_variazione_vs_anno_prec": 0.67 },
-    { "num_enti": 3274, "year": "2026", "pct_variazione_vs_anno_prec": null }
+    { "num_enti": 3356, "year": "2026", "pct_variazione_vs_anno_prec": null }
   ],
   "geo_comuni": [
     {
-      "year": "2025",
-      "regione": "Emilia-Romagna",
-      "num_comuni_attivi": 256,
-      "perc_comuni_attivi": 0.78
-    },
-    {
-      "year": "2024",
-      "regione": "Emilia-Romagna",
-      "num_comuni_attivi": 87,
-      "perc_comuni_attivi": 0.26
-    },
-    {
-      "year": "2026",
-      "regione": "Emilia-Romagna",
-      "num_comuni_attivi": 169,
-      "perc_comuni_attivi": 0.51
-    },
-    {
-      "year": null,
-      "regione": "Emilia-Romagna",
-      "num_comuni_attivi": 316,
-      "perc_comuni_attivi": 0.96
-    },
-    {
       "year": "2026",
       "regione": "Liguria",
-      "num_comuni_attivi": 93,
-      "perc_comuni_attivi": 0.4
+      "num_comuni_attivi": 95,
+      "perc_comuni_attivi": 0.41
     },
     {
       "year": "2024",
@@ -56,6 +32,30 @@
       "perc_comuni_attivi": 0.84
     },
     {
+      "year": "2025",
+      "regione": "Emilia-Romagna",
+      "num_comuni_attivi": 256,
+      "perc_comuni_attivi": 0.78
+    },
+    {
+      "year": "2024",
+      "regione": "Emilia-Romagna",
+      "num_comuni_attivi": 87,
+      "perc_comuni_attivi": 0.26
+    },
+    {
+      "year": "2026",
+      "regione": "Emilia-Romagna",
+      "num_comuni_attivi": 172,
+      "perc_comuni_attivi": 0.52
+    },
+    {
+      "year": null,
+      "regione": "Emilia-Romagna",
+      "num_comuni_attivi": 316,
+      "perc_comuni_attivi": 0.96
+    },
+    {
       "year": "2024",
       "regione": "Lazio",
       "num_comuni_attivi": 148,
@@ -64,8 +64,8 @@
     {
       "year": "2026",
       "regione": "Lazio",
-      "num_comuni_attivi": 151,
-      "perc_comuni_attivi": 0.4
+      "num_comuni_attivi": 156,
+      "perc_comuni_attivi": 0.41
     },
     {
       "year": "2025",
@@ -82,8 +82,8 @@
     {
       "year": "2026",
       "regione": "Sicilia",
-      "num_comuni_attivi": 120,
-      "perc_comuni_attivi": 0.31
+      "num_comuni_attivi": 124,
+      "perc_comuni_attivi": 0.32
     },
     {
       "year": "2025",
@@ -112,7 +112,7 @@
     {
       "year": "2026",
       "regione": "Toscana",
-      "num_comuni_attivi": 179,
+      "num_comuni_attivi": 180,
       "perc_comuni_attivi": 0.66
     },
     {
@@ -136,7 +136,7 @@
     {
       "year": "2026",
       "regione": "Abruzzo",
-      "num_comuni_attivi": 90,
+      "num_comuni_attivi": 92,
       "perc_comuni_attivi": 0.3
     },
     {
@@ -154,8 +154,8 @@
     {
       "year": "2026",
       "regione": "Piemonte",
-      "num_comuni_attivi": 463,
-      "perc_comuni_attivi": 0.39
+      "num_comuni_attivi": 473,
+      "perc_comuni_attivi": 0.4
     },
     {
       "year": "2024",
@@ -172,14 +172,14 @@
     {
       "year": null,
       "regione": "Piemonte",
-      "num_comuni_attivi": 1003,
+      "num_comuni_attivi": 1004,
       "perc_comuni_attivi": 0.85
     },
     {
       "year": "2026",
       "regione": "Calabria",
-      "num_comuni_attivi": 82,
-      "perc_comuni_attivi": 0.2
+      "num_comuni_attivi": 86,
+      "perc_comuni_attivi": 0.21
     },
     {
       "year": "2025",
@@ -202,8 +202,8 @@
     {
       "year": "2026",
       "regione": "Veneto",
-      "num_comuni_attivi": 280,
-      "perc_comuni_attivi": 0.5
+      "num_comuni_attivi": 291,
+      "perc_comuni_attivi": 0.52
     },
     {
       "year": "2024",
@@ -238,13 +238,13 @@
     {
       "year": "2026",
       "regione": "Lombardia",
-      "num_comuni_attivi": 726,
-      "perc_comuni_attivi": 0.48
+      "num_comuni_attivi": 734,
+      "perc_comuni_attivi": 0.49
     },
     {
       "year": null,
       "regione": "Lombardia",
-      "num_comuni_attivi": 1240,
+      "num_comuni_attivi": 1241,
       "perc_comuni_attivi": 0.83
     },
     {
@@ -262,8 +262,8 @@
     {
       "year": "2026",
       "regione": "Valle d'Aosta/Vall\u00e9e d'Aoste",
-      "num_comuni_attivi": 29,
-      "perc_comuni_attivi": 0.39
+      "num_comuni_attivi": 31,
+      "perc_comuni_attivi": 0.42
     },
     {
       "year": null,
@@ -286,8 +286,8 @@
     {
       "year": "2026",
       "regione": "Puglia",
-      "num_comuni_attivi": 124,
-      "perc_comuni_attivi": 0.48
+      "num_comuni_attivi": 127,
+      "perc_comuni_attivi": 0.49
     },
     {
       "year": null,
@@ -304,8 +304,8 @@
     {
       "year": "2026",
       "regione": "Sardegna",
-      "num_comuni_attivi": 110,
-      "perc_comuni_attivi": 0.29
+      "num_comuni_attivi": 113,
+      "perc_comuni_attivi": 0.3
     },
     {
       "year": "2025",
@@ -322,8 +322,8 @@
     {
       "year": "2026",
       "regione": "Umbria",
-      "num_comuni_attivi": 54,
-      "perc_comuni_attivi": 0.59
+      "num_comuni_attivi": 55,
+      "perc_comuni_attivi": 0.6
     },
     {
       "year": "2024",
@@ -376,8 +376,8 @@
     {
       "year": "2026",
       "regione": "Friuli-Venezia Giulia",
-      "num_comuni_attivi": 102,
-      "perc_comuni_attivi": 0.47
+      "num_comuni_attivi": 103,
+      "perc_comuni_attivi": 0.48
     },
     {
       "year": "2024",
@@ -406,7 +406,7 @@
     {
       "year": "2026",
       "regione": "Marche",
-      "num_comuni_attivi": 80,
+      "num_comuni_attivi": 81,
       "perc_comuni_attivi": 0.36
     },
     {
@@ -430,8 +430,8 @@
     {
       "year": "2026",
       "regione": "Basilicata",
-      "num_comuni_attivi": 20,
-      "perc_comuni_attivi": 0.15
+      "num_comuni_attivi": 22,
+      "perc_comuni_attivi": 0.17
     },
     {
       "year": null,
@@ -442,8 +442,8 @@
     {
       "year": "2026",
       "regione": "Trentino-Alto Adige/S\u00fcdtirol",
-      "num_comuni_attivi": 79,
-      "perc_comuni_attivi": 0.28
+      "num_comuni_attivi": 84,
+      "perc_comuni_attivi": 0.3
     },
     {
       "year": "2025",
@@ -466,8 +466,8 @@
     {
       "year": "2026",
       "regione": "Campania",
-      "num_comuni_attivi": 175,
-      "perc_comuni_attivi": 0.32
+      "num_comuni_attivi": 182,
+      "perc_comuni_attivi": 0.33
     },
     {
       "year": "2024",
@@ -488,213 +488,479 @@
       "perc_comuni_attivi": 0.94
     }
   ],
+  "notif_enti_category": [
+    {
+      "categoria_ente": "Comuni",
+      "num_iun": 16958450,
+      "ranking": 1,
+      "year": null
+    },
+    {
+      "categoria_ente": "Regioni",
+      "num_iun": 10843472,
+      "ranking": 2,
+      "year": null
+    },
+    {
+      "categoria_ente": "Pubbliche amministrazioni centrali",
+      "num_iun": 8344202,
+      "ranking": 3,
+      "year": null
+    },
+    {
+      "categoria_ente": "Riscossori e altro",
+      "num_iun": 5987069,
+      "ranking": 4,
+      "year": null
+    },
+    {
+      "categoria_ente": "Altri enti territoriali",
+      "num_iun": 310960,
+      "ranking": 5,
+      "year": null
+    },
+    {
+      "categoria_ente": "Province",
+      "num_iun": 222819,
+      "ranking": 6,
+      "year": null
+    },
+    {
+      "categoria_ente": "Salute locale",
+      "num_iun": 89970,
+      "ranking": 7,
+      "year": null
+    },
+    {
+      "categoria_ente": "Ordini, collegi e consigli professionali",
+      "num_iun": 17373,
+      "ranking": 8,
+      "year": null
+    },
+    {
+      "categoria_ente": "Enti comunali",
+      "num_iun": 14409,
+      "ranking": 9,
+      "year": null
+    },
+    {
+      "categoria_ente": "Universit\u00e0",
+      "num_iun": 7845,
+      "ranking": 10,
+      "year": null
+    },
+    {
+      "categoria_ente": "Consorzi universitari",
+      "num_iun": 4356,
+      "ranking": 11,
+      "year": null
+    },
+    {
+      "categoria_ente": "Salute centrale",
+      "num_iun": 2930,
+      "ranking": 12,
+      "year": null
+    },
+    {
+      "categoria_ente": "Regioni",
+      "num_iun": 3439842,
+      "ranking": 1,
+      "year": "2024"
+    },
+    {
+      "categoria_ente": "Comuni",
+      "num_iun": 2467916,
+      "ranking": 2,
+      "year": "2024"
+    },
+    {
+      "categoria_ente": "Pubbliche amministrazioni centrali",
+      "num_iun": 1774879,
+      "ranking": 3,
+      "year": "2024"
+    },
+    {
+      "categoria_ente": "Riscossori e altro",
+      "num_iun": 1223516,
+      "ranking": 4,
+      "year": "2024"
+    },
+    {
+      "categoria_ente": "Altri enti territoriali",
+      "num_iun": 14094,
+      "ranking": 5,
+      "year": "2024"
+    },
+    {
+      "categoria_ente": "Province",
+      "num_iun": 10405,
+      "ranking": 6,
+      "year": "2024"
+    },
+    {
+      "categoria_ente": "Salute locale",
+      "num_iun": 10029,
+      "ranking": 7,
+      "year": "2024"
+    },
+    {
+      "categoria_ente": "Ordini, collegi e consigli professionali",
+      "num_iun": 2047,
+      "ranking": 8,
+      "year": "2024"
+    },
+    {
+      "categoria_ente": "Universit\u00e0",
+      "num_iun": 1544,
+      "ranking": 9,
+      "year": "2024"
+    },
+    {
+      "categoria_ente": "Consorzi universitari",
+      "num_iun": 12,
+      "ranking": 10,
+      "year": "2024"
+    },
+    {
+      "categoria_ente": "Comuni",
+      "num_iun": 8746399,
+      "ranking": 1,
+      "year": "2025"
+    },
+    {
+      "categoria_ente": "Pubbliche amministrazioni centrali",
+      "num_iun": 3996634,
+      "ranking": 2,
+      "year": "2025"
+    },
+    {
+      "categoria_ente": "Regioni",
+      "num_iun": 3742889,
+      "ranking": 3,
+      "year": "2025"
+    },
+    {
+      "categoria_ente": "Riscossori e altro",
+      "num_iun": 2731443,
+      "ranking": 4,
+      "year": "2025"
+    },
+    {
+      "categoria_ente": "Altri enti territoriali",
+      "num_iun": 124307,
+      "ranking": 5,
+      "year": "2025"
+    },
+    {
+      "categoria_ente": "Province",
+      "num_iun": 123131,
+      "ranking": 6,
+      "year": "2025"
+    },
+    {
+      "categoria_ente": "Salute locale",
+      "num_iun": 34244,
+      "ranking": 7,
+      "year": "2025"
+    },
+    {
+      "categoria_ente": "Ordini, collegi e consigli professionali",
+      "num_iun": 8938,
+      "ranking": 8,
+      "year": "2025"
+    },
+    {
+      "categoria_ente": "Universit\u00e0",
+      "num_iun": 4762,
+      "ranking": 9,
+      "year": "2025"
+    },
+    {
+      "categoria_ente": "Consorzi universitari",
+      "num_iun": 2432,
+      "ranking": 10,
+      "year": "2025"
+    },
+    {
+      "categoria_ente": "Comuni",
+      "num_iun": 5664400,
+      "ranking": 1,
+      "year": "2026"
+    },
+    {
+      "categoria_ente": "Pubbliche amministrazioni centrali",
+      "num_iun": 2568733,
+      "ranking": 2,
+      "year": "2026"
+    },
+    {
+      "categoria_ente": "Regioni",
+      "num_iun": 2083761,
+      "ranking": 3,
+      "year": "2026"
+    },
+    {
+      "categoria_ente": "Riscossori e altro",
+      "num_iun": 1797121,
+      "ranking": 4,
+      "year": "2026"
+    },
+    {
+      "categoria_ente": "Altri enti territoriali",
+      "num_iun": 172557,
+      "ranking": 5,
+      "year": "2026"
+    },
+    {
+      "categoria_ente": "Province",
+      "num_iun": 89283,
+      "ranking": 6,
+      "year": "2026"
+    },
+    {
+      "categoria_ente": "Salute locale",
+      "num_iun": 45694,
+      "ranking": 7,
+      "year": "2026"
+    },
+    {
+      "categoria_ente": "Enti comunali",
+      "num_iun": 14409,
+      "ranking": 8,
+      "year": "2026"
+    },
+    {
+      "categoria_ente": "Ordini, collegi e consigli professionali",
+      "num_iun": 6388,
+      "ranking": 9,
+      "year": "2026"
+    },
+    {
+      "categoria_ente": "Salute centrale",
+      "num_iun": 2930,
+      "ranking": 10,
+      "year": "2026"
+    },
+    {
+      "categoria_ente": "Consorzi universitari",
+      "num_iun": 1912,
+      "ranking": 11,
+      "year": "2026"
+    },
+    {
+      "categoria_ente": "Universit\u00e0",
+      "num_iun": 1539,
+      "ranking": 12,
+      "year": "2026"
+    }
+  ],
   "top10_ambiti": [
     {
       "ambito": "Polizia Locale",
-      "num_iun": 4410142,
+      "num_iun": 5084178,
       "ranking": 1,
       "categoria_ente": null,
       "year": "2026"
     },
     {
       "ambito": "Recupero Bolli non Pagati",
-      "num_iun": 1634386,
+      "num_iun": 2141487,
       "ranking": 2,
       "categoria_ente": null,
       "year": "2026"
     },
     {
       "ambito": "Riscossione Coattiva",
-      "num_iun": 1368060,
+      "num_iun": 1525146,
       "ranking": 3,
       "categoria_ente": null,
       "year": "2026"
     },
     {
-      "ambito": "Contributi",
-      "num_iun": 952375,
+      "ambito": "Tributi",
+      "num_iun": 1016456,
       "ranking": 4,
       "categoria_ente": null,
       "year": "2026"
     },
     {
-      "ambito": "Tributi",
-      "num_iun": 821790,
+      "ambito": "Contributi",
+      "num_iun": 1006258,
       "ranking": 5,
       "categoria_ente": null,
       "year": "2026"
     },
     {
       "ambito": "Polizia Provinciale",
-      "num_iun": 580983,
+      "num_iun": 652710,
       "ranking": 6,
       "categoria_ente": null,
       "year": "2026"
     },
     {
       "ambito": "Avvisi di addebito",
-      "num_iun": 557295,
+      "num_iun": 607125,
       "ranking": 7,
       "categoria_ente": null,
       "year": "2026"
     },
     {
       "ambito": "Recupero indebiti",
-      "num_iun": 165108,
+      "num_iun": 203631,
       "ranking": 8,
       "categoria_ente": null,
       "year": "2026"
     },
     {
       "ambito": "Decreto",
-      "num_iun": 51429,
+      "num_iun": 57626,
       "ranking": 9,
       "categoria_ente": null,
       "year": "2026"
     },
     {
-      "ambito": "Patrimonio",
-      "num_iun": 28709,
+      "ambito": "Ticket",
+      "num_iun": 48524,
       "ranking": 10,
       "categoria_ente": null,
       "year": "2026"
     },
     {
       "ambito": "Polizia Locale",
-      "num_iun": 108006,
+      "num_iun": 132843,
       "ranking": 1,
       "categoria_ente": "Altri enti territoriali",
       "year": "2026"
     },
     {
       "ambito": "Riscossione Coattiva",
-      "num_iun": 36193,
+      "num_iun": 37586,
       "ranking": 2,
       "categoria_ente": "Altri enti territoriali",
       "year": "2026"
     },
     {
       "ambito": "Tributi",
-      "num_iun": 2029,
+      "num_iun": 2034,
       "ranking": 3,
       "categoria_ente": "Altri enti territoriali",
       "year": "2026"
     },
     {
       "ambito": "Ordinanze",
-      "num_iun": 76,
+      "num_iun": 86,
       "ranking": 4,
       "categoria_ente": "Altri enti territoriali",
       "year": "2026"
     },
     {
       "ambito": "Polizia Locale",
-      "num_iun": 4166396,
+      "num_iun": 4792794,
       "ranking": 1,
       "categoria_ente": "Comuni",
       "year": "2026"
     },
     {
       "ambito": "Tributi",
-      "num_iun": 626462,
+      "num_iun": 716224,
       "ranking": 2,
       "categoria_ente": "Comuni",
       "year": "2026"
     },
     {
       "ambito": "Riscossione Coattiva",
-      "num_iun": 65500,
+      "num_iun": 83322,
       "ranking": 3,
       "categoria_ente": "Comuni",
       "year": "2026"
     },
     {
-      "ambito": "Ordinanze",
-      "num_iun": 14414,
+      "ambito": "Accesso agli Atti",
+      "num_iun": 18909,
       "ranking": 4,
       "categoria_ente": "Comuni",
       "year": "2026"
     },
     {
-      "ambito": "Ufficio Tecnico / SUAP",
-      "num_iun": 9419,
+      "ambito": "Ordinanze",
+      "num_iun": 17625,
       "ranking": 5,
       "categoria_ente": "Comuni",
       "year": "2026"
     },
     {
       "ambito": "Anagrafe",
-      "num_iun": 8568,
+      "num_iun": 10432,
       "ranking": 6,
       "categoria_ente": "Comuni",
       "year": "2026"
     },
     {
-      "ambito": "Scuola",
-      "num_iun": 7423,
+      "ambito": "Ufficio Tecnico / SUAP",
+      "num_iun": 9591,
       "ranking": 7,
       "categoria_ente": "Comuni",
       "year": "2026"
     },
     {
-      "ambito": "Patrimonio",
-      "num_iun": 6742,
+      "ambito": "Scuola",
+      "num_iun": 7550,
       "ranking": 8,
       "categoria_ente": "Comuni",
       "year": "2026"
     },
     {
-      "ambito": "Comunicazioni",
-      "num_iun": 447,
+      "ambito": "Patrimonio",
+      "num_iun": 7437,
       "ranking": 9,
       "categoria_ente": "Comuni",
       "year": "2026"
     },
     {
-      "ambito": "Accesso agli Atti",
-      "num_iun": 71,
+      "ambito": "Comunicazioni",
+      "num_iun": 490,
       "ranking": 10,
       "categoria_ente": "Comuni",
       "year": "2026"
     },
     {
       "ambito": "Revoca benefici",
-      "num_iun": 1887,
+      "num_iun": 1911,
       "ranking": 1,
       "categoria_ente": "Consorzi universitari",
       "year": "2026"
     },
     {
       "ambito": "Polizia Locale",
-      "num_iun": 12490,
+      "num_iun": 14409,
       "ranking": 1,
       "categoria_ente": "Enti comunali",
       "year": "2026"
     },
     {
       "ambito": "Professionisti",
-      "num_iun": 6008,
+      "num_iun": 6095,
       "ranking": 1,
       "categoria_ente": "Ordini, collegi e consigli professionali",
       "year": "2026"
     },
     {
       "ambito": "Verbali ed Ordinanze",
-      "num_iun": 241,
+      "num_iun": 292,
       "ranking": 2,
       "categoria_ente": "Ordini, collegi e consigli professionali",
       "year": "2026"
     },
     {
       "ambito": "Polizia Locale",
-      "num_iun": 39052,
+      "num_iun": 48355,
       "ranking": 1,
       "categoria_ente": "Province",
       "year": "2026"
     },
     {
       "ambito": "Polizia Provinciale",
-      "num_iun": 27097,
+      "num_iun": 27793,
       "ranking": 2,
       "categoria_ente": "Province",
       "year": "2026"
@@ -714,78 +980,78 @@
       "year": "2026"
     },
     {
-      "ambito": "Ordinanze",
-      "num_iun": 68,
+      "ambito": "Violazioni",
+      "num_iun": 189,
       "ranking": 5,
       "categoria_ente": "Province",
       "year": "2026"
     },
     {
-      "ambito": "Violazioni",
-      "num_iun": 68,
+      "ambito": "Ordinanze",
+      "num_iun": 69,
       "ranking": 6,
       "categoria_ente": "Province",
       "year": "2026"
     },
     {
       "ambito": "Contributi",
-      "num_iun": 952374,
+      "num_iun": 1006257,
       "ranking": 1,
       "categoria_ente": "Pubbliche amministrazioni centrali",
       "year": "2026"
     },
     {
-      "ambito": "Avvisi di addebito",
-      "num_iun": 557295,
+      "ambito": "Polizia Provinciale",
+      "num_iun": 624917,
       "ranking": 2,
       "categoria_ente": "Pubbliche amministrazioni centrali",
       "year": "2026"
     },
     {
-      "ambito": "Polizia Provinciale",
-      "num_iun": 553886,
+      "ambito": "Avvisi di addebito",
+      "num_iun": 607125,
       "ranking": 3,
       "categoria_ente": "Pubbliche amministrazioni centrali",
       "year": "2026"
     },
     {
       "ambito": "Recupero indebiti",
-      "num_iun": 165108,
+      "num_iun": 203631,
       "ranking": 4,
       "categoria_ente": "Pubbliche amministrazioni centrali",
       "year": "2026"
     },
     {
       "ambito": "Polizia Locale",
-      "num_iun": 59509,
+      "num_iun": 67233,
       "ranking": 5,
       "categoria_ente": "Pubbliche amministrazioni centrali",
       "year": "2026"
     },
     {
       "ambito": "Decreto",
-      "num_iun": 51425,
+      "num_iun": 57622,
       "ranking": 6,
       "categoria_ente": "Pubbliche amministrazioni centrali",
       "year": "2026"
     },
     {
       "ambito": "Esercito Italiano",
-      "num_iun": 1076,
+      "num_iun": 1324,
       "ranking": 7,
       "categoria_ente": "Pubbliche amministrazioni centrali",
       "year": "2026"
     },
     {
       "ambito": "Arma dei Carabinieri",
-      "num_iun": 566,
+      "num_iun": 621,
       "ranking": 8,
       "categoria_ente": "Pubbliche amministrazioni centrali",
       "year": "2026"
     },
     {
       "ambito": "Recupero Bolli non Pagati",
-      "num_iun": 1630363,
+      "num_iun": 2071812,
       "ranking": 1,
       "categoria_ente": "Regioni",
       "year": "2026"
@@ -799,56 +1065,70 @@
     },
     {
       "ambito": "Violazioni Norme Sismiche",
-      "num_iun": 692,
+      "num_iun": 763,
       "ranking": 3,
       "categoria_ente": "Regioni",
       "year": "2026"
     },
     {
-      "ambito": "Accesso agli Atti",
-      "num_iun": 52,
+      "ambito": "Tutela delle Entrate Tributarie Regionali",
+      "num_iun": 147,
       "ranking": 4,
       "categoria_ente": "Regioni",
       "year": "2026"
     },
     {
-      "ambito": "Demanio Idrico",
-      "num_iun": 43,
+      "ambito": "Accesso agli Atti",
+      "num_iun": 55,
       "ranking": 5,
       "categoria_ente": "Regioni",
       "year": "2026"
     },
     {
+      "ambito": "Demanio Idrico",
+      "num_iun": 44,
+      "ranking": 6,
+      "categoria_ente": "Regioni",
+      "year": "2026"
+    },
+    {
+      "ambito": "Comunicazioni",
+      "num_iun": 13,
+      "ranking": 7,
+      "categoria_ente": "Regioni",
+      "year": "2026"
+    },
+    {
       "ambito": "Riscossione Coattiva",
-      "num_iun": 1253609,
+      "num_iun": 1391313,
       "ranking": 1,
       "categoria_ente": "Riscossori e altro",
       "year": "2026"
     },
     {
       "ambito": "Tributi",
-      "num_iun": 188142,
+      "num_iun": 291051,
       "ranking": 2,
       "categoria_ente": "Riscossori e altro",
       "year": "2026"
     },
     {
-      "ambito": "Polizia Locale",
-      "num_iun": 24689,
+      "ambito": "Recupero Bolli non Pagati",
+      "num_iun": 69675,
       "ranking": 3,
       "categoria_ente": "Riscossori e altro",
       "year": "2026"
     },
     {
-      "ambito": "Patrimonio",
-      "num_iun": 15453,
+      "ambito": "Polizia Locale",
+      "num_iun": 28544,
       "ranking": 4,
       "categoria_ente": "Riscossori e altro",
       "year": "2026"
     },
     {
-      "ambito": "Recupero Bolli non Pagati",
-      "num_iun": 4023,
+      "ambito": "Patrimonio",
+      "num_iun": 16507,
       "ranking": 5,
       "categoria_ente": "Riscossori e altro",
       "year": "2026"
@@ -862,14 +1142,14 @@
     },
     {
       "ambito": "Ticket",
-      "num_iun": 1838,
+      "num_iun": 2930,
       "ranking": 1,
       "categoria_ente": "Salute centrale",
       "year": "2026"
     },
     {
       "ambito": "Ticket",
-      "num_iun": 18495,
+      "num_iun": 45594,
       "ranking": 1,
       "categoria_ente": "Salute locale",
       "year": "2026"
@@ -890,21 +1170,21 @@
     },
     {
       "ambito": "Riscossione coattiva",
-      "num_iun": 851,
+      "num_iun": 865,
       "ranking": 1,
       "categoria_ente": "Universit\u00e0",
       "year": "2026"
     },
     {
       "ambito": "Scuola",
-      "num_iun": 410,
+      "num_iun": 421,
       "ranking": 2,
       "categoria_ente": "Universit\u00e0",
       "year": "2026"
     },
     {
       "ambito": "Tributi",
-      "num_iun": 105,
+      "num_iun": 249,
       "ranking": 3,
       "categoria_ente": "Universit\u00e0",
       "year": "2026"
@@ -925,7 +1205,7 @@
     },
     {
       "ambito": "Tributi",
-      "num_iun": 2234615,
+      "num_iun": 2234609,
       "ranking": 3,
       "categoria_ente": null,
       "year": "2025"
@@ -953,14 +1233,14 @@
     },
     {
       "ambito": "Polizia Provinciale",
-      "num_iun": 394714,
+      "num_iun": 394712,
       "ranking": 7,
       "categoria_ente": null,
       "year": "2025"
     },
     {
       "ambito": "Decreto",
-      "num_iun": 103592,
+      "num_iun": 103589,
       "ranking": 8,
       "categoria_ente": null,
       "year": "2025"
@@ -1016,7 +1296,7 @@
     },
     {
       "ambito": "Tributi",
-      "num_iun": 1574061,
+      "num_iun": 1574056,
       "ranking": 2,
       "categoria_ente": "Comuni",
       "year": "2025"
@@ -1163,14 +1443,14 @@
     },
     {
       "ambito": "Polizia Provinciale",
-      "num_iun": 324551,
+      "num_iun": 324549,
       "ranking": 3,
       "categoria_ente": "Pubbliche amministrazioni centrali",
       "year": "2025"
     },
     {
       "ambito": "Decreto",
-      "num_iun": 103591,
+      "num_iun": 103588,
       "ranking": 4,
       "categoria_ente": "Pubbliche amministrazioni centrali",
       "year": "2025"
@@ -1247,7 +1527,7 @@
     },
     {
       "ambito": "Tributi",
-      "num_iun": 639637,
+      "num_iun": 639636,
       "ranking": 2,
       "categoria_ente": "Riscossori e altro",
       "year": "2025"
@@ -1618,98 +1898,98 @@
     },
     {
       "ambito": "Polizia Locale",
-      "num_iun": 13447099,
+      "num_iun": 14121135,
       "ranking": 1,
       "categoria_ente": null,
       "year": null
     },
     {
       "ambito": "Recupero Bolli non Pagati",
-      "num_iun": 10649727,
+      "num_iun": 11156828,
       "ranking": 2,
       "categoria_ente": null,
       "year": null
     },
     {
       "ambito": "Riscossione Coattiva",
-      "num_iun": 4610126,
+      "num_iun": 4767212,
       "ranking": 3,
       "categoria_ente": null,
       "year": null
     },
     {
       "ambito": "Contributi",
-      "num_iun": 4096476,
+      "num_iun": 4150359,
       "ranking": 4,
       "categoria_ente": null,
       "year": null
     },
     {
       "ambito": "Tributi",
-      "num_iun": 3824515,
+      "num_iun": 4019175,
       "ranking": 5,
       "categoria_ente": null,
       "year": null
     },
     {
       "ambito": "Avvisi di addebito",
-      "num_iun": 2618511,
+      "num_iun": 2668341,
       "ranking": 6,
       "categoria_ente": null,
       "year": null
     },
     {
       "ambito": "Polizia Provinciale",
-      "num_iun": 975758,
+      "num_iun": 1047483,
       "ranking": 7,
       "categoria_ente": null,
       "year": null
     },
     {
       "ambito": "Decreto",
-      "num_iun": 279006,
+      "num_iun": 285200,
       "ranking": 8,
       "categoria_ente": null,
       "year": null
     },
     {
       "ambito": "Recupero indebiti",
-      "num_iun": 165108,
+      "num_iun": 203631,
       "ranking": 9,
       "categoria_ente": null,
       "year": null
     },
     {
       "ambito": "Patrimonio",
-      "num_iun": 121291,
+      "num_iun": 123040,
       "ranking": 10,
       "categoria_ente": null,
       "year": null
     },
     {
       "ambito": "Polizia Locale",
-      "num_iun": 229885,
+      "num_iun": 254722,
       "ranking": 1,
       "categoria_ente": "Altri enti territoriali",
       "year": null
     },
     {
       "ambito": "Riscossione Coattiva",
-      "num_iun": 48661,
+      "num_iun": 50054,
       "ranking": 2,
       "categoria_ente": "Altri enti territoriali",
       "year": null
     },
     {
       "ambito": "Tributi",
-      "num_iun": 5919,
+      "num_iun": 5924,
       "ranking": 3,
       "categoria_ente": "Altri enti territoriali",
       "year": null
     },
     {
       "ambito": "Ordinanze",
-      "num_iun": 235,
+      "num_iun": 245,
       "ranking": 4,
       "categoria_ente": "Altri enti territoriali",
       "year": null
@@ -1723,77 +2003,77 @@
     },
     {
       "ambito": "Polizia Locale",
-      "num_iun": 12975371,
+      "num_iun": 13601769,
       "ranking": 1,
       "categoria_ente": "Comuni",
       "year": null
     },
     {
       "ambito": "Tributi",
-      "num_iun": 2862532,
+      "num_iun": 2952289,
       "ranking": 2,
       "categoria_ente": "Comuni",
       "year": null
     },
     {
       "ambito": "Riscossione Coattiva",
-      "num_iun": 171752,
+      "num_iun": 189574,
       "ranking": 3,
       "categoria_ente": "Comuni",
       "year": null
     },
     {
       "ambito": "Patrimonio",
-      "num_iun": 74720,
+      "num_iun": 75415,
       "ranking": 4,
       "categoria_ente": "Comuni",
       "year": null
     },
     {
       "ambito": "Scuola",
-      "num_iun": 45656,
+      "num_iun": 45783,
       "ranking": 5,
       "categoria_ente": "Comuni",
       "year": null
     },
     {
       "ambito": "Anagrafe",
-      "num_iun": 31298,
+      "num_iun": 33162,
       "ranking": 6,
       "categoria_ente": "Comuni",
       "year": null
     },
     {
       "ambito": "Ordinanze",
-      "num_iun": 26103,
+      "num_iun": 29314,
       "ranking": 7,
       "categoria_ente": "Comuni",
       "year": null
     },
     {
-      "ambito": "Ufficio Tecnico / SUAP",
-      "num_iun": 11306,
+      "ambito": "Accesso agli Atti",
+      "num_iun": 18921,
       "ranking": 8,
       "categoria_ente": "Comuni",
       "year": null
     },
     {
-      "ambito": "Comunicazioni",
-      "num_iun": 447,
+      "ambito": "Ufficio Tecnico / SUAP",
+      "num_iun": 11478,
       "ranking": 9,
       "categoria_ente": "Comuni",
       "year": null
     },
     {
-      "ambito": "Polizia Provinciale",
-      "num_iun": 92,
+      "ambito": "Comunicazioni",
+      "num_iun": 490,
       "ranking": 10,
       "categoria_ente": "Comuni",
       "year": null
     },
     {
       "ambito": "Revoca benefici",
-      "num_iun": 4190,
+      "num_iun": 4214,
       "ranking": 1,
       "categoria_ente": "Consorzi universitari",
       "year": null
@@ -1807,7 +2087,7 @@
     },
     {
       "ambito": "Polizia Locale",
-      "num_iun": 12494,
+      "num_iun": 14413,
       "ranking": 1,
       "categoria_ente": "Enti comunali",
       "year": null
@@ -1835,28 +2115,28 @@
     },
     {
       "ambito": "Professionisti",
-      "num_iun": 16993,
+      "num_iun": 17080,
       "ranking": 1,
       "categoria_ente": "Ordini, collegi e consigli professionali",
       "year": null
     },
     {
       "ambito": "Verbali ed Ordinanze",
-      "num_iun": 241,
+      "num_iun": 292,
       "ranking": 2,
       "categoria_ente": "Ordini, collegi e consigli professionali",
       "year": null
     },
     {
-      "ambito": "Polizia Provinciale",
-      "num_iun": 97229,
+      "ambito": "Polizia Locale",
+      "num_iun": 102512,
       "ranking": 1,
       "categoria_ente": "Province",
       "year": null
     },
     {
-      "ambito": "Polizia Locale",
-      "num_iun": 93209,
+      "ambito": "Polizia Provinciale",
+      "num_iun": 97925,
       "ranking": 2,
       "categoria_ente": "Province",
       "year": null
@@ -1876,71 +2156,71 @@
       "year": null
     },
     {
-      "ambito": "Ordinanze",
-      "num_iun": 139,
+      "ambito": "Violazioni",
+      "num_iun": 227,
       "ranking": 5,
       "categoria_ente": "Province",
       "year": null
     },
     {
-      "ambito": "Violazioni",
-      "num_iun": 106,
+      "ambito": "Ordinanze",
+      "num_iun": 140,
       "ranking": 6,
       "categoria_ente": "Province",
       "year": null
     },
     {
       "ambito": "Contributi",
-      "num_iun": 4096453,
+      "num_iun": 4150336,
       "ranking": 1,
       "categoria_ente": "Pubbliche amministrazioni centrali",
       "year": null
     },
     {
       "ambito": "Avvisi di addebito",
-      "num_iun": 2618507,
+      "num_iun": 2668337,
       "ranking": 2,
       "categoria_ente": "Pubbliche amministrazioni centrali",
       "year": null
     },
     {
       "ambito": "Polizia Provinciale",
-      "num_iun": 878437,
+      "num_iun": 949466,
       "ranking": 3,
       "categoria_ente": "Pubbliche amministrazioni centrali",
       "year": null
     },
     {
       "ambito": "Decreto",
-      "num_iun": 279001,
+      "num_iun": 285195,
       "ranking": 4,
       "categoria_ente": "Pubbliche amministrazioni centrali",
       "year": null
     },
     {
       "ambito": "Recupero indebiti",
-      "num_iun": 165108,
+      "num_iun": 203631,
       "ranking": 5,
       "categoria_ente": "Pubbliche amministrazioni centrali",
       "year": null
     },
     {
       "ambito": "Polizia Locale",
-      "num_iun": 73413,
+      "num_iun": 81137,
       "ranking": 6,
       "categoria_ente": "Pubbliche amministrazioni centrali",
       "year": null
     },
     {
       "ambito": "Esercito Italiano",
-      "num_iun": 4965,
+      "num_iun": 5213,
       "ranking": 7,
       "categoria_ente": "Pubbliche amministrazioni centrali",
       "year": null
     },
     {
       "ambito": "Arma dei Carabinieri",
-      "num_iun": 816,
+      "num_iun": 871,
       "ranking": 8,
       "categoria_ente": "Pubbliche amministrazioni centrali",
       "year": null
@@ -1954,7 +2234,7 @@
     },
     {
       "ambito": "Recupero Bolli non Pagati",
-      "num_iun": 10368720,
+      "num_iun": 10810169,
       "ranking": 1,
       "categoria_ente": "Regioni",
       "year": null
@@ -1975,56 +2255,70 @@
     },
     {
       "ambito": "Violazioni Norme Sismiche",
-      "num_iun": 883,
+      "num_iun": 954,
       "ranking": 4,
       "categoria_ente": "Regioni",
       "year": null
     },
     {
       "ambito": "Accesso agli Atti",
-      "num_iun": 163,
+      "num_iun": 166,
       "ranking": 5,
       "categoria_ente": "Regioni",
       "year": null
     },
     {
-      "ambito": "Demanio Idrico",
-      "num_iun": 49,
+      "ambito": "Tutela delle Entrate Tributarie Regionali",
+      "num_iun": 147,
       "ranking": 6,
       "categoria_ente": "Regioni",
       "year": null
     },
     {
+      "ambito": "Demanio Idrico",
+      "num_iun": 50,
+      "ranking": 7,
+      "categoria_ente": "Regioni",
+      "year": null
+    },
+    {
+      "ambito": "Comunicazioni",
+      "num_iun": 13,
+      "ranking": 8,
+      "categoria_ente": "Regioni",
+      "year": null
+    },
+    {
       "ambito": "Riscossione Coattiva",
-      "num_iun": 4364595,
+      "num_iun": 4502299,
       "ranking": 1,
       "categoria_ente": "Riscossori e altro",
       "year": null
     },
     {
       "ambito": "Tributi",
-      "num_iun": 927117,
+      "num_iun": 1030025,
       "ranking": 2,
       "categoria_ente": "Riscossori e altro",
       "year": null
     },
     {
       "ambito": "Recupero Bolli non Pagati",
-      "num_iun": 281006,
+      "num_iun": 346658,
       "ranking": 3,
       "categoria_ente": "Riscossori e altro",
       "year": null
     },
     {
       "ambito": "Polizia Locale",
-      "num_iun": 62721,
+      "num_iun": 66576,
       "ranking": 4,
       "categoria_ente": "Riscossori e altro",
       "year": null
     },
     {
       "ambito": "Patrimonio",
-      "num_iun": 38460,
+      "num_iun": 39514,
       "ranking": 5,
       "categoria_ente": "Riscossori e altro",
       "year": null
@@ -2059,14 +2353,14 @@
     },
     {
       "ambito": "Ticket",
-      "num_iun": 1838,
+      "num_iun": 2930,
       "ranking": 1,
       "categoria_ente": "Salute centrale",
       "year": null
     },
     {
       "ambito": "Ticket",
-      "num_iun": 52565,
+      "num_iun": 79664,
       "ranking": 1,
       "categoria_ente": "Salute locale",
       "year": null
@@ -2087,21 +2381,21 @@
     },
     {
       "ambito": "Scuola",
-      "num_iun": 5974,
+      "num_iun": 5985,
       "ranking": 1,
       "categoria_ente": "Universit\u00e0",
       "year": null
     },
     {
       "ambito": "Riscossione coattiva",
-      "num_iun": 1114,
+      "num_iun": 1128,
       "ranking": 2,
       "categoria_ente": "Universit\u00e0",
       "year": null
     },
     {
       "ambito": "Tributi",
-      "num_iun": 380,
+      "num_iun": 524,
       "ranking": 3,
       "categoria_ente": "Universit\u00e0",
       "year": null
@@ -2118,67 +2412,67 @@
     {
       "year": "2026",
       "tipologia_atto": "Notifiche Violazioni al Codice della Strada",
-      "num_iun": 4958608,
+      "num_iun": 5698448,
       "ranking": 1
     },
     {
       "year": "2026",
       "tipologia_atto": "Notifiche Riscossione Bollo non pagato",
-      "num_iun": 1634386,
+      "num_iun": 2141487,
       "ranking": 2
     },
     {
       "year": "2026",
       "tipologia_atto": "Comunicazioni relative a riscossioni coattive e ingiunzioni fiscali",
-      "num_iun": 1368060,
+      "num_iun": 1525146,
       "ranking": 3
     },
     {
       "year": "2026",
       "tipologia_atto": "Notifiche relative a Contributi verso l'ente previdenziale",
-      "num_iun": 952375,
+      "num_iun": 1006258,
       "ranking": 4
     },
     {
       "year": "2026",
       "tipologia_atto": "Notifiche Riscossione Tributi con pagamento",
-      "num_iun": 779387,
+      "num_iun": 969880,
       "ranking": 5
     },
     {
       "year": "2026",
       "tipologia_atto": "Notifiche dei provvedimenti di recupero del credito",
-      "num_iun": 557295,
+      "num_iun": 607125,
       "ranking": 6
     },
     {
       "year": "2026",
       "tipologia_atto": "Notifiche dei provvedimenti di recupero indebiti",
-      "num_iun": 165108,
+      "num_iun": 203631,
       "ranking": 7
     },
     {
       "year": "2026",
       "tipologia_atto": "Notifica di concessione/diniego di cittadinanza",
-      "num_iun": 51429,
+      "num_iun": 57626,
       "ranking": 8
     },
     {
       "year": "2026",
-      "tipologia_atto": "Notifiche Riscossione Tributi senza pagamento",
-      "num_iun": 42403,
+      "tipologia_atto": "Notifiche relative al Pagamento nei confronti della Sanit\u00e0",
+      "num_iun": 48524,
       "ranking": 9
     },
     {
       "year": "2026",
-      "tipologia_atto": "Notifiche Violazioni extra CdS",
-      "num_iun": 32590,
+      "tipologia_atto": "Notifiche Riscossione Tributi senza pagamento",
+      "num_iun": 46576,
       "ranking": 10
     },
     {
       "year": "2025",
       "tipologia_atto": "Notifiche Violazioni al Codice della Strada",
-      "num_iun": 7532833,
+      "num_iun": 7532831,
       "ranking": 1
     },
     {
@@ -2190,7 +2484,7 @@
     {
       "year": "2025",
       "tipologia_atto": "Notifiche Riscossione Tributi con pagamento",
-      "num_iun": 2143007,
+      "num_iun": 2143001,
       "ranking": 3
     },
     {
@@ -2214,7 +2508,7 @@
     {
       "year": "2025",
       "tipologia_atto": "Notifica di concessione/diniego di cittadinanza",
-      "num_iun": 103592,
+      "num_iun": 103589,
       "ranking": 7
     },
     {
@@ -2358,323 +2652,62 @@
     {
       "year": null,
       "tipologia_atto": "Notifiche Violazioni al Codice della Strada",
-      "num_iun": 14324578,
+      "num_iun": 15064416,
       "ranking": 1
     },
     {
       "year": null,
       "tipologia_atto": "Notifiche Riscossione Bollo non pagato",
-      "num_iun": 10649727,
+      "num_iun": 11156828,
       "ranking": 2
     },
     {
       "year": null,
       "tipologia_atto": "Comunicazioni relative a riscossioni coattive e ingiunzioni fiscali",
-      "num_iun": 4610126,
+      "num_iun": 4767212,
       "ranking": 3
     },
     {
       "year": null,
       "tipologia_atto": "Notifiche relative a Contributi verso l'ente previdenziale",
-      "num_iun": 4096476,
+      "num_iun": 4150359,
       "ranking": 4
     },
     {
       "year": null,
       "tipologia_atto": "Notifiche Riscossione Tributi con pagamento",
-      "num_iun": 3676025,
+      "num_iun": 3866512,
       "ranking": 5
     },
     {
       "year": null,
       "tipologia_atto": "Notifiche dei provvedimenti di recupero del credito",
-      "num_iun": 2618511,
+      "num_iun": 2668341,
       "ranking": 6
     },
     {
       "year": null,
       "tipologia_atto": "Notifica di concessione/diniego di cittadinanza",
-      "num_iun": 279006,
+      "num_iun": 285200,
       "ranking": 7
     },
     {
       "year": null,
       "tipologia_atto": "Notifiche dei provvedimenti di recupero indebiti",
-      "num_iun": 165108,
+      "num_iun": 203631,
       "ranking": 8
     },
     {
       "year": null,
       "tipologia_atto": "Notifiche Riscossione Tributi senza pagamento",
-      "num_iun": 148490,
+      "num_iun": 152663,
       "ranking": 9
     },
     {
       "year": null,
       "tipologia_atto": "Notifiche riscossione entrate patrimoniali con pagamento",
-      "num_iun": 118908,
+      "num_iun": 120510,
       "ranking": 10
-    }
-  ],
-  "top_categorie_enti": [
-    {
-      "year": "2026",
-      "categoria_ente": "Comuni",
-      "num_iun": 125000000,
-      "ranking": 1
-    },
-    {
-      "year": "2026",
-      "categoria_ente": "Regioni",
-      "num_iun": 112500000,
-      "ranking": 2
-    },
-    {
-      "year": "2026",
-      "categoria_ente": "Pubbliche amministrazioni centrali",
-      "num_iun": 81250000,
-      "ranking": 3
-    },
-    {
-      "year": "2026",
-      "categoria_ente": "Utility",
-      "num_iun": 72500000,
-      "ranking": 4
-    },
-    {
-      "year": "2026",
-      "categoria_ente": "Altri enti territoriali",
-      "num_iun": 43750000,
-      "ranking": 5
-    },
-    {
-      "year": "2026",
-      "categoria_ente": "Province",
-      "num_iun": 6250000,
-      "ranking": 6
-    },
-    {
-      "year": "2026",
-      "categoria_ente": "Salute centrale",
-      "num_iun": 4500000,
-      "ranking": 7
-    },
-    {
-      "year": "2026",
-      "categoria_ente": "N/D",
-      "num_iun": 2000000,
-      "ranking": 8
-    },
-    {
-      "year": "2026",
-      "categoria_ente": "Ordini professionali Camere Commercio",
-      "num_iun": 875000,
-      "ranking": 9
-    },
-    {
-      "year": "2026",
-      "categoria_ente": "Enti comunali",
-      "num_iun": 450000,
-      "ranking": 10
-    },
-    {
-      "year": "2026",
-      "categoria_ente": "Istruzione",
-      "num_iun": 225000,
-      "ranking": 11
-    },
-    {
-      "year": "2025",
-      "categoria_ente": "Comuni",
-      "num_iun": 225000000,
-      "ranking": 1
-    },
-    {
-      "year": "2025",
-      "categoria_ente": "Regioni",
-      "num_iun": 202500000,
-      "ranking": 2
-    },
-    {
-      "year": "2025",
-      "categoria_ente": "Pubbliche amministrazioni centrali",
-      "num_iun": 146250000,
-      "ranking": 3
-    },
-    {
-      "year": "2025",
-      "categoria_ente": "Utility",
-      "num_iun": 130500000,
-      "ranking": 4
-    },
-    {
-      "year": "2025",
-      "categoria_ente": "Altri enti territoriali",
-      "num_iun": 78750000,
-      "ranking": 5
-    },
-    {
-      "year": "2025",
-      "categoria_ente": "Province",
-      "num_iun": 11250000,
-      "ranking": 6
-    },
-    {
-      "year": "2025",
-      "categoria_ente": "Salute centrale",
-      "num_iun": 8100000,
-      "ranking": 7
-    },
-    {
-      "year": "2025",
-      "categoria_ente": "N/D",
-      "num_iun": 3600000,
-      "ranking": 8
-    },
-    {
-      "year": "2025",
-      "categoria_ente": "Ordini professionali Camere Commercio",
-      "num_iun": 1575000,
-      "ranking": 9
-    },
-    {
-      "year": "2025",
-      "categoria_ente": "Enti comunali",
-      "num_iun": 810000,
-      "ranking": 10
-    },
-    {
-      "year": "2025",
-      "categoria_ente": "Istruzione",
-      "num_iun": 405000,
-      "ranking": 11
-    },
-    {
-      "year": "2024",
-      "categoria_ente": "Comuni",
-      "num_iun": 150000000,
-      "ranking": 1
-    },
-    {
-      "year": "2024",
-      "categoria_ente": "Regioni",
-      "num_iun": 135000000,
-      "ranking": 2
-    },
-    {
-      "year": "2024",
-      "categoria_ente": "Pubbliche amministrazioni centrali",
-      "num_iun": 97500000,
-      "ranking": 3
-    },
-    {
-      "year": "2024",
-      "categoria_ente": "Utility",
-      "num_iun": 87000000,
-      "ranking": 4
-    },
-    {
-      "year": "2024",
-      "categoria_ente": "Altri enti territoriali",
-      "num_iun": 52500000,
-      "ranking": 5
-    },
-    {
-      "year": "2024",
-      "categoria_ente": "Province",
-      "num_iun": 7500000,
-      "ranking": 6
-    },
-    {
-      "year": "2024",
-      "categoria_ente": "Salute centrale",
-      "num_iun": 5400000,
-      "ranking": 7
-    },
-    {
-      "year": "2024",
-      "categoria_ente": "N/D",
-      "num_iun": 2400000,
-      "ranking": 8
-    },
-    {
-      "year": "2024",
-      "categoria_ente": "Ordini professionali Camere Commercio",
-      "num_iun": 1050000,
-      "ranking": 9
-    },
-    {
-      "year": "2024",
-      "categoria_ente": "Enti comunali",
-      "num_iun": 540000,
-      "ranking": 10
-    },
-    {
-      "year": "2024",
-      "categoria_ente": "Istruzione",
-      "num_iun": 270000,
-      "ranking": 11
-    },
-    {
-      "year": null,
-      "categoria_ente": "Comuni",
-      "num_iun": 500000000,
-      "ranking": 1
-    },
-    {
-      "year": null,
-      "categoria_ente": "Regioni",
-      "num_iun": 450000000,
-      "ranking": 2
-    },
-    {
-      "year": null,
-      "categoria_ente": "Pubbliche amministrazioni centrali",
-      "num_iun": 325000000,
-      "ranking": 3
-    },
-    {
-      "year": null,
-      "categoria_ente": "Utility",
-      "num_iun": 290000000,
-      "ranking": 4
-    },
-    {
-      "year": null,
-      "categoria_ente": "Altri enti territoriali",
-      "num_iun": 175000000,
-      "ranking": 5
-    },
-    {
-      "year": null,
-      "categoria_ente": "Province",
-      "num_iun": 25000000,
-      "ranking": 6
-    },
-    {
-      "year": null,
-      "categoria_ente": "Salute centrale",
-      "num_iun": 18000000,
-      "ranking": 7
-    },
-    { "year": null, "categoria_ente": "N/D", "num_iun": 8000000, "ranking": 8 },
-    {
-      "year": null,
-      "categoria_ente": "Ordini professionali Camere Commercio",
-      "num_iun": 3500000,
-      "ranking": 9
-    },
-    {
-      "year": null,
-      "categoria_ente": "Enti comunali",
-      "num_iun": 1800000,
-      "ranking": 10
-    },
-    {
-      "year": null,
-      "categoria_ente": "Istruzione",
-      "num_iun": 900000,
-      "ranking": 11
     }
   ]
 }
