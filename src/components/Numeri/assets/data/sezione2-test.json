@@ -1,5 +1,5 @@
 {
-  "last_run": "2026-07-02T13:53:14.508215",
+  "last_run": "2026-07-02T15:31:45.132049",
   "enti_attivi": [
     { "num_enti": 7093, "year": null, "pct_variazione_vs_anno_prec": null },
     { "num_enti": 2944, "year": "2024", "pct_variazione_vs_anno_prec": null },
@@ -550,18 +550,6 @@
       "year": null
     },
     {
-      "categoria_ente": "Consorzi universitari",
-      "num_iun": 4356,
-      "ranking": 11,
-      "year": null
-    },
-    {
-      "categoria_ente": "Salute centrale",
-      "num_iun": 2930,
-      "ranking": 12,
-      "year": null
-    },
-    {
       "categoria_ente": "Regioni",
       "num_iun": 3439842,
       "ranking": 1,
@@ -739,18 +727,6 @@
       "categoria_ente": "Salute centrale",
       "num_iun": 2930,
       "ranking": 10,
-      "year": "2026"
-    },
-    {
-      "categoria_ente": "Consorzi universitari",
-      "num_iun": 1912,
-      "ranking": 11,
-      "year": "2026"
-    },
-    {
-      "categoria_ente": "Universit\u00e0",
-      "num_iun": 1539,
-      "ranking": 12,
       "year": "2026"
     }
   ],
