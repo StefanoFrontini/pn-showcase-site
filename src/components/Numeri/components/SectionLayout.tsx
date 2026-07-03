@@ -6,10 +6,11 @@ type Props = {
   children: React.ReactNode;
   text?: string;
   note?: React.ReactNode;
+  mb?: number;
 };
 
-const SectionLayout = ({ title, children, text, note }: Props) => (
-  <Box component="section" marginBottom={12}>
+const SectionLayout = ({ title, children, text, note, mb = 12 }: Props) => (
+  <Box component="section" marginBottom={mb}>
     <Box marginBottom={6}>
       <Typography
         component="h2"
